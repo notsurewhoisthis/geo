@@ -1,0 +1,274 @@
+{
+  "name": "GEO Content Automation Pipeline",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "hours",
+              "hoursInterval": 24
+            }
+          ]
+        }
+      },
+      "id": "schedule-trigger",
+      "name": "Daily Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.1,
+      "position": [250, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.perplexity.ai/chat/completions",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer {{$credentials.perplexityApiKey}}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "model",
+              "value": "llama-3.1-sonar-large-128k-online"
+            },
+            {
+              "name": "messages",
+              "value": "=[{\"role\":\"system\",\"content\":\"You are a GEO expert finding trending topics.\"},{\"role\":\"user\",\"content\":\"What are the top 5 trending topics in Generative Engine Optimization today/this week that people are searching for but have limited quality content available? Check LinkedIn, Reddit, and other sources. Return as JSON with: slug, title, keywords[], searchIntent\"}]"
+            }
+          ]
+        }
+      },
+      "id": "trend-discovery",
+      "name": "Trend Discovery",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [450, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Parse trending topics from Perplexity response\nconst response = $input.first().json;\nconst content = response.choices[0].message.content;\n\n// Extract JSON from response\nconst jsonMatch = content.match(/```json\\n([\\s\\S]*?)\\n```/);\nconst topics = jsonMatch ? JSON.parse(jsonMatch[1]) : [];\n\n// Limit to 2 topics per run\nconst selectedTopics = topics.slice(0, 2);\n\nreturn selectedTopics.map(topic => ({\n  json: {\n    slug: topic.slug,\n    title: topic.title,\n    keywords: topic.keywords,\n    searchIntent: topic.searchIntent,\n    timestamp: new Date().toISOString()\n  }\n}));"
+      },
+      "id": "parse-topics",
+      "name": "Parse Topics",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [650, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.perplexity.ai/chat/completions",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer {{$credentials.perplexityApiKey}}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "model",
+              "value": "llama-3.1-sonar-large-128k-online"
+            },
+            {
+              "name": "messages",
+              "value": "=[{\"role\":\"system\",\"content\":\"You are a GEO research expert.\"},{\"role\":\"user\",\"content\":\"Research {{$json.title}}: 1) Comprehensive guide with facts, statistics, expert opinions 2) Common questions and pain points 3) Latest developments and future predictions. Provide detailed research data.\"}]"
+            }
+          ]
+        }
+      },
+      "id": "deep-research",
+      "name": "Deep Research",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [850, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.openai.com/v1/chat/completions",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer {{$credentials.openaiApiKey}}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "model",
+              "value": "gpt-4-turbo-preview"
+            },
+            {
+              "name": "messages",
+              "value": "=[{\"role\":\"system\",\"content\":\"You are an expert SEO content writer specializing in GEO. Create comprehensive, SEO-optimized content.\"},{\"role\":\"user\",\"content\":\"Create a 2500+ word article about {{$json.title}} based on this research: {{$json.research}}. Include: SEO title (50-60 chars), meta description (150-160 chars), H1, multiple H2/H3 sections, FAQ section with 5 questions, conclusion. Format as HTML with proper heading tags.\"}]"
+            },
+            {
+              "name": "temperature",
+              "value": 0.7
+            },
+            {
+              "name": "max_tokens",
+              "value": 4000
+            }
+          ]
+        }
+      },
+      "id": "content-generation",
+      "name": "Content Generation",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [1050, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Generate Next.js page and blog data files\nconst topic = $input.first().json;\nconst content = topic.generatedContent;\nconst slug = topic.slug;\nconst now = new Date().toISOString();\n\n// Extract word count and reading time\nconst wordCount = content.split(' ').length;\nconst readingTime = Math.ceil(wordCount / 200);\n\n// Create blog data JSON\nconst blogData = {\n  slug: slug,\n  title: topic.title,\n  description: topic.metaDescription,\n  excerpt: topic.excerpt,\n  content: content,\n  publishedAt: now,\n  updatedAt: now,\n  author: {\n    name: \"GEO Content Team\",\n    bio: \"Automated content generation system\"\n  },\n  tags: topic.keywords.slice(0, 5),\n  keywords: topic.keywords,\n  metrics: {\n    readingTime: readingTime,\n    wordCount: wordCount\n  }\n};\n\n// Create Next.js page component\nconst pageComponent = `import { Metadata } from 'next'\nimport Link from 'next/link'\nimport blogData from '@/public/blog-data/${slug}.json'\n\nexport const metadata: Metadata = {\n  title: '${topic.title} | GEO Platform',\n  description: '${topic.metaDescription}',\n  keywords: '${topic.keywords.join(', ')}',\n  openGraph: {\n    title: '${topic.title}',\n    description: '${topic.metaDescription}',\n    url: 'https://generative-engine.org/${slug}',\n    type: 'article',\n    publishedTime: '${now}',\n    modifiedTime: '${now}',\n    authors: ['GEO Content Team'],\n  },\n  twitter: {\n    card: 'summary_large_image',\n    title: '${topic.title}',\n    description: '${topic.metaDescription}',\n  },\n}\n\nexport default function ${slug.split('-').map(w => w[0].toUpperCase() + w.slice(1)).join('')}Page() {\n  return (\n    <article className=\"container mx-auto px-4 py-12 max-w-4xl\">\n      <nav className=\"mb-8\">\n        <ol className=\"flex items-center space-x-2 text-sm text-gray-400\">\n          <li><Link href=\"/\" className=\"hover:text-purple-400\">Home</Link></li>\n          <li>/</li>\n          <li><Link href=\"/blog\" className=\"hover:text-purple-400\">Blog</Link></li>\n          <li>/</li>\n          <li className=\"text-white\">{blogData.title}</li>\n        </ol>\n      </nav>\n      \n      <header className=\"mb-12\">\n        <h1 className=\"text-4xl md:text-5xl font-bold mb-4 gradient-text\">\n          {blogData.title}\n        </h1>\n        <div className=\"flex items-center gap-4 text-gray-400\">\n          <span>{blogData.author.name}</span>\n          <span>•</span>\n          <span>{new Date(blogData.publishedAt).toLocaleDateString()}</span>\n          <span>•</span>\n          <span>{blogData.metrics.readingTime} min read</span>\n        </div>\n      </header>\n      \n      <div className=\"prose prose-invert prose-lg max-w-none\"\n           dangerouslySetInnerHTML={{ __html: blogData.content }}\n      />\n      \n      <script type=\"application/ld+json\">\n        {JSON.stringify({\n          \"@context\": \"https://schema.org\",\n          \"@type\": \"Article\",\n          \"headline\": blogData.title,\n          \"description\": blogData.description,\n          \"author\": {\n            \"@type\": \"Organization\",\n            \"name\": \"GEO Content Team\"\n          },\n          \"datePublished\": blogData.publishedAt,\n          \"dateModified\": blogData.updatedAt,\n        })}\n      </script>\n    </article>\n  )\n}`;\n\nreturn {\n  json: {\n    slug: slug,\n    blogData: blogData,\n    pageComponent: pageComponent,\n    files: [\n      {\n        path: `app/${slug}/page.tsx`,\n        content: pageComponent\n      },\n      {\n        path: `public/blog-data/${slug}.json`,\n        content: JSON.stringify(blogData, null, 2)\n      }\n    ]\n  }\n};"
+      },
+      "id": "create-files",
+      "name": "Create Files",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1250, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.github.com/repos/notsurewhoisthis/geo/contents/{{$json.files[0].path}}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer {{$credentials.githubToken}}"
+            },
+            {
+              "name": "Accept",
+              "value": "application/vnd.github.v3+json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "message",
+              "value": "Add trending topic: {{$json.slug}}"
+            },
+            {
+              "name": "content",
+              "value": "={{Buffer.from($json.files[0].content).toString('base64')}}"
+            },
+            {
+              "name": "branch",
+              "value": "main"
+            }
+          ]
+        }
+      },
+      "id": "github-commit",
+      "name": "GitHub Commit",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [1450, 300]
+    }
+  ],
+  "connections": {
+    "schedule-trigger": {
+      "main": [
+        [
+          {
+            "node": "trend-discovery",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "trend-discovery": {
+      "main": [
+        [
+          {
+            "node": "parse-topics",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "parse-topics": {
+      "main": [
+        [
+          {
+            "node": "deep-research",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "deep-research": {
+      "main": [
+        [
+          {
+            "node": "content-generation",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "content-generation": {
+      "main": [
+        [
+          {
+            "node": "create-files",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "create-files": {
+      "main": [
+        [
+          {
+            "node": "github-commit",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "pinData": {}
+}

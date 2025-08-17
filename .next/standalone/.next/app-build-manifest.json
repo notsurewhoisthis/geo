@@ -1,0 +1,50 @@
+{
+  "pages": {
+    "/_not-found/page": [
+      "static/chunks/webpack-8130d86d192dcd29.js",
+      "static/chunks/4bd1b696-cf72ae8a39fa05aa.js",
+      "static/chunks/964-7a34cadcb7695cec.js",
+      "static/chunks/main-app-16401898a3c4b4e7.js",
+      "static/chunks/app/_not-found/page-c3678eb3552b2ccd.js"
+    ],
+    "/layout": [
+      "static/chunks/webpack-8130d86d192dcd29.js",
+      "static/chunks/4bd1b696-cf72ae8a39fa05aa.js",
+      "static/chunks/964-7a34cadcb7695cec.js",
+      "static/chunks/main-app-16401898a3c4b4e7.js",
+      "static/css/931b179cff3131dc.css",
+      "static/chunks/874-437a265a67d6cfee.js",
+      "static/chunks/app/layout-25220fa611e5a8d7.js"
+    ],
+    "/api/geo/tips/route": [
+      "static/chunks/webpack-8130d86d192dcd29.js",
+      "static/chunks/4bd1b696-cf72ae8a39fa05aa.js",
+      "static/chunks/964-7a34cadcb7695cec.js",
+      "static/chunks/main-app-16401898a3c4b4e7.js",
+      "static/chunks/app/api/geo/tips/route-dc96b42c60b1d411.js"
+    ],
+    "/sitemap.xml/route": [
+      "static/chunks/webpack-8130d86d192dcd29.js",
+      "static/chunks/4bd1b696-cf72ae8a39fa05aa.js",
+      "static/chunks/964-7a34cadcb7695cec.js",
+      "static/chunks/main-app-16401898a3c4b4e7.js",
+      "static/chunks/app/sitemap.xml/route-dc96b42c60b1d411.js"
+    ],
+    "/page": [
+      "static/chunks/webpack-8130d86d192dcd29.js",
+      "static/chunks/4bd1b696-cf72ae8a39fa05aa.js",
+      "static/chunks/964-7a34cadcb7695cec.js",
+      "static/chunks/main-app-16401898a3c4b4e7.js",
+      "static/chunks/874-437a265a67d6cfee.js",
+      "static/chunks/app/page-b81295e5d42f84d0.js"
+    ],
+    "/blog/page": [
+      "static/chunks/webpack-8130d86d192dcd29.js",
+      "static/chunks/4bd1b696-cf72ae8a39fa05aa.js",
+      "static/chunks/964-7a34cadcb7695cec.js",
+      "static/chunks/main-app-16401898a3c4b4e7.js",
+      "static/chunks/874-437a265a67d6cfee.js",
+      "static/chunks/app/blog/page-b81295e5d42f84d0.js"
+    ]
+  }
+}
