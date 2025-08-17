@@ -4,35 +4,147 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --primary: #0066FF;
+    --primary-dark: #0052CC;
+    --text-primary: #1A1A1A;
+    --text-secondary: #666666;
+    --text-tertiary: #999999;
+    --bg-primary: #FFFFFF;
+    --bg-secondary: #FAFAFA;
+    --bg-tertiary: #F5F5F5;
+    --border: #E5E5E5;
+    --border-light: #F0F0F0;
   }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-  }
-}
-
-@layer base {
+  
   * {
-    @apply border-border;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
   }
+  
   body {
-    @apply bg-gray-900 text-white;
+    @apply bg-white text-gray-900;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold text-gray-900;
+  }
+  
+  a {
+    @apply text-blue-600 no-underline hover:underline;
   }
 }
 
 @layer components {
+  .container-blog {
+    @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .hero-title {
+    @apply text-5xl md:text-6xl lg:text-7xl font-bold leading-tight;
+  }
+  
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold mb-4;
+  }
+  
+  .card {
+    @apply bg-white rounded-lg border border-gray-200 overflow-hidden hover:shadow-xl transition-all duration-300;
+  }
+  
+  .article-card {
+    @apply bg-white rounded-lg border border-gray-200 overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-300;
+  }
+  
+  .btn-primary {
+    @apply inline-block px-8 py-4 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors duration-200;
+  }
+  
+  .btn-secondary {
+    @apply inline-block px-8 py-4 bg-white text-gray-700 font-semibold rounded-lg border-2 border-gray-200 hover:border-gray-300 hover:bg-gray-50 transition-all duration-200;
+  }
+  
+  .badge {
+    @apply inline-block px-3 py-1 text-xs font-semibold rounded-full;
+  }
+  
+  .badge-blue {
+    @apply bg-blue-100 text-blue-700;
+  }
+  
+  .badge-gray {
+    @apply bg-gray-100 text-gray-600;
+  }
+  
+  .nav-link {
+    @apply text-gray-600 hover:text-gray-900 font-medium transition-colors duration-200;
+  }
+  
+  .prose-blog {
+    @apply text-gray-700 leading-relaxed;
+  }
+  
+  .prose-blog h1 {
+    @apply text-4xl font-bold mt-8 mb-4 text-gray-900;
+  }
+  
+  .prose-blog h2 {
+    @apply text-3xl font-bold mt-8 mb-4 text-gray-900;
+  }
+  
+  .prose-blog h3 {
+    @apply text-2xl font-bold mt-6 mb-3 text-gray-900;
+  }
+  
+  .prose-blog p {
+    @apply mb-6 text-gray-700 leading-relaxed text-lg;
+  }
+  
+  .prose-blog ul, .prose-blog ol {
+    @apply mb-6 ml-6 text-gray-700;
+  }
+  
+  .prose-blog li {
+    @apply mb-2;
+  }
+  
+  .prose-blog blockquote {
+    @apply border-l-4 border-blue-500 pl-4 italic my-6 text-gray-600;
+  }
+  
+  .prose-blog code {
+    @apply bg-gray-100 text-blue-600 px-2 py-1 rounded text-sm;
+  }
+  
+  .prose-blog pre {
+    @apply bg-gray-50 border border-gray-200 rounded-lg p-4 my-6 overflow-x-auto;
+  }
+  
   .gradient-text {
-    @apply bg-gradient-to-r from-purple-400 to-blue-500 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
   }
   
-  .card-hover {
-    @apply transition-all duration-300 hover:scale-105 hover:shadow-2xl;
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-in;
   }
   
-  .gradient-border {
-    @apply relative before:absolute before:inset-0 before:rounded-lg before:p-[2px] before:bg-gradient-to-r before:from-purple-400 before:to-blue-500 before:-z-10;
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 }
