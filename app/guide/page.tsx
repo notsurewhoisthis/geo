@@ -848,7 +848,7 @@ Sitemap: https://example.com/news-sitemap.xml`}</pre>
                       <li>Configure robots.txt for AI crawlers</li>
                       <li>Create XML sitemaps with recent content</li>
                       <li>Add relevant meta tags</li>
-                      <li>Ensure fast page load times (< 3 seconds)</li>
+                      <li>Ensure fast page load times (&lt; 3 seconds)</li>
                       <li>Enable HTTPS across all pages</li>
                       <li>Implement proper canonical URLs</li>
                     </ol>
@@ -1117,7 +1117,7 @@ Sitemap: https://example.com/news-sitemap.xml`}</pre>
                       <tbody>
                         <tr className="border-b">
                           <td className="py-2">Citation Rate</td>
-                          <td className="py-2">>5% of relevant queries</td>
+                          <td className="py-2">&gt;5% of relevant queries</td>
                           <td className="py-2">Weekly sampling</td>
                         </tr>
                         <tr className="border-b">
@@ -1127,12 +1127,12 @@ Sitemap: https://example.com/news-sitemap.xml`}</pre>
                         </tr>
                         <tr className="border-b">
                           <td className="py-2">Content Freshness</td>
-                          <td className="py-2"><30 days average</td>
+                          <td className="py-2">&lt;30 days average</td>
                           <td className="py-2">Update frequency</td>
                         </tr>
                         <tr className="border-b">
                           <td className="py-2">Authority Score</td>
-                          <td className="py-2">>80/100</td>
+                          <td className="py-2">&gt;80/100</td>
                           <td className="py-2">Audit tools</td>
                         </tr>
                       </tbody>

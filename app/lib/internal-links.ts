@@ -6,7 +6,7 @@ export interface InternalLink {
 }
 
 // Define internal link mappings for key terms
-export const export const internalLinks: InternalLink[] = [
+export const internalLinks: InternalLink[] = [
   // Entity Pages - High Priority
   { keyword: 'generative engine optimization', href: '/entities/generative-engine-optimization', title: 'GEO Complete Guide' },
   { keyword: 'ChatGPT optimization', href: '/entities/chatgpt-optimization', title: 'ChatGPT Optimization Guide' },
