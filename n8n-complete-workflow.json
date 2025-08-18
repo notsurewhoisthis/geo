@@ -1,0 +1,113 @@
+{
+  "name": "GEO Automated Blog Publishing",
+  "version": 1,
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "hours",
+              "value": 24
+            }
+          ]
+        }
+      },
+      "id": "schedule-trigger",
+      "name": "Daily Content Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1,
+      "position": [240, 300]
+    },
+    {
+      "parameters": {
+        "url": "https://api.perplexity.ai/chat/completions",
+        "authentication": "headerAuth",
+        "requestMethod": "POST",
+        "jsonParameters": true,
+        "options": {},
+        "bodyParametersJson": "{\n  \"model\": \"llama-3.1-sonar-small-128k-online\",\n  \"messages\": [\n    {\n      \"role\": \"system\",\n      \"content\": \"You are a trend research specialist. Analyze current online discussions and identify trending topics in Generative Engine Optimization, AI SEO, and related fields. Focus on topics with high search interest but limited quality content.\"\n    },\n    {\n      \"role\": \"user\",\n      \"content\": \"What are the top 3 trending topics in Generative Engine Optimization this week that people are searching for but have limited quality content available? Check LinkedIn, Reddit, Twitter, and recent blog posts. Return your answer as JSON with this structure: {\\\"topics\\\": [{\\\"title\\\": \\\"Topic Title\\\", \\\"slug\\\": \\\"topic-slug\\\", \\\"search_intent\\\": \\\"informational/commercial\\\", \\\"competition_level\\\": \\\"low/medium/high\\\", \\\"keywords\\\": [\\\"keyword1\\\", \\\"keyword2\\\"]}]}\"\n    }\n  ],\n  \"max_tokens\": 1000,\n  \"temperature\": 0.3\n}"
+      },
+      "id": "trend-discovery",
+      "name": "Discover Trending Topics",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [460, 300],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "perplexity-api-key",
+          "name": "Perplexity API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "topic-data",
+              "name": "selectedTopic",
+              "value": "={{ JSON.parse($json.choices[0].message.content).topics[0] }}",
+              "type": "object"
+            }
+          ]
+        }
+      },
+      "id": "select-topic",
+      "name": "Select First Topic",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3,
+      "position": [680, 300]
+    },
+    {
+      "parameters": {
+        "url": "https://api.perplexity.ai/chat/completions",
+        "authentication": "headerAuth",
+        "requestMethod": "POST",
+        "jsonParameters": true,
+        "options": {},
+        "bodyParametersJson": "{\n  \"model\": \"llama-3.1-sonar-large-128k-online\",\n  \"messages\": [\n    {\n      \"role\": \"system\",\n      \"content\": \"You are a research specialist. Conduct comprehensive research on the given topic, gathering facts, statistics, expert opinions, and current developments. Provide detailed, accurate information from authoritative sources.\"\n    },\n    {\n      \"role\": \"user\",\n      \"content\": \"Research the topic: {{ $json.selectedTopic.title }}. Provide: 1) Key facts and statistics, 2) Expert opinions and quotes, 3) Current trends and developments, 4) Common questions people ask, 5) Practical applications and examples. Include sources and make it comprehensive for a 2500+ word article.\"\n    }\n  ],\n  \"max_tokens\": 4000,\n  \"temperature\": 0.2\n}"
+      },
+      "id": "deep-research",
+      "name": "Deep Research",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [900, 300],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "perplexity-api-key",
+          "name": "Perplexity API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "https://api.openai.com/v1/chat/completions",
+        "authentication": "headerAuth",
+        "requestMethod": "POST",
+        "jsonParameters": true,
+        "options": {},
+        "bodyParametersJson": "{\n  \"model\": \"gpt-4o\",\n  \"messages\": [\n    {\n      \"role\": \"system\",\n      \"content\": \"You are an expert content writer specializing in Generative Engine Optimization. Create comprehensive, SEO-optimized blog posts that are informative, engaging, and authoritative. Use proper HTML structure with h2, h3 headings, paragraphs, and lists. Write in a professional yet accessible tone.\"\n    },\n    {\n      \"role\": \"user\",\n      \"content\": \"Write a comprehensive 2500+ word blog post about: {{ $('select-topic').item.json.selectedTopic.title }}\\n\\nResearch data: {{ $json.choices[0].message.content }}\\n\\nRequirements:\\n- Use HTML formatting (h2, h3, p, ul, li tags)\\n- Include introduction, multiple main sections, and conclusion\\n- Add FAQ section at the end\\n- Optimize for keywords: {{ $('select-topic').item.json.selectedTopic.keywords.join(', ') }}\\n- Make it practical and actionable\\n- Include examples and use cases\\n- Write for {{ $('select-topic').item.json.selectedTopic.search_intent }} intent\"\n    }\n  ],\n  \"max_tokens\": 4000,\n  \"temperature\": 0.3\n}"
+      },
+      "id": "content-generation",
+      "name": "Generate Content",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [1120, 300],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "openai-api-key",
+          "name": "OpenAI API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "blog-post-json",
+              "name": "blogPost",
+              "value": "={\n  \"slug\": {{ $('select-topic').item.json.selectedTopic.slug }},\n  \"title\": {{ $('select-topic').item.json.selectedTopic.title }},\n  \"description\": {{ $json.choices[0].message.content.substring(0, 155) + '...' }},\n  \"excerpt\": {{ $json.choices[0].message.content.substring(0, 300) + '...' }},\n  \"content\": {{ $json.choices[0].message.content }},\n  \"publishedAt\": {{ new Date().toISOString() }},\n  \"updatedAt\": {{ new Date().toISOString() }},\n  \"author\": {\n    \"name\": \"GEO Content Team\",\n    \"bio\": \"AI-powered content generation system specializing in Generative Engine Optimization strategies and insights.\"\n  },\n  \"tags\": [\"GEO\", \"AI SEO\", \"Content Optimization\"],\n  \"keywords\": {{ $('select-topic').item.json.selectedTopic.keywords }},\n  \"metrics\": {\n    \"readingTime\": {{ Math.ceil($json.choices[0].message.content.split(' ').length / 200) }},\n    \"wordCount\": {{ $json.choices[0].message.content.split(' ').length }}\n  }\n}",
+              "type": "object"
+            },\n            {\n              \"id\": \"filename\",\n              \"name\": \"filename\",\n              \"value\": \"={{ $('select-topic').item.json.selectedTopic.slug }}.json\",\n              \"type\": \"string\"\n            }\n          ]\n        }\n      },\n      \"id\": \"format-blog-data\",\n      \"name\": \"Format Blog Data\",\n      \"type\": \"n8n-nodes-base.set\",\n      \"typeVersion\": 3,\n      \"position\": [1340, 300]\n    },\n    {\n      \"parameters\": {\n        \"owner\": \"notsurewhoisthis\",\n        \"repository\": \"geo\",\n        \"filePath\": \"public/blog-data/{{ $json.filename }}\",\n        \"fileContent\": \"={{ JSON.stringify($json.blogPost, null, 2) }}\",\n        \"commitMessage\": \"Add new blog post: {{ $('select-topic').item.json.selectedTopic.title }}\"\n      },\n      \"id\": \"github-commit\",\n      \"name\": \"Commit to GitHub\",\n      \"type\": \"n8n-nodes-base.github\",\n      \"typeVersion\": 1,\n      \"position\": [1560, 300],\n      \"credentials\": {\n        \"githubApi\": {\n          \"id\": \"github-token\",\n          \"name\": \"GitHub API\"\n        }\n      }\n    },\n    {\n      \"parameters\": {\n        \"httpMethod\": \"POST\",\n        \"url\": \"https://api.github.com/repos/notsurewhoisthis/geo/dispatches\",\n        \"authentication\": \"headerAuth\",\n        \"jsonParameters\": true,\n        \"bodyParametersJson\": \"{\n  \\\"event_type\\\": \\\"deploy\\\",\n  \\\"client_payload\\\": {\n    \\\"message\\\": \\\"New blog post published: {{ $('select-topic').item.json.selectedTopic.title }}\\\"\n  }\n}\",\n        \"options\": {}\n      },\n      \"id\": \"trigger-deploy\",\n      \"name\": \"Trigger Deployment\",\n      \"type\": \"n8n-nodes-base.httpRequest\",\n      \"typeVersion\": 4,\n      \"position\": [1780, 300],\n      \"credentials\": {\n        \"httpHeaderAuth\": {\n          \"id\": \"github-token\",\n          \"name\": \"GitHub API\"\n        }\n      }\n    }\n  ],\n  \"connections\": {\n    \"Daily Content Trigger\": {\n      \"main\": [\n        [\n          {\n            \"node\": \"Discover Trending Topics\",\n            \"type\": \"main\",\n            \"index\": 0\n          }\n        ]\n      ]\n    },\n    \"Discover Trending Topics\": {\n      \"main\": [\n        [\n          {\n            \"node\": \"Select First Topic\",\n            \"type\": \"main\",\n            \"index\": 0\n          }\n        ]\n      ]\n    },\n    \"Select First Topic\": {\n      \"main\": [\n        [\n          {\n            \"node\": \"Deep Research\",\n            \"type\": \"main\",\n            \"index\": 0\n          }\n        ]\n      ]\n    },\n    \"Deep Research\": {\n      \"main\": [\n        [\n          {\n            \"node\": \"Generate Content\",\n            \"type\": \"main\",\n            \"index\": 0\n          }\n        ]\n      ]\n    },\n    \"Generate Content\": {\n      \"main\": [\n        [\n          {\n            \"node\": \"Format Blog Data\",\n            \"type\": \"main\",\n            \"index\": 0\n          }\n        ]\n      ]\n    },\n    \"Format Blog Data\": {\n      \"main\": [\n        [\n          {\n            \"node\": \"Commit to GitHub\",\n            \"type\": \"main\",\n            \"index\": 0\n          }\n        ]\n      ]\n    },\n    \"Commit to GitHub\": {\n      \"main\": [\n        [\n          {\n            \"node\": \"Trigger Deployment\",\n            \"type\": \"main\",\n            \"index\": 0\n          }\n        ]\n      ]\n    }\n  },\n  \"pinData\": {},\n  \"settings\": {\n    \"executionOrder\": \"v1\"\n  }\n}
