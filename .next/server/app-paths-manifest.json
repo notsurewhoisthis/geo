@@ -1,12 +1,16 @@
 {
-  "/_not-found/page": "app/_not-found/page.js",
   "/api/geo/tips/route": "app/api/geo/tips/route.js",
   "/sitemap.xml/route": "app/sitemap.xml/route.js",
-  "/news-sitemap.xml/route": "app/news-sitemap.xml/route.js",
+  "/_not-found/page": "app/_not-found/page.js",
   "/feed.xml/route": "app/feed.xml/route.js",
-  "/[slug]/page": "app/[slug]/page.js",
-  "/page": "app/page.js",
+  "/news-sitemap.xml/route": "app/news-sitemap.xml/route.js",
   "/about/page": "app/about/page.js",
+  "/[slug]/page": "app/[slug]/page.js",
   "/blog/page": "app/blog/page.js",
-  "/glossary/page": "app/glossary/page.js"
+  "/glossary/page": "app/glossary/page.js",
+  "/page": "app/page.js",
+  "/tools/geo-audit/page": "app/tools/geo-audit/page.js",
+  "/tools/keyword-research/page": "app/tools/keyword-research/page.js",
+  "/tools/visibility-tracker/page": "app/tools/visibility-tracker/page.js",
+  "/tools/content-optimizer/page": "app/tools/content-optimizer/page.js"
 }

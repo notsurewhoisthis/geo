@@ -76,6 +76,30 @@
       "regex": "^/sitemap\\.xml(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/sitemap\\.xml(?:/)?$"
+    },
+    {
+      "page": "/tools/content-optimizer",
+      "regex": "^/tools/content\\-optimizer(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/tools/content\\-optimizer(?:/)?$"
+    },
+    {
+      "page": "/tools/geo-audit",
+      "regex": "^/tools/geo\\-audit(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/tools/geo\\-audit(?:/)?$"
+    },
+    {
+      "page": "/tools/keyword-research",
+      "regex": "^/tools/keyword\\-research(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/tools/keyword\\-research(?:/)?$"
+    },
+    {
+      "page": "/tools/visibility-tracker",
+      "regex": "^/tools/visibility\\-tracker(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/tools/visibility\\-tracker(?:/)?$"
     }
   ],
   "dataRoutes": [],
