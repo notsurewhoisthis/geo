@@ -18,7 +18,7 @@ export async function POST(request: Request) {
     // Step 1: Fetch and analyze the actual website content
     let contentAnalysis = null
     let geoScore = 0
-    let realMetrics = {}
+    let realMetrics: any = {}
     
     try {
       const response = await fetch(url, {
@@ -92,7 +92,7 @@ function analyzeContent(html: string, domain: string) {
   const citationPattern = /\[\d+\]|<sup>.*?<\/sup>|<cite>.*?<\/cite>|References:|Bibliography:|Sources:/gi
   const statisticsPattern = /\d+(\.\d+)?%|\d{1,3}(,\d{3})*(\.\d+)?|\$\d+|€\d+|£\d+/g
   const headingPattern = /<h[1-6][^>]*>(.*?)<\/h[1-6]>/gi
-  const faqPattern = /<(div|section)[^>]*(?:faq|qa|question).*?>(.*?)<\/\1>/gis
+  const faqPattern = /<(div|section)[^>]*(?:faq|qa|question).*?>(.*?)<\/\1>/gi
   const schemaPattern = /<script[^>]*type=["']application\/ld\+json["'][^>]*>/gi
   
   const citations = (html.match(citationPattern) || []).length

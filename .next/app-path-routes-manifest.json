@@ -1,0 +1,23 @@
+{
+  "/_not-found/page": "/_not-found",
+  "/api/geo-audit/route": "/api/geo-audit",
+  "/api/geo/tips/route": "/api/geo/tips",
+  "/api/keywords/route": "/api/keywords",
+  "/api/visibility-tracker/route": "/api/visibility-tracker",
+  "/sitemap.xml/route": "/sitemap.xml",
+  "/feed.xml/route": "/feed.xml",
+  "/news-sitemap.xml/route": "/news-sitemap.xml",
+  "/about/page": "/about",
+  "/blog/page": "/blog",
+  "/[slug]/page": "/[slug]",
+  "/glossary/page": "/glossary",
+  "/guide/page": "/guide",
+  "/tools/page": "/tools",
+  "/resources/page": "/resources",
+  "/page": "/",
+  "/tech-view/page": "/tech-view",
+  "/tools/content-optimizer/page": "/tools/content-optimizer",
+  "/tools/geo-audit/page": "/tools/geo-audit",
+  "/tools/keyword-research/page": "/tools/keyword-research",
+  "/tools/visibility-tracker/page": "/tools/visibility-tracker"
+}

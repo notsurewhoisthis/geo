@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  
+  <url>
+    <loc>https://generative-engine.org</loc>
+    <lastmod>2025-08-18T13:23:55.101Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://generative-engine.org/blog</loc>
+    <lastmod>2025-08-18T13:23:55.101Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://generative-engine.org/resources</loc>
+    <lastmod>2025-08-18T13:23:55.101Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://generative-engine.org/about</loc>
+    <lastmod>2025-08-18T13:23:55.101Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://generative-engine.org/glossary</loc>
+    <lastmod>2025-08-18T13:23:55.101Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://generative-engine.org/tools</loc>
+    <lastmod>2025-08-18T13:23:55.101Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://generative-engine.org/ai-powered-seo-strategies-2025</loc>
+    <lastmod>2025-01-15T10:00:00.000Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://generative-engine.org/api/og?title=ai-powered-seo-strategies-2025</image:loc>
+      <image:caption>GEO Article Thumbnail</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://generative-engine.org/seo-vs-geo-complete-guide</loc>
+    <lastmod>2024-12-20T00:00:00.000Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://generative-engine.org/api/og?title=seo-vs-geo-complete-guide</image:loc>
+      <image:caption>GEO Article Thumbnail</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://generative-engine.org/the-ai-citation-gold-rush-why-everyone-s-writing-like-robots-1755511425293</loc>
+    <lastmod>2025-08-18T10:03:45.293Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://generative-engine.org/api/og?title=the-ai-citation-gold-rush-why-everyone-s-writing-like-robots-1755511425293</image:loc>
+      <image:caption>GEO Article Thumbnail</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://generative-engine.org/the-citation-gold-rush-how-brands-are-secretly-gaming-chatgp-1755509037678</loc>
+    <lastmod>2025-08-18T09:23:57.680Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://generative-engine.org/api/og?title=the-citation-gold-rush-how-brands-are-secretly-gaming-chatgp-1755509037678</image:loc>
+      <image:caption>GEO Article Thumbnail</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://generative-engine.org/the-geo-gold-rush-how-content-creators-are-rigging-ai-search-1755508115765</loc>
+    <lastmod>2025-08-18T09:08:35.765Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://generative-engine.org/api/og?title=the-geo-gold-rush-how-content-creators-are-rigging-ai-search-1755508115765</image:loc>
+      <image:caption>GEO Article Thumbnail</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://generative-engine.org/the-great-ai-citation-hustle-how-desperate-marketers-are-gam-1755504450897</loc>
+    <lastmod>2025-08-18T08:07:30.897Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://generative-engine.org/api/og?title=the-great-ai-citation-hustle-how-desperate-marketers-are-gam-1755504450897</image:loc>
+      <image:caption>GEO Article Thumbnail</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://generative-engine.org/why-your-ai-tools-are-secretly-excluding-15-of-users-the-hid-1755511952955</loc>
+    <lastmod>2025-08-18T10:12:32.955Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://generative-engine.org/api/og?title=why-your-ai-tools-are-secretly-excluding-15-of-users-the-hid-1755511952955</image:loc>
+      <image:caption>GEO Article Thumbnail</image:caption>
+    </image:image>
+  </url>
+</urlset>
