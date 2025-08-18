@@ -4,9 +4,9 @@
   "/_not-found/page": "/_not-found",
   "/feed.xml/route": "/feed.xml",
   "/news-sitemap.xml/route": "/news-sitemap.xml",
+  "/[slug]/page": "/[slug]",
   "/about/page": "/about",
   "/blog/page": "/blog",
-  "/page": "/",
-  "/[slug]/page": "/[slug]",
-  "/glossary/page": "/glossary"
+  "/glossary/page": "/glossary",
+  "/page": "/"
 }
