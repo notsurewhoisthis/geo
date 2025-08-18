@@ -147,4 +147,46 @@
       transform: translateY(0);
     }
   }
+  
+  /* Smooth scrolling for anchor links */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Anchor link styles */
+  .anchor-link {
+    opacity: 0;
+    margin-left: 0.5rem;
+    color: #9ca3af;
+    text-decoration: none;
+    transition: opacity 0.2s, color 0.2s;
+  }
+  
+  h1:hover .anchor-link,
+  h2:hover .anchor-link,
+  h3:hover .anchor-link {
+    opacity: 1;
+  }
+  
+  .anchor-link:hover {
+    color: #3b82f6;
+  }
+  
+  /* External link indicator */
+  .external-link::after {
+    content: "↗";
+    margin-left: 0.125rem;
+    font-size: 0.875em;
+    vertical-align: super;
+  }
+  
+  /* Better list markers */
+  article ul li::marker {
+    color: #3b82f6;
+  }
+  
+  article ol li::marker {
+    color: #3b82f6;
+    font-weight: 600;
+  }
 }

@@ -3,6 +3,8 @@ import fs from 'fs'
 import path from 'path'
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { parseMarkdown, extractTableOfContents } from '@/app/lib/markdown'
+import ShareButtons from '@/app/components/ShareButtons'
 
 interface BlogPost {
   slug: string
@@ -152,6 +154,10 @@ export default async function BlogPostPage({
     .filter(p => p.slug !== post.slug && p.tags.some(tag => post.tags.includes(tag)))
     .slice(0, 3)
   
+  // Parse markdown content and extract TOC
+  const htmlContent = parseMarkdown(post.content)
+  const tableOfContents = extractTableOfContents(post.content)
+  
   return (
     <div className="min-h-screen">
       {/* Breadcrumb */}
@@ -224,15 +230,101 @@ export default async function BlogPostPage({
         </div>
       </header>
       
-      {/* Article Content */}
-      <article className="py-12 px-4">
-        <div className="container mx-auto max-w-4xl">
-          <div 
-            className="prose prose-lg max-w-none prose-headings:text-gray-900 prose-p:text-gray-700 prose-strong:text-gray-900 prose-a:text-blue-600 hover:prose-a:text-blue-700"
-            dangerouslySetInnerHTML={{ __html: post.content }}
-          />
+      {/* Article Content with Table of Contents */}
+      <div className="py-12 px-4">
+        <div className="container mx-auto max-w-7xl">
+          <div className="lg:grid lg:grid-cols-12 lg:gap-8">
+            {/* Table of Contents - Desktop */}
+            {tableOfContents.length > 0 && (
+              <aside className="hidden lg:block lg:col-span-3">
+                <div className="sticky top-24">
+                  <nav className="bg-white rounded-lg border border-gray-200 p-6">
+                    <h2 className="text-sm font-semibold text-gray-900 uppercase tracking-wider mb-4">
+                      Table of Contents
+                    </h2>
+                    <ul className="space-y-2">
+                      {tableOfContents.map((heading) => (
+                        <li key={heading.id} className={`${heading.level === 1 ? '' : heading.level === 2 ? 'ml-4' : 'ml-8'}`}>
+                          <a 
+                            href={`#${heading.id}`}
+                            className={`
+                              block text-sm hover:text-blue-600 transition-colors
+                              ${heading.level === 1 ? 'font-semibold text-gray-900' : 
+                                heading.level === 2 ? 'text-gray-700' : 'text-gray-600'}
+                            `}
+                          >
+                            {heading.text}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </nav>
+                  
+                  {/* Reading Progress */}
+                  <div className="mt-6 bg-white rounded-lg border border-gray-200 p-6">
+                    <div className="flex items-center justify-between text-sm text-gray-600 mb-2">
+                      <span>Reading time</span>
+                      <span className="font-medium">{post.metrics.readingTime} min</span>
+                    </div>
+                    <div className="flex items-center justify-between text-sm text-gray-600">
+                      <span>Word count</span>
+                      <span className="font-medium">{post.metrics.wordCount.toLocaleString()}</span>
+                    </div>
+                  </div>
+                </div>
+              </aside>
+            )}
+            
+            {/* Main Article Content */}
+            <article className={`${tableOfContents.length > 0 ? 'lg:col-span-9' : 'lg:col-span-12 max-w-4xl mx-auto'}`}>
+              <div 
+                className="prose prose-lg max-w-none
+                  prose-headings:font-bold prose-headings:tracking-tight
+                  prose-h1:text-4xl prose-h1:mb-8
+                  prose-h2:text-3xl prose-h2:mb-6 prose-h2:mt-12
+                  prose-h3:text-2xl prose-h3:mb-4 prose-h3:mt-8
+                  prose-h4:text-xl prose-h4:mb-3 prose-h4:mt-6
+                  prose-p:text-gray-700 prose-p:leading-relaxed prose-p:mb-6
+                  prose-a:text-blue-600 prose-a:font-medium hover:prose-a:text-blue-700 prose-a:underline prose-a:decoration-blue-200 hover:prose-a:decoration-blue-600
+                  prose-strong:text-gray-900 prose-strong:font-bold
+                  prose-ul:list-disc prose-ul:pl-6 prose-ul:mb-6 prose-ul:space-y-2
+                  prose-ol:list-decimal prose-ol:pl-6 prose-ol:mb-6 prose-ol:space-y-2
+                  prose-li:text-gray-700 prose-li:leading-relaxed
+                  prose-blockquote:border-l-4 prose-blockquote:border-blue-500 prose-blockquote:pl-6 prose-blockquote:italic prose-blockquote:text-gray-700
+                  prose-code:bg-gray-100 prose-code:text-gray-900 prose-code:px-2 prose-code:py-1 prose-code:rounded prose-code:text-sm
+                  prose-pre:bg-gray-900 prose-pre:text-gray-100 prose-pre:rounded-lg prose-pre:p-4 prose-pre:overflow-x-auto
+                  prose-img:rounded-lg prose-img:shadow-lg
+                  prose-hr:border-gray-200 prose-hr:my-12"
+                dangerouslySetInnerHTML={{ __html: htmlContent }}
+              />
+              
+              {/* Author Bio */}
+              <div className="mt-16 pt-8 border-t border-gray-200">
+                <div className="bg-gray-50 rounded-lg p-6">
+                  <div className="flex items-start gap-4">
+                    <div className="w-16 h-16 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
+                      <span className="text-white font-bold text-xl">
+                        {post.author.name.charAt(0)}
+                      </span>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-gray-900 mb-1">
+                        About {post.author.name}
+                      </h3>
+                      <p className="text-gray-600">
+                        {post.author.bio}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Share Section */}
+              <ShareButtons title={post.title} slug={post.slug} />
+            </article>
+          </div>
         </div>
-      </article>
+      </div>
       
       {/* Related Posts */}
       {relatedPosts.length > 0 && (
