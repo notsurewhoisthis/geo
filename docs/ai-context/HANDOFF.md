@@ -348,3 +348,99 @@ heroku logs --tail -a geo-engine-optimization
 
 ### Key Learning
 Heroku's built-in GitHub integration is simpler and more reliable than GitHub Actions for basic CD needs, especially when GitHub token permissions are limited.
+
+---
+
+## Visibility Tracker: Real Content Analysis Implementation (Jan 2025)
+
+### What Was Built
+Transformed the visibility tracker from mock data to a **real content analysis tool** that fetches and analyzes actual websites.
+
+### How It Works
+
+#### 1. **Website Content Fetching**
+```javascript
+// Fetches the actual HTML from any website
+const response = await fetch(url)
+const html = await response.text()
+```
+
+#### 2. **Real Pattern Detection**
+The tool searches for actual GEO optimization factors in the HTML:
+- **Citations**: Counts `[1]`, `<cite>`, `References:`, `Bibliography:` patterns
+- **Statistics**: Finds percentages, numbers, currency values (45%, $1,234, etc.)
+- **FAQ Sections**: Detects Q&A content patterns in divs/sections
+- **Schema Markup**: Checks for `<script type="application/ld+json">`
+- **Content Structure**: Counts H1-H6 tags and word count
+
+#### 3. **GEO Score Calculation**
+Based on the academic research paper findings:
+```javascript
+if (citations >= 5) score += 30  // "Cite Sources" = +40.6% visibility
+if (statistics >= 10) score += 25  // "Add Statistics" = +32.7% visibility
+if (hasFAQ) score += 10  // FAQ sections boost ChatGPT visibility
+if (hasSchema) score += 5  // Structured data helps AI comprehension
+```
+
+#### 4. **Platform-Specific Predictions**
+Predicts visibility on each AI platform based on content quality:
+- **Perplexity**: Higher scores with more citations
+- **ChatGPT**: Better with FAQ content
+- **Claude**: Prefers statistical content
+- **Bing Chat**: Values schema markup
+
+#### 5. **Personalized Recommendations**
+Instead of generic advice, provides specific feedback:
+- "Only 2 citations found. Add 3-5 authoritative sources"
+- "No FAQ section detected. Add Q&A content for +35% ChatGPT visibility"
+- "Current word count: 75. Aim for 1500+ words"
+
+### Important Clarification
+**The tool DOES NOT**:
+- Query actual AI platforms (ChatGPT, Claude, etc.)
+- Check if you actually appear in AI responses
+- Access any AI platform APIs
+
+**The tool DOES**:
+- Analyze YOUR website's actual HTML content
+- Count real optimization factors
+- Calculate a GEO score based on what it finds
+- PREDICT likely visibility using research correlations
+
+### Example Real Analysis
+When testing with `example.com`:
+```json
+{
+  "geoScore": 40,
+  "contentMetrics": {
+    "citations": 0,        // No citations found
+    "statistics": 26,      // Found 26 numbers/stats
+    "headings": 1,         // Only 1 heading
+    "wordCount": 75,       // Very brief content
+    "hasFAQ": false,       // No FAQ section
+    "hasSchema": false     // No structured data
+  }
+}
+```
+
+### Technical Implementation
+- **API Endpoint**: `/app/api/visibility-tracker/route.ts`
+- **Frontend**: `/app/tools/visibility-tracker/page.tsx`
+- **Method**: Real-time HTML fetching and pattern matching
+- **Output**: GEO scores, predictions, and specific recommendations
+
+### Key Files Modified
+- `/app/api/visibility-tracker/route.ts` - Real content analysis logic
+- `/app/tools/visibility-tracker/page.tsx` - Updated to show real insights
+
+### Why This Approach
+1. **No API costs** - Doesn't require access to AI platforms
+2. **Instant results** - Analyzes content in real-time
+3. **Based on research** - Uses proven correlations from GEO paper
+4. **Actionable insights** - Tells users exactly what to improve
+
+### Future Improvements
+- Add ability to track multiple domains over time
+- Implement competitor comparison features
+- Create API for programmatic access
+- Add export functionality for reports

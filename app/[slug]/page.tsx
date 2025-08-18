@@ -5,6 +5,8 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { parseMarkdown, extractTableOfContents, extractKeyTakeaways, extractFAQPairs } from '@/app/lib/markdown'
 import ShareButtons from '@/app/components/ShareButtons'
+import { BlogBreadcrumbs } from '@/app/components/Breadcrumbs'
+import { RelatedArticles } from '@/app/components/RelatedArticles'
 
 interface BlogPost {
   slug: string
@@ -155,7 +157,7 @@ export default async function BlogPostPage({
     .slice(0, 3)
   
   // Parse markdown content and extract TOC
-  const htmlContent = parseMarkdown(post.content)
+  const htmlContent = parseMarkdown(post.content, `/${post.slug}`)
   const tableOfContents = extractTableOfContents(post.content)
   const keyTakeaways = extractKeyTakeaways(post.content)
   const faqPairs = extractFAQPairs(post.content)
@@ -165,25 +167,7 @@ export default async function BlogPostPage({
       {/* Breadcrumb */}
       <nav className="bg-gray-50 py-4 px-4">
         <div className="container mx-auto max-w-4xl">
-          <ol className="flex items-center space-x-2 text-sm text-gray-600">
-            <li>
-              <Link href="/" className="hover:text-blue-600 transition">
-                Home
-              </Link>
-            </li>
-            <li>
-              <span className="mx-2">›</span>
-              <Link href="/blog" className="hover:text-blue-600 transition">
-                Blog
-              </Link>
-            </li>
-            <li>
-              <span className="mx-2">›</span>
-              <span className="text-gray-900 font-medium">
-                {post.title}
-              </span>
-            </li>
-          </ol>
+          <BlogBreadcrumbs title={post.title} />
         </div>
       </nav>
       
@@ -328,48 +312,17 @@ export default async function BlogPostPage({
         </div>
       </div>
       
-      {/* Related Posts */}
-      {relatedPosts.length > 0 && (
-        <section className="py-16 px-4 bg-gray-50">
-          <div className="container mx-auto max-w-4xl">
-            <h2 className="text-3xl font-bold text-gray-900 mb-8">
-              Related Articles
-            </h2>
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {relatedPosts.map((relatedPost) => (
-                <Link 
-                  key={relatedPost.slug} 
-                  href={`/${relatedPost.slug}`}
-                  className="group"
-                >
-                  <article className="bg-white rounded-lg shadow-sm hover:shadow-md transition p-6">
-                    <div className="aspect-video bg-gradient-to-br from-blue-400 to-blue-600 rounded-lg mb-4"></div>
-                    
-                    <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition">
-                      {relatedPost.title}
-                    </h3>
-                    
-                    <p className="text-gray-600 text-sm mb-4 line-clamp-3">
-                      {relatedPost.excerpt || relatedPost.description}
-                    </p>
-                    
-                    <div className="flex items-center justify-between text-sm text-gray-500">
-                      <time dateTime={relatedPost.publishedAt}>
-                        {new Date(relatedPost.publishedAt).toLocaleDateString('en-US', { 
-                          month: 'short', 
-                          day: 'numeric' 
-                        })}
-                      </time>
-                      <span>{relatedPost.metrics.readingTime} min read</span>
-                    </div>
-                  </article>
-                </Link>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
+      {/* Related Articles Section */}
+      <div className="py-16 px-4 bg-gray-50">
+        <div className="container mx-auto max-w-4xl">
+          <RelatedArticles 
+            currentSlug={post.slug}
+            currentTags={post.tags}
+            allPosts={allPosts}
+            maxArticles={3}
+          />
+        </div>
+      </div>
       
       {/* JSON-LD Structured Data */}
       <script

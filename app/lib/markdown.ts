@@ -1,5 +1,14 @@
 import { marked } from 'marked'
-import { enhanceKeyTakeaways, enhanceFAQSections } from './markdown-enhancements'
+import { 
+  enhanceKeyTakeaways, 
+  enhanceFAQSections,
+  enhanceCitations,
+  enhanceStatistics,
+  addTLDRSection,
+  addContentMetrics,
+  formatForAIVisibility
+} from './markdown-enhancements'
+import { addInternalLinks } from './internal-links'
 
 // Configure marked for better typography and SEO
 marked.setOptions({
@@ -8,7 +17,7 @@ marked.setOptions({
   pedantic: false,
 })
 
-export function parseMarkdown(content: string): string {
+export function parseMarkdown(content: string, currentPath?: string): string {
   // Pre-process content to ensure proper spacing and structure
   let processedContent = content
     .replace(/\n{3,}/g, '\n\n') // Normalize multiple line breaks
@@ -68,11 +77,24 @@ export function parseMarkdown(content: string): string {
     .replace(/<img src="(.*?)" alt="(.*?)"(.*?)>/g, 
       '<figure class="my-8"><img src="$1" alt="$2" class="rounded-lg shadow-lg w-full" loading="lazy" /><figcaption class="text-center text-sm text-gray-600 mt-2">$2</figcaption></figure>')
 
-  // Enhance Key Takeaways sections
-  processedHtml = enhanceKeyTakeaways(processedHtml)
+  // Calculate word count for metrics
+  const wordCount = processedContent.split(/\s+/).filter(w => w.length > 0).length
   
-  // Enhance FAQ sections
+  // Apply all AI-specific enhancements
+  processedHtml = enhanceKeyTakeaways(processedHtml)
   processedHtml = enhanceFAQSections(processedHtml)
+  processedHtml = enhanceCitations(processedHtml)
+  processedHtml = enhanceStatistics(processedHtml)
+  processedHtml = addTLDRSection(processedHtml, processedHtml)
+  processedHtml = addContentMetrics(processedHtml, wordCount)
+  
+  // Final AI visibility formatting
+  processedHtml = formatForAIVisibility(processedHtml, processedContent, wordCount)
+  
+  // Add internal links for better navigation
+  if (currentPath) {
+    processedHtml = addInternalLinks(processedHtml, currentPath)
+  }
 
   return processedHtml
 }

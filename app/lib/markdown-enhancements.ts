@@ -155,3 +155,139 @@ export function extractFAQPairs(content: string): Array<{question: string, answe
   
   return pairs.slice(0, 5) // Return top 5 Q&A pairs
 }
+
+// AI-specific citation enhancement
+export function enhanceCitations(html: string): string {
+  // Format citations for AI readability
+  return html
+    // Numbered citations [1], [2], etc.
+    .replace(/\[(\d+)\]/g, '<sup class="citation text-blue-600 hover:text-blue-800" title="Citation">[$1]</sup>')
+    // Source mentions
+    .replace(/(?:According to|Source:|Via:|Per:)\s+([^<.,]+)/gi, (match) => {
+      return `<span class="source-citation font-medium text-gray-700 bg-gray-50 px-2 py-1 rounded">${match}</span>`
+    })
+}
+
+// Statistical highlighting for AI visibility
+export function enhanceStatistics(html: string): string {
+  // Highlight statistics with special formatting
+  return html.replace(
+    /(\d+(?:\.\d+)?%|\$[\d,]+(?:\.\d+)?(?:\s*(?:billion|million|thousand|B|M|K))?|\d+x\s|[\d,]+(?:\.\d+)?(?:\s*(?:times|fold|increase|decrease)))/gi,
+    (match) => {
+      // Skip if already formatted
+      if (match.includes('class=')) return match
+      
+      return `<mark class="statistic bg-yellow-100 text-gray-900 font-semibold px-1 rounded" data-value="${match}">${match}</mark>`
+    }
+  )
+}
+
+// Add TL;DR section for quick AI comprehension
+export function addTLDRSection(html: string, content: string): string {
+  // Check if TL;DR already exists
+  if (html.includes('tldr-section')) return html
+  
+  // Extract first paragraph or key points
+  const firstPara = content.match(/<p[^>]*>(.*?)<\/p>/)?.[1]?.replace(/<[^>]*>/g, '').substring(0, 200)
+  
+  if (!firstPara) return html
+  
+  const tldr = `
+    <div class="tldr-section bg-gradient-to-r from-green-50 to-emerald-50 border-l-4 border-green-500 p-4 rounded-lg mb-8">
+      <div class="flex items-center mb-2">
+        <svg class="w-5 h-5 text-green-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+        </svg>
+        <strong class="text-green-800">TL;DR</strong>
+      </div>
+      <p class="text-gray-700">${firstPara}...</p>
+    </div>
+  `
+  
+  // Insert after first heading or at the beginning
+  const h1Match = html.match(/<h1[^>]*>.*?<\/h1>/)
+  if (h1Match) {
+    return html.replace(h1Match[0], h1Match[0] + tldr)
+  }
+  
+  return tldr + html
+}
+
+// Add reading time and content metrics
+export function addContentMetrics(html: string, wordCount: number): string {
+  const readingTime = Math.ceil(wordCount / 200)
+  const metrics = `
+    <div class="content-metrics flex items-center gap-4 text-sm text-gray-600 mb-6">
+      <span class="flex items-center">
+        <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+        </svg>
+        ${readingTime} min read
+      </span>
+      <span class="flex items-center">
+        <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+        </svg>
+        ${wordCount.toLocaleString()} words
+      </span>
+    </div>
+  `
+  
+  // Insert after TL;DR or at the beginning
+  if (html.includes('tldr-section')) {
+    return html.replace('</div>\n  </div>', '</div>\n  </div>' + metrics)
+  }
+  
+  return metrics + html
+}
+
+// Create structured navigation for long content
+export function addTableOfContents(html: string, headings: Array<{id: string, text: string, level: number}>): string {
+  if (headings.length < 3) return html // Only add TOC for longer content
+  
+  const toc = `
+    <nav class="table-of-contents bg-gray-50 rounded-lg p-4 mb-8">
+      <h2 class="font-bold text-gray-900 mb-3 flex items-center">
+        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+        Table of Contents
+      </h2>
+      <ol class="space-y-2">
+        ${headings.map(h => `
+          <li class="ml-${(h.level - 2) * 4}">
+            <a href="#${h.id}" class="text-gray-700 hover:text-blue-600 transition-colors">
+              ${h.text}
+            </a>
+          </li>
+        `).join('')}
+      </ol>
+    </nav>
+  `
+  
+  // Insert after metrics or TL;DR
+  if (html.includes('content-metrics')) {
+    return html.replace('</div>', '</div>' + toc)
+  }
+  
+  return toc + html
+}
+
+// Format the entire content for maximum AI visibility
+export function formatForAIVisibility(html: string, content: string, wordCount: number): string {
+  let enhanced = html
+  
+  // Apply all AI enhancements
+  enhanced = enhanceCitations(enhanced)
+  enhanced = enhanceStatistics(enhanced)
+  enhanced = addTLDRSection(enhanced, content)
+  enhanced = addContentMetrics(enhanced, wordCount)
+  
+  // Add microdata attributes for better AI comprehension
+  enhanced = enhanced
+    .replace(/<article/g, '<article itemscope itemtype="https://schema.org/Article"')
+    .replace(/<h1/g, '<h1 itemprop="headline"')
+    .replace(/<time/g, '<time itemprop="datePublished"')
+  
+  return enhanced
+}

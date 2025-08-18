@@ -224,3 +224,115 @@ curl -s http://localhost:3000/robots.txt | grep 'GPTBot'
 - `/app/page.tsx` - Homepage GEO content
 - `/app/about/page.tsx` - Authority signals
 - `/app/glossary/page.tsx` - GEO terminology
+
+## 🔍 Visibility Tracker: Real Content Analysis Tool (January 2025)
+
+### Overview
+The Visibility Tracker has been transformed from mock data to a **real content analysis tool** that fetches and analyzes actual websites to predict their AI platform visibility using Generative Engine Optimization (GEO) principles.
+
+### How It Works
+
+#### 1. Real Website Content Fetching
+The tool fetches the actual HTML content from any website URL provided:
+```javascript
+const response = await fetch(url, {
+  headers: { 'User-Agent': 'Mozilla/5.0 (compatible; GEO-Tracker/1.0)' },
+  signal: AbortSignal.timeout(10000)
+})
+const html = await response.text()
+```
+
+#### 2. Pattern Detection & Analysis
+Analyzes the HTML for GEO optimization factors based on academic research:
+- **Citations**: Counts `[1]`, `<cite>`, `References:`, `Bibliography:` patterns
+- **Statistics**: Finds percentages, numbers, currency values (45%, $1,234, etc.)
+- **FAQ Sections**: Detects Q&A content patterns in divs/sections
+- **Schema Markup**: Checks for `<script type="application/ld+json">`
+- **Content Structure**: Counts H1-H6 tags and word count
+- **Meta Elements**: Checks for meta descriptions and title tags
+
+#### 3. GEO Score Calculation
+Based on the academic research paper findings:
+```javascript
+if (citations >= 5) score += 30  // "Cite Sources" = +40.6% visibility
+if (statistics >= 10) score += 25  // "Add Statistics" = +32.7% visibility
+if (hasFAQ) score += 10  // FAQ sections boost ChatGPT visibility
+if (hasSchema) score += 5  // Structured data helps AI comprehension
+```
+
+#### 4. Platform-Specific Predictions
+Generates visibility predictions for each AI platform based on content quality:
+- **Perplexity**: Favors citations and authoritative sources
+- **ChatGPT**: Prefers FAQ and conversational content
+- **Claude**: Values statistical and data-driven content
+- **Bing Chat**: Benefits from schema markup
+- **Gemini**: Focuses on E-E-A-T signals
+
+#### 5. Personalized Recommendations
+Provides specific, actionable feedback instead of generic advice:
+- "Only 2 citations found. Add 3-5 authoritative sources for +40% Perplexity visibility"
+- "No FAQ section detected. Add Q&A content for +35% ChatGPT visibility"
+- "Current word count: 75. Aim for 1500+ words for comprehensive coverage"
+
+### Important Clarification
+**What the tool DOES NOT do:**
+- Query actual AI platforms (ChatGPT, Claude, etc.)
+- Check if you actually appear in AI responses
+- Access any AI platform APIs
+
+**What the tool DOES:**
+- Analyze YOUR website's actual HTML content
+- Count real optimization factors
+- Calculate a GEO score based on findings
+- PREDICT likely visibility using research correlations
+
+### Technical Implementation
+- **API Endpoint**: `/app/api/visibility-tracker/route.ts`
+  - POST method for content analysis
+  - GET method for checking tracking status
+- **Frontend**: `/app/tools/visibility-tracker/page.tsx`
+  - Real-time analysis interface
+  - Shows predictions and recommendations
+- **Analysis Method**: Real-time HTML fetching and pattern matching
+- **Output**: GEO scores, platform predictions, specific recommendations
+
+### Example Real Analysis
+When testing with `example.com`:
+```json
+{
+  "geoScore": 40,
+  "contentMetrics": {
+    "citations": 0,        // No citations found
+    "statistics": 26,      // Found 26 numbers/stats
+    "headings": 1,         // Only 1 heading
+    "wordCount": 75,       // Very brief content
+    "hasFAQ": false,       // No FAQ section
+    "hasSchema": false     // No structured data
+  }
+}
+```
+
+### Testing the Visibility Tracker
+```bash
+# Test locally
+curl -X POST http://localhost:3000/api/visibility-tracker \
+  -H "Content-Type: application/json" \
+  -d '{"domain": "example.com"}'
+
+# Check tracking status
+curl http://localhost:3000/api/visibility-tracker?domain=example.com
+```
+
+### Key Benefits
+1. **No API costs** - Doesn't require access to AI platforms
+2. **Instant results** - Analyzes content in real-time
+3. **Based on research** - Uses proven correlations from GEO paper
+4. **Actionable insights** - Tells users exactly what to improve
+5. **Real data** - Actually fetches and analyzes website content
+
+### Future Improvements
+- Add ability to track multiple domains over time
+- Implement competitor comparison features
+- Create API for programmatic access
+- Add export functionality for reports
+- Historical tracking and trend analysis
