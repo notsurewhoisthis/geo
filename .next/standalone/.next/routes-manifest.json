@@ -84,6 +84,12 @@
       "namedRegex": "^/blog(?:/)?$"
     },
     {
+      "page": "/compare",
+      "regex": "^/compare(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/compare(?:/)?$"
+    },
+    {
       "page": "/entities",
       "regex": "^/entities(?:/)?$",
       "routeKeys": {},
@@ -120,10 +126,22 @@
       "namedRegex": "^/guide(?:/)?$"
     },
     {
+      "page": "/industries",
+      "regex": "^/industries(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/industries(?:/)?$"
+    },
+    {
       "page": "/news-sitemap.xml",
       "regex": "^/news\\-sitemap\\.xml(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/news\\-sitemap\\.xml(?:/)?$"
+    },
+    {
+      "page": "/platforms",
+      "regex": "^/platforms(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/platforms(?:/)?$"
     },
     {
       "page": "/resources",
