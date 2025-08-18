@@ -5,10 +5,10 @@
     "subtitle": "Topic Authority Building vs Keyword Research strategies comparison",
     "geoTechnique": "Topic Authority Building",
     "traditionalTechnique": "Keyword Research",
-    "category": "Core Strategy",
+    "category": "Technical Strategy",
     "difficulty": "Advanced",
     "impact": "High",
-    "timeToResults": "6-12 weeks",
+    "timeToResults": "4-8 weeks",
     "comparison": {
       "focus": {
         "geo": "AI-powered topic authority building approach",
@@ -41,9 +41,9 @@
     "subtitle": "Topic Authority Building vs Link Building strategies comparison",
     "geoTechnique": "Topic Authority Building",
     "traditionalTechnique": "Link Building",
-    "category": "Authority Building",
-    "difficulty": "Beginner",
-    "impact": "Medium-High",
+    "category": "Technical Strategy",
+    "difficulty": "Intermediate",
+    "impact": "High",
     "timeToResults": "2-4 weeks",
     "comparison": {
       "focus": {
@@ -77,7 +77,7 @@
     "subtitle": "Topic Authority Building vs Content Marketing strategies comparison",
     "geoTechnique": "Topic Authority Building",
     "traditionalTechnique": "Content Marketing",
-    "category": "Core Strategy",
+    "category": "Content Strategy",
     "difficulty": "Intermediate",
     "impact": "Medium-High",
     "timeToResults": "3-6 months",
@@ -113,10 +113,10 @@
     "subtitle": "Topic Authority Building vs Technical SEO strategies comparison",
     "geoTechnique": "Topic Authority Building",
     "traditionalTechnique": "Technical SEO",
-    "category": "Authority Building",
-    "difficulty": "Advanced",
+    "category": "Core Strategy",
+    "difficulty": "Beginner",
     "impact": "Medium",
-    "timeToResults": "2-4 weeks",
+    "timeToResults": "6-12 weeks",
     "comparison": {
       "focus": {
         "geo": "AI-powered topic authority building approach",
@@ -149,10 +149,10 @@
     "subtitle": "Topic Authority Building vs Local SEO strategies comparison",
     "geoTechnique": "Topic Authority Building",
     "traditionalTechnique": "Local SEO",
-    "category": "Authority Building",
+    "category": "Technical Strategy",
     "difficulty": "Beginner",
-    "impact": "Medium",
-    "timeToResults": "6-12 weeks",
+    "impact": "Medium-High",
+    "timeToResults": "3-6 months",
     "comparison": {
       "focus": {
         "geo": "AI-powered topic authority building approach",
