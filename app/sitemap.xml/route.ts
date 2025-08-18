@@ -27,6 +27,45 @@ export async function GET() {
     console.error('Error reading blog posts:', error)
   }
   
+  // Get all programmatic industries pages
+  let industryPages: Array<{slug: string}> = []
+  try {
+    const industriesPath = path.join(process.cwd(), 'public', 'data', 'industries.json')
+    if (fs.existsSync(industriesPath)) {
+      const industriesContent = fs.readFileSync(industriesPath, 'utf8')
+      const industries = JSON.parse(industriesContent)
+      industryPages = industries.map((industry: any) => ({ slug: industry.slug }))
+    }
+  } catch (error) {
+    console.error('Error reading industries data:', error)
+  }
+
+  // Get all programmatic AI platform pages  
+  let platformPages: Array<{slug: string}> = []
+  try {
+    const platformsPath = path.join(process.cwd(), 'public', 'data', 'platforms.json')
+    if (fs.existsSync(platformsPath)) {
+      const platformsContent = fs.readFileSync(platformsPath, 'utf8')
+      const platforms = JSON.parse(platformsContent)
+      platformPages = platforms.map((platform: any) => ({ slug: platform.slug }))
+    }
+  } catch (error) {
+    console.error('Error reading platforms data:', error)
+  }
+
+  // Get all programmatic comparison pages
+  let comparisonPages: Array<{slug: string}> = []
+  try {
+    const comparisonsPath = path.join(process.cwd(), 'public', 'data', 'comparisons.json')
+    if (fs.existsSync(comparisonsPath)) {
+      const comparisonsContent = fs.readFileSync(comparisonsPath, 'utf8')
+      const comparisons = JSON.parse(comparisonsContent)
+      comparisonPages = comparisons.map((comparison: any) => ({ slug: comparison.slug }))
+    }
+  } catch (error) {
+    console.error('Error reading comparisons data:', error)
+  }
+  
   // Dynamically discover entity pages
   let entityPages: string[] = []
   const entitiesPath = path.join(process.cwd(), 'app', 'entities')
@@ -60,6 +99,11 @@ export async function GET() {
     { path: '/tools/geo-audit', priority: '0.8', changefreq: 'weekly' },
     { path: '/tools/keyword-research', priority: '0.8', changefreq: 'weekly' },
     
+    // Programmatic page hubs
+    { path: '/industries', priority: '0.8', changefreq: 'weekly' },
+    { path: '/platforms', priority: '0.8', changefreq: 'weekly' },
+    { path: '/compare', priority: '0.7', changefreq: 'weekly' },
+    
     // Entity pages (important for knowledge graph)
     { path: '/entities', priority: '0.7', changefreq: 'weekly' },
     { path: '/entities/generative-engine-optimization', priority: '0.9', changefreq: 'weekly' },
@@ -84,6 +128,39 @@ export async function GET() {
     <lastmod>${new Date().toISOString()}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
+  </url>`).join('')}
+  ${industryPages.map(industry => `
+  <url>
+    <loc>${baseUrl}/industries/${industry.slug}</loc>
+    <lastmod>${new Date().toISOString()}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>${baseUrl}/api/og?title=${encodeURIComponent('GEO for ' + industry.slug)}&type=industry</image:loc>
+      <image:caption>GEO Industry Guide Thumbnail</image:caption>
+    </image:image>
+  </url>`).join('')}
+  ${platformPages.map(platform => `
+  <url>
+    <loc>${baseUrl}/platforms/${platform.slug}</loc>
+    <lastmod>${new Date().toISOString()}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>${baseUrl}/api/og?title=${encodeURIComponent(platform.slug + ' Optimization Guide')}&type=platform</image:loc>
+      <image:caption>AI Platform Optimization Guide</image:caption>
+    </image:image>
+  </url>`).join('')}
+  ${comparisonPages.map(comparison => `
+  <url>
+    <loc>${baseUrl}/compare/${comparison.slug}</loc>
+    <lastmod>${new Date().toISOString()}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <image:image>
+      <image:loc>${baseUrl}/api/og?title=${encodeURIComponent(comparison.slug)}&type=comparison</image:loc>
+      <image:caption>GEO Comparison Guide</image:caption>
+    </image:image>
   </url>`).join('')}
   ${blogPosts.map(post => `
   <url>
