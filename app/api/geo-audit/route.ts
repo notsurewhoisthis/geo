@@ -31,25 +31,48 @@ export async function POST(request: Request) {
 // Fetch and parse HTML content
 async function fetchPageContent(url: string) {
   try {
-    const response = await fetch(url, {
+    // Ensure URL has a protocol
+    let validUrl = url
+    if (!url.startsWith('http://') && !url.startsWith('https://')) {
+      validUrl = 'https://' + url
+    }
+    
+    // Validate URL format
+    try {
+      new URL(validUrl)
+    } catch (e) {
+      throw new Error(`Invalid URL format: ${url}`)
+    }
+    
+    const response = await fetch(validUrl, {
       headers: {
-        'User-Agent': 'GEO-Audit-Tool/1.0'
-      }
+        'User-Agent': 'GEO-Audit-Tool/1.0',
+        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+        'Accept-Language': 'en-US,en;q=0.5',
+        'Accept-Encoding': 'gzip, deflate',
+        'Connection': 'keep-alive',
+        'Upgrade-Insecure-Requests': '1'
+      },
+      redirect: 'follow',
+      signal: AbortSignal.timeout(15000) // 15 second timeout
     })
     
     if (!response.ok) {
-      throw new Error(`Failed to fetch URL: ${response.status}`)
+      throw new Error(`Failed to fetch URL: ${response.status} ${response.statusText}`)
     }
     
     const html = await response.text()
     
     return {
       html,
-      url,
+      url: validUrl,
       contentLength: html.length
     }
   } catch (error) {
-    throw new Error(`Could not fetch URL: ${error}`)
+    if (error instanceof Error) {
+      throw new Error(`Could not fetch URL: ${error.message}`)
+    }
+    throw new Error(`Could not fetch URL: Unknown error`)
   }
 }
 
