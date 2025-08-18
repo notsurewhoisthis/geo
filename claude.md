@@ -6,6 +6,9 @@
 - Component layouts or visual hierarchy
 - The website styling has been perfected - DO NOT CHANGE IT
 
+## 🎯 Project Overview
+**GEO (Generative Engine Optimization)** - A Next.js 15 blog platform with automated content publishing via n8n integration. Live at https://www.generative-engine.org
+
 ## 🚨 CRITICAL: Next.js Standalone Deployment on Heroku
 
 ### The Problem That Broke Production (Aug 18, 2025)
@@ -86,143 +89,138 @@ curl -s http://localhost:3000/[slug] | grep -o '<h2[^>]*>.*</h2>' | head -3
 3. **Deploy to Heroku**: `git push heroku main`
 4. **Verify in production**: Check live blog posts for proper formatting
 
-### Automatic Deployment for n8n Blog Posts
-**IMPORTANT**: Currently manual deployment is required when n8n pushes new blog posts.
+## ✅ Fully Automated Blog Publishing Pipeline
 
-To enable automatic deployment, you need to:
-1. **Set up Heroku GitHub Integration**: 
-   - Go to Heroku Dashboard → Your App → Deploy tab
-   - Connect to GitHub repository
-   - Enable automatic deploys from main branch
-   
-2. **Alternative: GitHub Actions** (requires workflow scope):
-   - Add HEROKU_API_KEY to GitHub secrets
-   - Create `.github/workflows/deploy.yml` with Heroku deploy action
-   - Ensure GitHub token has `workflow` scope
+### Complete Workflow (No Manual Steps!)
+1. **n8n creates blog post** → Pushes JSON to GitHub `/public/blog-data/`
+2. **GitHub webhook triggers** → Heroku auto-deployment (instant)
+3. **Heroku builds & deploys** → Static generation with ISR
+4. **Blog goes live** → Available within 2-3 minutes
 
-3. **Current Solution**: 
-   - n8n pushes to GitHub
-   - Manual deploy: `git pull origin main && git push heroku main`
-   - ISR will pick up new posts after 60 seconds
+### Deployment Configuration
+- **Heroku App**: geo-engine-optimization
+- **GitHub Repo**: notsurewhoisthis/GEO (main branch)
+- **Auto-Deploy**: ✅ ENABLED via Heroku GitHub Integration
+- **Pipeline**: geo-pipeline (production)
+- **ISR Revalidation**: 60 seconds
 
-You are an orchestrator, not an implementer. Your role is to instantly route tasks to specialized agents.
-Immediate Routing Rules
+### Manual Override (if ever needed)
+```bash
+git pull origin main && git push heroku main
+```
 
-start by reading the handoff: /Users/heni/GEO/docs/ai-context/HANDOFF.md
+### Monitoring & Verification
+- **Activity**: https://dashboard.heroku.com/apps/geo-engine-optimization/activity
+- **Deploy Settings**: https://dashboard.heroku.com/apps/geo-engine-optimization/deploy/github
+- **Live Site**: https://www.generative-engine.org
 
+## 📚 Quick Reference
 
-ON TASK RECEIPT → Analyze → Route (within first response)
+### Key Commands
+```bash
+# Development
+npm run dev                  # Start dev server on port 3000
+npm run build               # Build for production (includes static copy)
+npm start                   # Start production server
 
-DEFAULT ACTION: Spawn @yardimci NO MATTER WHAT!!! 
-REASONING: Better to over-delegate than under-delegate
+# Deployment (manual override if needed)
+git pull origin main && git push heroku main
 
-SPAWN FIRST, ASK QUESTIONS LATER: When in doubt, spawn @yardimci immediately.
+# Heroku Management
+heroku logs --tail -a geo-engine-optimization
+heroku releases -a geo-engine-optimization
+heroku open -a geo-engine-optimization
+```
 
-🤖 Agent Hierarchy & Capabilities
-Primary Agents
-@yardimci - Master Coordinator & Architect
+### Important Files
+- `/app/[slug]/page.tsx` - Blog post renderer
+- `/app/lib/markdown.ts` - Markdown processor with SEO
+- `/public/blog-data/*.json` - Blog post data files
+- `/app/globals.css` - DO NOT MODIFY
+- `package.json` - Contains critical build script for static files
+- `next.config.mjs` - Standalone output configuration
 
-First responder for ALL complex tasks
-Creates detailed implementation plans
-Spawns other agents as needed
-Manages multi-agent workflows
-Handles documentation and progress tracking
+### Project Links
+- **Live Site**: https://www.generative-engine.org
+- **GitHub**: https://github.com/notsurewhoisthis/GEO
+- **Heroku Dashboard**: https://dashboard.heroku.com/apps/geo-engine-optimization
+- **Handoff Doc**: `/docs/ai-context/HANDOFF.md`
 
-@kral - Implementation Specialist
+## 🚀 SEO/GEO Implementation (December 2024)
 
-Full-stack development expert
-Executes plans from @yardimci
-Handles all coding tasks
-Runs tests and validations
+### Overview
+Comprehensive SEO and Generative Engine Optimization (GEO) implementation targeting both traditional search engines and AI platforms (ChatGPT, Claude, Perplexity). Goal: 40% AI visibility boost, 50% organic traffic increase.
 
-Agent Communication Protocol
-1. Main AI: "Spawning @yardimci for task coordination..."
-2. @yardimci: "Active. Researching codebase and creating execution plan..."
-3. @yardimci: "Plan complete. Spawning @kral for implementation..."
-4. @kral: "Implementing step 1 of N..."
+### Key SEO/GEO Systems Implemented
 
-🔄 Universal Workflow (Agent-Executed)
-Phase 0: ULTRATHINK (When Needed)
-Trigger: Complex architecture, system design, or ambiguous requirements
-Action: "Let me ultrathink about this problem space..."
-Output: Deep analysis before agent spawning
-Phase 1: RESEARCH (Mandatory Order)
-1. Claude-Context: Semantic search for large codebases (>5K lines)
-2. Serena: Symbol-level analysis and project structure
-3. External: context7, octocode-mcp, perplexity for libraries/APIs
-Phase 2: PLAN
-- Create step-by-step implementation blueprint
-- Present to user: "Here's my plan: [details]. Shall I proceed?"
-- Wait for confirmation before implementing
-Phase 3: IMPLEMENT
-- Execute using Serena's precise editing tools
-- Test after EVERY change
-- Update docs/PROGRESS.md after EVERY feature/fix
-Phase 4: VALIDATE
-- Run ALL tests (unit, integration, lint, format)
-- ALL checks must be ✅ GREEN
-- Zero tolerance for warnings or errors
+#### 1. Dynamic Content Systems (Auto-updates for new posts!)
+- **RSS Feed** (`/app/feed.xml/route.ts`): Full-content RSS with CDATA sections for AI consumption
+- **News Sitemap** (`/app/news-sitemap.xml/route.ts`): Auto-includes posts from last 48 hours
+- **Main Sitemap** (`/app/sitemap.xml/route.ts`): Updated with actual lastmod dates and images
+- **All systems automatically include new blog posts** - no manual updates needed!
 
-🛠️ Tool Selection Matrix
-Serena MCP (Primary Coding Tool)
-Activation: ALWAYS activate project first
-bash# First time: "Activate project /path/to/project"
-# Subsequently: "Activate project my_project"
-Key Operations:
+#### 2. AI Crawler Optimization
+- **robots.txt**: Explicit permissions for 15+ AI crawlers (GPTBot, Claude-Web, PerplexityBot, etc.)
+- **RSS alternate links**: Added to layout metadata for content discovery
+- **News sitemap**: Special handling for fresh content indexing
 
-Symbol-level editing (NOT line-based)
-LSP-powered navigation
-Memory creation for complex implementations
-Shell execution for testing
+#### 3. Schema Markup (Triple-Layer Implementation)
+- **Organization Schema**: Brand authority signals in layout.tsx
+- **WebSite Schema**: SearchAction and potentialAction for AI understanding
+- **Article Schema**: Enhanced blog posts with author, dates, images
+- **BreadcrumbList**: Navigation context for every blog post
+- **FAQPage Schema**: Extracted from blog content Q&A sections
+- **AboutPage Schema**: Team expertise and authority signals
+- **DefinedTermSet**: Glossary page with 30+ GEO terms
 
-Research Tools Priority
+#### 4. Content Enhancements
+- **Homepage** (`/app/page.tsx`): Complete rewrite with GEO statistics, comparison tables, FAQ
+- **About Page** (`/app/about/page.tsx`): Team expertise, platform stats, mission
+- **Glossary Page** (`/app/glossary/page.tsx`): 30+ GEO terms categorized and defined
 
-Claude-Context: Large codebase exploration, semantic queries
-Serena: Precise symbol analysis, references, implementations
-Context7/Perplexity: External documentation and research and updated documentations and knowledge. 
-Octocode: GitHub examples and patterns
+#### 5. Dynamic Blog Post Optimization
+- **Auto-schema generation**: Every new blog post gets Article + BreadcrumbList schemas
+- **Meta descriptions**: AI-optimized summaries for search and AI platforms
+- **Open Graph/Twitter Cards**: Social sharing optimization
+- **Heading structure**: Proper H1-H6 hierarchy maintained
 
+### Testing SEO Implementation
+```bash
+# Verify RSS feed
+curl -s http://localhost:3000/feed.xml | grep -c '<item>'
 
-⚡ Automatic Agent Patterns
-Pattern 1: Instant Delegation
-User: "Build a REST API for user management"
-You: "Complex task detected. Spawning @yardimci for architecture and planning..."
-Pattern 2: Multi-Agent Cascade
-User: "Refactor the entire authentication system"
-You: "Spawning @yardimci for analysis and @kral for parallel preparation..."
-Pattern 3: Exploratory Research
-User: "Why is the app slow?"
-You: "Performance investigation needed. Spawning @yardimci for profiling..."
+# Check news sitemap (should only show recent posts)
+curl -s http://localhost:3000/news-sitemap.xml | grep '<news:publication_date>'
 
-📋 Pre-Flight Checklist (Automatic)
-yamlon_task_received:
-  - Is codebase > 5K lines? → Index with claude-context
-  - Contains keywords from trigger list? → Spawn agent immediately
-  - Involves multiple files? → @yardimci required
-  - Needs external research? → @yardimci first
-  - Simple one-line change? → Proceed directly (rare)
+# Verify schema markup
+curl -s http://localhost:3000 | grep -o '@type.*Organization'
+curl -s http://localhost:3000/[slug] | grep -o '@type.*Article'
 
-🚨 Quality Gates (Non-Negotiable)
+# Test AI crawler permissions
+curl -s http://localhost:3000/robots.txt | grep 'GPTBot'
+```
 
-NO errors, warnings, or linting issues
-ALL tests must pass
-EVERY change documented in PROGRESS.md
-ALWAYS format code before committing
+### SEO Performance Metrics to Monitor
+- **AI Platform Visibility**: Track citations in ChatGPT, Claude, Perplexity
+- **Organic Traffic**: Monitor via Google Analytics
+- **Core Web Vitals**: Check via PageSpeed Insights
+- **Schema Validation**: Test with Google's Rich Results Test
+- **Crawler Activity**: Monitor server logs for AI bot visits
 
+### Ongoing SEO Tasks
+- Phase 2.2: Add Key Takeaways and FAQ sections to blog posts
+- Phase 2.3: Create pillar pages (Complete GEO Guide, Tools, Resources)
+- Phase 3: AI-specific content optimization
+- Phase 4: Internal linking improvements
+- Phase 5: Content calendar and keyword strategy
 
-💾 Memory Management
-After Complex Tasks:
-- Create semantic memory: "Write memory about [implementation]"
-- Tag appropriately: #architecture #security #performance
-- Include: what, why, gotchas, future considerations
-
-🎮 Quick Command Reference
-bash# Agent Spawning (Automatic, but manual override available)
-"Spawn @yardimci" | "Spawn @kral" | "Spawn both agents"
-
-# Serena Essentials
-"Activate project X" | "Show symbols in Y" | "Replace function Z"
-"Find references to A" | "Create memory about B" | "Run tests"
-
-# Research Commands
-"Search codebase for X" | "Find authentication logic" | "Show API patterns"
+### Critical SEO Files
+- `/public/robots.txt` - AI crawler permissions
+- `/app/feed.xml/route.ts` - RSS feed generator
+- `/app/news-sitemap.xml/route.ts` - News sitemap
+- `/app/sitemap.xml/route.ts` - Main sitemap
+- `/app/layout.tsx` - Global schemas and metadata
+- `/app/[slug]/page.tsx` - Blog post schemas
+- `/app/page.tsx` - Homepage GEO content
+- `/app/about/page.tsx` - Authority signals
+- `/app/glossary/page.tsx` - GEO terminology

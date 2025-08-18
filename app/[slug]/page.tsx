@@ -3,7 +3,7 @@ import fs from 'fs'
 import path from 'path'
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { parseMarkdown, extractTableOfContents } from '@/app/lib/markdown'
+import { parseMarkdown, extractTableOfContents, extractKeyTakeaways, extractFAQPairs } from '@/app/lib/markdown'
 import ShareButtons from '@/app/components/ShareButtons'
 
 interface BlogPost {
@@ -157,6 +157,8 @@ export default async function BlogPostPage({
   // Parse markdown content and extract TOC
   const htmlContent = parseMarkdown(post.content)
   const tableOfContents = extractTableOfContents(post.content)
+  const keyTakeaways = extractKeyTakeaways(post.content)
+  const faqPairs = extractFAQPairs(post.content)
   
   return (
     <div className="min-h-screen">
@@ -373,35 +375,102 @@ export default async function BlogPostPage({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'Article',
-            headline: post.title,
-            description: post.description,
-            image: `https://generative-engine.org/api/og?title=${encodeURIComponent(post.title)}`,
-            datePublished: post.publishedAt,
-            dateModified: post.updatedAt,
-            author: {
-              '@type': 'Person',
-              name: post.author.name,
-              description: post.author.bio,
-            },
-            publisher: {
-              '@type': 'Organization',
-              name: 'GEO Platform',
-              logo: {
-                '@type': 'ImageObject',
-                url: 'https://generative-engine.org/logo.png',
+          __html: JSON.stringify([
+            {
+              '@context': 'https://schema.org',
+              '@type': 'Article',
+              '@id': `https://generative-engine.org/${post.slug}#article`,
+              headline: post.title,
+              description: post.description,
+              image: `https://generative-engine.org/api/og?title=${encodeURIComponent(post.title)}`,
+              datePublished: post.publishedAt,
+              dateModified: post.updatedAt || post.publishedAt,
+              author: {
+                '@type': 'Person',
+                name: post.author.name,
+                description: post.author.bio,
+                url: 'https://generative-engine.org/about#team',
               },
+              publisher: {
+                '@type': 'Organization',
+                name: 'GEO Platform',
+                logo: {
+                  '@type': 'ImageObject',
+                  url: 'https://generative-engine.org/logo.png',
+                },
+              },
+              mainEntityOfPage: {
+                '@type': 'WebPage',
+                '@id': `https://generative-engine.org/${post.slug}`,
+              },
+              keywords: post.keywords.join(', '),
+              articleSection: 'Generative Engine Optimization',
+              wordCount: post.metrics.wordCount,
+              timeRequired: `PT${post.metrics.readingTime}M`,
+              inLanguage: 'en-US',
+              isAccessibleForFree: true,
+              hasPart: tableOfContents.map((heading, index) => ({
+                '@type': 'WebPageElement',
+                '@id': `#${heading.id}`,
+                name: heading.text,
+                position: index + 1,
+              })),
+              speakable: keyTakeaways.length > 0 ? {
+                '@type': 'SpeakableSpecification',
+                cssSelector: ['.key-takeaways'],
+                xpath: ['//div[@class="key-takeaways"]']
+              } : undefined,
+              backstory: keyTakeaways.length > 0 ? keyTakeaways.join(' ') : undefined,
             },
-            mainEntityOfPage: {
-              '@type': 'WebPage',
-              '@id': `https://generative-engine.org/${post.slug}`,
+            {
+              '@context': 'https://schema.org',
+              '@type': 'BreadcrumbList',
+              itemListElement: [
+                {
+                  '@type': 'ListItem',
+                  position: 1,
+                  name: 'Home',
+                  item: 'https://generative-engine.org',
+                },
+                {
+                  '@type': 'ListItem',
+                  position: 2,
+                  name: 'Blog',
+                  item: 'https://generative-engine.org/blog',
+                },
+                {
+                  '@type': 'ListItem',
+                  position: 3,
+                  name: post.title,
+                  item: `https://generative-engine.org/${post.slug}`,
+                },
+              ],
             },
-            keywords: post.keywords,
-            wordCount: post.metrics.wordCount,
-            timeRequired: `PT${post.metrics.readingTime}M`,
-          }),
+            // FAQ Schema - Use extracted Q&A if available, fallback to generated
+            faqPairs.length > 0 ? {
+              '@context': 'https://schema.org',
+              '@type': 'FAQPage',
+              mainEntity: faqPairs.map(qa => ({
+                '@type': 'Question',
+                name: qa.question,
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: qa.answer,
+                },
+              })),
+            } : {
+              '@context': 'https://schema.org',
+              '@type': 'FAQPage',
+              mainEntity: post.tags.slice(0, 3).map((tag, index) => ({
+                '@type': 'Question',
+                name: `What is ${tag} in GEO?`,
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: `${tag} is a key concept in Generative Engine Optimization that helps improve visibility in AI-powered search results. It involves optimizing content specifically for how AI models understand and retrieve information.`,
+                },
+              })),
+            },
+          ]),
         }}
       />
     </div>

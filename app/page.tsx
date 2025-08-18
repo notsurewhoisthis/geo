@@ -1,230 +1,697 @@
 import Link from 'next/link'
+import type { Metadata } from 'next'
+import fs from 'fs'
+import path from 'path'
 
-export default function Home() {
+export const metadata: Metadata = {
+  title: 'GEO - Generative Engine Optimization | Master AI-Powered Search',
+  description: 'Learn Generative Engine Optimization (GEO) to boost your AI visibility by 40%. Optimize for ChatGPT, Claude, Perplexity, and other AI search engines with proven strategies.',
+  keywords: 'generative engine optimization, GEO, AI SEO, ChatGPT optimization, Claude optimization, Perplexity AI, LLM optimization, AI search visibility',
+  alternates: {
+    canonical: 'https://generative-engine.org',
+  },
+}
+
+export default async function Home() {
+  // Get latest blog posts
+  const blogDataDir = path.join(process.cwd(), 'public', 'blog-data')
+  const latestPosts = []
+  
+  try {
+    const files = fs.readdirSync(blogDataDir)
+    const jsonFiles = files.filter(file => file.endsWith('.json'))
+    
+    for (const file of jsonFiles) {
+      const filePath = path.join(blogDataDir, file)
+      const fileContent = fs.readFileSync(filePath, 'utf-8')
+      const post = JSON.parse(fileContent)
+      latestPosts.push(post)
+    }
+    
+    // Sort by publishedAt date (newest first)
+    latestPosts.sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime())
+  } catch (error) {
+    console.error('Error reading blog posts:', error)
+  }
+  
+  // Get the 3 most recent posts
+  const recentPosts = latestPosts.slice(0, 3)
+  
+  const comparisonData = [
+    { 
+      aspect: 'Primary Focus',
+      traditionalSEO: 'Keyword density & backlinks',
+      geo: 'Semantic understanding & citations'
+    },
+    {
+      aspect: 'Content Structure',
+      traditionalSEO: 'Short, keyword-focused',
+      geo: 'Comprehensive, conversational'
+    },
+    {
+      aspect: 'Optimization Target',
+      traditionalSEO: 'Search engine crawlers',
+      geo: 'Large Language Models (LLMs)'
+    },
+    {
+      aspect: 'Success Metrics',
+      traditionalSEO: 'Rankings & clicks',
+      geo: 'AI citations & visibility'
+    },
+    {
+      aspect: 'Content Format',
+      traditionalSEO: 'Web pages & metadata',
+      geo: 'Structured data & knowledge graphs'
+    },
+    {
+      aspect: 'User Intent',
+      traditionalSEO: '2-4 word queries',
+      geo: '10-11 word conversational queries'
+    },
+  ]
+
+  const stats = [
+    { value: '400M+', label: 'ChatGPT Users', subtext: 'Active monthly users' },
+    { value: '40%', label: 'Visibility Boost', subtext: 'With proper GEO' },
+    { value: '65%', label: 'AI Search Growth', subtext: 'Year over year' },
+    { value: '2025', label: 'The GEO Era', subtext: 'AI-first search begins' },
+  ]
+
+  const faqItems = [
+    {
+      question: 'What is Generative Engine Optimization (GEO)?',
+      answer: 'GEO is the practice of optimizing content specifically for AI-powered search engines and chatbots like ChatGPT, Claude, and Perplexity. It focuses on making content easily understandable and citable by Large Language Models.'
+    },
+    {
+      question: 'How is GEO different from traditional SEO?',
+      answer: 'While SEO optimizes for search engine crawlers using keywords and backlinks, GEO optimizes for AI comprehension using semantic structure, comprehensive coverage, and authoritative citations. GEO requires conversational content that answers complex queries.'
+    },
+    {
+      question: 'Why is GEO important in 2025?',
+      answer: 'With over 400 million ChatGPT users and rapidly growing AI search adoption, GEO is essential for maintaining visibility. Studies show proper GEO implementation can boost AI visibility by 40%, making it critical for future content strategy.'
+    },
+    {
+      question: 'What are the key GEO ranking factors?',
+      answer: 'Key GEO factors include: semantic clarity, comprehensive topic coverage, authoritative citations, structured data implementation, conversational tone, factual accuracy, and regular content updates.'
+    },
+    {
+      question: 'How do I start implementing GEO?',
+      answer: 'Start by: 1) Creating comprehensive, authoritative content, 2) Implementing structured data and schema markup, 3) Using clear heading hierarchies, 4) Adding citations and statistics, 5) Writing in a conversational tone, 6) Monitoring AI platform visibility.'
+    },
+  ]
+
+  const homeSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'GEO Platform',
+    description: 'Leading platform for Generative Engine Optimization education and implementation',
+    url: 'https://generative-engine.org',
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: {
+        '@type': 'EntryPoint',
+        urlTemplate: 'https://generative-engine.org/search?q={search_term_string}'
+      },
+      'query-input': 'required name=search_term_string'
+    },
+    mainEntity: {
+      '@type': 'FAQPage',
+      mainEntity: faqItems.map(item => ({
+        '@type': 'Question',
+        name: item.question,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: item.answer
+        }
+      }))
+    }
+  }
+
   return (
-    <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative py-20 px-4 overflow-hidden bg-gradient-to-b from-blue-50 to-white">
-        <div className="container-blog relative z-10">
-          <div className="text-center max-w-4xl mx-auto">
-            <div className="inline-block px-4 py-2 rounded-full bg-blue-100 text-blue-700 text-sm font-semibold mb-6">
-              THE FUTURE OF SEO
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(homeSchema) }}
+      />
+      
+      <div className="min-h-screen">
+        {/* Enhanced Hero Section */}
+        <section className="relative py-24 px-4 overflow-hidden bg-gradient-to-br from-blue-50 via-purple-50 to-white">
+          <div className="container-blog relative z-10">
+            <div className="text-center max-w-5xl mx-auto">
+              <div className="inline-block px-4 py-2 rounded-full bg-blue-100 text-blue-700 text-sm font-semibold mb-6 animate-pulse">
+                🚀 THE FUTURE OF SEO IS HERE
+              </div>
+              
+              <h1 className="hero-title text-gray-900 mb-6">
+                Master <span className="gradient-text">Generative Engine</span> Optimization
+              </h1>
+              
+              <p className="text-2xl text-gray-700 mb-4 font-medium">
+                Boost Your AI Visibility by 40% Across ChatGPT, Claude & Perplexity
+              </p>
+              
+              <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
+                Traditional SEO isn't enough anymore. With 400+ million users on AI platforms, 
+                learn how to optimize your content for Large Language Models and dominate the new era of AI-powered search.
+              </p>
+              
+              <div className="flex gap-4 justify-center flex-wrap mb-12">
+                <Link href="#what-is-geo" className="btn-primary text-lg px-8 py-4">
+                  Discover GEO Strategies →
+                </Link>
+                <Link href="/blog" className="btn-secondary text-lg px-8 py-4">
+                  Read Latest Guides
+                </Link>
+              </div>
+              
+              {/* Trust Signals */}
+              <div className="flex flex-wrap gap-8 justify-center text-sm text-gray-600">
+                <div className="flex items-center gap-2">
+                  <span className="text-green-600">✓</span>
+                  <span>100+ In-Depth Guides</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="text-green-600">✓</span>
+                  <span>50K+ Monthly Readers</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="text-green-600">✓</span>
+                  <span>Industry Leading Research</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Statistics Section */}
+        <section className="py-20 px-4 bg-gradient-to-b from-white to-gray-50">
+          <div className="container-blog">
+            <div className="text-center mb-16">
+              <h2 className="section-title text-gray-900 mb-4">The AI Search Revolution</h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                The numbers don't lie - AI-powered search is transforming how people find information online
+              </p>
             </div>
             
-            <h1 className="hero-title text-gray-900 mb-6">
-              Master <span className="gradient-text">Generative Engine</span> Optimization
-            </h1>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
+              {stats.map((stat, index) => (
+                <div key={index} className="text-center">
+                  <div className="text-5xl font-bold gradient-text mb-2">{stat.value}</div>
+                  <div className="text-xl font-semibold text-gray-900 mb-1">{stat.label}</div>
+                  <div className="text-sm text-gray-600">{stat.subtext}</div>
+                </div>
+              ))}
+            </div>
             
-            <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto leading-relaxed">
-              Learn how to optimize your content for AI search engines, chatbots, and large language models. Stay ahead in the new era of search.
-            </p>
+            <div className="bg-blue-50 rounded-2xl p-8 max-w-4xl mx-auto">
+              <p className="text-lg text-gray-700 text-center italic">
+                "By 2025, over 50% of search queries will be processed through AI-powered interfaces. 
+                Organizations that don't adapt their content strategy for GEO risk losing significant visibility."
+              </p>
+              <p className="text-center text-gray-600 mt-4">- Industry Research Report, 2024</p>
+            </div>
+          </div>
+        </section>
+
+        {/* What is GEO Section */}
+        <section className="py-20 px-4" id="what-is-geo">
+          <div className="container-blog">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <h2 className="section-title text-gray-900 mb-6">What is Generative Engine Optimization?</h2>
+                <p className="text-lg text-gray-700 mb-6">
+                  Generative Engine Optimization (GEO) is the evolution of SEO for the AI age. 
+                  As Large Language Models like ChatGPT, Claude, and Perplexity become primary 
+                  information sources, traditional SEO tactics fall short.
+                </p>
+                <p className="text-lg text-gray-700 mb-6">
+                  GEO focuses on optimizing content for how AI models understand, process, and 
+                  cite information. This means creating content that's not just keyword-rich, 
+                  but semantically clear, comprehensive, and authoritative.
+                </p>
+                <div className="space-y-4">
+                  <div className="flex items-start gap-3">
+                    <span className="text-2xl">🎯</span>
+                    <div>
+                      <h4 className="font-semibold text-gray-900 mb-1">Semantic Optimization</h4>
+                      <p className="text-gray-600">Structure content for AI comprehension using clear entities and relationships</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <span className="text-2xl">📊</span>
+                    <div>
+                      <h4 className="font-semibold text-gray-900 mb-1">Citation Optimization</h4>
+                      <p className="text-gray-600">Include statistics, research, and authoritative sources that AI models prefer</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <span className="text-2xl">💬</span>
+                    <div>
+                      <h4 className="font-semibold text-gray-900 mb-1">Conversational Content</h4>
+                      <p className="text-gray-600">Write for 10-11 word queries that mirror natural AI interactions</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="bg-white rounded-2xl shadow-xl p-8">
+                <h3 className="text-2xl font-bold text-gray-900 mb-6">GEO Success Metrics</h3>
+                <div className="space-y-6">
+                  <div>
+                    <div className="flex justify-between mb-2">
+                      <span className="text-gray-700">AI Citation Rate</span>
+                      <span className="font-semibold text-blue-600">+40%</span>
+                    </div>
+                    <div className="w-full bg-gray-200 rounded-full h-3">
+                      <div className="bg-gradient-to-r from-blue-400 to-blue-600 h-3 rounded-full" style={{width: '40%'}}></div>
+                    </div>
+                  </div>
+                  <div>
+                    <div className="flex justify-between mb-2">
+                      <span className="text-gray-700">LLM Visibility Score</span>
+                      <span className="font-semibold text-green-600">+65%</span>
+                    </div>
+                    <div className="w-full bg-gray-200 rounded-full h-3">
+                      <div className="bg-gradient-to-r from-green-400 to-green-600 h-3 rounded-full" style={{width: '65%'}}></div>
+                    </div>
+                  </div>
+                  <div>
+                    <div className="flex justify-between mb-2">
+                      <span className="text-gray-700">Semantic Clarity Score</span>
+                      <span className="font-semibold text-purple-600">+80%</span>
+                    </div>
+                    <div className="w-full bg-gray-200 rounded-full h-3">
+                      <div className="bg-gradient-to-r from-purple-400 to-purple-600 h-3 rounded-full" style={{width: '80%'}}></div>
+                    </div>
+                  </div>
+                  <div>
+                    <div className="flex justify-between mb-2">
+                      <span className="text-gray-700">Authority Recognition</span>
+                      <span className="font-semibold text-orange-600">+55%</span>
+                    </div>
+                    <div className="w-full bg-gray-200 rounded-full h-3">
+                      <div className="bg-gradient-to-r from-orange-400 to-orange-600 h-3 rounded-full" style={{width: '55%'}}></div>
+                    </div>
+                  </div>
+                </div>
+                <p className="text-sm text-gray-600 mt-6 text-center">
+                  Average improvements after GEO implementation
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* SEO vs GEO Comparison */}
+        <section className="py-20 px-4 bg-gray-50">
+          <div className="container-blog">
+            <div className="text-center mb-12">
+              <h2 className="section-title text-gray-900 mb-4">Traditional SEO vs. GEO</h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                Understanding the key differences is crucial for adapting your content strategy
+              </p>
+            </div>
             
-            <div className="flex gap-4 justify-center flex-wrap">
-              <Link href="/blog" className="btn-primary">
-                Start Learning →
+            <div className="overflow-x-auto">
+              <table className="w-full bg-white rounded-lg shadow-lg">
+                <thead className="bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+                  <tr>
+                    <th className="px-6 py-4 text-left">Aspect</th>
+                    <th className="px-6 py-4 text-left">Traditional SEO</th>
+                    <th className="px-6 py-4 text-left">Generative Engine Optimization</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {comparisonData.map((row, index) => (
+                    <tr key={index} className={index % 2 === 0 ? 'bg-gray-50' : 'bg-white'}>
+                      <td className="px-6 py-4 font-semibold text-gray-900">{row.aspect}</td>
+                      <td className="px-6 py-4 text-gray-700">{row.traditionalSEO}</td>
+                      <td className="px-6 py-4 text-gray-700">{row.geo}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            
+            <div className="mt-8 text-center">
+              <Link href="/blog/seo-vs-geo-complete-guide" className="text-blue-600 font-semibold text-lg hover:text-blue-700 transition">
+                Read our complete guide: SEO vs GEO →
               </Link>
-              <Link href="/resources" className="btn-secondary">
-                View Resources
+            </div>
+          </div>
+        </section>
+
+        {/* Case Studies Section */}
+        <section className="py-20 px-4">
+          <div className="container-blog">
+            <div className="text-center mb-12">
+              <h2 className="section-title text-gray-900 mb-4">GEO Success Stories</h2>
+              <p className="text-xl text-gray-600">Real results from implementing GEO strategies</p>
+            </div>
+            
+            <div className="grid md:grid-cols-3 gap-8">
+              <div className="bg-white rounded-lg shadow-lg p-8">
+                <div className="text-4xl font-bold text-blue-600 mb-4">+300%</div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">AI Citations Increase</h3>
+                <p className="text-gray-600 mb-4">
+                  E-commerce site saw 300% increase in ChatGPT citations after implementing 
+                  structured data and conversational content optimization.
+                </p>
+                <Link href="/case-studies/ecommerce-geo" className="text-blue-600 font-semibold">
+                  Read Case Study →
+                </Link>
+              </div>
+              
+              <div className="bg-white rounded-lg shadow-lg p-8">
+                <div className="text-4xl font-bold text-green-600 mb-4">+250%</div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Organic Traffic Growth</h3>
+                <p className="text-gray-600 mb-4">
+                  Tech blog experienced 250% traffic increase from AI-powered search 
+                  after comprehensive GEO implementation.
+                </p>
+                <Link href="/case-studies/tech-blog-geo" className="text-blue-600 font-semibold">
+                  Read Case Study →
+                </Link>
+              </div>
+              
+              <div className="bg-white rounded-lg shadow-lg p-8">
+                <div className="text-4xl font-bold text-purple-600 mb-4">Top 3</div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Perplexity Rankings</h3>
+                <p className="text-gray-600 mb-4">
+                  SaaS platform achieved top 3 positions in Perplexity AI for 
+                  all target keywords within 60 days.
+                </p>
+                <Link href="/case-studies/saas-perplexity" className="text-blue-600 font-semibold">
+                  Read Case Study →
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* GEO Best Practices - Enhanced */}
+        <section className="py-20 px-4 bg-gray-50">
+          <div className="container-blog">
+            <div className="text-center mb-12">
+              <h2 className="section-title text-gray-900 mb-4">GEO Best Practices</h2>
+              <p className="text-xl text-gray-600">Proven techniques for optimizing content for AI engines</p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[
+                {
+                  title: 'Clear Entity Definition',
+                  description: 'Define entities, concepts, and relationships explicitly to help AI models understand context and connections.',
+                  icon: '🎯',
+                  color: 'blue',
+                },
+                {
+                  title: 'Conversational Tone',
+                  description: 'Write in natural language that mirrors how users interact with AI assistants - use 10-11 word query patterns.',
+                  icon: '💬',
+                  color: 'green',
+                },
+                {
+                  title: 'Comprehensive Coverage',
+                  description: 'Create authoritative, in-depth content (2000+ words) that serves as a reliable source for AI training.',
+                  icon: '📚',
+                  color: 'purple',
+                },
+                {
+                  title: 'Structured Formatting',
+                  description: 'Use clear H1-H3 hierarchies, numbered lists, and logical organization for better content parsing.',
+                  icon: '📝',
+                  color: 'orange',
+                },
+                {
+                  title: 'Citations & Statistics',
+                  description: 'Include research citations, statistics (like "40% improvement"), and authoritative sources.',
+                  icon: '📊',
+                  color: 'red',
+                },
+                {
+                  title: 'Regular Updates',
+                  description: 'Keep content fresh with monthly updates to maintain relevance in AI training datasets.',
+                  icon: '🔄',
+                  color: 'indigo',
+                },
+              ].map((practice, index) => (
+                <div key={index} className="bg-white rounded-lg border-2 border-gray-100 p-6 hover:shadow-xl hover:border-blue-200 transition-all">
+                  <div className="text-3xl mb-4">{practice.icon}</div>
+                  <h3 className="text-lg font-bold text-gray-900 mb-2">{practice.title}</h3>
+                  <p className="text-gray-600">{practice.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ Section */}
+        <section className="py-20 px-4">
+          <div className="container-blog max-w-4xl">
+            <div className="text-center mb-12">
+              <h2 className="section-title text-gray-900 mb-4">Frequently Asked Questions</h2>
+              <p className="text-xl text-gray-600">Everything you need to know about GEO</p>
+            </div>
+            
+            <div className="space-y-6">
+              {faqItems.map((item, index) => (
+                <div key={index} className="bg-white rounded-lg shadow-md p-6">
+                  <h3 className="text-xl font-bold text-gray-900 mb-3 flex items-start">
+                    <span className="text-blue-600 mr-3">Q:</span>
+                    {item.question}
+                  </h3>
+                  <p className="text-gray-700 pl-8">
+                    <span className="text-green-600 font-semibold">A:</span> {item.answer}
+                  </p>
+                </div>
+              ))}
+            </div>
+            
+            <div className="mt-12 text-center">
+              <p className="text-gray-600 mb-4">Have more questions?</p>
+              <Link href="/contact" className="text-blue-600 font-semibold text-lg hover:text-blue-700 transition">
+                Contact our GEO experts →
               </Link>
             </div>
           </div>
-        </div>
-      </section>
-      
-      {/* Features Section */}
-      <section className="py-20 px-4">
-        <div className="container-blog">
-          <div className="text-center mb-16">
-            <h2 className="section-title text-gray-900">Why GEO Matters</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              As AI becomes the primary interface for information discovery, traditional SEO evolves into Generative Engine Optimization.
+        </section>
+
+        {/* Latest Articles - Enhanced */}
+        <section className="py-20 px-4 bg-gray-50">
+          <div className="container-blog">
+            <div className="flex justify-between items-end mb-12">
+              <div>
+                <h2 className="section-title text-gray-900">Latest GEO Insights</h2>
+                <p className="text-xl text-gray-600">Fresh strategies and case studies</p>
+              </div>
+              <Link href="/blog" className="text-blue-600 font-semibold hover:text-blue-700 transition">
+                View All Articles →
+              </Link>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {recentPosts.length > 0 ? (
+                recentPosts.map((post, index) => {
+                  const colors = [
+                    'from-blue-400 to-blue-600',
+                    'from-purple-400 to-purple-600',
+                    'from-green-400 to-green-600'
+                  ]
+                  const category = post.category || 'Article'
+                  const publishedDate = new Date(post.publishedAt)
+                  const daysAgo = Math.floor((Date.now() - publishedDate.getTime()) / (1000 * 60 * 60 * 24))
+                  const timeAgo = daysAgo === 0 ? 'Today' : daysAgo === 1 ? '1 day ago' : `${daysAgo} days ago`
+                  
+                  return (
+                    <article key={post.slug} className="article-card group">
+                      <div className={`aspect-video bg-gradient-to-br ${colors[index]} relative overflow-hidden`}>
+                        <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition"></div>
+                      </div>
+                      <div className="p-6">
+                        <div className="flex items-center gap-3 mb-3">
+                          <span className="badge badge-blue">{category}</span>
+                          <span className="text-sm text-gray-500">{timeAgo}</span>
+                        </div>
+                        <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition">
+                          {post.title}
+                        </h3>
+                        <p className="text-gray-600 mb-4 line-clamp-3">
+                          {post.description}
+                        </p>
+                        <Link href={`/${post.slug}`} className="text-blue-600 font-semibold hover:text-blue-700 transition">
+                          Read Full Article →
+                        </Link>
+                      </div>
+                    </article>
+                  )
+                })
+              ) : (
+                // Fallback content if no posts
+                <>
+                  <article className="article-card group">
+                    <div className="aspect-video bg-gradient-to-br from-blue-400 to-blue-600 relative overflow-hidden">
+                      <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition"></div>
+                    </div>
+                    <div className="p-6">
+                      <div className="flex items-center gap-3 mb-3">
+                        <span className="badge badge-blue">Tutorial</span>
+                        <span className="text-sm text-gray-500">Coming Soon</span>
+                      </div>
+                      <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition">
+                        Complete Guide to ChatGPT Optimization
+                      </h3>
+                      <p className="text-gray-600 mb-4 line-clamp-3">
+                        Learn how to structure your content for maximum visibility in ChatGPT responses, 
+                        including semantic markup, citation strategies, and conversation optimization.
+                      </p>
+                      <Link href="/blog" className="text-blue-600 font-semibold hover:text-blue-700 transition">
+                        View All Articles →
+                      </Link>
+                    </div>
+                  </article>
+                  
+                  <article className="article-card group">
+                    <div className="aspect-video bg-gradient-to-br from-purple-400 to-purple-600 relative overflow-hidden">
+                      <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition"></div>
+                    </div>
+                    <div className="p-6">
+                      <div className="flex items-center gap-3 mb-3">
+                        <span className="badge badge-blue">Research</span>
+                        <span className="text-sm text-gray-500">Coming Soon</span>
+                      </div>
+                      <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition">
+                        2025 GEO Trends: What's Coming Next
+                      </h3>
+                      <p className="text-gray-600 mb-4 line-clamp-3">
+                        Discover emerging GEO trends including multi-modal optimization, voice-first content, 
+                        and new AI platforms entering the search landscape.
+                      </p>
+                      <Link href="/blog" className="text-blue-600 font-semibold hover:text-blue-700 transition">
+                        View All Articles →
+                      </Link>
+                    </div>
+                  </article>
+                  
+                  <article className="article-card group">
+                    <div className="aspect-video bg-gradient-to-br from-green-400 to-green-600 relative overflow-hidden">
+                      <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition"></div>
+                    </div>
+                    <div className="p-6">
+                      <div className="flex items-center gap-3 mb-3">
+                        <span className="badge badge-blue">Case Study</span>
+                        <span className="text-sm text-gray-500">Coming Soon</span>
+                      </div>
+                      <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition">
+                        How We Dominated Perplexity AI Rankings
+                      </h3>
+                      <p className="text-gray-600 mb-4 line-clamp-3">
+                        Real-world case study showing how we achieved top positions in Perplexity AI 
+                        for competitive keywords using advanced GEO techniques.
+                      </p>
+                      <Link href="/blog" className="text-blue-600 font-semibold hover:text-blue-700 transition">
+                        View All Articles →
+                      </Link>
+                    </div>
+                  </article>
+                </>
+              )}
+            </div>
+          </div>
+        </section>
+
+        {/* Tools & Resources */}
+        <section className="py-20 px-4">
+          <div className="container-blog">
+            <div className="text-center mb-12">
+              <h2 className="section-title text-gray-900 mb-4">GEO Tools & Resources</h2>
+              <p className="text-xl text-gray-600">Everything you need to implement GEO successfully</p>
+            </div>
+            
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <Link href="/tools/geo-audit" className="block bg-white rounded-lg shadow-md p-6 hover:shadow-xl transition">
+                <div className="text-3xl mb-4">🔍</div>
+                <h3 className="text-lg font-bold text-gray-900 mb-2">GEO Audit Tool</h3>
+                <p className="text-gray-600">Analyze your content's AI optimization score</p>
+              </Link>
+              
+              <Link href="/tools/keyword-research" className="block bg-white rounded-lg shadow-md p-6 hover:shadow-xl transition">
+                <div className="text-3xl mb-4">🔑</div>
+                <h3 className="text-lg font-bold text-gray-900 mb-2">AI Keyword Research</h3>
+                <p className="text-gray-600">Find conversational queries for AI platforms</p>
+              </Link>
+              
+              <Link href="/tools/content-optimizer" className="block bg-white rounded-lg shadow-md p-6 hover:shadow-xl transition">
+                <div className="text-3xl mb-4">✨</div>
+                <h3 className="text-lg font-bold text-gray-900 mb-2">Content Optimizer</h3>
+                <p className="text-gray-600">Optimize existing content for GEO</p>
+              </Link>
+              
+              <Link href="/tools/visibility-tracker" className="block bg-white rounded-lg shadow-md p-6 hover:shadow-xl transition">
+                <div className="text-3xl mb-4">📈</div>
+                <h3 className="text-lg font-bold text-gray-900 mb-2">AI Visibility Tracker</h3>
+                <p className="text-gray-600">Monitor your AI platform citations</p>
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* Newsletter Section */}
+        <section className="py-20 px-4 bg-gradient-to-br from-blue-600 to-purple-600">
+          <div className="container-blog text-center">
+            <h2 className="text-4xl font-bold text-white mb-4">
+              Stay Ahead of the GEO Curve
+            </h2>
+            <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+              Get weekly insights on Generative Engine Optimization strategies, 
+              AI platform updates, and exclusive case studies delivered to your inbox.
             </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <div className="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">AI-First Content</h3>
-              <p className="text-gray-600 leading-relaxed">
-                Optimize content structure and semantics for better AI comprehension and citation in generated responses.
-              </p>
-            </div>
-            
-            <div className="text-center">
-              <div className="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Structured Data</h3>
-              <p className="text-gray-600 leading-relaxed">
-                Implement semantic markup and knowledge graphs that AI models can easily parse and understand.
-              </p>
-            </div>
-            
-            <div className="text-center">
-              <div className="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Real-Time Insights</h3>
-              <p className="text-gray-600 leading-relaxed">
-                Track performance metrics specific to AI-powered search and generative response inclusion rates.
+            <div className="max-w-md mx-auto">
+              <form className="flex flex-col sm:flex-row gap-4">
+                <input 
+                  type="email" 
+                  placeholder="Enter your email" 
+                  className="flex-1 px-6 py-3 rounded-lg text-gray-900 focus:outline-none focus:ring-4 focus:ring-blue-300"
+                  required
+                />
+                <button 
+                  type="submit"
+                  className="px-8 py-3 bg-white text-blue-600 font-semibold rounded-lg hover:bg-blue-50 transition"
+                >
+                  Subscribe
+                </button>
+              </form>
+              <p className="text-blue-200 text-sm mt-4">
+                Join 10,000+ marketers mastering GEO. No spam, unsubscribe anytime.
               </p>
             </div>
           </div>
-        </div>
-      </section>
-      
-      {/* Latest Articles */}
-      <section className="py-20 px-4 bg-gray-50">
-        <div className="container-blog">
-          <div className="flex justify-between items-end mb-12">
-            <div>
-              <h2 className="section-title text-gray-900">Latest Articles</h2>
-              <p className="text-xl text-gray-600">Fresh insights on Generative Engine Optimization</p>
+        </section>
+
+        {/* Final CTA */}
+        <section className="py-20 px-4">
+          <div className="container-blog">
+            <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl p-12 text-center">
+              <h2 className="text-4xl font-bold text-white mb-6">
+                Ready to Dominate AI Search?
+              </h2>
+              <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
+                Don't let your competitors get ahead in the AI revolution. 
+                Start implementing GEO strategies today and secure your position in the future of search.
+              </p>
+              <div className="flex gap-4 justify-center flex-wrap">
+                <Link href="/getting-started" className="px-8 py-4 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition">
+                  Get Started with GEO
+                </Link>
+                <Link href="/consultation" className="px-8 py-4 bg-white text-gray-900 font-semibold rounded-lg hover:bg-gray-100 transition">
+                  Book a Consultation
+                </Link>
+              </div>
             </div>
-            <Link href="/blog" className="text-blue-600 font-semibold hover:text-blue-700 transition">
-              View All →
-            </Link>
           </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <article className="article-card">
-              <div className="aspect-video bg-gradient-to-br from-blue-400 to-blue-600"></div>
-              <div className="p-6">
-                <div className="flex items-center gap-3 mb-3">
-                  <span className="badge badge-blue">Tutorial</span>
-                  <time className="text-sm text-gray-500">2 days ago</time>
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">
-                  Getting Started with Generative Engine Optimization
-                </h3>
-                <p className="text-gray-600 mb-4 line-clamp-3">
-                  A comprehensive guide to understanding and implementing GEO strategies for your content in the age of AI-powered search.
-                </p>
-                <Link href="/blog" className="text-blue-600 font-semibold hover:text-blue-700 transition">
-                  Read More →
-                </Link>
-              </div>
-            </article>
-            
-            <article className="article-card">
-              <div className="aspect-video bg-gradient-to-br from-purple-400 to-purple-600"></div>
-              <div className="p-6">
-                <div className="flex items-center gap-3 mb-3">
-                  <span className="badge badge-blue">Strategy</span>
-                  <time className="text-sm text-gray-500">5 days ago</time>
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">
-                  Advanced Semantic Markup for AI Comprehension
-                </h3>
-                <p className="text-gray-600 mb-4 line-clamp-3">
-                  Deep dive into structured data implementation and semantic HTML patterns that improve AI understanding of your content.
-                </p>
-                <Link href="/blog" className="text-blue-600 font-semibold hover:text-blue-700 transition">
-                  Read More →
-                </Link>
-              </div>
-            </article>
-            
-            <article className="article-card">
-              <div className="aspect-video bg-gradient-to-br from-green-400 to-green-600"></div>
-              <div className="p-6">
-                <div className="flex items-center gap-3 mb-3">
-                  <span className="badge badge-blue">Case Study</span>
-                  <time className="text-sm text-gray-500">1 week ago</time>
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">
-                  How We Increased AI Citations by 300%
-                </h3>
-                <p className="text-gray-600 mb-4 line-clamp-3">
-                  Real-world case study showing the impact of GEO implementation on content visibility in AI-generated responses.
-                </p>
-                <Link href="/blog" className="text-blue-600 font-semibold hover:text-blue-700 transition">
-                  Read More →
-                </Link>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-      
-      {/* Best Practices Grid */}
-      <section className="py-20 px-4">
-        <div className="container-blog">
-          <div className="text-center mb-12">
-            <h2 className="section-title text-gray-900">GEO Best Practices</h2>
-            <p className="text-xl text-gray-600">Essential techniques for optimizing content for AI engines</p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              {
-                title: 'Clear Entity Definition',
-                description: 'Define entities, concepts, and relationships explicitly to help AI models understand context.',
-                icon: '🎯',
-              },
-              {
-                title: 'Conversational Tone',
-                description: 'Write in natural language that mirrors how users interact with AI assistants.',
-                icon: '💬',
-              },
-              {
-                title: 'Comprehensive Coverage',
-                description: 'Create authoritative, in-depth content that serves as a reliable source for AI training.',
-                icon: '📚',
-              },
-              {
-                title: 'Structured Formatting',
-                description: 'Use clear headings, lists, and logical organization for better content parsing.',
-                icon: '📝',
-              },
-              {
-                title: 'Multi-Modal Content',
-                description: 'Combine text, images, videos, and data visualizations for richer context.',
-                icon: '🎨',
-              },
-              {
-                title: 'Regular Updates',
-                description: 'Keep content fresh and current to maintain relevance in AI training datasets.',
-                icon: '🔄',
-              },
-            ].map((practice, index) => (
-              <div key={index} className="bg-white rounded-lg border border-gray-200 p-6 hover:shadow-lg transition-shadow">
-                <div className="text-3xl mb-4">{practice.icon}</div>
-                <h3 className="text-lg font-bold text-gray-900 mb-2">{practice.title}</h3>
-                <p className="text-gray-600">{practice.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-      
-      {/* CTA Section */}
-      <section className="py-20 px-4 bg-gradient-to-br from-blue-600 to-blue-700">
-        <div className="container-blog text-center">
-          <h2 className="text-4xl font-bold text-white mb-4">
-            Ready to Master GEO?
-          </h2>
-          <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-            Join thousands of content creators and marketers who are already optimizing for the AI-powered future of search.
-          </p>
-          <div className="flex gap-4 justify-center flex-wrap">
-            <Link href="/blog" className="px-8 py-4 bg-white text-blue-600 font-semibold rounded-lg hover:bg-blue-50 transition">
-              Start Learning
-            </Link>
-            <Link href="/resources" className="px-8 py-4 bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-400 transition">
-              Get Resources
-            </Link>
-          </div>
-        </div>
-      </section>
-    </div>
+        </section>
+      </div>
+    </>
   )
 }

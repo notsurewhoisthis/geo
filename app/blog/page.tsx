@@ -1,147 +1,172 @@
-import Link from 'next/link'
 import fs from 'fs'
 import path from 'path'
+import Link from 'next/link'
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'GEO Blog - Generative Engine Optimization Insights',
+  description: 'Learn cutting-edge GEO strategies, AI optimization techniques, and best practices for ranking in ChatGPT, Claude, Perplexity, and other AI search engines.',
+  keywords: 'GEO blog, generative engine optimization, AI SEO, ChatGPT optimization, Claude optimization, AI search insights',
+  alternates: {
+    canonical: 'https://generative-engine.org/blog',
+  },
+}
 
 interface BlogPost {
   slug: string
   title: string
   description: string
-  excerpt: string
+  author: string
   publishedAt: string
-  author: {
-    name: string
-  }
   tags: string[]
-  metrics: {
-    readingTime: number
-    wordCount: number
-  }
+  content?: string
+  htmlContent?: string
+  category?: string
 }
 
-async function getBlogPosts(): Promise<BlogPost[]> {
-  const blogDataPath = path.join(process.cwd(), 'public', 'blog-data')
+export default async function BlogPage({
+  searchParams
+}: {
+  searchParams: Promise<{ page?: string }>
+}) {
+  const params = await searchParams
+  const currentPage = parseInt(params.page || '1', 10)
+  const postsPerPage = 9
+  
+  // Read all blog posts
+  const blogDataDir = path.join(process.cwd(), 'public', 'blog-data')
+  const posts: BlogPost[] = []
   
   try {
-    if (!fs.existsSync(blogDataPath)) {
-      return []
+    const files = fs.readdirSync(blogDataDir)
+    const jsonFiles = files.filter(file => file.endsWith('.json'))
+    
+    for (const file of jsonFiles) {
+      const filePath = path.join(blogDataDir, file)
+      const fileContent = fs.readFileSync(filePath, 'utf-8')
+      const post = JSON.parse(fileContent)
+      posts.push(post)
     }
     
-    const files = fs.readdirSync(blogDataPath).filter(file => file.endsWith('.json'))
-    
-    const posts = files.map(file => {
-      const content = fs.readFileSync(path.join(blogDataPath, file), 'utf8')
-      return JSON.parse(content) as BlogPost
-    })
-    
-    // Sort by publish date, newest first
-    return posts.sort((a, b) => 
-      new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
-    )
+    // Sort posts by publishedAt date (newest first)
+    posts.sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime())
   } catch (error) {
-    console.error('Error loading blog posts:', error)
-    return []
+    console.error('Error reading blog posts:', error)
   }
-}
 
-// Enable ISR - revalidate every 60 seconds to pick up new blog posts
-export const revalidate = 60
+  // Calculate pagination
+  const totalPosts = posts.length
+  const totalPages = Math.ceil(totalPosts / postsPerPage)
+  const startIndex = (currentPage - 1) * postsPerPage
+  const endIndex = startIndex + postsPerPage
+  const currentPosts = posts.slice(startIndex, endIndex)
 
-export default async function BlogPage() {
-  const posts = await getBlogPosts()
+  // Generate page numbers
+  const pageNumbers = []
+  const maxVisiblePages = 5
+  let startPage = Math.max(1, currentPage - 2)
+  let endPage = Math.min(totalPages, startPage + maxVisiblePages - 1)
   
+  if (endPage - startPage < maxVisiblePages - 1) {
+    startPage = Math.max(1, endPage - maxVisiblePages + 1)
+  }
+  
+  for (let i = startPage; i <= endPage; i++) {
+    pageNumbers.push(i)
+  }
+
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="bg-gradient-to-b from-blue-50 to-white py-16 px-4">
+      <section className="bg-gradient-to-br from-blue-600 to-blue-800 text-white py-20 px-4">
         <div className="container-blog">
-          <div className="text-center max-w-3xl mx-auto">
-            <h1 className="text-5xl font-bold text-gray-900 mb-4">
-              Generative Engine Optimization Insights & Resources
-            </h1>
-            <p className="text-xl text-gray-600 leading-relaxed">
-              Stay ahead with the latest trends, strategies, and best practices in Generative Engine Optimization
-            </p>
-          </div>
+          <h1 className="text-5xl font-bold mb-6">GEO Insights & Updates</h1>
+          <p className="text-xl opacity-90 max-w-3xl">
+            Stay ahead of the curve with our latest research on Generative Engine Optimization, 
+            AI search strategies, and the future of content discovery.
+          </p>
         </div>
       </section>
-      
-      {/* Blog Posts */}
+
+      {/* Blog Grid */}
       <section className="py-16 px-4">
         <div className="container-blog">
           {posts.length === 0 ? (
-            <div className="text-center py-20">
-              <div className="max-w-md mx-auto">
-                <svg className="w-24 h-24 text-gray-300 mx-auto mb-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
-                </svg>
-                <p className="text-gray-500 mb-4 text-lg">No articles published yet</p>
-                <p className="text-gray-400 mb-8">Our AI-powered content system is preparing fresh insights. Check back soon!</p>
-                <Link href="/" className="text-blue-600 font-semibold hover:text-blue-700 transition">
-                  ← Back to Home
-                </Link>
-              </div>
+            <div className="text-center py-12">
+              <p className="text-gray-600 text-lg">No blog posts available yet. Check back soon!</p>
             </div>
           ) : (
             <>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {posts.map((post) => (
-                  <Link key={post.slug} href={`/${post.slug}`} className="group">
-                    <article className="article-card h-full flex flex-col">
-                      <div className="aspect-video bg-gradient-to-br from-blue-400 to-blue-600"></div>
-                      
-                      <div className="p-6 flex-grow flex flex-col">
-                        <div className="flex items-center gap-3 mb-3">
-                          {post.tags[0] && (
-                            <span className="badge badge-blue">{post.tags[0]}</span>
-                          )}
-                          <time className="text-sm text-gray-500">
-                            {new Date(post.publishedAt).toLocaleDateString('en-US', { 
-                              month: 'short', 
-                              day: 'numeric', 
-                              year: 'numeric' 
-                            })}
-                          </time>
-                        </div>
-                        
-                        <h2 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition">
-                          {post.title}
-                        </h2>
-                        
-                        <p className="text-gray-600 mb-4 line-clamp-3 flex-grow">
-                          {post.excerpt || post.description}
-                        </p>
-                        
-                        <div className="flex items-center justify-between pt-4 border-t border-gray-100">
-                          <span className="text-sm text-gray-500">
-                            {post.metrics.readingTime} min read
-                          </span>
-                          <span className="text-blue-600 font-semibold group-hover:text-blue-700 transition">
-                            Read More →
-                          </span>
-                        </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                {currentPosts.map((post) => (
+                  <article key={post.slug} className="blog-card">
+                    <div className="aspect-video bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg mb-4"></div>
+                    <div className="space-y-3">
+                      <div className="flex items-center gap-2 text-sm text-gray-600">
+                        <span>{post.author}</span>
+                        <span>•</span>
+                        <time>{new Date(post.publishedAt).toLocaleDateString('en-US', { 
+                          year: 'numeric',
+                          month: 'long',
+                          day: 'numeric'
+                        })}</time>
                       </div>
-                    </article>
-                  </Link>
+                      <h2 className="text-xl font-bold text-gray-900 hover:text-blue-600 transition">
+                        <Link href={`/${post.slug}`}>
+                          {post.title}
+                        </Link>
+                      </h2>
+                      <p className="text-gray-600 line-clamp-3">
+                        {post.description}
+                      </p>
+                      <div className="flex flex-wrap gap-2">
+                        {post.tags.slice(0, 3).map(tag => (
+                          <span key={tag} className="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full">
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </article>
                 ))}
               </div>
-              
-              {/* Pagination Placeholder */}
-              <div className="mt-12 flex justify-center">
-                <nav className="flex gap-2">
-                  <button className="px-4 py-2 bg-blue-600 text-white rounded-lg font-medium">
-                    1
-                  </button>
-                  <button className="px-4 py-2 bg-white text-gray-700 rounded-lg border border-gray-200 hover:bg-gray-50 transition font-medium">
-                    2
-                  </button>
-                  <button className="px-4 py-2 bg-white text-gray-700 rounded-lg border border-gray-200 hover:bg-gray-50 transition font-medium">
-                    3
-                  </button>
-                  <button className="px-4 py-2 bg-white text-gray-700 rounded-lg border border-gray-200 hover:bg-gray-50 transition font-medium">
-                    Next →
-                  </button>
-                </nav>
-              </div>
+
+              {/* Pagination */}
+              {totalPages > 1 && (
+                <div className="flex justify-center gap-2">
+                  {currentPage > 1 && (
+                    <Link
+                      href={`/blog?page=${currentPage - 1}`}
+                      className="px-4 py-2 bg-white text-gray-700 rounded-lg border border-gray-200 hover:bg-gray-50 transition font-medium"
+                    >
+                      ← Previous
+                    </Link>
+                  )}
+                  
+                  {pageNumbers.map(page => (
+                    <Link
+                      key={page}
+                      href={`/blog?page=${page}`}
+                      className={`px-4 py-2 rounded-lg font-medium transition ${
+                        page === currentPage
+                          ? 'bg-blue-600 text-white'
+                          : 'bg-white text-gray-700 border border-gray-200 hover:bg-gray-50'
+                      }`}
+                    >
+                      {page}
+                    </Link>
+                  ))}
+                  
+                  {currentPage < totalPages && (
+                    <Link
+                      href={`/blog?page=${currentPage + 1}`}
+                      className="px-4 py-2 bg-white text-gray-700 rounded-lg border border-gray-200 hover:bg-gray-50 transition font-medium"
+                    >
+                      Next →
+                    </Link>
+                  )}
+                </div>
+              )}
             </>
           )}
         </div>
@@ -152,24 +177,21 @@ export default async function BlogPage() {
         <div className="container-blog">
           <div className="max-w-2xl mx-auto text-center">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              Never Miss an Update
+              Stay Updated with GEO Insights
             </h2>
-            <p className="text-lg text-gray-600 mb-8">
-              Our AI-powered content system discovers and publishes new Generative Engine Optimization insights daily. Stay informed with the latest strategies and techniques.
+            <p className="text-gray-600 mb-8">
+              Get the latest GEO strategies, AI optimization techniques, and search engine updates delivered to your inbox.
             </p>
-            <div className="flex gap-4 justify-center">
-              <input 
-                type="email" 
-                placeholder="Enter your email" 
-                className="px-6 py-3 rounded-lg border border-gray-300 flex-1 max-w-sm focus:outline-none focus:border-blue-500 transition"
+            <form className="flex gap-4 max-w-md mx-auto">
+              <input
+                type="email"
+                placeholder="Enter your email"
+                className="flex-1 px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
-              <button className="px-8 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition">
+              <button className="px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition">
                 Subscribe
               </button>
-            </div>
-            <p className="text-sm text-gray-500 mt-4">
-              No spam, unsubscribe anytime. We respect your privacy.
-            </p>
+            </form>
           </div>
         </div>
       </section>

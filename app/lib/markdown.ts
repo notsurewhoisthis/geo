@@ -1,4 +1,5 @@
 import { marked } from 'marked'
+import { enhanceKeyTakeaways, enhanceFAQSections } from './markdown-enhancements'
 
 // Configure marked for better typography and SEO
 marked.setOptions({
@@ -21,7 +22,7 @@ export function parseMarkdown(content: string): string {
   const html = marked.parse(processedContent) as string
 
   // Post-process HTML for better typography and SEO
-  const processedHtml = html
+  let processedHtml = html
     // Headings with IDs and anchor links
     .replace(/<h([1-6])>(.*?)<\/h[1-6]>/g, (match, level, text) => {
       const id = text.toLowerCase().replace(/[^\w]+/g, '-')
@@ -67,6 +68,12 @@ export function parseMarkdown(content: string): string {
     .replace(/<img src="(.*?)" alt="(.*?)"(.*?)>/g, 
       '<figure class="my-8"><img src="$1" alt="$2" class="rounded-lg shadow-lg w-full" loading="lazy" /><figcaption class="text-center text-sm text-gray-600 mt-2">$2</figcaption></figure>')
 
+  // Enhance Key Takeaways sections
+  processedHtml = enhanceKeyTakeaways(processedHtml)
+  
+  // Enhance FAQ sections
+  processedHtml = enhanceFAQSections(processedHtml)
+
   return processedHtml
 }
 
@@ -111,6 +118,9 @@ export function extractTableOfContents(content: string): Array<{ id: string; tex
 
   return headings
 }
+
+// Re-export extraction functions from markdown-enhancements
+export { extractKeyTakeaways, extractFAQPairs } from './markdown-enhancements'
 
 export function estimateReadingTime(content: string): number {
   const wordsPerMinute = 200
