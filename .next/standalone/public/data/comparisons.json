@@ -1,0 +1,182 @@
+[
+  {
+    "slug": "geo-vs-keyword-research",
+    "title": "GEO vs Keyword Research",
+    "subtitle": "Topic Authority Building vs Keyword Research strategies comparison",
+    "geoTechnique": "Topic Authority Building",
+    "traditionalTechnique": "Keyword Research",
+    "category": "Content Strategy",
+    "difficulty": "Advanced",
+    "impact": "Medium",
+    "timeToResults": "2-4 weeks",
+    "comparison": {
+      "focus": {
+        "geo": "AI-powered topic authority building approach",
+        "traditional": "Traditional keyword research methodology"
+      },
+      "primaryGoal": {
+        "geo": "Optimize for AI platform visibility and recommendations",
+        "traditional": "Improve search engine rankings and organic traffic"
+      }
+    },
+    "advantages": {
+      "geo": [
+        "Future-proof strategy for AI-first search",
+        "Higher authority and trust signals",
+        "Better content quality and depth",
+        "Direct integration with AI training data"
+      ],
+      "traditional": [
+        "Established methodology and tools",
+        "Immediate traffic generation",
+        "Clear ROI measurement",
+        "Extensive professional ecosystem"
+      ]
+    },
+    "futureOutlook": "Topic Authority Building expected to dominate as AI becomes primary search method, while Keyword Research remains supplementary but declining."
+  },
+  {
+    "slug": "geo-vs-link-building",
+    "title": "GEO vs Link Building",
+    "subtitle": "Topic Authority Building vs Link Building strategies comparison",
+    "geoTechnique": "Topic Authority Building",
+    "traditionalTechnique": "Link Building",
+    "category": "Core Strategy",
+    "difficulty": "Beginner",
+    "impact": "Medium",
+    "timeToResults": "3-6 months",
+    "comparison": {
+      "focus": {
+        "geo": "AI-powered topic authority building approach",
+        "traditional": "Traditional link building methodology"
+      },
+      "primaryGoal": {
+        "geo": "Optimize for AI platform visibility and recommendations",
+        "traditional": "Improve search engine rankings and organic traffic"
+      }
+    },
+    "advantages": {
+      "geo": [
+        "Future-proof strategy for AI-first search",
+        "Higher authority and trust signals",
+        "Better content quality and depth",
+        "Direct integration with AI training data"
+      ],
+      "traditional": [
+        "Established methodology and tools",
+        "Immediate traffic generation",
+        "Clear ROI measurement",
+        "Extensive professional ecosystem"
+      ]
+    },
+    "futureOutlook": "Topic Authority Building expected to dominate as AI becomes primary search method, while Link Building remains supplementary but declining."
+  },
+  {
+    "slug": "geo-vs-content-marketing",
+    "title": "GEO vs Content Marketing",
+    "subtitle": "Topic Authority Building vs Content Marketing strategies comparison",
+    "geoTechnique": "Topic Authority Building",
+    "traditionalTechnique": "Content Marketing",
+    "category": "Content Strategy",
+    "difficulty": "Intermediate",
+    "impact": "Medium-High",
+    "timeToResults": "3-6 months",
+    "comparison": {
+      "focus": {
+        "geo": "AI-powered topic authority building approach",
+        "traditional": "Traditional content marketing methodology"
+      },
+      "primaryGoal": {
+        "geo": "Optimize for AI platform visibility and recommendations",
+        "traditional": "Improve search engine rankings and organic traffic"
+      }
+    },
+    "advantages": {
+      "geo": [
+        "Future-proof strategy for AI-first search",
+        "Higher authority and trust signals",
+        "Better content quality and depth",
+        "Direct integration with AI training data"
+      ],
+      "traditional": [
+        "Established methodology and tools",
+        "Immediate traffic generation",
+        "Clear ROI measurement",
+        "Extensive professional ecosystem"
+      ]
+    },
+    "futureOutlook": "Topic Authority Building expected to dominate as AI becomes primary search method, while Content Marketing remains supplementary but declining."
+  },
+  {
+    "slug": "geo-vs-technical-seo",
+    "title": "GEO vs Technical SEO",
+    "subtitle": "Topic Authority Building vs Technical SEO strategies comparison",
+    "geoTechnique": "Topic Authority Building",
+    "traditionalTechnique": "Technical SEO",
+    "category": "Content Strategy",
+    "difficulty": "Beginner",
+    "impact": "Medium",
+    "timeToResults": "2-4 weeks",
+    "comparison": {
+      "focus": {
+        "geo": "AI-powered topic authority building approach",
+        "traditional": "Traditional technical seo methodology"
+      },
+      "primaryGoal": {
+        "geo": "Optimize for AI platform visibility and recommendations",
+        "traditional": "Improve search engine rankings and organic traffic"
+      }
+    },
+    "advantages": {
+      "geo": [
+        "Future-proof strategy for AI-first search",
+        "Higher authority and trust signals",
+        "Better content quality and depth",
+        "Direct integration with AI training data"
+      ],
+      "traditional": [
+        "Established methodology and tools",
+        "Immediate traffic generation",
+        "Clear ROI measurement",
+        "Extensive professional ecosystem"
+      ]
+    },
+    "futureOutlook": "Topic Authority Building expected to dominate as AI becomes primary search method, while Technical SEO remains supplementary but declining."
+  },
+  {
+    "slug": "geo-vs-local-seo",
+    "title": "GEO vs Local SEO",
+    "subtitle": "Topic Authority Building vs Local SEO strategies comparison",
+    "geoTechnique": "Topic Authority Building",
+    "traditionalTechnique": "Local SEO",
+    "category": "Technical Strategy",
+    "difficulty": "Beginner",
+    "impact": "High",
+    "timeToResults": "3-6 months",
+    "comparison": {
+      "focus": {
+        "geo": "AI-powered topic authority building approach",
+        "traditional": "Traditional local seo methodology"
+      },
+      "primaryGoal": {
+        "geo": "Optimize for AI platform visibility and recommendations",
+        "traditional": "Improve search engine rankings and organic traffic"
+      }
+    },
+    "advantages": {
+      "geo": [
+        "Future-proof strategy for AI-first search",
+        "Higher authority and trust signals",
+        "Better content quality and depth",
+        "Direct integration with AI training data"
+      ],
+      "traditional": [
+        "Established methodology and tools",
+        "Immediate traffic generation",
+        "Clear ROI measurement",
+        "Extensive professional ecosystem"
+      ]
+    },
+    "futureOutlook": "Topic Authority Building expected to dominate as AI becomes primary search method, while Local SEO remains supplementary but declining."
+  }
+]

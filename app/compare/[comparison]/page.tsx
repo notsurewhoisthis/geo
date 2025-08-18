@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
+import Link from 'next/link'
 import { Breadcrumbs } from '@/app/components/Breadcrumbs'
 import { RelatedArticles } from '@/app/components/RelatedArticles'
 import fs from 'fs'
@@ -216,6 +217,64 @@ export default async function ComparisonPage({ params }: { params: Promise<{ com
     }
   }
 
+  // Get cross-references to industries and platforms
+  interface Industry {
+    slug: string
+    name: string
+    category: string
+    description: string
+    marketSize: string
+    aiAdoption: string
+  }
+
+  interface Platform {
+    slug: string
+    name: string
+    company: string
+    type: string
+    userBase: string
+    industries: string[]
+  }
+
+  // Load industries and platforms for cross-references
+  const getRelevantIndustries = async (): Promise<Industry[]> => {
+    try {
+      const industriesPath = path.join(process.cwd(), 'public', 'data', 'industries.json')
+      if (!fs.existsSync(industriesPath)) return []
+      
+      const content = fs.readFileSync(industriesPath, 'utf8')
+      const allIndustries = JSON.parse(content) as Industry[]
+      
+      // Return a selection of industries for all comparisons
+      return allIndustries.slice(0, 6)
+    } catch (error) {
+      console.error('Error loading industries:', error)
+      return []
+    }
+  }
+
+  const getTopPlatforms = async (): Promise<Platform[]> => {
+    try {
+      const platformsPath = path.join(process.cwd(), 'public', 'data', 'platforms.json')
+      if (!fs.existsSync(platformsPath)) return []
+      
+      const content = fs.readFileSync(platformsPath, 'utf8')
+      const allPlatforms = JSON.parse(content) as Platform[]
+      
+      // Return top platforms by name recognition
+      const topPlatforms = ['chatgpt', 'claude', 'perplexity', 'gemini', 'copilot']
+      return allPlatforms
+        .filter(platform => topPlatforms.includes(platform.slug.toLowerCase()))
+        .slice(0, 3)
+    } catch (error) {
+      console.error('Error loading platforms:', error)
+      return []
+    }
+  }
+
+  const relevantIndustries = await getRelevantIndustries()
+  const topPlatforms = await getTopPlatforms()
+  
   // Get related blog posts
   const allPosts = await getAllBlogPosts()
   const relatedPosts = allPosts
@@ -630,6 +689,76 @@ export default async function ComparisonPage({ params }: { params: Promise<{ com
                   </div>
                 </div>
               ) : null}
+            </div>
+          )}
+
+          {/* Industry Applications */}
+          {relevantIndustries.length > 0 && (
+            <div className="bg-white rounded-2xl shadow-lg p-8 mb-8">
+              <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">
+                Apply {comparison.title} in Different Industries
+              </h2>
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
+                {relevantIndustries.map((industry) => (
+                  <Link
+                    key={industry.slug}
+                    href={`/industries/${industry.slug}`}
+                    className="block bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-200 rounded-lg p-4 hover:shadow-lg transition group"
+                  >
+                    <h3 className="font-bold text-blue-900 group-hover:text-blue-700 mb-2">
+                      {industry.name}
+                    </h3>
+                    <div className="text-sm text-blue-700 mb-3">
+                      {industry.marketSize} market • {industry.aiAdoption} AI adoption
+                    </div>
+                    <p className="text-xs text-blue-600 line-clamp-2">
+                      {industry.description}
+                    </p>
+                  </Link>
+                ))}
+              </div>
+              <p className="text-center text-gray-600">
+                🎯 Each industry can benefit from different aspects of {comparison.title}. 
+                Explore industry-specific implementation guides.
+              </p>
+            </div>
+          )}
+
+          {/* Platform Implementation */}
+          {topPlatforms.length > 0 && (
+            <div className="bg-white rounded-2xl shadow-lg p-8 mb-8">
+              <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">
+                Implement {comparison.title} Across AI Platforms
+              </h2>
+              <div className="grid md:grid-cols-3 gap-6 mb-6">
+                {topPlatforms.map((platform) => (
+                  <Link
+                    key={platform.slug}
+                    href={`/platforms/${platform.slug}`}
+                    className="block bg-gradient-to-br from-purple-50 to-pink-50 border border-purple-200 rounded-lg p-6 hover:shadow-lg transition group"
+                  >
+                    <div className="flex items-center gap-3 mb-3">
+                      <span className="text-2xl">🤖</span>
+                      <div>
+                        <h3 className="font-bold text-purple-900 group-hover:text-purple-700">
+                          {platform.name}
+                        </h3>
+                        <p className="text-purple-700 text-sm">{platform.company}</p>
+                      </div>
+                    </div>
+                    <p className="text-purple-800 text-sm mb-3">
+                      {platform.userBase} users • {platform.type}
+                    </p>
+                    <div className="text-xs text-purple-600">
+                      Top industries: {platform.industries.slice(0, 2).join(', ')}
+                    </div>
+                  </Link>
+                ))}
+              </div>
+              <p className="text-center text-gray-600">
+                🚀 Each AI platform has unique optimization requirements. 
+                Learn platform-specific strategies for maximum impact.
+              </p>
             </div>
           )}
 

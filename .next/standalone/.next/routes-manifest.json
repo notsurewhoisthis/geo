@@ -20,6 +20,30 @@
   },
   "dynamicRoutes": [
     {
+      "page": "/compare/[comparison]",
+      "regex": "^/compare/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPcomparison": "nxtPcomparison"
+      },
+      "namedRegex": "^/compare/(?<nxtPcomparison>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/industries/[industry]",
+      "regex": "^/industries/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPindustry": "nxtPindustry"
+      },
+      "namedRegex": "^/industries/(?<nxtPindustry>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/platforms/[platform]",
+      "regex": "^/platforms/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPplatform": "nxtPplatform"
+      },
+      "namedRegex": "^/platforms/(?<nxtPplatform>[^/]+?)(?:/)?$"
+    },
+    {
       "page": "/[slug]",
       "regex": "^/([^/]+?)(?:/)?$",
       "routeKeys": {
@@ -48,10 +72,34 @@
       "namedRegex": "^/about(?:/)?$"
     },
     {
+      "page": "/authors",
+      "regex": "^/authors(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/authors(?:/)?$"
+    },
+    {
       "page": "/blog",
       "regex": "^/blog(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/blog(?:/)?$"
+    },
+    {
+      "page": "/entities",
+      "regex": "^/entities(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/entities(?:/)?$"
+    },
+    {
+      "page": "/entities/chatgpt-optimization",
+      "regex": "^/entities/chatgpt\\-optimization(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/entities/chatgpt\\-optimization(?:/)?$"
+    },
+    {
+      "page": "/entities/generative-engine-optimization",
+      "regex": "^/entities/generative\\-engine\\-optimization(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/entities/generative\\-engine\\-optimization(?:/)?$"
     },
     {
       "page": "/feed.xml",
@@ -118,6 +166,24 @@
       "regex": "^/tools/keyword\\-research(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/tools/keyword\\-research(?:/)?$"
+    },
+    {
+      "page": "/tools/meta-tag-generator",
+      "regex": "^/tools/meta\\-tag\\-generator(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/tools/meta\\-tag\\-generator(?:/)?$"
+    },
+    {
+      "page": "/tools/schema-validator",
+      "regex": "^/tools/schema\\-validator(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/tools/schema\\-validator(?:/)?$"
+    },
+    {
+      "page": "/tools/serp-preview",
+      "regex": "^/tools/serp\\-preview(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/tools/serp\\-preview(?:/)?$"
     },
     {
       "page": "/tools/visibility-tracker",

@@ -3,6 +3,39 @@ import type { Metadata } from 'next'
 import fs from 'fs'
 import path from 'path'
 
+interface Industry {
+  slug: string
+  name: string
+  category: string
+  description: string
+  marketSize: string
+  growth: string
+  aiAdoption: string
+}
+
+interface Platform {
+  slug: string
+  name: string
+  company: string
+  type: string
+  userBase: string
+  description?: string
+  primaryUse?: string
+  industries: string[]
+}
+
+interface Comparison {
+  slug: string
+  title: string
+  subtitle: string
+  category: string
+  difficulty: string
+  impact: string
+  geoTechnique: string
+  traditionalTechnique: string
+  timeToResults: string
+}
+
 export const metadata: Metadata = {
   title: 'GEO - Generative Engine Optimization | Master AI-Powered Search',
   description: 'Learn Generative Engine Optimization (GEO) to boost your AI visibility by 40%. Optimize for ChatGPT, Claude, Perplexity, and other AI search engines with proven strategies.',
@@ -36,6 +69,85 @@ export default async function Home() {
   
   // Get the 3 most recent posts
   const recentPosts = latestPosts.slice(0, 3)
+
+  // Load programmatic content data
+  const getPopularIndustries = async (): Promise<Industry[]> => {
+    try {
+      const industriesPath = path.join(process.cwd(), 'public', 'data', 'industries.json')
+      if (!fs.existsSync(industriesPath)) return []
+      
+      const content = fs.readFileSync(industriesPath, 'utf8')
+      const allIndustries = JSON.parse(content) as Industry[]
+      
+      // Sort by market size and get top 8
+      return allIndustries
+        .sort((a, b) => {
+          const aSizeNumber = parseFloat(a.marketSize.replace(/[^0-9.]/g, ''))
+          const bSizeNumber = parseFloat(b.marketSize.replace(/[^0-9.]/g, ''))
+          return bSizeNumber - aSizeNumber
+        })
+        .slice(0, 8)
+    } catch (error) {
+      console.error('Error loading industries:', error)
+      return []
+    }
+  }
+
+  const getTopPlatforms = async (): Promise<Platform[]> => {
+    try {
+      const platformsPath = path.join(process.cwd(), 'public', 'data', 'platforms.json')
+      if (!fs.existsSync(platformsPath)) return []
+      
+      const content = fs.readFileSync(platformsPath, 'utf8')
+      const allPlatforms = JSON.parse(content) as Platform[]
+      
+      // Get well-known platforms by filtering specific slugs
+      const topSlugs = ['chatgpt', 'claude', 'perplexity', 'gemini', 'copilot', 'bing-chat']
+      const topPlatforms = allPlatforms.filter(platform => 
+        topSlugs.some(slug => platform.slug.includes(slug)) ||
+        ['ChatGPT', 'Claude', 'Perplexity', 'Gemini', 'Copilot', 'Bing'].some(name => 
+          platform.name.includes(name)
+        )
+      )
+      
+      // If we don't have enough known platforms, get the ones with largest user bases
+      if (topPlatforms.length < 6) {
+        const remainingPlatforms = allPlatforms
+          .filter(platform => !topPlatforms.includes(platform))
+          .sort((a, b) => {
+            const aUsers = parseFloat(a.userBase.replace(/[^0-9.]/g, ''))
+            const bUsers = parseFloat(b.userBase.replace(/[^0-9.]/g, ''))
+            return bUsers - aUsers
+          })
+        
+        topPlatforms.push(...remainingPlatforms.slice(0, 6 - topPlatforms.length))
+      }
+      
+      return topPlatforms.slice(0, 6)
+    } catch (error) {
+      console.error('Error loading platforms:', error)
+      return []
+    }
+  }
+
+  const getComparisons = async (): Promise<Comparison[]> => {
+    try {
+      const comparisonsPath = path.join(process.cwd(), 'public', 'data', 'comparisons.json')
+      if (!fs.existsSync(comparisonsPath)) return []
+      
+      const content = fs.readFileSync(comparisonsPath, 'utf8')
+      return JSON.parse(content) as Comparison[]
+    } catch (error) {
+      console.error('Error loading comparisons:', error)
+      return []
+    }
+  }
+
+  const [popularIndustries, topPlatforms, comparisons] = await Promise.all([
+    getPopularIndustries(),
+    getTopPlatforms(), 
+    getComparisons()
+  ])
   
   const comparisonData = [
     { 
@@ -600,6 +712,265 @@ export default async function Home() {
             </div>
           </div>
         </section>
+
+        {/* Popular Industries Section */}
+        {popularIndustries.length > 0 && (
+          <section className="py-20 px-4 bg-gradient-to-b from-gray-50 to-white">
+            <div className="container-blog">
+              <div className="text-center mb-16">
+                <h2 className="section-title text-gray-900 mb-4">
+                  Industry-Specific GEO Strategies
+                </h2>
+                <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                  Discover how leading industries optimize for AI platforms. Get tailored strategies for your sector.
+                </p>
+                <div className="mt-6">
+                  <span className="inline-flex items-center px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-semibold">
+                    📊 560+ Industry Guides Available
+                  </span>
+                </div>
+              </div>
+              
+              <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+                {popularIndustries.map((industry) => (
+                  <Link
+                    key={industry.slug}
+                    href={`/industries/${industry.slug}`}
+                    className="group block bg-white rounded-xl shadow-md p-6 hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-blue-200"
+                  >
+                    <div className="flex items-center justify-between mb-4">
+                      <div className="text-2xl">🏢</div>
+                      <div className="text-right">
+                        <div className="text-lg font-bold text-green-600">{industry.marketSize}</div>
+                        <div className="text-xs text-gray-500">Market Size</div>
+                      </div>
+                    </div>
+                    
+                    <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition line-clamp-2">
+                      {industry.name}
+                    </h3>
+                    
+                    <div className="flex items-center justify-between mb-3 text-sm">
+                      <span className="bg-gray-100 text-gray-700 px-2 py-1 rounded">{industry.category}</span>
+                      <span className="text-blue-600 font-semibold">{industry.growth} growth</span>
+                    </div>
+                    
+                    <p className="text-gray-600 text-sm mb-4 line-clamp-2">
+                      {industry.description}
+                    </p>
+                    
+                    <div className="flex items-center justify-between">
+                      <span className="text-purple-600 text-xs font-semibold">
+                        {industry.aiAdoption} AI adoption
+                      </span>
+                      <span className="text-blue-600 font-medium text-sm group-hover:text-blue-700">
+                        Learn More →
+                      </span>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+              
+              <div className="text-center">
+                <Link 
+                  href="/industries" 
+                  className="inline-flex items-center px-8 py-4 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition"
+                >
+                  <span>View All 560+ Industries</span>
+                  <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </Link>
+              </div>
+            </div>
+          </section>
+        )}
+
+        {/* Top AI Platforms Section */}
+        {topPlatforms.length > 0 && (
+          <section className="py-20 px-4 bg-gradient-to-br from-purple-50 via-indigo-50 to-blue-50">
+            <div className="container-blog">
+              <div className="text-center mb-16">
+                <h2 className="section-title text-gray-900 mb-4">
+                  Master Every AI Platform
+                </h2>
+                <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                  Platform-specific optimization strategies for maximum AI visibility. Each guide includes metrics, 
+                  best practices, and proven techniques.
+                </p>
+                <div className="mt-6">
+                  <span className="inline-flex items-center px-4 py-2 bg-purple-100 text-purple-800 rounded-full text-sm font-semibold">
+                    🤖 103+ AI Platform Guides
+                  </span>
+                </div>
+              </div>
+              
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                {topPlatforms.map((platform) => (
+                  <Link
+                    key={platform.slug}
+                    href={`/platforms/${platform.slug}`}
+                    className="group block bg-white rounded-xl shadow-lg p-8 hover:shadow-2xl transition-all duration-300 border border-purple-100 hover:border-purple-300 hover:-translate-y-1"
+                  >
+                    <div className="flex items-center justify-between mb-6">
+                      <div className="text-3xl">🤖</div>
+                      <div className="text-right">
+                        <div className="text-sm font-semibold text-purple-600">{platform.company}</div>
+                        <div className="text-xs text-gray-500">{platform.type}</div>
+                      </div>
+                    </div>
+                    
+                    <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-purple-600 transition">
+                      {platform.name}
+                    </h3>
+                    
+                    <p className="text-gray-600 text-sm mb-4 line-clamp-2">
+                      {platform.description || `Optimize your content for ${platform.name} with proven GEO strategies`}
+                    </p>
+                    
+                    <div className="space-y-3 mb-6">
+                      <div className="flex justify-between items-center">
+                        <span className="text-gray-500 text-sm">Users:</span>
+                        <span className="font-bold text-gray-900">{platform.userBase}+</span>
+                      </div>
+                      <div className="flex justify-between items-center">
+                        <span className="text-gray-500 text-sm">Primary Use:</span>
+                        <span className="text-sm text-gray-700 capitalize">{platform.primaryUse?.split(' ').slice(0, 2).join(' ') || platform.type}</span>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-center justify-between">
+                      <span className="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full font-medium">
+                        {platform.industries?.length || 0} Industries
+                      </span>
+                      <span className="text-purple-600 font-semibold group-hover:text-purple-700 transition">
+                        Optimize →
+                      </span>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+              
+              <div className="text-center">
+                <Link 
+                  href="/platforms" 
+                  className="inline-flex items-center px-8 py-4 bg-purple-600 text-white font-semibold rounded-lg hover:bg-purple-700 transition"
+                >
+                  <span>Explore All 103+ Platforms</span>
+                  <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </Link>
+              </div>
+            </div>
+          </section>
+        )}
+
+        {/* Strategy Comparisons Section */}
+        {comparisons.length > 0 && (
+          <section className="py-20 px-4 bg-gradient-to-b from-white to-orange-50">
+            <div className="container-blog">
+              <div className="text-center mb-16">
+                <h2 className="section-title text-gray-900 mb-4">
+                  GEO vs Traditional SEO
+                </h2>
+                <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                  Make informed decisions with detailed comparisons between GEO and traditional optimization strategies. 
+                  Understand when and why to choose each approach.
+                </p>
+                <div className="mt-6">
+                  <span className="inline-flex items-center px-4 py-2 bg-orange-100 text-orange-800 rounded-full text-sm font-semibold">
+                    ⚡ 5 Essential Comparisons
+                  </span>
+                </div>
+              </div>
+              
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+                {comparisons.slice(0, 3).map((comparison) => (
+                  <Link
+                    key={comparison.slug}
+                    href={`/compare/${comparison.slug}`}
+                    className="group block bg-white rounded-xl shadow-md p-6 hover:shadow-xl transition-all duration-300 border border-orange-100 hover:border-orange-300"
+                  >
+                    <div className="flex items-start justify-between mb-4">
+                      <div className="text-2xl">⚡</div>
+                      <div className="flex gap-2">
+                        <span className={`text-xs px-2 py-1 rounded font-medium ${
+                          comparison.difficulty === 'Beginner' ? 'bg-green-100 text-green-700' :
+                          comparison.difficulty === 'Intermediate' ? 'bg-yellow-100 text-yellow-700' :
+                          'bg-red-100 text-red-700'
+                        }`}>
+                          {comparison.difficulty}
+                        </span>
+                        <span className={`text-xs px-2 py-1 rounded font-medium ${
+                          comparison.impact === 'High' ? 'bg-purple-100 text-purple-700' :
+                          comparison.impact === 'Medium-High' ? 'bg-blue-100 text-blue-700' :
+                          'bg-gray-100 text-gray-700'
+                        }`}>
+                          {comparison.impact} Impact
+                        </span>
+                      </div>
+                    </div>
+                    
+                    <h3 className="text-lg font-bold text-gray-900 mb-3 group-hover:text-orange-600 transition">
+                      {comparison.title}
+                    </h3>
+                    
+                    <p className="text-gray-600 text-sm mb-4 line-clamp-2">
+                      {comparison.subtitle}
+                    </p>
+                    
+                    <div className="space-y-2 mb-4">
+                      <div className="flex items-center justify-between text-xs">
+                        <span className="text-indigo-600 font-medium">🚀 {comparison.geoTechnique}</span>
+                        <span className="text-gray-500">vs</span>
+                        <span className="text-orange-600 font-medium">🎯 {comparison.traditionalTechnique}</span>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-center justify-between">
+                      <span className="text-gray-500 text-xs">
+                        Results in {comparison.timeToResults}
+                      </span>
+                      <span className="text-orange-600 font-semibold group-hover:text-orange-700 transition">
+                        Compare →
+                      </span>
+                    </div>
+                  </Link>
+                ))}
+                
+                {/* Show remaining comparisons as smaller items */}
+                {comparisons.slice(3).map((comparison) => (
+                  <Link
+                    key={comparison.slug}
+                    href={`/compare/${comparison.slug}`}
+                    className="group block bg-orange-50 rounded-lg p-4 hover:bg-orange-100 transition border border-orange-200"
+                  >
+                    <h4 className="font-bold text-gray-900 mb-2 group-hover:text-orange-600 transition text-sm">
+                      {comparison.title}
+                    </h4>
+                    <div className="flex items-center justify-between">
+                      <span className="text-xs text-gray-600">{comparison.difficulty} • {comparison.impact}</span>
+                      <span className="text-orange-600 text-xs font-medium">Compare →</span>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+              
+              <div className="text-center">
+                <Link 
+                  href="/compare" 
+                  className="inline-flex items-center px-8 py-4 bg-orange-600 text-white font-semibold rounded-lg hover:bg-orange-700 transition"
+                >
+                  <span>View All Strategy Comparisons</span>
+                  <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </Link>
+              </div>
+            </div>
+          </section>
+        )}
 
         {/* Tools & Resources */}
         <section className="py-20 px-4">

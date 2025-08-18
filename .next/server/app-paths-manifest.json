@@ -1,23 +1,6 @@
 {
-  "/_not-found/page": "app/_not-found/page.js",
-  "/api/geo-audit/route": "app/api/geo-audit/route.js",
-  "/api/geo/tips/route": "app/api/geo/tips/route.js",
-  "/api/keywords/route": "app/api/keywords/route.js",
-  "/api/visibility-tracker/route": "app/api/visibility-tracker/route.js",
-  "/sitemap.xml/route": "app/sitemap.xml/route.js",
-  "/news-sitemap.xml/route": "app/news-sitemap.xml/route.js",
-  "/feed.xml/route": "app/feed.xml/route.js",
-  "/about/page": "app/about/page.js",
-  "/blog/page": "app/blog/page.js",
-  "/[slug]/page": "app/[slug]/page.js",
-  "/glossary/page": "app/glossary/page.js",
-  "/resources/page": "app/resources/page.js",
-  "/guide/page": "app/guide/page.js",
   "/page": "app/page.js",
-  "/tools/page": "app/tools/page.js",
-  "/tech-view/page": "app/tech-view/page.js",
-  "/tools/geo-audit/page": "app/tools/geo-audit/page.js",
-  "/tools/content-optimizer/page": "app/tools/content-optimizer/page.js",
-  "/tools/keyword-research/page": "app/tools/keyword-research/page.js",
-  "/tools/visibility-tracker/page": "app/tools/visibility-tracker/page.js"
+  "/industries/[industry]/page": "app/industries/[industry]/page.js",
+  "/compare/[comparison]/page": "app/compare/[comparison]/page.js",
+  "/platforms/[platform]/page": "app/platforms/[platform]/page.js"
 }

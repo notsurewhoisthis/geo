@@ -62,6 +62,69 @@ async function getAllIndustries(): Promise<Industry[]> {
   }
 }
 
+interface Platform {
+  slug: string
+  name: string
+  company: string
+  type: string
+  userBase: string
+  primaryUse: string
+  industries: string[]
+}
+
+interface Comparison {
+  slug: string
+  title: string
+  subtitle: string
+  category: string
+  difficulty: string
+  impact: string
+}
+
+async function getRelevantPlatforms(industry: Industry): Promise<Platform[]> {
+  try {
+    const platformsPath = path.join(process.cwd(), 'public', 'data', 'platforms.json')
+    if (!fs.existsSync(platformsPath)) {
+      return []
+    }
+    
+    const content = fs.readFileSync(platformsPath, 'utf8')
+    const allPlatforms = JSON.parse(content) as Platform[]
+    
+    // Find platforms that serve this industry or related keywords
+    return allPlatforms
+      .filter(platform => 
+        platform.industries.some(ind => 
+          ind.toLowerCase().includes(industry.category.toLowerCase()) ||
+          ind.toLowerCase().includes(industry.name.toLowerCase().split(' ')[0]) ||
+          industry.name.toLowerCase().includes(ind.toLowerCase())
+        )
+      )
+      .slice(0, 3) // Show top 3 most relevant
+  } catch (error) {
+    console.error('Error loading platforms:', error)
+    return []
+  }
+}
+
+async function getRelevantComparisons(industry: Industry): Promise<Comparison[]> {
+  try {
+    const comparisonsPath = path.join(process.cwd(), 'public', 'data', 'comparisons.json')
+    if (!fs.existsSync(comparisonsPath)) {
+      return []
+    }
+    
+    const content = fs.readFileSync(comparisonsPath, 'utf8')
+    const allComparisons = JSON.parse(content) as Comparison[]
+    
+    // Return all comparisons as they're relevant to all industries
+    return allComparisons.slice(0, 2) // Show top 2 comparisons
+  } catch (error) {
+    console.error('Error loading comparisons:', error)
+    return []
+  }
+}
+
 export async function generateStaticParams() {
   const industries = await getAllIndustries()
   return industries.map((industry) => ({
@@ -152,6 +215,10 @@ export default async function IndustryPage({
   const relatedIndustries = allIndustries
     .filter(ind => ind.slug !== industry.slug && ind.category === industry.category)
     .slice(0, 3)
+    
+  // Get cross-references to platforms and comparisons
+  const relevantPlatforms = await getRelevantPlatforms(industry)
+  const relevantComparisons = await getRelevantComparisons(industry)
 
   const breadcrumbItems = [
     { name: 'Home', href: '/' },
@@ -409,6 +476,91 @@ export default async function IndustryPage({
               ))}
             </div>
           </section>
+
+          {/* Recommended AI Platforms */}
+          {relevantPlatforms.length > 0 && (
+            <section className="mb-16">
+              <h2 className="text-3xl font-bold text-gray-900 mb-8">
+                Recommended AI Platforms for {industry.name}
+              </h2>
+              <div className="grid md:grid-cols-3 gap-6 mb-6">
+                {relevantPlatforms.map((platform) => (
+                  <Link
+                    key={platform.slug}
+                    href={`/platforms/${platform.slug}`}
+                    className="block bg-gradient-to-br from-purple-50 to-indigo-50 border border-purple-200 rounded-lg p-6 hover:shadow-lg transition group"
+                  >
+                    <div className="flex items-center gap-3 mb-3">
+                      <span className="text-2xl">🤖</span>
+                      <div>
+                        <h3 className="text-xl font-bold text-purple-900 group-hover:text-purple-700">
+                          {platform.name}
+                        </h3>
+                        <p className="text-purple-700 text-sm">{platform.company}</p>
+                      </div>
+                    </div>
+                    <p className="text-purple-800 text-sm mb-4">
+                      {platform.primaryUse} • {platform.userBase} users
+                    </p>
+                    <div className="flex justify-between items-center">
+                      <span className="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded">
+                        {platform.type}
+                      </span>
+                      <span className="text-purple-600 font-medium text-sm">Optimize →</span>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+              <p className="text-gray-600 text-center">
+                💡 These AI platforms are most effective for {industry.name.toLowerCase()} businesses. 
+                Optimize your content for these platforms to maximize AI visibility.
+              </p>
+            </section>
+          )}
+          
+          {/* Relevant GEO Comparisons */}
+          {relevantComparisons.length > 0 && (
+            <section className="mb-16">
+              <h2 className="text-3xl font-bold text-gray-900 mb-8">
+                GEO Strategy Comparisons for {industry.name}
+              </h2>
+              <div className="grid md:grid-cols-2 gap-6 mb-6">
+                {relevantComparisons.map((comparison) => (
+                  <Link
+                    key={comparison.slug}
+                    href={`/compare/${comparison.slug}`}
+                    className="block bg-gradient-to-br from-orange-50 to-red-50 border border-orange-200 rounded-lg p-6 hover:shadow-lg transition group"
+                  >
+                    <div className="flex items-start gap-3 mb-4">
+                      <span className="text-2xl">⚡</span>
+                      <div>
+                        <h3 className="text-xl font-bold text-orange-900 group-hover:text-orange-700 mb-2">
+                          {comparison.title}
+                        </h3>
+                        <p className="text-orange-800 text-sm mb-3">
+                          {comparison.subtitle}
+                        </p>
+                      </div>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <div className="flex gap-2">
+                        <span className="bg-orange-100 text-orange-800 text-xs px-2 py-1 rounded">
+                          {comparison.difficulty}
+                        </span>
+                        <span className="bg-red-100 text-red-800 text-xs px-2 py-1 rounded">
+                          {comparison.impact} Impact
+                        </span>
+                      </div>
+                      <span className="text-orange-600 font-medium text-sm">Compare →</span>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+              <p className="text-gray-600 text-center">
+                🎯 Compare different GEO strategies to find the best approach for your {industry.name.toLowerCase()} business.
+              </p>
+            </section>
+          )}
 
           {/* Related Industries */}
           {relatedIndustries.length > 0 && (

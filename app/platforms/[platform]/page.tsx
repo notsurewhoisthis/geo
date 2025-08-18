@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
+import Link from 'next/link'
 import { Breadcrumbs } from '@/app/components/Breadcrumbs'
 import { RelatedArticles } from '@/app/components/RelatedArticles'
 import fs from 'fs'
@@ -86,6 +87,65 @@ async function getAllBlogPosts(): Promise<BlogPost[]> {
   }
 }
 
+interface Industry {
+  slug: string
+  name: string
+  category: string
+  description: string
+  marketSize: string
+  aiAdoption: string
+}
+
+interface Comparison {
+  slug: string
+  title: string
+  subtitle: string
+  category: string
+  difficulty: string
+  impact: string
+}
+
+async function getRelevantIndustries(platform: Platform): Promise<Industry[]> {
+  try {
+    const industriesPath = path.join(process.cwd(), 'public', 'data', 'industries.json')
+    if (!fs.existsSync(industriesPath)) {
+      return []
+    }
+    
+    const content = fs.readFileSync(industriesPath, 'utf8')
+    const allIndustries = JSON.parse(content) as Industry[]
+    
+    // Find industries that match platform's target industries
+    return allIndustries
+      .filter(industry => 
+        platform.industries.some(platformInd => 
+          industry.name.toLowerCase().includes(platformInd.toLowerCase()) ||
+          industry.category.toLowerCase().includes(platformInd.toLowerCase()) ||
+          platformInd.toLowerCase().includes(industry.category.toLowerCase())
+        )
+      )
+      .slice(0, 4) // Show top 4 most relevant
+  } catch (error) {
+    console.error('Error loading industries:', error)
+    return []
+  }
+}
+
+async function getAllComparisons(): Promise<Comparison[]> {
+  try {
+    const comparisonsPath = path.join(process.cwd(), 'public', 'data', 'comparisons.json')
+    if (!fs.existsSync(comparisonsPath)) {
+      return []
+    }
+    
+    const content = fs.readFileSync(comparisonsPath, 'utf8')
+    return JSON.parse(content) as Comparison[]
+  } catch (error) {
+    console.error('Error loading comparisons:', error)
+    return []
+  }
+}
+
 export async function generateStaticParams() {
   const platforms = await getAllPlatforms()
   return platforms.map((platform) => ({
@@ -166,6 +226,10 @@ export default async function PlatformPage({ params }: { params: Promise<{ platf
      platform.geoOptimization.authorityWeight) / 5
   )
 
+  // Get cross-references to industries and comparisons
+  const relevantIndustries = await getRelevantIndustries(platform)
+  const allComparisons = await getAllComparisons()
+  
   // Get related blog posts
   const allPosts = await getAllBlogPosts()
   const relatedPosts = allPosts
@@ -540,6 +604,60 @@ export default async function PlatformPage({ params }: { params: Promise<{ platf
                   </div>
                 </div>
               </div>
+
+              {/* Related Industries */}
+              {relevantIndustries.length > 0 && (
+                <div className="bg-white rounded-2xl shadow-lg p-6">
+                  <h3 className="text-xl font-bold text-gray-900 mb-4">Top Industries for {platform.name}</h3>
+                  <div className="space-y-3">
+                    {relevantIndustries.slice(0, 3).map((industry) => (
+                      <Link 
+                        key={industry.slug}
+                        href={`/industries/${industry.slug}`} 
+                        className="block p-3 bg-indigo-50 rounded-lg hover:bg-indigo-100 transition border border-indigo-100"
+                      >
+                        <div className="font-semibold text-indigo-900">{industry.name}</div>
+                        <div className="text-sm text-indigo-700">{industry.marketSize} market • {industry.aiAdoption} AI adoption</div>
+                      </Link>
+                    ))}
+                  </div>
+                  {relevantIndustries.length > 3 && (
+                    <Link 
+                      href="/industries" 
+                      className="block mt-3 text-center text-indigo-600 hover:text-indigo-700 font-medium text-sm"
+                    >
+                      View all {relevantIndustries.length} relevant industries →
+                    </Link>
+                  )}
+                </div>
+              )}
+              
+              {/* GEO Strategy Comparisons */}
+              {allComparisons.length > 0 && (
+                <div className="bg-white rounded-2xl shadow-lg p-6">
+                  <h3 className="text-xl font-bold text-gray-900 mb-4">Strategy Comparisons</h3>
+                  <div className="space-y-3">
+                    {allComparisons.slice(0, 2).map((comparison) => (
+                      <Link 
+                        key={comparison.slug}
+                        href={`/compare/${comparison.slug}`} 
+                        className="block p-3 bg-orange-50 rounded-lg hover:bg-orange-100 transition border border-orange-100"
+                      >
+                        <div className="font-semibold text-orange-900">{comparison.title}</div>
+                        <div className="text-sm text-orange-700">{comparison.difficulty} • {comparison.impact} impact</div>
+                      </Link>
+                    ))}
+                  </div>
+                  {allComparisons.length > 2 && (
+                    <Link 
+                      href="/compare" 
+                      className="block mt-3 text-center text-orange-600 hover:text-orange-700 font-medium text-sm"
+                    >
+                      View all comparisons →
+                    </Link>
+                  )}
+                </div>
+              )}
 
               {/* Related Platforms */}
               <div className="bg-white rounded-2xl shadow-lg p-6">
