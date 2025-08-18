@@ -40,6 +40,52 @@ curl -s https://www.generative-engine.org/_next/static/css/[hash].css | head -c 
 - ✅ Always copy static files in build script
 - ✅ Always test CSS loading in production after deployment
 
+## 📝 Blog System Architecture & n8n Integration
+
+### How Blog Posts Work
+1. **n8n pushes blog posts** directly to Heroku as JSON files in `/public/blog-data/`
+2. **Next.js reads these files** at build time and generates static pages
+3. **ISR (Incremental Static Regeneration)** with 60-second revalidation allows new posts to appear
+
+### Content Format Types
+Blog posts can have two content formats:
+- **Markdown content**: New posts from n8n (processed through markdown processor)
+- **HTML content**: Legacy posts with direct HTML (bypasses markdown processing)
+
+### Markdown Processing Pipeline
+Located in `/app/lib/markdown.ts`:
+1. **Removes duplicate H1**: Strips the first H1 heading to prevent title duplication
+2. **Applies SEO optimizations**: 
+   - Adds heading anchors with IDs
+   - Improves typography (smart quotes, em dashes)
+   - Adds proper spacing and formatting
+3. **Extracts Table of Contents**: Generates TOC from headings (skipping first H1)
+
+### Critical Fix (Aug 18, 2025)
+**Problem**: Blog posts pushed by n8n weren't getting markdown formatting applied
+**Solution**: Fixed markdown processor to:
+- Remove duplicate H1 headings (`processedContent.replace(/^#\s+.*\n+/, '')`)
+- Apply SEO-optimized HTML formatting to all markdown content
+- Ensure TOC extraction skips the first H1
+
+### Testing Blog Posts Locally
+```bash
+# Start dev server
+npm run dev
+
+# Test specific blog post
+curl -s http://localhost:3000/[slug] | grep -c '<h1 class="text-4xl'  # Should be 1
+
+# Check if markdown processing is working
+curl -s http://localhost:3000/[slug] | grep -o '<h2[^>]*>.*</h2>' | head -3
+```
+
+### Deployment Checklist for Blog Changes
+1. **Build locally first**: `npm run build`
+2. **Test markdown processing**: Check H1 count and heading formatting
+3. **Deploy to Heroku**: `git push heroku main`
+4. **Verify in production**: Check live blog posts for proper formatting
+
 You are an orchestrator, not an implementer. Your role is to instantly route tasks to specialized agents.
 Immediate Routing Rules
 

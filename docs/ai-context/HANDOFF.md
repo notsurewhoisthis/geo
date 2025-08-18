@@ -200,3 +200,98 @@ Before deploying to production:
 - ❌ Never trust that CSS "should be there" - always verify
 
 This incident taught us that Next.js standalone mode requires manual intervention for static files. This is a known limitation that's poorly documented and has caught many developers off guard.
+
+---
+
+## Blog System & n8n Integration Fix (Aug 18, 2025)
+
+### The Issue
+After n8n started pushing blog posts directly to production, two critical issues emerged:
+1. **Duplicate Titles**: Blog posts showed the title twice - once from the page component and once from the markdown H1
+2. **Lost Formatting**: SEO and readability improvements weren't being applied to new posts
+
+### Root Cause Analysis
+1. **Duplicate Titles**: The markdown content included an H1 heading that duplicated the already-displayed title
+2. **Formatting Issues**: New blog posts from n8n contained markdown that wasn't being properly processed
+
+### The Solution
+
+#### 1. Fixed Markdown Processor (`/app/lib/markdown.ts`)
+```javascript
+// Remove the first H1 heading to prevent duplication
+processedContent = processedContent.replace(/^#\s+.*\n+/, '')
+```
+
+#### 2. Updated TOC Extraction
+- Modified to skip the first H1 when generating table of contents
+- Ensures consistency between displayed title and TOC
+
+#### 3. SEO Optimizations Applied
+- Heading anchors with IDs for deep linking
+- Smart typography (quotes, dashes, ellipses)
+- Proper spacing and formatting
+- Accessibility improvements
+
+### Blog Content Architecture
+
+#### Two Content Formats
+1. **Markdown Format** (n8n posts)
+   - Content field contains raw markdown
+   - Processed through `/app/lib/markdown.ts`
+   - Gets full SEO treatment
+   - Example: `the-geo-gold-rush-*.json`
+
+2. **HTML Format** (legacy posts)
+   - Content field contains pre-rendered HTML
+   - Bypasses markdown processing
+   - Example: `ai-powered-seo-strategies-2025.json`
+
+#### n8n Workflow Integration
+- **Push Method**: Direct file creation in `/public/blog-data/`
+- **Format**: JSON with markdown content
+- **Deployment**: Automatic via Heroku's git integration
+- **Visibility**: ISR with 60-second revalidation
+
+### Testing & Verification
+
+#### Local Testing
+```bash
+# Check for duplicate titles (should return 1)
+curl -s http://localhost:3000/[slug] | grep -c '<h1 class="text-4xl'
+
+# Verify markdown processing
+curl -s http://localhost:3000/[slug] | grep -o '<h2[^>]*>.*</h2>' | head -3
+```
+
+#### Production Verification
+```bash
+# Check live site
+curl -s https://www.generative-engine.org/[slug] | grep -c '<h1'
+
+# Verify SEO formatting
+curl -s https://www.generative-engine.org/[slug] | grep 'id=".*" class="text-3xl'
+```
+
+### Key Files for Blog System
+- `/app/[slug]/page.tsx` - Blog post page component
+- `/app/lib/markdown.ts` - Markdown processor with SEO optimizations
+- `/app/components/ShareButtons.tsx` - Client component for share functionality
+- `/public/blog-data/*.json` - Blog post data files
+
+### Deployment Process for Blog Updates
+1. **n8n pushes JSON file** to Heroku repository
+2. **Heroku rebuilds** the application
+3. **Next.js processes** markdown and generates static pages
+4. **ISR revalidates** after 60 seconds for new content
+
+### Critical Learnings
+1. **Always strip duplicate H1s** when markdown includes titles
+2. **Test both content formats** (markdown and HTML) after changes
+3. **Verify formatting persists** after n8n pushes new content
+4. **ISR cache takes 60 seconds** - be patient for updates
+
+### Future Improvements Needed
+1. **Better Content Management**: Consider API-based approach instead of file pushes
+2. **Validation Layer**: Add checks for content format before processing
+3. **Error Handling**: Better logging for markdown processing failures
+4. **Performance**: Consider database for blog posts instead of JSON files
