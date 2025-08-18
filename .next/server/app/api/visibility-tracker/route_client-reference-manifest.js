@@ -1,0 +1,1 @@
+globalThis.__RSC_MANIFEST=(globalThis.__RSC_MANIFEST||{});globalThis.__RSC_MANIFEST["/api/visibility-tracker/route"]={"moduleLoading":{"prefix":"/_next/"},"ssrModuleMapping":{},"edgeSSRModuleMapping":{},"clientModules":{},"entryCSSFiles":{"/Users/heni/GEO/":[],"/Users/heni/GEO/app/api/visibility-tracker/route":[]},"rscModuleMapping":{},"edgeRscModuleMapping":{}}

@@ -4,6 +4,11 @@
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/api/geo-audit/route.js"
+    ],
+    "/api/visibility-tracker/route": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/api/visibility-tracker/route.js"
     ]
   }
 }

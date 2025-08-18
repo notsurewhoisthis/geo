@@ -1,1 +1,3 @@
-{}
+{
+  "/api/visibility-tracker/route": "app/api/visibility-tracker/route.js"
+}
