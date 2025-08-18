@@ -43,6 +43,9 @@ async function getBlogPosts(): Promise<BlogPost[]> {
   }
 }
 
+// Enable ISR - revalidate every 60 seconds to pick up new blog posts
+export const revalidate = 60
+
 export default async function BlogPage() {
   const posts = await getBlogPosts()
   
