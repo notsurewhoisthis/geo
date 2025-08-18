@@ -23,6 +23,7 @@ export default function Header() {
             <Link href="/tools" className="text-gray-600 hover:text-gray-900 font-medium transition">Tools</Link>
             <Link href="/blog" className="text-gray-600 hover:text-gray-900 font-medium transition">Blog</Link>
             <Link href="/resources" className="text-gray-600 hover:text-gray-900 font-medium transition">Resources</Link>
+            <Link href="/tech-view" className="text-gray-600 hover:text-gray-900 font-medium transition">Tech View</Link>
             <Link href="/about" className="text-gray-600 hover:text-gray-900 font-medium transition">About</Link>
             <Link href="/tools" className="px-6 py-2.5 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition">
               Try Tools
@@ -47,6 +48,7 @@ export default function Header() {
               <Link href="/tools" className="text-gray-600 hover:text-gray-900 font-medium transition">Tools</Link>
               <Link href="/blog" className="text-gray-600 hover:text-gray-900 font-medium transition">Blog</Link>
               <Link href="/resources" className="text-gray-600 hover:text-gray-900 font-medium transition">Resources</Link>
+              <Link href="/tech-view" className="text-gray-600 hover:text-gray-900 font-medium transition">Tech View</Link>
               <Link href="/about" className="text-gray-600 hover:text-gray-900 font-medium transition">About</Link>
               <Link href="/tools" className="px-6 py-2.5 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition text-center">
                 Try Tools
