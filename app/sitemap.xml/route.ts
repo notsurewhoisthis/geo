@@ -69,11 +69,19 @@ export async function GET() {
   // Get all programmatic comparison pages
   let comparisonPages: Array<{slug: string}> = []
   try {
-    const comparisonsPath = path.join(process.cwd(), 'public', 'data', 'comparisons.json')
-    if (fs.existsSync(comparisonsPath)) {
-      const comparisonsContent = fs.readFileSync(comparisonsPath, 'utf8')
-      const comparisons = JSON.parse(comparisonsContent)
-      comparisonPages = comparisons.map((comparison: any) => ({ slug: comparison.slug }))
+    // First try the new platform-comparisons.ts file
+    const { getAllComparisons } = await import('@/app/lib/platform-comparisons')
+    const allComparisons = getAllComparisons()
+    if (allComparisons && allComparisons.length > 0) {
+      comparisonPages = allComparisons.map((comp: any) => ({ slug: comp.slug }))
+    } else {
+      // Fallback to old comparisons.json if it exists
+      const comparisonsPath = path.join(process.cwd(), 'public', 'data', 'comparisons.json')
+      if (fs.existsSync(comparisonsPath)) {
+        const comparisonsContent = fs.readFileSync(comparisonsPath, 'utf8')
+        const comparisons = JSON.parse(comparisonsContent)
+        comparisonPages = comparisons.map((comparison: any) => ({ slug: comparison.slug }))
+      }
     }
   } catch (error) {
     console.error('Error reading comparisons data:', error)

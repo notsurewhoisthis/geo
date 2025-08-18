@@ -502,6 +502,84 @@ export default async function Home() {
           </div>
         </section>
 
+        {/* Platform Comparisons Section */}
+        <section className="py-20 px-4 bg-gradient-to-br from-purple-900 to-blue-900">
+          <div className="container-blog">
+            <div className="text-center mb-12">
+              <h2 className="section-title text-white mb-4">AI Platform Optimization Guides</h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Compare optimization strategies across 19 leading AI platforms. 
+                Learn how to maximize visibility on ChatGPT, Claude, Gemini, and more.
+              </p>
+            </div>
+            
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+              {/* Featured Comparisons */}
+              <Link href="/compare/gpt-4o-vs-claude-4-1-opus" className="block bg-white/10 backdrop-blur-sm rounded-lg p-6 hover:bg-white/20 transition-all hover:scale-105">
+                <h3 className="text-xl font-semibold text-white mb-2">GPT-4o vs Claude 4.1 Opus</h3>
+                <p className="text-gray-300 mb-4">Compare optimization for OpenAI's multimodal model vs Anthropic's advanced reasoning system</p>
+                <span className="text-purple-300 font-semibold">View Comparison →</span>
+              </Link>
+              
+              <Link href="/compare/gemini-2-5-pro-vs-gpt-5" className="block bg-white/10 backdrop-blur-sm rounded-lg p-6 hover:bg-white/20 transition-all hover:scale-105">
+                <h3 className="text-xl font-semibold text-white mb-2">Gemini 2.5 Pro vs GPT-5</h3>
+                <p className="text-gray-300 mb-4">Google's latest model vs OpenAI's most advanced language model optimization strategies</p>
+                <span className="text-purple-300 font-semibold">View Comparison →</span>
+              </Link>
+              
+              <Link href="/compare/deepseek-r1-vs-openai-o3" className="block bg-white/10 backdrop-blur-sm rounded-lg p-6 hover:bg-white/20 transition-all hover:scale-105">
+                <h3 className="text-xl font-semibold text-white mb-2">DeepSeek-R1 vs OpenAI o3</h3>
+                <p className="text-gray-300 mb-4">Reasoning-focused models: Compare optimization for mathematical and logical content</p>
+                <span className="text-purple-300 font-semibold">View Comparison →</span>
+              </Link>
+              
+              <Link href="/compare/llama-3-1-vs-llama-4" className="block bg-white/10 backdrop-blur-sm rounded-lg p-6 hover:bg-white/20 transition-all hover:scale-105">
+                <h3 className="text-xl font-semibold text-white mb-2">Llama 3.1 vs Llama 4</h3>
+                <p className="text-gray-300 mb-4">Meta's open-source models: Evolution of optimization requirements</p>
+                <span className="text-purple-300 font-semibold">View Comparison →</span>
+              </Link>
+              
+              <Link href="/compare/claude-4-1-sonnet-vs-gemini-2-0-flash" className="block bg-white/10 backdrop-blur-sm rounded-lg p-6 hover:bg-white/20 transition-all hover:scale-105">
+                <h3 className="text-xl font-semibold text-white mb-2">Claude 4.1 Sonnet vs Gemini 2.0 Flash</h3>
+                <p className="text-gray-300 mb-4">Balanced performance vs speed-optimized: Different optimization approaches</p>
+                <span className="text-purple-300 font-semibold">View Comparison →</span>
+              </Link>
+              
+              <Link href="/compare/mistral-large-2-vs-qwen-2-5" className="block bg-white/10 backdrop-blur-sm rounded-lg p-6 hover:bg-white/20 transition-all hover:scale-105">
+                <h3 className="text-xl font-semibold text-white mb-2">Mistral Large 2 vs Qwen2.5</h3>
+                <p className="text-gray-300 mb-4">European vs Asian models: Regional optimization differences</p>
+                <span className="text-purple-300 font-semibold">View Comparison →</span>
+              </Link>
+            </div>
+            
+            <div className="text-center">
+              <Link href="/compare" className="inline-block bg-white text-purple-900 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-all hover:scale-105">
+                View All 171 Platform Comparisons →
+              </Link>
+            </div>
+            
+            {/* Stats about comparisons */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12 pt-12 border-t border-white/20">
+              <div className="text-center">
+                <div className="text-3xl font-bold text-white mb-2">19</div>
+                <div className="text-gray-300">AI Platforms</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-white mb-2">171</div>
+                <div className="text-gray-300">Unique Comparisons</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-white mb-2">2025</div>
+                <div className="text-gray-300">Latest Models</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-white mb-2">100%</div>
+                <div className="text-gray-300">SEO Optimized</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* GEO Best Practices - Enhanced */}
         <section className="py-20 px-4 bg-gray-50">
           <div className="container-blog">
