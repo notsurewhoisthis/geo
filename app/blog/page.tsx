@@ -80,7 +80,7 @@ export default async function BlogPage({
       {/* Hero Section */}
       <section className="py-16 px-4 bg-white">
         <div className="container-blog">
-          <h1 className="text-5xl font-bold mb-6 text-white">Generative engine optimization insights and updates</h1>
+          <h1 className="text-5xl font-bold mb-6 text-gray-900">Generative engine optimization insights and updates</h1>
           <p className="text-xl text-gray-600 max-w-3xl">
             Stay ahead of the curve with our latest research on Generative Engine Optimization, 
             AI search strategies, and the future of content discovery.

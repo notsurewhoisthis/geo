@@ -1,12 +1,12 @@
 {
+  "/_not-found/page": "/_not-found",
   "/api/geo/tips/route": "/api/geo/tips",
   "/sitemap.xml/route": "/sitemap.xml",
-  "/_not-found/page": "/_not-found",
-  "/feed.xml/route": "/feed.xml",
   "/news-sitemap.xml/route": "/news-sitemap.xml",
-  "/about/page": "/about",
+  "/feed.xml/route": "/feed.xml",
   "/[slug]/page": "/[slug]",
+  "/page": "/",
+  "/about/page": "/about",
   "/blog/page": "/blog",
-  "/glossary/page": "/glossary",
-  "/page": "/"
+  "/glossary/page": "/glossary"
 }
