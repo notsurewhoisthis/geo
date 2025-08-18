@@ -27,13 +27,43 @@ export async function GET() {
     console.error('Error reading blog posts:', error)
   }
   
+  // Dynamically discover entity pages
+  let entityPages: string[] = []
+  const entitiesPath = path.join(process.cwd(), 'app', 'entities')
+  try {
+    if (fs.existsSync(entitiesPath)) {
+      const entities = fs.readdirSync(entitiesPath, { withFileTypes: true })
+        .filter(dirent => dirent.isDirectory())
+        .filter(dirent => fs.existsSync(path.join(entitiesPath, dirent.name, 'page.tsx')))
+        .map(dirent => dirent.name)
+      entityPages = entities
+    }
+  } catch (error) {
+    console.error('Error reading entity pages:', error)
+  }
+  
+  // Static pages with proper priority and update frequency
   const staticPages = [
+    // Core pages
     { path: '', priority: '1.0', changefreq: 'daily' },
     { path: '/blog', priority: '0.9', changefreq: 'daily' },
-    { path: '/resources', priority: '0.8', changefreq: 'weekly' },
     { path: '/about', priority: '0.8', changefreq: 'monthly' },
+    { path: '/resources', priority: '0.8', changefreq: 'weekly' },
     { path: '/glossary', priority: '0.7', changefreq: 'weekly' },
-    { path: '/tools', priority: '0.7', changefreq: 'weekly' },
+    { path: '/guide', priority: '0.8', changefreq: 'weekly' },
+    { path: '/tech-view', priority: '0.6', changefreq: 'monthly' },
+    
+    // Tools pages (high priority for user engagement)
+    { path: '/tools', priority: '0.8', changefreq: 'weekly' },
+    { path: '/tools/visibility-tracker', priority: '0.9', changefreq: 'weekly' },
+    { path: '/tools/content-optimizer', priority: '0.8', changefreq: 'weekly' },
+    { path: '/tools/geo-audit', priority: '0.8', changefreq: 'weekly' },
+    { path: '/tools/keyword-research', priority: '0.8', changefreq: 'weekly' },
+    
+    // Entity pages (important for knowledge graph)
+    { path: '/entities', priority: '0.7', changefreq: 'weekly' },
+    { path: '/entities/generative-engine-optimization', priority: '0.9', changefreq: 'weekly' },
+    { path: '/entities/chatgpt-optimization', priority: '0.8', changefreq: 'weekly' },
   ]
   
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
@@ -45,6 +75,15 @@ export async function GET() {
     <lastmod>${new Date().toISOString()}</lastmod>
     <changefreq>${page.changefreq}</changefreq>
     <priority>${page.priority}</priority>
+  </url>`).join('')}
+  ${entityPages
+    .filter(entity => !['generative-engine-optimization', 'chatgpt-optimization'].includes(entity))
+    .map(entity => `
+  <url>
+    <loc>${baseUrl}/entities/${entity}</loc>
+    <lastmod>${new Date().toISOString()}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
   </url>`).join('')}
   ${blogPosts.map(post => `
   <url>

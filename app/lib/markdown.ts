@@ -6,7 +6,9 @@ import {
   enhanceStatistics,
   addTLDRSection,
   addContentMetrics,
-  formatForAIVisibility
+  formatForAIVisibility,
+  createRAGChunks,
+  addRAGMetadata
 } from './markdown-enhancements'
 import { addInternalLinks } from './internal-links'
 
@@ -87,6 +89,16 @@ export function parseMarkdown(content: string, currentPath?: string): string {
   processedHtml = enhanceStatistics(processedHtml)
   processedHtml = addTLDRSection(processedHtml, processedHtml)
   processedHtml = addContentMetrics(processedHtml, wordCount)
+  
+  // Apply RAG-optimized chunking for better AI retrieval
+  processedHtml = createRAGChunks(processedHtml)
+  
+  // Add RAG metadata if we have a path
+  if (currentPath) {
+    const title = processedContent.match(/^#\s+(.+)$/m)?.[1] || 'Content'
+    const url = `https://generative-engine.org${currentPath}`
+    processedHtml = addRAGMetadata(processedHtml, title, url)
+  }
   
   // Final AI visibility formatting
   processedHtml = formatForAIVisibility(processedHtml, processedContent, wordCount)

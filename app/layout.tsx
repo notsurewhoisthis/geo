@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import Script from 'next/script'
 import './globals.css'
 import Header from './components/Header'
 import Footer from './components/Footer'
@@ -131,11 +132,82 @@ export default function RootLayout({
     }
   }
 
+  // Add WebPage schema for better SEO
+  const webPageSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    '@id': 'https://generative-engine.org/#webpage',
+    url: 'https://generative-engine.org',
+    name: 'GEO - Generative Engine Optimization Platform',
+    description: 'Master Generative Engine Optimization with cutting-edge strategies for AI-powered search',
+    isPartOf: {
+      '@id': 'https://generative-engine.org/#website'
+    },
+    primaryImageOfPage: {
+      '@type': 'ImageObject',
+      url: 'https://generative-engine.org/og-image.png'
+    },
+    breadcrumb: {
+      '@type': 'BreadcrumbList',
+      itemListElement: [{
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: 'https://generative-engine.org'
+      }]
+    }
+  }
+
+  // Add SiteNavigationElement schema for main navigation
+  const navigationSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'SiteNavigationElement',
+    name: 'Main Navigation',
+    url: 'https://generative-engine.org',
+    hasPart: [
+      {
+        '@type': 'WebPageElement',
+        name: 'Blog',
+        url: 'https://generative-engine.org/blog'
+      },
+      {
+        '@type': 'WebPageElement',
+        name: 'Tools',
+        url: 'https://generative-engine.org/tools'
+      },
+      {
+        '@type': 'WebPageElement',
+        name: 'About',
+        url: 'https://generative-engine.org/about'
+      },
+      {
+        '@type': 'WebPageElement',
+        name: 'Glossary',
+        url: 'https://generative-engine.org/glossary'
+      }
+    ]
+  }
+
   return (
     <html lang="en">
       <head>
+        {/* RSS Feeds */}
         <link rel="alternate" type="application/rss+xml" title="GEO Platform RSS Feed" href="/feed.xml" />
         <link rel="alternate" type="application/rss+xml" title="GEO Platform RSS Feed" href="/rss.xml" />
+        
+        {/* International SEO - Hreflang Tags */}
+        <link rel="alternate" hrefLang="en" href="https://generative-engine.org" />
+        <link rel="alternate" hrefLang="en-US" href="https://generative-engine.org" />
+        <link rel="alternate" hrefLang="en-GB" href="https://uk.generative-engine.org" />
+        <link rel="alternate" hrefLang="es" href="https://es.generative-engine.org" />
+        <link rel="alternate" hrefLang="fr" href="https://fr.generative-engine.org" />
+        <link rel="alternate" hrefLang="de" href="https://de.generative-engine.org" />
+        <link rel="alternate" hrefLang="pt" href="https://pt.generative-engine.org" />
+        <link rel="alternate" hrefLang="it" href="https://it.generative-engine.org" />
+        <link rel="alternate" hrefLang="ja" href="https://ja.generative-engine.org" />
+        <link rel="alternate" hrefLang="zh" href="https://zh.generative-engine.org" />
+        <link rel="alternate" hrefLang="ko" href="https://ko.generative-engine.org" />
+        <link rel="alternate" hrefLang="x-default" href="https://generative-engine.org" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
@@ -144,8 +216,31 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(navigationSchema) }}
+        />
       </head>
       <body className={`${inter.className} bg-white text-gray-900 min-h-screen flex flex-col`}>
+        {/* Google Analytics */}
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-DKJB7H8XG5"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-DKJB7H8XG5');
+          `}
+        </Script>
+        
         <Header />
         <main className="flex-grow">
           {children}

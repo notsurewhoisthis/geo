@@ -1,3 +1,85 @@
+// RAG-optimized content chunking for better AI retrieval
+export function createRAGChunks(html: string): string {
+  // Add semantic section markers for RAG systems
+  let enhancedHtml = html
+  
+  // Mark major sections with data attributes for chunking
+  enhancedHtml = enhancedHtml.replace(
+    /<h2(.*?)>(.*?)<\/h2>/g,
+    (match, attrs, content) => {
+      const cleanContent = content.replace(/<.*?>/g, '')
+      const chunkId = cleanContent.toLowerCase().replace(/[^\w]+/g, '-')
+      return `<h2${attrs} data-rag-chunk="${chunkId}" data-rag-type="section">${content}</h2>`
+    }
+  )
+  
+  // Mark paragraphs with semantic importance
+  enhancedHtml = enhancedHtml.replace(
+    /<p>(.*?)<\/p>/g,
+    (match, content) => {
+      // Check for definition patterns
+      if (content.match(/^(.*?)\s+(is|are|means?|refers? to|describes?)\s+/i)) {
+        return `<p data-rag-importance="high" data-rag-type="definition">${content}</p>`
+      }
+      // Check for statistical content
+      if (content.match(/\d+%|\$[\d,]+|[\d,]+\s+(times?|percent|dollars?)/i)) {
+        return `<p data-rag-importance="high" data-rag-type="statistic">${content}</p>`
+      }
+      // Check for conclusion/summary patterns
+      if (content.match(/^(In (conclusion|summary)|Therefore|Thus|Overall|To sum up)/i)) {
+        return `<p data-rag-importance="high" data-rag-type="conclusion">${content}</p>`
+      }
+      return `<p data-rag-importance="medium">${content}</p>`
+    }
+  )
+  
+  // Add microdata for better semantic understanding
+  enhancedHtml = enhancedHtml.replace(
+    /<ul>([\s\S]*?)<\/ul>/g,
+    (match, content) => {
+      // Check if it's a list of benefits, features, steps, etc.
+      const prevText = enhancedHtml.substring(Math.max(0, enhancedHtml.indexOf(match) - 200), enhancedHtml.indexOf(match))
+      if (prevText.match(/(benefits?|features?|advantages?|steps?|process|how to)/i)) {
+        return `<ul data-rag-type="structured-list" data-rag-importance="high">${content}</ul>`
+      }
+      return `<ul data-rag-type="list">${content}</ul>`
+    }
+  )
+  
+  // Wrap content in semantic chunks for optimal RAG retrieval
+  const sections = enhancedHtml.split(/<h2/g)
+  const chunkedHtml = sections.map((section, index) => {
+    if (index === 0) return section // Skip content before first h2
+    
+    const sectionMatch = section.match(/data-rag-chunk="([^"]+)"/)
+    const chunkId = sectionMatch ? sectionMatch[1] : `chunk-${index}`
+    
+    return `<section class="rag-chunk" data-chunk-id="${chunkId}" data-chunk-index="${index}">
+      <h2${section}
+    </section>`
+  }).join('')
+  
+  return chunkedHtml || enhancedHtml
+}
+
+// Add chunk metadata for RAG systems
+export function addRAGMetadata(html: string, title: string, url: string): string {
+  const metadata = {
+    title: title,
+    url: url,
+    timestamp: new Date().toISOString(),
+    contentType: 'article',
+    optimization: 'rag-enhanced'
+  }
+  
+  return `
+    <script type="application/ld+json" class="rag-metadata">
+    ${JSON.stringify(metadata, null, 2)}
+    </script>
+    ${html}
+  `
+}
+
 // Enhanced Key Takeaways formatting for AI optimization
 export function enhanceKeyTakeaways(html: string): string {
   // Look for Key Takeaways sections and enhance them

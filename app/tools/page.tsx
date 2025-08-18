@@ -33,6 +33,69 @@ const toolsData = [
     ]
   },
   {
+    name: 'SERP Preview',
+    description: 'Preview how your page appears in search results and AI responses. Optimize titles and descriptions for maximum CTR.',
+    icon: '👁️',
+    category: 'Optimization',
+    color: 'purple',
+    link: '/tools/serp-preview',
+    features: [
+      'Google SERP preview',
+      'AI citation preview',
+      'Social media preview',
+      'Character count validation',
+      'Real-time optimization tips'
+    ],
+    benefits: [
+      'Improve click-through rates',
+      'Optimize for AI citations',
+      'Perfect meta descriptions',
+      'Enhance social sharing'
+    ]
+  },
+  {
+    name: 'Meta Tag Generator',
+    description: 'Generate SEO-optimized meta tags with AI-specific enhancements. Includes Open Graph and Twitter Card support.',
+    icon: '🏷️',
+    category: 'Tools',
+    color: 'green',
+    link: '/tools/meta-tag-generator',
+    features: [
+      'Complete meta tag generation',
+      'Open Graph tags',
+      'Twitter Card tags',
+      'AI crawler optimization',
+      'One-click copy to clipboard'
+    ],
+    benefits: [
+      'Save time on meta tags',
+      'Ensure proper formatting',
+      'Improve social sharing',
+      'Enhance AI discovery'
+    ]
+  },
+  {
+    name: 'Schema Validator',
+    description: 'Validate and optimize structured data for search engines and AI platforms. Get GEO-specific suggestions.',
+    icon: '✅',
+    category: 'Validation',
+    color: 'orange',
+    link: '/tools/schema-validator',
+    features: [
+      'JSON-LD validation',
+      'Schema.org compliance',
+      'GEO optimization tips',
+      'Error detection',
+      'Example templates'
+    ],
+    benefits: [
+      'Fix schema errors',
+      'Improve rich snippets',
+      'Enhance AI understanding',
+      'Boost search visibility'
+    ]
+  },
+  {
     name: 'AI Keyword Research',
     description: 'Discover conversational keywords and long-tail queries that perform exceptionally well on AI platforms.',
     icon: '🔑',
@@ -161,7 +224,7 @@ export default function ToolsPage() {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               <div className="text-center">
                 <div className="text-3xl md:text-4xl font-bold text-blue-300 mb-2">
-                  4
+                  7
                 </div>
                 <div className="text-sm text-gray-300">
                   Professional Tools
