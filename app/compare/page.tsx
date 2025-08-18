@@ -231,7 +231,7 @@ export default async function ComparisonsPage() {
                           <div>
                             <h4 className="font-semibold text-green-900 mb-2">GEO Advantages:</h4>
                             <ul className="space-y-1">
-                              {comparison.geoAdvantages.slice(0, 3).map((advantage, index) => (
+                              {(comparison.geoAdvantages || []).slice(0, 3).map((advantage, index) => (
                                 <li key={index} className="text-sm text-gray-700 flex items-start gap-2">
                                   <span className="text-green-600 mt-0.5">•</span>
                                   <span>{advantage}</span>
@@ -242,7 +242,7 @@ export default async function ComparisonsPage() {
                           <div>
                             <h4 className="font-semibold text-blue-900 mb-2">Traditional SEO Advantages:</h4>
                             <ul className="space-y-1">
-                              {comparison.traditionalAdvantages.slice(0, 3).map((advantage, index) => (
+                              {(comparison.traditionalAdvantages || []).slice(0, 3).map((advantage, index) => (
                                 <li key={index} className="text-sm text-gray-700 flex items-start gap-2">
                                   <span className="text-blue-600 mt-0.5">•</span>
                                   <span>{advantage}</span>
