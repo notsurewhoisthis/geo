@@ -37,7 +37,10 @@ export default function Footer() {
             </p>
             <div className="flex gap-4">
               <Link href="/feed.xml" className="text-gray-500 hover:text-purple-400 transition text-sm">RSS Feed</Link>
-              <Link href="/sitemap.xml" className="text-gray-500 hover:text-purple-400 transition text-sm">Sitemap</Link>
+              <Link href="/glossary" className="text-gray-500 hover:text-purple-400 transition text-sm">GEO Glossary</Link>
+              <Link href="/tools/visibility-tracker" className="text-gray-500 hover:text-purple-400 transition text-sm">Visibility Tracker</Link>
+              <Link href="/industries" className="text-gray-500 hover:text-purple-400 transition text-sm">Industries</Link>
+              <Link href="/platforms" className="text-gray-500 hover:text-purple-400 transition text-sm">AI Platforms</Link>
             </div>
           </div>
           
