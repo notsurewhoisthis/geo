@@ -9,6 +9,7 @@ interface KeywordData {
   difficulty: string
   intent: string
   aiOptimized: boolean
+  source?: string
 }
 
 export default function KeywordResearchPage() {
@@ -22,71 +23,37 @@ export default function KeywordResearchPage() {
     
     setIsSearching(true)
     
-    // Simulate search delay
-    await new Promise(resolve => setTimeout(resolve, 2000))
-    
-    // Mock keyword data based on seed keyword
-    const mockKeywords: KeywordData[] = [
-      {
-        keyword: `How to implement ${seedKeyword} for better AI search visibility`,
-        searchVolume: '1.2K',
-        difficulty: 'Medium',
-        intent: 'Informational',
-        aiOptimized: true
-      },
-      {
-        keyword: `What is the best ${seedKeyword} strategy for ChatGPT optimization`,
-        searchVolume: '890',
-        difficulty: 'Low',
-        intent: 'Informational',
-        aiOptimized: true
-      },
-      {
-        keyword: `${seedKeyword} vs traditional SEO techniques comparison`,
-        searchVolume: '2.1K',
-        difficulty: 'Medium',
-        intent: 'Comparative',
-        aiOptimized: true
-      },
-      {
-        keyword: `Step by step guide to ${seedKeyword} implementation`,
-        searchVolume: '3.4K',
-        difficulty: 'High',
-        intent: 'Tutorial',
-        aiOptimized: true
-      },
-      {
-        keyword: `Why ${seedKeyword} is important for business growth`,
-        searchVolume: '1.8K',
-        difficulty: 'Medium',
-        intent: 'Educational',
-        aiOptimized: true
-      },
-      {
-        keyword: `${seedKeyword} tools and resources for beginners`,
-        searchVolume: '740',
-        difficulty: 'Low',
-        intent: 'Resource',
-        aiOptimized: true
-      },
-      {
-        keyword: `Common mistakes in ${seedKeyword} optimization`,
-        searchVolume: '650',
-        difficulty: 'Low',
-        intent: 'Problem-solving',
-        aiOptimized: true
-      },
-      {
-        keyword: `${seedKeyword} case studies and success stories`,
-        searchVolume: '920',
-        difficulty: 'Medium',
-        intent: 'Research',
-        aiOptimized: true
+    try {
+      // Call the real API endpoint
+      const response = await fetch('/api/keywords', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ keyword: seedKeyword })
+      })
+      
+      if (!response.ok) {
+        throw new Error('Failed to fetch keywords')
       }
-    ]
-    
-    setKeywords(mockKeywords)
-    setIsSearching(false)
+      
+      const data = await response.json()
+      setKeywords(data.keywords || [])
+    } catch (error) {
+      console.error('Error fetching keywords:', error)
+      // Fallback to some basic keywords if API fails
+      setKeywords([
+        {
+          keyword: `${seedKeyword} guide`,
+          searchVolume: 'N/A',
+          difficulty: 'Medium',
+          intent: 'Informational',
+          aiOptimized: true
+        }
+      ])
+    } finally {
+      setIsSearching(false)
+    }
   }
 
   const getDifficultyColor = (difficulty: string) => {
@@ -120,6 +87,9 @@ export default function KeywordResearchPage() {
             
             <div className="bg-blue-50 rounded-lg p-8 max-w-2xl mx-auto">
               <h2 className="text-2xl font-bold text-gray-900 mb-4">Research Keywords</h2>
+              <p className="text-sm text-blue-700 mb-4">
+                🔍 Powered by real-time data from Google Suggestions, Wikipedia, Reddit, and AI patterns
+              </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <input
                   type="text"
@@ -191,6 +161,7 @@ export default function KeywordResearchPage() {
                         <th className="px-6 py-4 text-left">Difficulty</th>
                         <th className="px-6 py-4 text-left">Intent</th>
                         <th className="px-6 py-4 text-left">AI Optimized</th>
+                        <th className="px-6 py-4 text-left">Source</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -212,6 +183,11 @@ export default function KeywordResearchPage() {
                             ) : (
                               <span className="text-gray-400">Standard</span>
                             )}
+                          </td>
+                          <td className="px-6 py-4">
+                            <span className="text-sm text-gray-600">
+                              {keyword.source || 'Generated'}
+                            </span>
                           </td>
                         </tr>
                       ))}

@@ -1,19 +1,20 @@
 {
   "/api/geo/tips/route": "/api/geo/tips",
+  "/api/keywords/route": "/api/keywords",
   "/sitemap.xml/route": "/sitemap.xml",
   "/_not-found/page": "/_not-found",
-  "/feed.xml/route": "/feed.xml",
   "/news-sitemap.xml/route": "/news-sitemap.xml",
-  "/blog/page": "/blog",
+  "/feed.xml/route": "/feed.xml",
   "/about/page": "/about",
+  "/blog/page": "/blog",
   "/glossary/page": "/glossary",
-  "/[slug]/page": "/[slug]",
   "/resources/page": "/resources",
   "/guide/page": "/guide",
+  "/[slug]/page": "/[slug]",
   "/tools/page": "/tools",
   "/page": "/",
   "/tools/content-optimizer/page": "/tools/content-optimizer",
   "/tools/keyword-research/page": "/tools/keyword-research",
-  "/tools/geo-audit/page": "/tools/geo-audit",
-  "/tools/visibility-tracker/page": "/tools/visibility-tracker"
+  "/tools/visibility-tracker/page": "/tools/visibility-tracker",
+  "/tools/geo-audit/page": "/tools/geo-audit"
 }
