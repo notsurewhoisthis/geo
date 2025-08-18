@@ -776,7 +776,6 @@ export default function TechViewPage() {
               </p>
               <ul className="space-y-2 text-gray-700">
                 <li>• arXiv: <a href="https://arxiv.org/abs/2311.09735" className="text-blue-600 hover:text-blue-800">https://arxiv.org/abs/2311.09735</a></li>
-                <li>• Local copy: /Users/heni/Desktop/2311.09735v3.pdf</li>
                 <li>• DOI: 10.48550/arXiv.2311.09735</li>
               </ul>
             </div>

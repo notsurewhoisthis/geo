@@ -32,95 +32,98 @@ export default function VisibilityTrackerPage() {
     
     setIsTracking(true)
     
-    // Simulate tracking delay
-    await new Promise(resolve => setTimeout(resolve, 4000))
-    
-    // Mock platform data
-    const mockPlatformData: PlatformData[] = [
-      {
-        platform: 'ChatGPT',
-        icon: '🤖',
-        visibility: 78,
-        citations: 156,
-        trend: 'up',
-        trendPercent: 12
-      },
-      {
-        platform: 'Claude',
-        icon: '🧠',
-        visibility: 65,
-        citations: 89,
-        trend: 'up',
-        trendPercent: 8
-      },
-      {
-        platform: 'Perplexity',
-        icon: '🔍',
-        visibility: 82,
-        citations: 201,
-        trend: 'up',
-        trendPercent: 15
-      },
-      {
-        platform: 'Bing Chat',
-        icon: '💬',
-        visibility: 45,
-        citations: 34,
-        trend: 'stable',
-        trendPercent: 2
-      },
-      {
-        platform: 'Gemini',
-        icon: '✨',
-        visibility: 38,
-        citations: 28,
-        trend: 'down',
-        trendPercent: -5
+    try {
+      // Call the real API endpoint
+      const response = await fetch('/api/visibility-tracker', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ domain })
+      })
+      
+      if (!response.ok) {
+        throw new Error('Failed to track visibility')
       }
-    ]
-
-    const mockCitations: CitationData[] = [
-      {
-        query: 'what is generative engine optimization',
-        platform: 'ChatGPT',
-        cited: true,
-        position: 1,
-        context: 'According to experts, generative engine optimization...'
-      },
-      {
-        query: 'GEO vs SEO differences',
-        platform: 'Perplexity',
-        cited: true,
-        position: 2,
-        context: 'As outlined in industry research, the key differences...'
-      },
-      {
-        query: 'AI search optimization techniques',
-        platform: 'Claude',
-        cited: true,
-        position: 1,
-        context: 'Leading optimization strategies include...'
-      },
-      {
-        query: 'how to optimize for AI search',
-        platform: 'ChatGPT',
-        cited: false,
-        position: null,
-        context: 'Not cited in response'
-      },
-      {
-        query: 'best GEO practices 2024',
-        platform: 'Perplexity',
-        cited: true,
-        position: 3,
-        context: 'Recent studies show that implementing...'
+      
+      const data = await response.json()
+      
+      // Process the API response
+      if (data.data) {
+        setPlatformData(data.data.platforms)
+        
+        // Convert top queries to citation format for display
+        const citationData: CitationData[] = data.data.topQueries.map((q: any) => ({
+          query: q.query,
+          platform: q.platforms[0] || 'Multiple',
+          cited: q.cited,
+          position: q.position,
+          context: q.cited ? 'Content cited in AI response' : 'Not cited in response'
+        }))
+        
+        setCitations(citationData)
+        
+        // Calculate overall score
+        const avgScore = Math.round(
+          data.data.platforms.reduce((acc: number, p: any) => acc + p.visibility, 0) / 
+          data.data.platforms.length
+        )
+        setOverallScore(avgScore)
       }
-    ]
-    
-    setPlatformData(mockPlatformData)
-    setCitations(mockCitations)
-    setOverallScore(Math.round(mockPlatformData.reduce((acc, platform) => acc + platform.visibility, 0) / mockPlatformData.length))
-    setIsTracking(false)
+    } catch (error) {
+      console.error('Tracking error:', error)
+      // Fallback to demo data if API fails
+      alert('Unable to connect to tracking service. Showing demonstration data.')
+      
+      // Show demo data as fallback
+      const demoData: PlatformData[] = [
+        {
+          platform: 'ChatGPT',
+          icon: '🤖',
+          visibility: 65,
+          citations: 89,
+          trend: 'up',
+          trendPercent: 8
+        },
+        {
+          platform: 'Perplexity',
+          icon: '🔍',
+          visibility: 72,
+          citations: 156,
+          trend: 'up',
+          trendPercent: 12
+        },
+        {
+          platform: 'Claude',
+          icon: '🧠',
+          visibility: 58,
+          citations: 67,
+          trend: 'stable',
+          trendPercent: 2
+        },
+        {
+          platform: 'Bing Chat',
+          icon: '💬',
+          visibility: 41,
+          citations: 34,
+          trend: 'stable',
+          trendPercent: 0
+        },
+        {
+          platform: 'Gemini',
+          icon: '✨',
+          visibility: 35,
+          citations: 22,
+          trend: 'down',
+          trendPercent: -3
+        }
+      ]
+      
+      setPlatformData(demoData)
+      setOverallScore(54)
+    } finally {
+      setIsTracking(false)
+    }
   }
 
   const getTrendIcon = (trend: string) => {
