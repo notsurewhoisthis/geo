@@ -335,7 +335,7 @@ export default async function Home() {
             </div>
             
             <div className="mt-8 text-center">
-              <Link href="/blog/seo-vs-geo-complete-guide" className="text-blue-600 font-semibold text-lg hover:text-blue-700 transition">
+              <Link href="/seo-vs-geo-complete-guide" className="text-blue-600 font-semibold text-lg hover:text-blue-700 transition">
                 Read our complete guide: SEO vs GEO →
               </Link>
             </div>
