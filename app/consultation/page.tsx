@@ -37,8 +37,8 @@ export default function ConsultationPage() {
       <div className="container mx-auto px-6 py-8">
         <Breadcrumbs 
           items={[
-            { label: 'Home', href: '/' },
-            { label: 'Consultation', href: '/consultation' }
+            { name: 'Home', href: '/' },
+            { name: 'Consultation', href: '/consultation' }
           ]} 
         />
 

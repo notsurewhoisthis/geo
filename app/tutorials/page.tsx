@@ -19,8 +19,8 @@ export default function TutorialsPage() {
       <div className="container mx-auto px-6 py-8">
         <Breadcrumbs 
           items={[
-            { label: 'Home', href: '/' },
-            { label: 'Tutorials', href: '/tutorials' }
+            { name: 'Home', href: '/' },
+            { name: 'Tutorials', href: '/tutorials' }
           ]}
         />
         

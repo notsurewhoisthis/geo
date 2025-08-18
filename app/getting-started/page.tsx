@@ -53,8 +53,8 @@ export default function GettingStartedPage() {
       <div className="container mx-auto px-6 py-8">
         <Breadcrumbs 
           items={[
-            { label: 'Home', href: '/' },
-            { label: 'Getting Started', href: '/getting-started' }
+            { name: 'Home', href: '/' },
+            { name: 'Getting Started', href: '/getting-started' }
           ]} 
         />
 

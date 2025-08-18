@@ -42,8 +42,8 @@ export default function ContactPage() {
       <div className="container mx-auto px-6 py-8">
         <Breadcrumbs 
           items={[
-            { label: 'Home', href: '/' },
-            { label: 'Contact', href: '/contact' }
+            { name: 'Home', href: '/' },
+            { name: 'Contact', href: '/contact' }
           ]} 
         />
 

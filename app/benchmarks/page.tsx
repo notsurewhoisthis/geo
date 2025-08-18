@@ -19,8 +19,8 @@ export default function BenchmarksPage() {
       <div className="container mx-auto px-6 py-8">
         <Breadcrumbs 
           items={[
-            { label: 'Home', href: '/' },
-            { label: 'Benchmarks', href: '/benchmarks' }
+            { name: 'Home', href: '/' },
+            { name: 'Benchmarks', href: '/benchmarks' }
           ]}
         />
         

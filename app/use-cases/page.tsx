@@ -62,8 +62,8 @@ export default function UseCasesPage() {
       <div className="container mx-auto px-6 py-8">
         <Breadcrumbs 
           items={[
-            { label: 'Home', href: '/' },
-            { label: 'Use Cases', href: '/use-cases' }
+            { name: 'Home', href: '/' },
+            { name: 'Use Cases', href: '/use-cases' }
           ]} 
         />
 
