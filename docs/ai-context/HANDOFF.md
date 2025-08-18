@@ -90,3 +90,113 @@ The site is fully functional with proper DNS routing and SSL. The domain success
 - Blog posts are loaded from JSON files in the `public/blog-data` directory
 - The site has a responsive design with mobile menu support
 - Tailwind CSS is used for styling
+
+---
+
+## CRITICAL PRODUCTION INCIDENT: CSS Completely Broken (Aug 18, 2025)
+
+### The Crisis
+After setting up automated blog publishing with n8n, the entire website's CSS broke in production. The site displayed with NO styling at all - just raw HTML. This was a complete visual failure that made the site unusable.
+
+### Timeline of Events
+1. **Initial Deployment**: Set up ISR (Incremental Static Regeneration) for automated blog updates
+2. **CSS Breaks**: Production site loses all styling - displays as unstyled HTML
+3. **First Fix Attempt**: Tried removing GitHub Actions, rebuilding - FAILED
+4. **Second Fix Attempt**: Updated PostCSS config, rebuilt - FAILED
+5. **Root Cause Discovery**: Next.js standalone mode wasn't copying static files
+6. **Final Fix**: Modified build script to manually copy static assets - SUCCESS
+
+### The Root Cause
+**Next.js `output: 'standalone'` mode DOES NOT copy static files!**
+
+When using standalone output (required for Heroku deployment), Next.js only creates the server files in `.next/standalone/`. It does NOT copy:
+- `.next/static/` (CSS, JS chunks, fonts)
+- `public/` (static assets)
+
+This caused the server to return 404 for all CSS files, breaking the entire site appearance.
+
+### The Solution That Fixed It
+Modified `package.json` scripts:
+```json
+{
+  "scripts": {
+    "build": "next build && cp -r .next/static .next/standalone/.next/ && cp -r public .next/standalone/",
+    "start": "node .next/standalone/server.js"
+  }
+}
+```
+
+This ensures static files are copied to the standalone output after build.
+
+### Critical Learnings for Future Deployments
+
+#### 1. ALWAYS Verify Static Assets in Production
+```bash
+# Check if CSS is actually being served (should return CSS, not HTML)
+curl -s https://[your-domain]/_next/static/css/[hash].css | head -c 100
+```
+
+#### 2. Standalone Mode Checklist
+- [ ] Build script copies `.next/static` to `.next/standalone/.next/`
+- [ ] Build script copies `public` to `.next/standalone/`
+- [ ] Start script uses `node .next/standalone/server.js`
+- [ ] Procfile points to correct start command
+- [ ] Test CSS loading after every deployment
+
+#### 3. Warning Signs of CSS Issues
+- CSS file returns HTML (404 page) instead of CSS content
+- Browser console shows 404 for CSS files
+- CSS file size is suspiciously small (2KB instead of 20KB+)
+- HTML has classes but no styling applied
+
+#### 4. PostCSS/Tailwind Configuration
+Ensure `postcss.config.js` has quoted plugin names:
+```javascript
+module.exports = {
+  plugins: {
+    'tailwindcss': {},
+    'autoprefixer': {},
+  },
+}
+```
+
+### Deployment Configuration That Works
+
+#### package.json
+```json
+{
+  "scripts": {
+    "build": "next build && cp -r .next/static .next/standalone/.next/ && cp -r public .next/standalone/",
+    "start": "node .next/standalone/server.js"
+  }
+}
+```
+
+#### next.config.js
+```javascript
+module.exports = {
+  output: 'standalone',
+  // ... other config
+}
+```
+
+#### Procfile
+```
+web: npm start
+```
+
+### Never Again Checklist
+Before deploying to production:
+1. ✅ Run build locally and check `.next/standalone/.next/static/` exists
+2. ✅ Verify CSS file is 15KB+ (contains Tailwind styles)
+3. ✅ Test the standalone server locally: `node .next/standalone/server.js`
+4. ✅ After deployment, curl the CSS URL to verify it returns CSS
+5. ✅ Load the site in incognito mode to bypass cache
+
+### What NOT to Do
+- ❌ Never assume standalone mode "just works"
+- ❌ Never use `next start` with standalone builds
+- ❌ Never deploy without verifying static assets
+- ❌ Never trust that CSS "should be there" - always verify
+
+This incident taught us that Next.js standalone mode requires manual intervention for static files. This is a known limitation that's poorly documented and has caught many developers off guard.

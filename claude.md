@@ -6,6 +6,40 @@
 - Component layouts or visual hierarchy
 - The website styling has been perfected - DO NOT CHANGE IT
 
+## 🚨 CRITICAL: Next.js Standalone Deployment on Heroku
+
+### The Problem That Broke Production (Aug 18, 2025)
+When deploying Next.js with `output: 'standalone'` mode to Heroku, the CSS completely broke. The website displayed with NO styling at all.
+
+### Root Cause
+Next.js standalone mode DOES NOT automatically copy static files (CSS, JS, fonts) to the standalone output directory. The `.next/standalone` folder only contains the server files, NOT the static assets.
+
+### The Solution
+Modified `package.json` build script to manually copy static files:
+```json
+"build": "next build && cp -r .next/static .next/standalone/.next/ && cp -r public .next/standalone/",
+"start": "node .next/standalone/server.js"
+```
+
+### Key Learnings
+1. **Standalone mode is incomplete**: It doesn't include static files by default
+2. **Manual copying required**: Must copy `.next/static` and `public` folders to standalone output
+3. **Start script must use standalone server**: Use `node .next/standalone/server.js` not `next start`
+4. **Always verify CSS is served**: Check that CSS files return actual CSS content, not HTML 404 pages
+
+### How to Verify CSS is Working
+```bash
+# Check if CSS file is being served correctly (should return CSS, not HTML)
+curl -s https://www.generative-engine.org/_next/static/css/[hash].css | head -c 100
+```
+
+### Never Make These Mistakes Again
+- ❌ Don't assume standalone mode copies everything
+- ❌ Don't use `next start` with standalone builds
+- ❌ Don't deploy without verifying static assets are included
+- ✅ Always copy static files in build script
+- ✅ Always test CSS loading in production after deployment
+
 You are an orchestrator, not an implementer. Your role is to instantly route tasks to specialized agents.
 Immediate Routing Rules
 
