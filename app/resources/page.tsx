@@ -121,25 +121,25 @@ const industryResources = [
 
 const communityResources = [
   {
-    platform: 'GitHub',
-    title: 'GEO Community Repository',
-    description: 'Open-source tools and templates for GEO practitioners',
-    icon: '👥',
-    link: 'https://github.com/geo-community'
+    platform: 'Newsletter',
+    title: 'GEO Weekly Newsletter',
+    description: 'Get the latest GEO strategies and insights delivered to your inbox',
+    icon: '📧',
+    link: '#newsletter'
   },
   {
-    platform: 'Discord',
-    title: 'GEO Practitioners Discord',
-    description: 'Join discussions with other GEO specialists',
+    platform: 'Forum',
+    title: 'GEO Community Forum',
+    description: 'Ask questions and share knowledge with other practitioners',
     icon: '💬',
-    link: 'https://discord.gg/geo-practitioners'
+    link: '/community'
   },
   {
-    platform: 'LinkedIn',
-    title: 'GEO Professional Group',
-    description: 'Network with industry professionals and share insights',
-    icon: '🔗',
-    link: 'https://linkedin.com/groups/geo-professionals'
+    platform: 'Academy',
+    title: 'GEO Training Academy',
+    description: 'Structured courses and certifications for GEO mastery',
+    icon: '🎓',
+    link: '/academy'
   }
 ]
 
@@ -375,14 +375,21 @@ export default function ResourcesPage() {
                   <span className="text-4xl mb-4 block">{community.icon}</span>
                   <h3 className="text-xl font-bold text-gray-900 mb-2">{community.title}</h3>
                   <p className="text-gray-700 mb-6">{community.description}</p>
-                  <a 
-                    href={community.link}
-                    className="inline-flex items-center bg-gray-900 text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-800 transition"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Join {community.platform} →
-                  </a>
+                  {community.platform === 'Newsletter' ? (
+                    <a 
+                      href={community.link}
+                      className="inline-flex items-center bg-gray-900 text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-800 transition"
+                    >
+                      Subscribe →
+                    </a>
+                  ) : (
+                    <Link 
+                      href={community.link}
+                      className="inline-flex items-center bg-gray-900 text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-800 transition"
+                    >
+                      Join {community.platform} →
+                    </Link>
+                  )}
                 </div>
               ))}
             </div>
