@@ -113,6 +113,12 @@ export async function GET() {
     { path: '/guide', priority: '0.8', changefreq: 'weekly' },
     { path: '/tech-view', priority: '0.6', changefreq: 'monthly' },
     
+    // Learning & Information pages
+    { path: '/benchmarks', priority: '0.8', changefreq: 'weekly' },
+    { path: '/tutorials', priority: '0.8', changefreq: 'weekly' },
+    { path: '/academy', priority: '0.8', changefreq: 'weekly' },
+    { path: '/coming-soon', priority: '0.3', changefreq: 'monthly' },
+    
     // Tools pages (high priority for user engagement)
     { path: '/tools', priority: '0.8', changefreq: 'weekly' },
     { path: '/tools/visibility-tracker', priority: '0.9', changefreq: 'weekly' },
