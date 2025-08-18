@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "next dev",
-    "build": "next build && cp -r .next/static .next/standalone/.next/ && cp -r public .next/standalone/",
+    "build": "next build && cp -r .next/static .next/standalone/.next/ && cp -r public .next/standalone/ && cp -r content .next/standalone/",
     "start": "node .next/standalone/server.js",
     "lint": "next lint",
     "test": "echo \"Error: no test specified\" && exit 1",
