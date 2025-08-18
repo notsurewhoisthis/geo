@@ -812,6 +812,13 @@ export const platformComparisons = [
     "description": "Compare optimization strategies for Claude 4.1 Sonnet and Phi-4. Learn how to maximize visibility across both AI platforms."
   },
   {
+    "slug": "claude-4-1-sonnet-vs-gemini-2-0-flash",
+    "title": "Claude 4.1 Sonnet vs Gemini 2.0 Flash Optimization Guide",
+    "platform1": "Claude 4.1 Sonnet",
+    "platform2": "Gemini 2.0 Flash",
+    "description": "Compare optimization strategies for Claude 4.1 Sonnet and Gemini 2.0 Flash. Learn how to maximize visibility across both AI platforms."
+  },
+  {
     "slug": "llama-3-1-vs-llama-4",
     "title": "Llama 3.1 vs Llama 4 Optimization Guide",
     "platform1": "Llama 3.1",
@@ -1153,6 +1160,13 @@ export const platformComparisons = [
     "platform1": "Mistral Large 2",
     "platform2": "Phi-4",
     "description": "Compare optimization strategies for Mistral Large 2 and Phi-4. Learn how to maximize visibility across both AI platforms."
+  },
+  {
+    "slug": "mistral-large-2-vs-qwen2-5",
+    "title": "Mistral Large 2 vs Qwen2.5 Optimization Guide",
+    "platform1": "Mistral Large 2",
+    "platform2": "Qwen2.5",
+    "description": "Compare optimization strategies for Mistral Large 2 and Qwen2.5. Learn how to maximize visibility across both AI platforms."
   },
   {
     "slug": "chatgpt-5-mini-vs-nova-pro",

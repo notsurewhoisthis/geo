@@ -119,6 +119,12 @@ export async function GET() {
     { path: '/academy', priority: '0.8', changefreq: 'weekly' },
     { path: '/coming-soon', priority: '0.3', changefreq: 'monthly' },
     
+    // Main pages 
+    { path: '/contact', priority: '0.9', changefreq: 'monthly' },
+    { path: '/getting-started', priority: '0.9', changefreq: 'weekly' },
+    { path: '/consultation', priority: '0.8', changefreq: 'monthly' },
+    { path: '/use-cases', priority: '0.8', changefreq: 'weekly' },
+    
     // Tools pages (high priority for user engagement)
     { path: '/tools', priority: '0.8', changefreq: 'weekly' },
     { path: '/tools/visibility-tracker', priority: '0.9', changefreq: 'weekly' },

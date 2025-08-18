@@ -72,10 +72,22 @@
       "namedRegex": "^/about(?:/)?$"
     },
     {
+      "page": "/academy",
+      "regex": "^/academy(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/academy(?:/)?$"
+    },
+    {
       "page": "/authors",
       "regex": "^/authors(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/authors(?:/)?$"
+    },
+    {
+      "page": "/benchmarks",
+      "regex": "^/benchmarks(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/benchmarks(?:/)?$"
     },
     {
       "page": "/blog",
@@ -84,10 +96,28 @@
       "namedRegex": "^/blog(?:/)?$"
     },
     {
+      "page": "/coming-soon",
+      "regex": "^/coming\\-soon(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/coming\\-soon(?:/)?$"
+    },
+    {
       "page": "/compare",
       "regex": "^/compare(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/compare(?:/)?$"
+    },
+    {
+      "page": "/consultation",
+      "regex": "^/consultation(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/consultation(?:/)?$"
+    },
+    {
+      "page": "/contact",
+      "regex": "^/contact(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/contact(?:/)?$"
     },
     {
       "page": "/entities",
@@ -112,6 +142,12 @@
       "regex": "^/feed\\.xml(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/feed\\.xml(?:/)?$"
+    },
+    {
+      "page": "/getting-started",
+      "regex": "^/getting\\-started(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/getting\\-started(?:/)?$"
     },
     {
       "page": "/glossary",
@@ -148,6 +184,12 @@
       "regex": "^/resources(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/resources(?:/)?$"
+    },
+    {
+      "page": "/rss.xml",
+      "regex": "^/rss\\.xml(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/rss\\.xml(?:/)?$"
     },
     {
       "page": "/sitemap.xml",
@@ -208,6 +250,18 @@
       "regex": "^/tools/visibility\\-tracker(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/tools/visibility\\-tracker(?:/)?$"
+    },
+    {
+      "page": "/tutorials",
+      "regex": "^/tutorials(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/tutorials(?:/)?$"
+    },
+    {
+      "page": "/use-cases",
+      "regex": "^/use\\-cases(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/use\\-cases(?:/)?$"
     }
   ],
   "dataRoutes": [],
