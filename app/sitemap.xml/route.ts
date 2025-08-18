@@ -149,7 +149,7 @@ export async function GET() {
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>${escapeXml(baseUrl + '/api/og?title=' + encodeURIComponent('GEO for ' + industry.slug) + '&amp;type=industry')}</image:loc>
+      <image:loc>${escapeXml(baseUrl + '/api/og?title=' + encodeURIComponent('GEO for ' + industry.slug) + '&type=industry')}</image:loc>
       <image:caption>GEO Industry Guide Thumbnail</image:caption>
     </image:image>
   </url>`).join('')}
@@ -160,7 +160,7 @@ export async function GET() {
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
-      <image:loc>${escapeXml(baseUrl + '/api/og?title=' + encodeURIComponent(platform.slug + ' Optimization Guide') + '&amp;type=platform')}</image:loc>
+      <image:loc>${escapeXml(baseUrl + '/api/og?title=' + encodeURIComponent(platform.slug + ' Optimization Guide') + '&type=platform')}</image:loc>
       <image:caption>AI Platform Optimization Guide</image:caption>
     </image:image>
   </url>`).join('')}
@@ -171,7 +171,7 @@ export async function GET() {
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
-      <image:loc>${escapeXml(baseUrl + '/api/og?title=' + encodeURIComponent(comparison.slug) + '&amp;type=comparison')}</image:loc>
+      <image:loc>${escapeXml(baseUrl + '/api/og?title=' + encodeURIComponent(comparison.slug) + '&type=comparison')}</image:loc>
       <image:caption>GEO Comparison Guide</image:caption>
     </image:image>
   </url>`).join('')}
