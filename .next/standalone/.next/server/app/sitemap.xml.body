@@ -4,109 +4,109 @@
   
   <url>
     <loc>https://generative-engine.org</loc>
-    <lastmod>2025-08-18T19:25:18.305Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.593Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://generative-engine.org/blog</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.595Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://generative-engine.org/about</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.595Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://generative-engine.org/resources</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.595Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://generative-engine.org/glossary</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.595Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://generative-engine.org/guide</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.595Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://generative-engine.org/tech-view</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.595Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://generative-engine.org/tools</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.595Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://generative-engine.org/tools/visibility-tracker</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.595Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://generative-engine.org/tools/content-optimizer</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.595Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://generative-engine.org/tools/geo-audit</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.595Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://generative-engine.org/tools/keyword-research</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.595Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://generative-engine.org/industries</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.595Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://generative-engine.org/platforms</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.595Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://generative-engine.org/compare</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.595Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://generative-engine.org/entities</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.595Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://generative-engine.org/entities/generative-engine-optimization</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.595Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://generative-engine.org/entities/chatgpt-optimization</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.595Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -114,7 +114,7 @@
   
   <url>
     <loc>https://generative-engine.org/industries/healthcare-medical-services</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.595Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -124,7 +124,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/industries/financial-services-banking</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.595Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -134,7 +134,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/industries/retail-ecommerce</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.595Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -144,7 +144,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/industries/manufacturing-industry</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.595Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -154,7 +154,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/industries/education-technology</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.595Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -164,7 +164,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/industries/transportation-logistics</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.595Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -174,7 +174,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/industries/energy-utilities</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.595Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -184,7 +184,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/industries/real-estate-property</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.595Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -194,7 +194,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/industries/pharmaceuticals-biotech</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.595Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -204,7 +204,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/industries/telecommunications</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.595Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -214,7 +214,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/industries/insurance-industry</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.595Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -224,7 +224,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/industries/automotive-industry</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.595Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -234,7 +234,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/industries/media-entertainment</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.595Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -244,7 +244,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/industries/agriculture-agtech</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.595Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -254,7 +254,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/industries/hospitality-tourism</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.595Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -264,7 +264,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/industries/construction-engineering</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.595Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -274,7 +274,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/industries/food-beverage-industry</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.595Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -284,7 +284,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/industries/cybersecurity-industry</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.595Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -294,7 +294,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/industries/legal-services</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.595Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -304,7 +304,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/industries/cloud-computing</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.595Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -314,7 +314,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/industries/gaming-industry</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.595Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -324,7 +324,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/industries/human-resources</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.595Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -334,7 +334,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/industries/supply-chain-management</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.595Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -344,7 +344,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/industries/biotechnology</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.595Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -354,7 +354,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/industries/fashion-apparel</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.595Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -364,7 +364,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/industries/government-public-sector</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.595Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -374,7 +374,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/industries/sports-fitness</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.595Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -384,7 +384,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/industries/nonprofit-organizations</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.595Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -394,7 +394,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/industries/space-aerospace</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.595Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -404,7 +404,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/industries/renewable-energy</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.595Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -414,7 +414,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/industries/maritime-shipping</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.595Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -424,7 +424,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/industries/mining-resources</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.595Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -434,7 +434,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/industries/chemical-industry</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.595Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -444,7 +444,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/industries/defense-military</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.595Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -454,7 +454,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/industries/luxury-goods</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.595Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -464,7 +464,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/industries/pet-care-industry</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.595Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -474,7 +474,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/industries/beauty-cosmetics</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.595Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -484,7 +484,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/industries/event-management</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.595Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -494,7 +494,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/industries/printing-publishing</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.595Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -504,7 +504,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/industries/waste-management</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.595Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -514,7 +514,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/industries/architecture-design</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.595Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -524,7 +524,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/industries/dental-healthcare</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.595Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -534,7 +534,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/industries/music-industry</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.595Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -544,7 +544,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/industries/elderly-care</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.595Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -554,7 +554,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/industries/translation-localization</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.595Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -564,7 +564,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/industries/home-automation</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.595Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -574,7 +574,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/industries/mental-health</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.595Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -584,7 +584,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/industries/blockchain-crypto</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.595Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -594,7 +594,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/industries/quantum-computing</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.595Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -604,7 +604,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/industries/metaverse-virtual-worlds</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.595Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -615,7 +615,7 @@
   
   <url>
     <loc>https://generative-engine.org/platforms/chatgpt</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.595Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -625,7 +625,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/platforms/claude</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.595Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -635,7 +635,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/platforms/gemini</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.595Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -645,7 +645,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/platforms/perplexity-ai</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.595Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -655,7 +655,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/platforms/microsoft-copilot</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.595Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -665,7 +665,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/platforms/grok</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.595Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -675,7 +675,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/platforms/github-copilot</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.595Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -685,7 +685,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/platforms/amazon-codewhisperer</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.595Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -695,7 +695,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/platforms/midjourney</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.595Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -705,7 +705,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/platforms/dall-e-3</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.595Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -715,7 +715,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/platforms/stable-diffusion</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.595Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -725,7 +725,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/platforms/jasper-ai</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.595Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -735,7 +735,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/platforms/copy-ai</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.595Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -745,7 +745,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/platforms/notion-ai</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.595Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -755,7 +755,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/platforms/grammarly</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.595Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -765,7 +765,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/platforms/cursor</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.595Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -775,7 +775,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/platforms/you-com</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.595Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -785,7 +785,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/platforms/phind</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.595Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -795,7 +795,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/platforms/poe</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -805,7 +805,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/platforms/character-ai</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -815,7 +815,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/platforms/replika</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -825,7 +825,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/platforms/runway</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -835,7 +835,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/platforms/synthesia</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -845,7 +845,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/platforms/elevenlabs</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -855,7 +855,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/platforms/murf-ai</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -865,7 +865,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/platforms/deepl</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -875,7 +875,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/platforms/writesonic</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -885,7 +885,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/platforms/wordtune</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -895,7 +895,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/platforms/scale-ai</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -905,7 +905,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/platforms/dataiku</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -915,7 +915,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/platforms/h2o-ai</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -925,7 +925,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/platforms/cohere</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -935,7 +935,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/platforms/ai21-labs</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -945,7 +945,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/platforms/inflection-ai</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -955,7 +955,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/platforms/adobe-firefly</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -965,7 +965,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/platforms/canva-ai</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -975,7 +975,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/platforms/leonardo-ai</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -985,7 +985,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/platforms/ideogram</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -995,7 +995,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/platforms/otter-ai</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -1005,7 +1005,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/platforms/descript</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -1015,7 +1015,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/platforms/tabnine</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -1025,7 +1025,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/platforms/replit-ai</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -1035,7 +1035,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/platforms/codeium</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -1045,7 +1045,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/platforms/hugging-face</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -1055,7 +1055,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/platforms/kaggle</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -1065,7 +1065,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/platforms/weights-biases</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -1075,7 +1075,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/platforms/langchain</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -1085,7 +1085,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/platforms/pinecone</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -1095,7 +1095,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/platforms/weaviate</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -1105,7 +1105,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/platforms/chroma</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -1115,7 +1115,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/platforms/together-ai</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -1125,7 +1125,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/platforms/anyscale</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -1135,7 +1135,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/platforms/modal</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -1145,7 +1145,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/platforms/vertex-ai</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -1155,7 +1155,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/platforms/sagemaker</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -1165,7 +1165,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/platforms/azure-ai</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -1175,7 +1175,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/platforms/watsonx</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -1185,7 +1185,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/platforms/llama</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -1195,7 +1195,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/platforms/mistral-ai</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -1205,7 +1205,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/platforms/falcon</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -1215,7 +1215,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/platforms/bloom</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -1225,7 +1225,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/platforms/flan-t5</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
@@ -1236,7 +1236,7 @@
   
   <url>
     <loc>https://generative-engine.org/compare/gpt-4o-vs-gpt-4-5</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -1246,7 +1246,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/gpt-4o-vs-gpt-5</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -1256,7 +1256,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/gpt-4o-vs-gemini-2-5-pro</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -1266,7 +1266,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/gpt-4o-vs-gemini-2-0-flash</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -1276,7 +1276,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/gpt-4o-vs-claude-3-7-sonnet</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -1286,7 +1286,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/gpt-4o-vs-claude-4-1-opus</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -1296,7 +1296,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/gpt-4o-vs-claude-4-1-sonnet</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -1306,7 +1306,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/gpt-4o-vs-llama-3-1</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -1316,7 +1316,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/gpt-4o-vs-llama-4</loc>
-    <lastmod>2025-08-18T19:25:18.308Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -1326,7 +1326,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/gpt-4o-vs-grok-4</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -1336,7 +1336,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/gpt-4o-vs-deepseek-r1</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -1346,7 +1346,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/gpt-4o-vs-openai-o3</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -1356,7 +1356,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/gpt-4o-vs-qwen-2-5</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -1366,7 +1366,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/gpt-4o-vs-mistral-large-2</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -1376,7 +1376,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/gpt-4o-vs-chatgpt-5-mini</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -1386,7 +1386,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/gpt-4o-vs-nova-pro</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -1396,7 +1396,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/gpt-4o-vs-gemma-3</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -1406,7 +1406,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/gpt-4o-vs-phi-4</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -1416,7 +1416,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/gpt-4-5-vs-gpt-5</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -1426,7 +1426,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/gpt-4-5-vs-gemini-2-5-pro</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -1436,7 +1436,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/gpt-4-5-vs-gemini-2-0-flash</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -1446,7 +1446,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/gpt-4-5-vs-claude-3-7-sonnet</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -1456,7 +1456,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/gpt-4-5-vs-claude-4-1-opus</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -1466,7 +1466,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/gpt-4-5-vs-claude-4-1-sonnet</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -1476,7 +1476,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/gpt-4-5-vs-llama-3-1</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -1486,7 +1486,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/gpt-4-5-vs-llama-4</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -1496,7 +1496,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/gpt-4-5-vs-grok-4</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -1506,7 +1506,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/gpt-4-5-vs-deepseek-r1</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -1516,7 +1516,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/gpt-4-5-vs-openai-o3</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -1526,7 +1526,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/gpt-4-5-vs-qwen-2-5</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -1536,7 +1536,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/gpt-4-5-vs-mistral-large-2</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -1546,7 +1546,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/gpt-4-5-vs-chatgpt-5-mini</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -1556,7 +1556,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/gpt-4-5-vs-nova-pro</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -1566,7 +1566,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/gpt-4-5-vs-gemma-3</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -1576,7 +1576,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/gpt-4-5-vs-phi-4</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -1586,7 +1586,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/gpt-5-vs-gemini-2-5-pro</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -1596,7 +1596,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/gpt-5-vs-gemini-2-0-flash</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -1606,7 +1606,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/gpt-5-vs-claude-3-7-sonnet</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -1616,7 +1616,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/gpt-5-vs-claude-4-1-opus</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -1626,7 +1626,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/gpt-5-vs-claude-4-1-sonnet</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -1636,7 +1636,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/gpt-5-vs-llama-3-1</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -1646,7 +1646,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/gpt-5-vs-llama-4</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -1656,7 +1656,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/gpt-5-vs-grok-4</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -1666,7 +1666,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/gpt-5-vs-deepseek-r1</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -1676,7 +1676,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/gpt-5-vs-openai-o3</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -1686,7 +1686,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/gpt-5-vs-qwen-2-5</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -1696,7 +1696,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/gpt-5-vs-mistral-large-2</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -1706,7 +1706,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/gpt-5-vs-chatgpt-5-mini</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -1716,7 +1716,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/gpt-5-vs-nova-pro</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -1726,7 +1726,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/gpt-5-vs-gemma-3</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -1736,7 +1736,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/gpt-5-vs-phi-4</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -1746,7 +1746,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/gemini-2-5-pro-vs-gemini-2-0-flash</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -1756,7 +1756,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/gemini-2-5-pro-vs-claude-3-7-sonnet</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -1766,7 +1766,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/gemini-2-5-pro-vs-claude-4-1-opus</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -1776,7 +1776,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/gemini-2-5-pro-vs-claude-4-1-sonnet</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -1786,7 +1786,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/gemini-2-5-pro-vs-llama-3-1</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -1796,7 +1796,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/gemini-2-5-pro-vs-llama-4</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -1806,7 +1806,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/gemini-2-5-pro-vs-grok-4</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -1816,7 +1816,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/gemini-2-5-pro-vs-deepseek-r1</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -1826,7 +1826,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/gemini-2-5-pro-vs-openai-o3</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -1836,7 +1836,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/gemini-2-5-pro-vs-qwen-2-5</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -1846,7 +1846,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/gemini-2-5-pro-vs-mistral-large-2</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -1856,7 +1856,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/gemini-2-5-pro-vs-chatgpt-5-mini</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -1866,7 +1866,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/gemini-2-5-pro-vs-nova-pro</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -1876,7 +1876,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/gemini-2-5-pro-vs-gemma-3</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -1886,7 +1886,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/gemini-2-5-pro-vs-phi-4</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -1896,7 +1896,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/gemini-2-0-flash-vs-claude-3-7-sonnet</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -1906,7 +1906,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/gemini-2-0-flash-vs-claude-4-1-opus</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -1916,7 +1916,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/gemini-2-0-flash-vs-claude-4-1-sonnet</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -1926,7 +1926,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/gemini-2-0-flash-vs-llama-3-1</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -1936,7 +1936,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/gemini-2-0-flash-vs-llama-4</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -1946,7 +1946,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/gemini-2-0-flash-vs-grok-4</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -1956,7 +1956,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/gemini-2-0-flash-vs-deepseek-r1</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -1966,7 +1966,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/gemini-2-0-flash-vs-openai-o3</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -1976,7 +1976,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/gemini-2-0-flash-vs-qwen-2-5</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -1986,7 +1986,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/gemini-2-0-flash-vs-mistral-large-2</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -1996,7 +1996,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/gemini-2-0-flash-vs-chatgpt-5-mini</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -2006,7 +2006,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/gemini-2-0-flash-vs-nova-pro</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -2016,7 +2016,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/gemini-2-0-flash-vs-gemma-3</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -2026,7 +2026,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/gemini-2-0-flash-vs-phi-4</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -2036,7 +2036,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/claude-3-7-sonnet-vs-claude-4-1-opus</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -2046,7 +2046,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/claude-3-7-sonnet-vs-claude-4-1-sonnet</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -2056,7 +2056,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/claude-3-7-sonnet-vs-llama-3-1</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -2066,7 +2066,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/claude-3-7-sonnet-vs-llama-4</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -2076,7 +2076,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/claude-3-7-sonnet-vs-grok-4</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -2086,7 +2086,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/claude-3-7-sonnet-vs-deepseek-r1</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -2096,7 +2096,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/claude-3-7-sonnet-vs-openai-o3</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -2106,7 +2106,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/claude-3-7-sonnet-vs-qwen-2-5</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -2116,7 +2116,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/claude-3-7-sonnet-vs-mistral-large-2</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -2126,7 +2126,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/claude-3-7-sonnet-vs-chatgpt-5-mini</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -2136,7 +2136,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/claude-3-7-sonnet-vs-nova-pro</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -2146,7 +2146,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/claude-3-7-sonnet-vs-gemma-3</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -2156,7 +2156,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/claude-3-7-sonnet-vs-phi-4</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -2166,7 +2166,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/claude-4-1-opus-vs-claude-4-1-sonnet</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -2176,7 +2176,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/claude-4-1-opus-vs-llama-3-1</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -2186,7 +2186,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/claude-4-1-opus-vs-llama-4</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -2196,7 +2196,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/claude-4-1-opus-vs-grok-4</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -2206,7 +2206,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/claude-4-1-opus-vs-deepseek-r1</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -2216,7 +2216,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/claude-4-1-opus-vs-openai-o3</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -2226,7 +2226,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/claude-4-1-opus-vs-qwen-2-5</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -2236,7 +2236,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/claude-4-1-opus-vs-mistral-large-2</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -2246,7 +2246,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/claude-4-1-opus-vs-chatgpt-5-mini</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -2256,7 +2256,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/claude-4-1-opus-vs-nova-pro</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -2266,7 +2266,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/claude-4-1-opus-vs-gemma-3</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -2276,7 +2276,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/claude-4-1-opus-vs-phi-4</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -2286,7 +2286,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/claude-4-1-sonnet-vs-llama-3-1</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -2296,7 +2296,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/claude-4-1-sonnet-vs-llama-4</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -2306,7 +2306,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/claude-4-1-sonnet-vs-grok-4</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -2316,7 +2316,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/claude-4-1-sonnet-vs-deepseek-r1</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -2326,7 +2326,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/claude-4-1-sonnet-vs-openai-o3</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -2336,7 +2336,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/claude-4-1-sonnet-vs-qwen-2-5</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -2346,7 +2346,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/claude-4-1-sonnet-vs-mistral-large-2</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -2356,7 +2356,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/claude-4-1-sonnet-vs-chatgpt-5-mini</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -2366,7 +2366,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/claude-4-1-sonnet-vs-nova-pro</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -2376,7 +2376,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/claude-4-1-sonnet-vs-gemma-3</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -2386,7 +2386,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/claude-4-1-sonnet-vs-phi-4</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -2396,7 +2396,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/llama-3-1-vs-llama-4</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -2406,7 +2406,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/llama-3-1-vs-grok-4</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -2416,7 +2416,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/llama-3-1-vs-deepseek-r1</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -2426,7 +2426,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/llama-3-1-vs-openai-o3</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -2436,7 +2436,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/llama-3-1-vs-qwen-2-5</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -2446,7 +2446,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/llama-3-1-vs-mistral-large-2</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -2456,7 +2456,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/llama-3-1-vs-chatgpt-5-mini</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -2466,7 +2466,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/llama-3-1-vs-nova-pro</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -2476,7 +2476,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/llama-3-1-vs-gemma-3</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -2486,7 +2486,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/llama-3-1-vs-phi-4</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -2496,7 +2496,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/llama-4-vs-grok-4</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -2506,7 +2506,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/llama-4-vs-deepseek-r1</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -2516,7 +2516,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/llama-4-vs-openai-o3</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -2526,7 +2526,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/llama-4-vs-qwen-2-5</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -2536,7 +2536,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/llama-4-vs-mistral-large-2</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -2546,7 +2546,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/llama-4-vs-chatgpt-5-mini</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -2556,7 +2556,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/llama-4-vs-nova-pro</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -2566,7 +2566,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/llama-4-vs-gemma-3</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -2576,7 +2576,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/llama-4-vs-phi-4</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -2586,7 +2586,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/grok-4-vs-deepseek-r1</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -2596,7 +2596,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/grok-4-vs-openai-o3</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -2606,7 +2606,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/grok-4-vs-qwen-2-5</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -2616,7 +2616,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/grok-4-vs-mistral-large-2</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -2626,7 +2626,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/grok-4-vs-chatgpt-5-mini</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -2636,7 +2636,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/grok-4-vs-nova-pro</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -2646,7 +2646,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/grok-4-vs-gemma-3</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -2656,7 +2656,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/grok-4-vs-phi-4</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -2666,7 +2666,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/deepseek-r1-vs-openai-o3</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -2676,7 +2676,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/deepseek-r1-vs-qwen-2-5</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -2686,7 +2686,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/deepseek-r1-vs-mistral-large-2</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -2696,7 +2696,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/deepseek-r1-vs-chatgpt-5-mini</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -2706,7 +2706,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/deepseek-r1-vs-nova-pro</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -2716,7 +2716,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/deepseek-r1-vs-gemma-3</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -2726,7 +2726,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/deepseek-r1-vs-phi-4</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -2736,7 +2736,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/openai-o3-vs-qwen-2-5</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -2746,7 +2746,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/openai-o3-vs-mistral-large-2</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -2756,7 +2756,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/openai-o3-vs-chatgpt-5-mini</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -2766,7 +2766,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/openai-o3-vs-nova-pro</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -2776,7 +2776,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/openai-o3-vs-gemma-3</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -2786,7 +2786,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/openai-o3-vs-phi-4</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -2796,7 +2796,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/qwen-2-5-vs-mistral-large-2</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -2806,7 +2806,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/qwen-2-5-vs-chatgpt-5-mini</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -2816,7 +2816,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/qwen-2-5-vs-nova-pro</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -2826,7 +2826,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/qwen-2-5-vs-gemma-3</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -2836,7 +2836,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/qwen-2-5-vs-phi-4</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -2846,7 +2846,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/mistral-large-2-vs-chatgpt-5-mini</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -2856,7 +2856,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/mistral-large-2-vs-nova-pro</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -2866,7 +2866,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/mistral-large-2-vs-gemma-3</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -2876,7 +2876,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/mistral-large-2-vs-phi-4</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -2886,7 +2886,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/chatgpt-5-mini-vs-nova-pro</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -2896,7 +2896,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/chatgpt-5-mini-vs-gemma-3</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -2906,7 +2906,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/chatgpt-5-mini-vs-phi-4</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -2916,7 +2916,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/nova-pro-vs-gemma-3</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -2926,7 +2926,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/nova-pro-vs-phi-4</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -2936,7 +2936,7 @@
   </url>
   <url>
     <loc>https://generative-engine.org/compare/gemma-3-vs-phi-4</loc>
-    <lastmod>2025-08-18T19:25:18.309Z</lastmod>
+    <lastmod>2025-08-18T19:39:02.596Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
@@ -2972,6 +2972,16 @@
     <priority>0.7</priority>
     <image:image>
       <image:loc>https://generative-engine.org/api/og?title=entity-based-seo-is-silently-killing-traditional-keyword-str-1755540152359</image:loc>
+      <image:caption>GEO Article Thumbnail</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://generative-engine.org/llama-s-enterprise-takeover-how-meta-s-aws-partnership-and-l-1755543758338</loc>
+    <lastmod>2025-08-18T19:02:38.338Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://generative-engine.org/api/og?title=llama-s-enterprise-takeover-how-meta-s-aws-partnership-and-l-1755543758338</image:loc>
       <image:caption>GEO Article Thumbnail</image:caption>
     </image:image>
   </url>
