@@ -8,6 +8,7 @@ interface AuditResult {
   category: string
   issues: string[]
   recommendations: string[]
+  details?: any
 }
 
 export default function GEOAuditPage() {
@@ -20,57 +21,34 @@ export default function GEOAuditPage() {
     if (!url) return
     
     setIsAnalyzing(true)
+    setResults([])
+    setOverallScore(0)
     
-    // Simulate analysis delay
-    await new Promise(resolve => setTimeout(resolve, 3000))
-    
-    // Simulated audit results
-    const mockResults: AuditResult[] = [
-      {
-        score: 85,
-        category: 'Content Structure',
-        issues: ['Missing FAQ section', 'H1 tag optimization needed'],
-        recommendations: [
-          'Add FAQ section to address common questions',
-          'Optimize H1 tag with primary keyword',
-          'Include numbered lists for better readability'
-        ]
-      },
-      {
-        score: 72,
-        category: 'Semantic Clarity',
-        issues: ['Entity definitions unclear', 'Limited semantic markup'],
-        recommendations: [
-          'Define key entities in first paragraph',
-          'Add schema.org markup',
-          'Use clear topic sentences'
-        ]
-      },
-      {
-        score: 68,
-        category: 'AI Citations',
-        issues: ['No quotable statistics', 'Missing authoritative sources'],
-        recommendations: [
-          'Include specific statistics with context',
-          'Add expert quotes and citations',
-          'Reference industry reports and studies'
-        ]
-      },
-      {
-        score: 91,
-        category: 'Content Depth',
-        issues: [],
-        recommendations: [
-          'Excellent content depth!',
-          'Maintain comprehensive coverage',
-          'Consider adding more examples'
-        ]
+    try {
+      // Call the real API endpoint
+      const response = await fetch('/api/geo-audit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ url })
+      })
+      
+      if (!response.ok) {
+        const error = await response.json()
+        throw new Error(error.details || 'Failed to analyze URL')
       }
-    ]
-    
-    setResults(mockResults)
-    setOverallScore(Math.round(mockResults.reduce((acc, result) => acc + result.score, 0) / mockResults.length))
-    setIsAnalyzing(false)
+      
+      const data = await response.json()
+      setResults(data.results || [])
+      setOverallScore(data.overallScore || 0)
+    } catch (error) {
+      console.error('Audit error:', error)
+      // Show error message to user
+      alert(`Failed to analyze URL: ${error instanceof Error ? error.message : 'Unknown error'}`)
+    } finally {
+      setIsAnalyzing(false)
+    }
   }
 
   const getScoreColor = (score: number) => {
@@ -101,6 +79,9 @@ export default function GEOAuditPage() {
             
             <div className="bg-blue-50 rounded-lg p-8 max-w-2xl mx-auto">
               <h2 className="text-2xl font-bold text-gray-900 mb-4">Analyze Your Content</h2>
+              <p className="text-sm text-blue-700 mb-4">
+                🔍 Real-time analysis of your actual content for GEO factors
+              </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <input
                   type="url"
@@ -180,6 +161,19 @@ export default function GEOAuditPage() {
                         ))}
                       </ul>
                     </div>
+
+                    {result.details && (
+                      <div className="mt-4 pt-4 border-t border-gray-200">
+                        <h4 className="font-semibold text-blue-700 mb-2">Analysis Details:</h4>
+                        <div className="grid grid-cols-2 gap-2 text-sm text-gray-600">
+                          {Object.entries(result.details).map(([key, value]) => (
+                            <div key={key}>
+                              <span className="font-medium">{key.replace(/([A-Z])/g, ' $1').trim()}:</span> {String(value)}
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    )}
                   </div>
                 ))}
               </div>
