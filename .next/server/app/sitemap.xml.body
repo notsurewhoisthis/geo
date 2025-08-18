@@ -4,37 +4,37 @@
   
   <url>
     <loc>https://generative-engine.org</loc>
-    <lastmod>2025-08-18T11:22:43.937Z</lastmod>
+    <lastmod>2025-08-18T11:30:24.217Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://generative-engine.org/blog</loc>
-    <lastmod>2025-08-18T11:22:43.939Z</lastmod>
+    <lastmod>2025-08-18T11:30:24.219Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://generative-engine.org/resources</loc>
-    <lastmod>2025-08-18T11:22:43.939Z</lastmod>
+    <lastmod>2025-08-18T11:30:24.219Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://generative-engine.org/about</loc>
-    <lastmod>2025-08-18T11:22:43.939Z</lastmod>
+    <lastmod>2025-08-18T11:30:24.219Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://generative-engine.org/glossary</loc>
-    <lastmod>2025-08-18T11:22:43.939Z</lastmod>
+    <lastmod>2025-08-18T11:30:24.219Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://generative-engine.org/tools</loc>
-    <lastmod>2025-08-18T11:22:43.939Z</lastmod>
+    <lastmod>2025-08-18T11:30:24.219Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -46,6 +46,16 @@
     <priority>0.7</priority>
     <image:image>
       <image:loc>https://generative-engine.org/api/og?title=ai-powered-seo-strategies-2025</image:loc>
+      <image:caption>GEO Article Thumbnail</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://generative-engine.org/blog/seo-vs-geo-complete-guide</loc>
+    <lastmod>2024-12-20T00:00:00.000Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://generative-engine.org/api/og?title=blog%2Fseo-vs-geo-complete-guide</image:loc>
       <image:caption>GEO Article Thumbnail</image:caption>
     </image:image>
   </url>

@@ -78,10 +78,10 @@ export default async function BlogPage({
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-600 to-blue-800 text-white py-20 px-4">
+      <section className="py-16 px-4 bg-white">
         <div className="container-blog">
-          <h1 className="text-5xl font-bold mb-6">GEO Insights & Updates</h1>
-          <p className="text-xl opacity-90 max-w-3xl">
+          <h1 className="text-5xl font-bold mb-6 text-white">Generative engine optimization insights and updates</h1>
+          <p className="text-xl text-gray-600 max-w-3xl">
             Stay ahead of the curve with our latest research on Generative Engine Optimization, 
             AI search strategies, and the future of content discovery.
           </p>
@@ -100,7 +100,6 @@ export default async function BlogPage({
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
                 {currentPosts.map((post) => (
                   <article key={post.slug} className="blog-card">
-                    <div className="aspect-video bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg mb-4"></div>
                     <div className="space-y-3">
                       <div className="flex items-center gap-2 text-sm text-gray-600">
                         <span>{typeof post.author === 'string' ? post.author : post.author?.name || 'GEO Team'}</span>
