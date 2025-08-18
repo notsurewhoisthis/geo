@@ -16,7 +16,7 @@ interface BlogPost {
   slug: string
   title: string
   description: string
-  author: string
+  author: string | { name: string; bio: string }
   publishedAt: string
   tags: string[]
   content?: string
@@ -103,7 +103,7 @@ export default async function BlogPage({
                     <div className="aspect-video bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg mb-4"></div>
                     <div className="space-y-3">
                       <div className="flex items-center gap-2 text-sm text-gray-600">
-                        <span>{post.author}</span>
+                        <span>{typeof post.author === 'string' ? post.author : post.author?.name || 'GEO Team'}</span>
                         <span>•</span>
                         <time>{new Date(post.publishedAt).toLocaleDateString('en-US', { 
                           year: 'numeric',
