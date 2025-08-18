@@ -295,3 +295,56 @@ curl -s https://www.generative-engine.org/[slug] | grep 'id=".*" class="text-3xl
 2. **Validation Layer**: Add checks for content format before processing
 3. **Error Handling**: Better logging for markdown processing failures
 4. **Performance**: Consider database for blog posts instead of JSON files
+
+---
+
+## Automatic Deployment Setup (Aug 18, 2025)
+
+### What Was Accomplished
+Successfully set up automatic deployment from GitHub to Heroku, eliminating manual deployment steps when n8n pushes blog posts.
+
+### The Problem Before
+- n8n would push blog posts to GitHub ✅
+- Manual step required: `git pull origin main && git push heroku main` ❌
+- Delays in blog posts going live
+- Risk of forgetting to deploy
+
+### The Solution Implemented
+1. **Heroku GitHub Integration**
+   - Connected Heroku app to GitHub repository
+   - Enabled automatic deploys from main branch
+   - Set up pipeline: geo-pipeline (production stage)
+
+2. **Failed Attempt: GitHub Actions**
+   - Created workflow file but couldn't push due to missing `workflow` scope
+   - GitHub OAuth token limitations prevented workflow creation
+   - Removed in favor of Heroku's built-in integration
+
+### Current Automated Workflow
+1. n8n creates blog post → pushes JSON to GitHub
+2. GitHub webhook triggers Heroku deployment (automatic)
+3. Heroku builds and deploys the application
+4. Blog post goes live within 2-3 minutes
+5. No manual intervention required!
+
+### Configuration Details
+- **Heroku App**: geo-engine-optimization
+- **GitHub Repository**: notsurewhoisthis/GEO
+- **Branch**: main (auto-deploys enabled)
+- **Pipeline**: geo-pipeline
+- **Build Process**: Includes static file copying for standalone mode
+
+### Verification Steps
+```bash
+# Check deployment status
+heroku releases -a geo-engine-optimization
+
+# View deployment activity
+heroku logs --tail -a geo-engine-optimization
+
+# Dashboard URL for monitoring
+# https://dashboard.heroku.com/apps/geo-engine-optimization/activity
+```
+
+### Key Learning
+Heroku's built-in GitHub integration is simpler and more reliable than GitHub Actions for basic CD needs, especially when GitHub token permissions are limited.
