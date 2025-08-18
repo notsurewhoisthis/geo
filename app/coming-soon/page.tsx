@@ -3,7 +3,7 @@ import { Suspense } from 'react'
 import { languages, localeContent } from '@/app/lib/i18n-config'
 
 interface ComingSoonPageProps {
-  searchParams: { lang?: string }
+  searchParams: Promise<{ lang?: string }>
 }
 
 export const metadata: Metadata = {
@@ -12,8 +12,9 @@ export const metadata: Metadata = {
   robots: 'noindex, nofollow',
 }
 
-function ComingSoonContent({ searchParams }: ComingSoonPageProps) {
-  const langCode = searchParams.lang || 'en'
+async function ComingSoonContent({ searchParams }: ComingSoonPageProps) {
+  const resolvedSearchParams = await searchParams
+  const langCode = resolvedSearchParams.lang || 'en'
   const language = languages.find(lang => lang.code === langCode)
   const content = localeContent[langCode as keyof typeof localeContent] || localeContent['en']
   
