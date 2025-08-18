@@ -53,7 +53,7 @@ export default async function BlogPage() {
         <div className="container-blog">
           <div className="text-center max-w-3xl mx-auto">
             <h1 className="text-5xl font-bold text-gray-900 mb-4">
-              GEO Insights & Resources
+              Generative Engine Optimization Insights & Resources
             </h1>
             <p className="text-xl text-gray-600 leading-relaxed">
               Stay ahead with the latest trends, strategies, and best practices in Generative Engine Optimization
@@ -152,7 +152,7 @@ export default async function BlogPage() {
               Never Miss an Update
             </h2>
             <p className="text-lg text-gray-600 mb-8">
-              Our AI-powered content system discovers and publishes new GEO insights daily. Stay informed with the latest strategies and techniques.
+              Our AI-powered content system discovers and publishes new Generative Engine Optimization insights daily. Stay informed with the latest strategies and techniques.
             </p>
             <div className="flex gap-4 justify-center">
               <input 
