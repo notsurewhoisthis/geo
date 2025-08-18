@@ -86,6 +86,25 @@ curl -s http://localhost:3000/[slug] | grep -o '<h2[^>]*>.*</h2>' | head -3
 3. **Deploy to Heroku**: `git push heroku main`
 4. **Verify in production**: Check live blog posts for proper formatting
 
+### Automatic Deployment for n8n Blog Posts
+**IMPORTANT**: Currently manual deployment is required when n8n pushes new blog posts.
+
+To enable automatic deployment, you need to:
+1. **Set up Heroku GitHub Integration**: 
+   - Go to Heroku Dashboard → Your App → Deploy tab
+   - Connect to GitHub repository
+   - Enable automatic deploys from main branch
+   
+2. **Alternative: GitHub Actions** (requires workflow scope):
+   - Add HEROKU_API_KEY to GitHub secrets
+   - Create `.github/workflows/deploy.yml` with Heroku deploy action
+   - Ensure GitHub token has `workflow` scope
+
+3. **Current Solution**: 
+   - n8n pushes to GitHub
+   - Manual deploy: `git pull origin main && git push heroku main`
+   - ISR will pick up new posts after 60 seconds
+
 You are an orchestrator, not an implementer. Your role is to instantly route tasks to specialized agents.
 Immediate Routing Rules
 
