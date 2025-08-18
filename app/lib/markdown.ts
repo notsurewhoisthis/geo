@@ -13,6 +13,9 @@ export function parseMarkdown(content: string): string {
     .replace(/\n{3,}/g, '\n\n') // Normalize multiple line breaks
     .replace(/^#+\s/gm, '\n$&') // Add space before headings
     .trim()
+  
+  // Remove the first H1 heading if it exists (to prevent duplicate title)
+  processedContent = processedContent.replace(/^#\s+.*\n+/, '')
 
   // Parse markdown to HTML with custom rendering (marked.parse is synchronous in this context)
   const html = marked.parse(processedContent) as string
@@ -90,10 +93,18 @@ export function extractTableOfContents(content: string): Array<{ id: string; tex
   const headings: Array<{ id: string; text: string; level: number }> = []
   const regex = /^(#{1,3})\s+(.+)$/gm
   let match
+  let isFirst = true
 
   while ((match = regex.exec(content)) !== null) {
     const level = match[1].length
     const text = match[2]
+    
+    // Skip the first H1 heading (duplicate title)
+    if (isFirst && level === 1) {
+      isFirst = false
+      continue
+    }
+    
     const id = text.toLowerCase().replace(/[^\w]+/g, '-')
     headings.push({ id, text, level })
   }

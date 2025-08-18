@@ -1,8 +1,8 @@
 {
-  "/_not-found/page": "/_not-found",
   "/api/geo/tips/route": "/api/geo/tips",
+  "/_not-found/page": "/_not-found",
   "/sitemap.xml/route": "/sitemap.xml",
   "/page": "/",
-  "/blog/page": "/blog",
-  "/[slug]/page": "/[slug]"
+  "/[slug]/page": "/[slug]",
+  "/blog/page": "/blog"
 }
