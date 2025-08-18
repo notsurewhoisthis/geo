@@ -19,11 +19,13 @@ export default function Header() {
           
           <div className="hidden md:flex items-center gap-8">
             <Link href="/" className="text-gray-600 hover:text-gray-900 font-medium transition">Home</Link>
+            <Link href="/guide" className="text-gray-600 hover:text-gray-900 font-medium transition">Guide</Link>
+            <Link href="/tools" className="text-gray-600 hover:text-gray-900 font-medium transition">Tools</Link>
             <Link href="/blog" className="text-gray-600 hover:text-gray-900 font-medium transition">Blog</Link>
             <Link href="/resources" className="text-gray-600 hover:text-gray-900 font-medium transition">Resources</Link>
             <Link href="/about" className="text-gray-600 hover:text-gray-900 font-medium transition">About</Link>
-            <Link href="/blog" className="px-6 py-2.5 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition">
-              Get Started
+            <Link href="/tools" className="px-6 py-2.5 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition">
+              Try Tools
             </Link>
           </div>
           
@@ -41,11 +43,13 @@ export default function Header() {
           <div className="md:hidden mt-4 pb-4 border-t border-gray-100 pt-4">
             <div className="flex flex-col gap-4">
               <Link href="/" className="text-gray-600 hover:text-gray-900 font-medium transition">Home</Link>
+              <Link href="/guide" className="text-gray-600 hover:text-gray-900 font-medium transition">Guide</Link>
+              <Link href="/tools" className="text-gray-600 hover:text-gray-900 font-medium transition">Tools</Link>
               <Link href="/blog" className="text-gray-600 hover:text-gray-900 font-medium transition">Blog</Link>
               <Link href="/resources" className="text-gray-600 hover:text-gray-900 font-medium transition">Resources</Link>
               <Link href="/about" className="text-gray-600 hover:text-gray-900 font-medium transition">About</Link>
-              <Link href="/blog" className="px-6 py-2.5 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition text-center">
-                Get Started
+              <Link href="/tools" className="px-6 py-2.5 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition text-center">
+                Try Tools
               </Link>
             </div>
           </div>

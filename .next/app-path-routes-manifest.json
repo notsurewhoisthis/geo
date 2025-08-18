@@ -4,13 +4,16 @@
   "/_not-found/page": "/_not-found",
   "/feed.xml/route": "/feed.xml",
   "/news-sitemap.xml/route": "/news-sitemap.xml",
-  "/about/page": "/about",
-  "/[slug]/page": "/[slug]",
   "/blog/page": "/blog",
+  "/about/page": "/about",
   "/glossary/page": "/glossary",
+  "/[slug]/page": "/[slug]",
+  "/resources/page": "/resources",
+  "/guide/page": "/guide",
+  "/tools/page": "/tools",
   "/page": "/",
-  "/tools/geo-audit/page": "/tools/geo-audit",
+  "/tools/content-optimizer/page": "/tools/content-optimizer",
   "/tools/keyword-research/page": "/tools/keyword-research",
-  "/tools/visibility-tracker/page": "/tools/visibility-tracker",
-  "/tools/content-optimizer/page": "/tools/content-optimizer"
+  "/tools/geo-audit/page": "/tools/geo-audit",
+  "/tools/visibility-tracker/page": "/tools/visibility-tracker"
 }
