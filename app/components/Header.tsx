@@ -14,7 +14,7 @@ export default function Header() {
             <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-400 rounded-lg flex items-center justify-center">
               <span className="text-white font-bold text-xl">G</span>
             </div>
-            <span className="text-2xl font-bold text-gray-900">GEO</span>
+            <span className="text-2xl font-bold text-gray-900">Generative Engine Optimization</span>
           </Link>
           
           <div className="hidden md:flex items-center gap-8">
