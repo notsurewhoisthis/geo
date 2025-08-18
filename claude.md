@@ -578,3 +578,56 @@ curl -s https://www.generative-engine.org/sitemap.xml | xmllint --format - > /de
 - **Localization**: Multi-language versions for global markets
 - **Performance**: Further optimize build times and page load speeds
 - **Analytics**: Advanced tracking for programmatic page performance
+
+## 🚨 CRITICAL: Sitemap Data Loss Prevention (August 18, 2025)
+
+### The Problem That Broke Sitemap Pages
+The sitemap dropped from 650+ pages to only 346 pages, losing over 300 programmatic pages due to truncated data files.
+
+### Root Cause
+The data files `/public/data/industries.json` and `/public/data/platforms.json` were somehow truncated:
+- **Industries**: Should have 560 entries, only had 50 entries
+- **Platforms**: Should have 102 entries, only had 82 entries
+
+### The Solution
+Use the data generation script to restore full datasets:
+```bash
+node scripts/generate-massive-data.js
+```
+This regenerates:
+- **560 industry pages** (up from 50)
+- **102 platform pages** (up from 82)
+- **5 comparison pages** (plus 173 from platform-comparisons.ts)
+
+### Prevention Steps
+1. **Monitor sitemap count**: Regularly check `curl -s https://www.generative-engine.org/sitemap.xml | grep -c "<url>"` should show 850+ URLs
+2. **Verify data files**: Check `jq length /Users/heni/GEO/public/data/industries.json` should show 560
+3. **Build verification**: Next.js build should show 700+ static pages generated
+4. **Backup critical data**: Keep backups of the full programmatic data files
+
+### How to Verify Full Dataset
+```bash
+# Check data file counts
+echo "Industries count:" && jq length /Users/heni/GEO/public/data/industries.json
+echo "Platforms count:" && jq length /Users/heni/GEO/public/data/platforms.json
+
+# Check sitemap URL count
+curl -s https://www.generative-engine.org/sitemap.xml | grep -c "<url>"
+
+# Should show 850+ URLs total
+```
+
+### Success Metrics After Fix
+- **Sitemap URLs**: 876 (up from 346)
+- **Static pages generated**: 716 (up from 186)  
+- **Industry pages**: 560 (up from 50)
+- **Platform pages**: 102 (up from 82)
+- **Total programmatic pages**: 667+ pages restored
+
+### Never Make These Mistakes Again
+- ❌ Don't assume data files stay intact
+- ❌ Don't deploy without verifying sitemap count
+- ❌ Don't ignore dramatic drops in generated pages
+- ✅ Always run the generation script if data looks truncated
+- ✅ Always verify programmatic page counts after major changes
+- ✅ Monitor sitemap count in deployment checks
