@@ -2,6 +2,19 @@ import { NextResponse } from 'next/server'
 import fs from 'fs'
 import path from 'path'
 
+function escapeXml(unsafe: string): string {
+  return unsafe.replace(/[<>&'"]/g, function (c) {
+    switch (c) {
+      case '<': return '&lt;';
+      case '>': return '&gt;';
+      case '&': return '&amp;';
+      case '\'': return '&apos;';
+      case '"': return '&quot;';
+    }
+    return c;
+  });
+}
+
 export async function GET() {
   const baseUrl = 'https://generative-engine.org'
   
@@ -115,7 +128,7 @@ export async function GET() {
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   ${staticPages.map(page => `
   <url>
-    <loc>${baseUrl}${page.path}</loc>
+    <loc>${escapeXml(baseUrl + page.path)}</loc>
     <lastmod>${new Date().toISOString()}</lastmod>
     <changefreq>${page.changefreq}</changefreq>
     <priority>${page.priority}</priority>
@@ -124,52 +137,52 @@ export async function GET() {
     .filter(entity => !['generative-engine-optimization', 'chatgpt-optimization'].includes(entity))
     .map(entity => `
   <url>
-    <loc>${baseUrl}/entities/${entity}</loc>
+    <loc>${escapeXml(baseUrl + '/entities/' + entity)}</loc>
     <lastmod>${new Date().toISOString()}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>`).join('')}
   ${industryPages.map(industry => `
   <url>
-    <loc>${baseUrl}/industries/${industry.slug}</loc>
+    <loc>${escapeXml(baseUrl + '/industries/' + industry.slug)}</loc>
     <lastmod>${new Date().toISOString()}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>${baseUrl}/api/og?title=${encodeURIComponent('GEO for ' + industry.slug)}&type=industry</image:loc>
+      <image:loc>${escapeXml(baseUrl + '/api/og?title=' + encodeURIComponent('GEO for ' + industry.slug) + '&amp;type=industry')}</image:loc>
       <image:caption>GEO Industry Guide Thumbnail</image:caption>
     </image:image>
   </url>`).join('')}
   ${platformPages.map(platform => `
   <url>
-    <loc>${baseUrl}/platforms/${platform.slug}</loc>
+    <loc>${escapeXml(baseUrl + '/platforms/' + platform.slug)}</loc>
     <lastmod>${new Date().toISOString()}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <image:image>
-      <image:loc>${baseUrl}/api/og?title=${encodeURIComponent(platform.slug + ' Optimization Guide')}&type=platform</image:loc>
+      <image:loc>${escapeXml(baseUrl + '/api/og?title=' + encodeURIComponent(platform.slug + ' Optimization Guide') + '&amp;type=platform')}</image:loc>
       <image:caption>AI Platform Optimization Guide</image:caption>
     </image:image>
   </url>`).join('')}
   ${comparisonPages.map(comparison => `
   <url>
-    <loc>${baseUrl}/compare/${comparison.slug}</loc>
+    <loc>${escapeXml(baseUrl + '/compare/' + comparison.slug)}</loc>
     <lastmod>${new Date().toISOString()}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
-      <image:loc>${baseUrl}/api/og?title=${encodeURIComponent(comparison.slug)}&type=comparison</image:loc>
+      <image:loc>${escapeXml(baseUrl + '/api/og?title=' + encodeURIComponent(comparison.slug) + '&amp;type=comparison')}</image:loc>
       <image:caption>GEO Comparison Guide</image:caption>
     </image:image>
   </url>`).join('')}
   ${blogPosts.map(post => `
   <url>
-    <loc>${baseUrl}/${post.slug}</loc>
+    <loc>${escapeXml(baseUrl + '/' + post.slug)}</loc>
     <lastmod>${new Date(post.updatedAt || post.publishedAt).toISOString()}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
-      <image:loc>${baseUrl}/api/og?title=${encodeURIComponent(post.slug)}</image:loc>
+      <image:loc>${escapeXml(baseUrl + '/api/og?title=' + encodeURIComponent(post.slug))}</image:loc>
       <image:caption>GEO Article Thumbnail</image:caption>
     </image:image>
   </url>`).join('')}
