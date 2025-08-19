@@ -125,7 +125,7 @@ export async function GET() {
     { path: '/consultation', priority: '0.8', changefreq: 'monthly' },
     { path: '/use-cases', priority: '0.8', changefreq: 'weekly' },
     
-    // Tools pages (high priority for user engagement)
+    // Tools pages (high priority for user engagement) - all existing tools
     { path: '/tools', priority: '0.8', changefreq: 'weekly' },
     { path: '/tools/visibility-tracker', priority: '0.9', changefreq: 'weekly' },
     { path: '/tools/content-optimizer', priority: '0.8', changefreq: 'weekly' },
@@ -135,16 +135,26 @@ export async function GET() {
     { path: '/tools/platform-finder', priority: '0.8', changefreq: 'weekly' },
     { path: '/tools/platform-compare', priority: '0.8', changefreq: 'weekly' },
     { path: '/tools/chatgpt-optimizer', priority: '0.8', changefreq: 'weekly' },
+    { path: '/tools/meta-tag-generator', priority: '0.7', changefreq: 'weekly' },
+    { path: '/tools/schema-validator', priority: '0.7', changefreq: 'weekly' },
+    { path: '/tools/serp-preview', priority: '0.7', changefreq: 'weekly' },
     
     // Programmatic page hubs
     { path: '/industries', priority: '0.8', changefreq: 'weekly' },
     { path: '/platforms', priority: '0.8', changefreq: 'weekly' },
     { path: '/compare', priority: '0.7', changefreq: 'weekly' },
     
+    // Community and collaboration
+    { path: '/community', priority: '0.7', changefreq: 'weekly' },
+    
     // Entity pages (important for knowledge graph)
     { path: '/entities', priority: '0.7', changefreq: 'weekly' },
     { path: '/entities/generative-engine-optimization', priority: '0.9', changefreq: 'weekly' },
     { path: '/entities/chatgpt-optimization', priority: '0.8', changefreq: 'weekly' },
+    { path: '/entities/llm-optimization', priority: '0.8', changefreq: 'weekly' },
+    { path: '/entities/claude-optimization', priority: '0.8', changefreq: 'weekly' },
+    { path: '/entities/perplexity-optimization', priority: '0.8', changefreq: 'weekly' },
+    { path: '/entities/citation-optimization', priority: '0.7', changefreq: 'weekly' },
   ]
   
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>

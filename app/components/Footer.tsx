@@ -12,12 +12,12 @@ export default function Footer() {
   ];
 
   const topPlatforms = [
+    { slug: 'chatgpt', name: 'ChatGPT' },
+    { slug: 'claude', name: 'Claude' },
+    { slug: 'google-gemini', name: 'Google Gemini' },
+    { slug: 'perplexity', name: 'Perplexity AI' },
     { slug: 'gpt-4o', name: 'GPT-4o' },
-    { slug: 'claude-4-1-opus', name: 'Claude 4.1 Opus' },
-    { slug: 'gemini-2-5-pro', name: 'Gemini 2.5 Pro' },
-    { slug: 'deepseek-r1', name: 'DeepSeek-R1' },
-    { slug: 'llama-4', name: 'Llama 4' },
-    { slug: 'openai-o3', name: 'OpenAI o3' }
+    { slug: 'claude-4-1-opus', name: 'Claude 4.1 Opus' }
   ];
 
   return (
