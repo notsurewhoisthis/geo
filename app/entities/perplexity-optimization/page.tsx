@@ -80,7 +80,7 @@ export default function PerplexityOptimizationPage() {
                   <ul className="space-y-2 text-gray-700">
                     <li className="flex items-start">
                       <span className="text-blue-600 mr-2">✓</span>
-                      <span>Recency (prefer sources < 2 years old)</span>
+                      <span>Recency (prefer sources less than 2 years old)</span>
                     </li>
                     <li className="flex items-start">
                       <span className="text-blue-600 mr-2">✓</span>
@@ -294,7 +294,7 @@ export default function PerplexityOptimizationPage() {
                       </label>
                       <label className="flex items-center cursor-pointer">
                         <input type="checkbox" className="mr-2" />
-                        <span className="text-gray-700 text-sm">All citations < 2 years old</span>
+                        <span className="text-gray-700 text-sm">All citations less than 2 years old</span>
                       </label>
                       <label className="flex items-center cursor-pointer">
                         <input type="checkbox" className="mr-2" />
