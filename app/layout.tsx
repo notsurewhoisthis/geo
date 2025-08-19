@@ -4,6 +4,7 @@ import Script from 'next/script'
 import './globals.css'
 import Header from './components/Header'
 import Footer from './components/Footer'
+import { HreflangTags } from './components/HreflangTags'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -210,10 +211,9 @@ export default function RootLayout({
         <link rel="alternate" type="application/rss+xml" title="GEO Platform RSS Feed" href="/feed.xml" />
         <link rel="alternate" type="application/rss+xml" title="GEO Platform RSS Feed" href="/rss.xml" />
         
-        {/* International SEO - Hreflang Tags */}
-        {/* Only include hreflang tags for enabled languages */}
-        <link rel="alternate" hrefLang="en" href="https://www.generative-engine.org" />
-        <link rel="alternate" hrefLang="x-default" href="https://www.generative-engine.org" />
+        {/* International SEO - Hreflang Tags with Self-Reference */}
+        <HreflangTags />
+        
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}

@@ -723,7 +723,8 @@ export default async function IndustryPage({
               '@id': `https://generative-engine.org/industries/${industry.slug}#industry-data`,
               name: `${industry.name} Industry`,
               description: industry.description,
-              category: industry.category,
+              articleSection: industry.category,
+              keywords: `${industry.category}, ${industry.name}`,
               additionalProperty: [
                 {
                   '@type': 'PropertyValue',
