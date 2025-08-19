@@ -78,7 +78,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/about": {
+    "/tools/serp-preview": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -91,56 +91,8 @@
         }
       ],
       "initialRevalidateSeconds": false,
-      "srcRoute": "/about",
-      "dataRoute": "/about.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/authors": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": false,
-      "srcRoute": "/authors",
-      "dataRoute": "/authors.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/tools/meta-tag-generator": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": false,
-      "srcRoute": "/tools/meta-tag-generator",
-      "dataRoute": "/tools/meta-tag-generator.rsc",
+      "srcRoute": "/tools/serp-preview",
+      "dataRoute": "/tools/serp-preview.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -174,7 +126,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/contact": {
+    "/authors": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -187,32 +139,8 @@
         }
       ],
       "initialRevalidateSeconds": false,
-      "srcRoute": "/contact",
-      "dataRoute": "/contact.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/entities": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": false,
-      "srcRoute": "/entities",
-      "dataRoute": "/entities.rsc",
+      "srcRoute": "/authors",
+      "dataRoute": "/authors.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -246,7 +174,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/entities/chatgpt-optimization": {
+    "/academy": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -259,8 +187,104 @@
         }
       ],
       "initialRevalidateSeconds": false,
-      "srcRoute": "/entities/chatgpt-optimization",
-      "dataRoute": "/entities/chatgpt-optimization.rsc",
+      "srcRoute": "/academy",
+      "dataRoute": "/academy.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/contact": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "Next-Action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/contact",
+      "dataRoute": "/contact.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/tools/meta-tag-generator": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "Next-Action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/tools/meta-tag-generator",
+      "dataRoute": "/tools/meta-tag-generator.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/entities": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "Next-Action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/entities",
+      "dataRoute": "/entities.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/about": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "Next-Action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/about",
+      "dataRoute": "/about.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -294,7 +318,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/entities/generative-engine-optimization": {
+    "/entities/chatgpt-optimization": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -307,56 +331,8 @@
         }
       ],
       "initialRevalidateSeconds": false,
-      "srcRoute": "/entities/generative-engine-optimization",
-      "dataRoute": "/entities/generative-engine-optimization.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/tools/serp-preview": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": false,
-      "srcRoute": "/tools/serp-preview",
-      "dataRoute": "/tools/serp-preview.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/getting-started": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": false,
-      "srcRoute": "/getting-started",
-      "dataRoute": "/getting-started.rsc",
+      "srcRoute": "/entities/chatgpt-optimization",
+      "dataRoute": "/entities/chatgpt-optimization.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -390,7 +366,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/platforms": {
+    "/getting-started": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -403,8 +379,8 @@
         }
       ],
       "initialRevalidateSeconds": false,
-      "srcRoute": "/platforms",
-      "dataRoute": "/platforms.rsc",
+      "srcRoute": "/getting-started",
+      "dataRoute": "/getting-started.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -414,7 +390,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/academy": {
+    "/platforms/chatgpt": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -426,34 +402,10 @@
           "value": "multipart/form-data;.*"
         }
       ],
-      "initialRevalidateSeconds": false,
-      "srcRoute": "/academy",
-      "dataRoute": "/academy.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/ai-powered-seo-strategies-2025": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": 60,
+      "initialRevalidateSeconds": 604800,
       "initialExpireSeconds": 31536000,
-      "srcRoute": "/[slug]",
-      "dataRoute": "/ai-powered-seo-strategies-2025.rsc",
+      "srcRoute": "/platforms/[platform]",
+      "dataRoute": "/platforms/chatgpt.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -463,7 +415,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/ai-search-apocalypse-why-entity-based-seo-just-killed-tradit-1755532989673": {
+    "/platforms/claude": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -475,10 +427,10 @@
           "value": "multipart/form-data;.*"
         }
       ],
-      "initialRevalidateSeconds": 60,
+      "initialRevalidateSeconds": 604800,
       "initialExpireSeconds": 31536000,
-      "srcRoute": "/[slug]",
-      "dataRoute": "/ai-search-apocalypse-why-entity-based-seo-just-killed-tradit-1755532989673.rsc",
+      "srcRoute": "/platforms/[platform]",
+      "dataRoute": "/platforms/claude.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -488,7 +440,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/entity-based-seo-is-silently-killing-traditional-keyword-str-1755540152359": {
+    "/platforms/copy-ai": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -500,10 +452,10 @@
           "value": "multipart/form-data;.*"
         }
       ],
-      "initialRevalidateSeconds": 60,
+      "initialRevalidateSeconds": 604800,
       "initialExpireSeconds": 31536000,
-      "srcRoute": "/[slug]",
-      "dataRoute": "/entity-based-seo-is-silently-killing-traditional-keyword-str-1755540152359.rsc",
+      "srcRoute": "/platforms/[platform]",
+      "dataRoute": "/platforms/copy-ai.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -513,7 +465,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/llama-s-enterprise-takeover-how-meta-s-aws-partnership-and-l-1755543758338": {
+    "/platforms/dall-e": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -525,10 +477,10 @@
           "value": "multipart/form-data;.*"
         }
       ],
-      "initialRevalidateSeconds": 60,
+      "initialRevalidateSeconds": 604800,
       "initialExpireSeconds": 31536000,
-      "srcRoute": "/[slug]",
-      "dataRoute": "/llama-s-enterprise-takeover-how-meta-s-aws-partnership-and-l-1755543758338.rsc",
+      "srcRoute": "/platforms/[platform]",
+      "dataRoute": "/platforms/dall-e.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -538,7 +490,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/seo-vs-geo-complete-guide": {
+    "/platforms/elevenlabs": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -550,10 +502,10 @@
           "value": "multipart/form-data;.*"
         }
       ],
-      "initialRevalidateSeconds": 60,
+      "initialRevalidateSeconds": 604800,
       "initialExpireSeconds": 31536000,
-      "srcRoute": "/[slug]",
-      "dataRoute": "/seo-vs-geo-complete-guide.rsc",
+      "srcRoute": "/platforms/[platform]",
+      "dataRoute": "/platforms/elevenlabs.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -563,7 +515,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/the-ai-citation-gold-rush-why-everyone-s-writing-like-robots-1755511425293": {
+    "/platforms/github-copilot": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -575,10 +527,10 @@
           "value": "multipart/form-data;.*"
         }
       ],
-      "initialRevalidateSeconds": 60,
+      "initialRevalidateSeconds": 604800,
       "initialExpireSeconds": 31536000,
-      "srcRoute": "/[slug]",
-      "dataRoute": "/the-ai-citation-gold-rush-why-everyone-s-writing-like-robots-1755511425293.rsc",
+      "srcRoute": "/platforms/[platform]",
+      "dataRoute": "/platforms/github-copilot.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -588,7 +540,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/the-citation-gold-rush-how-brands-are-secretly-gaming-chatgp-1755509037678": {
+    "/platforms/google-gemini": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -600,10 +552,10 @@
           "value": "multipart/form-data;.*"
         }
       ],
-      "initialRevalidateSeconds": 60,
+      "initialRevalidateSeconds": 604800,
       "initialExpireSeconds": 31536000,
-      "srcRoute": "/[slug]",
-      "dataRoute": "/the-citation-gold-rush-how-brands-are-secretly-gaming-chatgp-1755509037678.rsc",
+      "srcRoute": "/platforms/[platform]",
+      "dataRoute": "/platforms/google-gemini.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -613,7 +565,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/the-citation-wars-how-geo-is-creating-a-new-battle-for-ai-po-1755547560342": {
+    "/platforms/grammarly": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -625,10 +577,10 @@
           "value": "multipart/form-data;.*"
         }
       ],
-      "initialRevalidateSeconds": 60,
+      "initialRevalidateSeconds": 604800,
       "initialExpireSeconds": 31536000,
-      "srcRoute": "/[slug]",
-      "dataRoute": "/the-citation-wars-how-geo-is-creating-a-new-battle-for-ai-po-1755547560342.rsc",
+      "srcRoute": "/platforms/[platform]",
+      "dataRoute": "/platforms/grammarly.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -638,7 +590,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/the-geo-gold-rush-how-content-creators-are-rigging-ai-search-1755508115765": {
+    "/platforms/jasper": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -650,10 +602,10 @@
           "value": "multipart/form-data;.*"
         }
       ],
-      "initialRevalidateSeconds": 60,
+      "initialRevalidateSeconds": 604800,
       "initialExpireSeconds": 31536000,
-      "srcRoute": "/[slug]",
-      "dataRoute": "/the-geo-gold-rush-how-content-creators-are-rigging-ai-search-1755508115765.rsc",
+      "srcRoute": "/platforms/[platform]",
+      "dataRoute": "/platforms/jasper.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -663,7 +615,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/the-geo-scam-why-80-of-content-optimization-advice-for-ai-se-1755526449836": {
+    "/platforms/microsoft-copilot": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -675,10 +627,10 @@
           "value": "multipart/form-data;.*"
         }
       ],
-      "initialRevalidateSeconds": 60,
+      "initialRevalidateSeconds": 604800,
       "initialExpireSeconds": 31536000,
-      "srcRoute": "/[slug]",
-      "dataRoute": "/the-geo-scam-why-80-of-content-optimization-advice-for-ai-se-1755526449836.rsc",
+      "srcRoute": "/platforms/[platform]",
+      "dataRoute": "/platforms/microsoft-copilot.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -688,7 +640,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/the-great-ai-citation-hustle-how-desperate-marketers-are-gam-1755504450897": {
+    "/platforms/midjourney": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -700,10 +652,10 @@
           "value": "multipart/form-data;.*"
         }
       ],
-      "initialRevalidateSeconds": 60,
+      "initialRevalidateSeconds": 604800,
       "initialExpireSeconds": 31536000,
-      "srcRoute": "/[slug]",
-      "dataRoute": "/the-great-ai-citation-hustle-how-desperate-marketers-are-gam-1755504450897.rsc",
+      "srcRoute": "/platforms/[platform]",
+      "dataRoute": "/platforms/midjourney.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -713,7 +665,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/the-great-geo-lie-why-11-000-ai-queries-proved-everything-we-1755529404419": {
+    "/platforms/notion-ai": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -725,10 +677,10 @@
           "value": "multipart/form-data;.*"
         }
       ],
-      "initialRevalidateSeconds": 60,
+      "initialRevalidateSeconds": 604800,
       "initialExpireSeconds": 31536000,
-      "srcRoute": "/[slug]",
-      "dataRoute": "/the-great-geo-lie-why-11-000-ai-queries-proved-everything-we-1755529404419.rsc",
+      "srcRoute": "/platforms/[platform]",
+      "dataRoute": "/platforms/notion-ai.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -738,7 +690,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/the-hidden-seo-goldmine-how-ai-accessibility-features-are-se-1755525103579": {
+    "/platforms/perplexity": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -750,10 +702,10 @@
           "value": "multipart/form-data;.*"
         }
       ],
-      "initialRevalidateSeconds": 60,
+      "initialRevalidateSeconds": 604800,
       "initialExpireSeconds": 31536000,
-      "srcRoute": "/[slug]",
-      "dataRoute": "/the-hidden-seo-goldmine-how-ai-accessibility-features-are-se-1755525103579.rsc",
+      "srcRoute": "/platforms/[platform]",
+      "dataRoute": "/platforms/perplexity.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -763,7 +715,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/why-most-geo-tools-are-missing-the-mark-a-technical-deep-div-1755536649647": {
+    "/platforms/runwayml": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -775,10 +727,10 @@
           "value": "multipart/form-data;.*"
         }
       ],
-      "initialRevalidateSeconds": 60,
+      "initialRevalidateSeconds": 604800,
       "initialExpireSeconds": 31536000,
-      "srcRoute": "/[slug]",
-      "dataRoute": "/why-most-geo-tools-are-missing-the-mark-a-technical-deep-div-1755536649647.rsc",
+      "srcRoute": "/platforms/[platform]",
+      "dataRoute": "/platforms/runwayml.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -788,7 +740,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/why-your-ai-tools-are-secretly-excluding-15-of-users-the-hid-1755511952955": {
+    "/platforms/synthesia": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -800,34 +752,10 @@
           "value": "multipart/form-data;.*"
         }
       ],
-      "initialRevalidateSeconds": 60,
+      "initialRevalidateSeconds": 604800,
       "initialExpireSeconds": 31536000,
-      "srcRoute": "/[slug]",
-      "dataRoute": "/why-your-ai-tools-are-secretly-excluding-15-of-users-the-hid-1755511952955.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/guide": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": false,
-      "srcRoute": "/guide",
-      "dataRoute": "/guide.rsc",
+      "srcRoute": "/platforms/[platform]",
+      "dataRoute": "/platforms/synthesia.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -861,7 +789,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/": {
+    "/platforms": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -874,8 +802,8 @@
         }
       ],
       "initialRevalidateSeconds": false,
-      "srcRoute": "/",
-      "dataRoute": "/index.rsc",
+      "srcRoute": "/platforms",
+      "dataRoute": "/platforms.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -885,7 +813,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/tools": {
+    "/entities/generative-engine-optimization": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -898,8 +826,8 @@
         }
       ],
       "initialRevalidateSeconds": false,
-      "srcRoute": "/tools",
-      "dataRoute": "/tools.rsc",
+      "srcRoute": "/entities/generative-engine-optimization",
+      "dataRoute": "/entities/generative-engine-optimization.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -909,7 +837,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/tech-view": {
+    "/guide": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -922,2581 +850,8 @@
         }
       ],
       "initialRevalidateSeconds": false,
-      "srcRoute": "/tech-view",
-      "dataRoute": "/tech-view.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/use-cases": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": false,
-      "srcRoute": "/use-cases",
-      "dataRoute": "/use-cases.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/tools/content-optimizer": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": false,
-      "srcRoute": "/tools/content-optimizer",
-      "dataRoute": "/tools/content-optimizer.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/platforms/adobe-brain": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": 604800,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": "/platforms/[platform]",
-      "dataRoute": "/platforms/adobe-brain.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/platforms/adobe-codex": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": 604800,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": "/platforms/[platform]",
-      "dataRoute": "/platforms/adobe-codex.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/platforms/adobe-gemini": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": 604800,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": "/platforms/[platform]",
-      "dataRoute": "/platforms/adobe-gemini.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/platforms/adobe-generator": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": 604800,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": "/platforms/[platform]",
-      "dataRoute": "/platforms/adobe-generator.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/platforms/adobe-insight": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": 604800,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": "/platforms/[platform]",
-      "dataRoute": "/platforms/adobe-insight.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/platforms/adobe-logic": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": 604800,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": "/platforms/[platform]",
-      "dataRoute": "/platforms/adobe-logic.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/platforms/adobe-mind": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": 604800,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": "/platforms/[platform]",
-      "dataRoute": "/platforms/adobe-mind.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/platforms/adobe-optimizer": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": 604800,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": "/platforms/[platform]",
-      "dataRoute": "/platforms/adobe-optimizer.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/platforms/adobe-palm": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": 604800,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": "/platforms/[platform]",
-      "dataRoute": "/platforms/adobe-palm.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/platforms/ai21-bard": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": 604800,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": "/platforms/[platform]",
-      "dataRoute": "/platforms/ai21-bard.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/platforms/ai21-copilot": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": 604800,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": "/platforms/[platform]",
-      "dataRoute": "/platforms/ai21-copilot.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/platforms/ai21-creator": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": 604800,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": "/platforms/[platform]",
-      "dataRoute": "/platforms/ai21-creator.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/platforms/ai21-generator": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": 604800,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": "/platforms/[platform]",
-      "dataRoute": "/platforms/ai21-generator.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/platforms/ai21-insight": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": 604800,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": "/platforms/[platform]",
-      "dataRoute": "/platforms/ai21-insight.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/platforms/ai21-lamda": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": 604800,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": "/platforms/[platform]",
-      "dataRoute": "/platforms/ai21-lamda.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/platforms/ai21-mind": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": 604800,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": "/platforms/[platform]",
-      "dataRoute": "/platforms/ai21-mind.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/platforms/amazon-chatgpt": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": 604800,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": "/platforms/[platform]",
-      "dataRoute": "/platforms/amazon-chatgpt.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/platforms/amazon-claude": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": 604800,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": "/platforms/[platform]",
-      "dataRoute": "/platforms/amazon-claude.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/platforms/amazon-designer": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": 604800,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": "/platforms/[platform]",
-      "dataRoute": "/platforms/amazon-designer.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/platforms/amazon-expert": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": 604800,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": "/platforms/[platform]",
-      "dataRoute": "/platforms/amazon-expert.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/platforms/amazon-generator": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": 604800,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": "/platforms/[platform]",
-      "dataRoute": "/platforms/amazon-generator.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/platforms/amazon-intelligence": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": 604800,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": "/platforms/[platform]",
-      "dataRoute": "/platforms/amazon-intelligence.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/platforms/amazon-optimizer": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": 604800,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": "/platforms/[platform]",
-      "dataRoute": "/platforms/amazon-optimizer.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/platforms/amazon-writer": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": 604800,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": "/platforms/[platform]",
-      "dataRoute": "/platforms/amazon-writer.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/platforms/anthropic-assistant": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": 604800,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": "/platforms/[platform]",
-      "dataRoute": "/platforms/anthropic-assistant.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/platforms/anthropic-gemini": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": 604800,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": "/platforms/[platform]",
-      "dataRoute": "/platforms/anthropic-gemini.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/platforms/anthropic-gpt": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": 604800,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": "/platforms/[platform]",
-      "dataRoute": "/platforms/anthropic-gpt.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/platforms/anthropic-intelligence": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": 604800,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": "/platforms/[platform]",
-      "dataRoute": "/platforms/anthropic-intelligence.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/platforms/anthropic-logic": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": 604800,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": "/platforms/[platform]",
-      "dataRoute": "/platforms/anthropic-logic.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/platforms/anthropic-writer": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": 604800,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": "/platforms/[platform]",
-      "dataRoute": "/platforms/anthropic-writer.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/platforms/cohere-brain": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": 604800,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": "/platforms/[platform]",
-      "dataRoute": "/platforms/cohere-brain.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/platforms/cohere-claude": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": 604800,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": "/platforms/[platform]",
-      "dataRoute": "/platforms/cohere-claude.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/platforms/cohere-codex": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": 604800,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": "/platforms/[platform]",
-      "dataRoute": "/platforms/cohere-codex.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/platforms/cohere-mind": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": 604800,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": "/platforms/[platform]",
-      "dataRoute": "/platforms/cohere-mind.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/platforms/cohere-reason": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": 604800,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": "/platforms/[platform]",
-      "dataRoute": "/platforms/cohere-reason.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/platforms/cohere-vision": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": 604800,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": "/platforms/[platform]",
-      "dataRoute": "/platforms/cohere-vision.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/platforms/cohere-writer": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": 604800,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": "/platforms/[platform]",
-      "dataRoute": "/platforms/cohere-writer.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/platforms/deepmind-bard": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": 604800,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": "/platforms/[platform]",
-      "dataRoute": "/platforms/deepmind-bard.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/platforms/deepmind-brain": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": 604800,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": "/platforms/[platform]",
-      "dataRoute": "/platforms/deepmind-brain.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/platforms/deepmind-chatgpt": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": 604800,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": "/platforms/[platform]",
-      "dataRoute": "/platforms/deepmind-chatgpt.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/platforms/deepmind-claude": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": 604800,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": "/platforms/[platform]",
-      "dataRoute": "/platforms/deepmind-claude.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/platforms/deepmind-insight": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": 604800,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": "/platforms/[platform]",
-      "dataRoute": "/platforms/deepmind-insight.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/platforms/deepmind-mind": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": 604800,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": "/platforms/[platform]",
-      "dataRoute": "/platforms/deepmind-mind.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/platforms/deepmind-reason": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": 604800,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": "/platforms/[platform]",
-      "dataRoute": "/platforms/deepmind-reason.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/platforms/google-bard": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": 604800,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": "/platforms/[platform]",
-      "dataRoute": "/platforms/google-bard.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/platforms/google-designer": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": 604800,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": "/platforms/[platform]",
-      "dataRoute": "/platforms/google-designer.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/platforms/google-expert": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": 604800,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": "/platforms/[platform]",
-      "dataRoute": "/platforms/google-expert.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/platforms/google-generator": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": 604800,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": "/platforms/[platform]",
-      "dataRoute": "/platforms/google-generator.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/platforms/google-lamda": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": 604800,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": "/platforms/[platform]",
-      "dataRoute": "/platforms/google-lamda.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/platforms/google-logic": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": 604800,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": "/platforms/[platform]",
-      "dataRoute": "/platforms/google-logic.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/platforms/google-vision": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": 604800,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": "/platforms/[platform]",
-      "dataRoute": "/platforms/google-vision.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/platforms/hugging-face-analyst": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": 604800,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": "/platforms/[platform]",
-      "dataRoute": "/platforms/hugging-face-analyst.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/platforms/hugging-face-copilot": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": 604800,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": "/platforms/[platform]",
-      "dataRoute": "/platforms/hugging-face-copilot.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/platforms/hugging-face-expert": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": 604800,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": "/platforms/[platform]",
-      "dataRoute": "/platforms/hugging-face-expert.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/platforms/hugging-face-generator": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": 604800,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": "/platforms/[platform]",
-      "dataRoute": "/platforms/hugging-face-generator.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/platforms/hugging-face-gpt": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": 604800,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": "/platforms/[platform]",
-      "dataRoute": "/platforms/hugging-face-gpt.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/platforms/hugging-face-insight": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": 604800,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": "/platforms/[platform]",
-      "dataRoute": "/platforms/hugging-face-insight.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/platforms/hugging-face-palm": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": 604800,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": "/platforms/[platform]",
-      "dataRoute": "/platforms/hugging-face-palm.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/platforms/ibm-analyst": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": 604800,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": "/platforms/[platform]",
-      "dataRoute": "/platforms/ibm-analyst.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/platforms/ibm-copilot": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": 604800,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": "/platforms/[platform]",
-      "dataRoute": "/platforms/ibm-copilot.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/platforms/ibm-insight": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": 604800,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": "/platforms/[platform]",
-      "dataRoute": "/platforms/ibm-insight.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/platforms/ibm-intelligence": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": 604800,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": "/platforms/[platform]",
-      "dataRoute": "/platforms/ibm-intelligence.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/platforms/ibm-logic": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": 604800,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": "/platforms/[platform]",
-      "dataRoute": "/platforms/ibm-logic.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/platforms/ibm-mind": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": 604800,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": "/platforms/[platform]",
-      "dataRoute": "/platforms/ibm-mind.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/platforms/ibm-optimizer": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": 604800,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": "/platforms/[platform]",
-      "dataRoute": "/platforms/ibm-optimizer.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/platforms/meta-claude": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": 604800,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": "/platforms/[platform]",
-      "dataRoute": "/platforms/meta-claude.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/platforms/meta-codex": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": 604800,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": "/platforms/[platform]",
-      "dataRoute": "/platforms/meta-codex.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/platforms/meta-creator": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": 604800,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": "/platforms/[platform]",
-      "dataRoute": "/platforms/meta-creator.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/platforms/meta-generator": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": 604800,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": "/platforms/[platform]",
-      "dataRoute": "/platforms/meta-generator.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/platforms/meta-lamda": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": 604800,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": "/platforms/[platform]",
-      "dataRoute": "/platforms/meta-lamda.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/platforms/meta-mind": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": 604800,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": "/platforms/[platform]",
-      "dataRoute": "/platforms/meta-mind.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/platforms/microsoft-claude": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": 604800,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": "/platforms/[platform]",
-      "dataRoute": "/platforms/microsoft-claude.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/platforms/microsoft-designer": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": 604800,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": "/platforms/[platform]",
-      "dataRoute": "/platforms/microsoft-designer.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/platforms/microsoft-lamda": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": 604800,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": "/platforms/[platform]",
-      "dataRoute": "/platforms/microsoft-lamda.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/platforms/microsoft-reason": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": 604800,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": "/platforms/[platform]",
-      "dataRoute": "/platforms/microsoft-reason.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/platforms/nvidia-claude": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": 604800,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": "/platforms/[platform]",
-      "dataRoute": "/platforms/nvidia-claude.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/platforms/nvidia-copilot": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": 604800,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": "/platforms/[platform]",
-      "dataRoute": "/platforms/nvidia-copilot.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/platforms/nvidia-gemini": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": 604800,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": "/platforms/[platform]",
-      "dataRoute": "/platforms/nvidia-gemini.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/platforms/nvidia-optimizer": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": 604800,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": "/platforms/[platform]",
-      "dataRoute": "/platforms/nvidia-optimizer.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/platforms/nvidia-palm": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": 604800,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": "/platforms/[platform]",
-      "dataRoute": "/platforms/nvidia-palm.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/platforms/nvidia-reason": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": 604800,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": "/platforms/[platform]",
-      "dataRoute": "/platforms/nvidia-reason.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/platforms/nvidia-vision": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": 604800,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": "/platforms/[platform]",
-      "dataRoute": "/platforms/nvidia-vision.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/platforms/openai-claude": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": 604800,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": "/platforms/[platform]",
-      "dataRoute": "/platforms/openai-claude.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/platforms/openai-gpt": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": 604800,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": "/platforms/[platform]",
-      "dataRoute": "/platforms/openai-gpt.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/platforms/openai-insight": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": 604800,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": "/platforms/[platform]",
-      "dataRoute": "/platforms/openai-insight.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/platforms/openai-logic": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": 604800,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": "/platforms/[platform]",
-      "dataRoute": "/platforms/openai-logic.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/platforms/openai-reason": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": 604800,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": "/platforms/[platform]",
-      "dataRoute": "/platforms/openai-reason.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/platforms/openai-vision": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": 604800,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": "/platforms/[platform]",
-      "dataRoute": "/platforms/openai-vision.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/platforms/salesforce-analyst": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": 604800,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": "/platforms/[platform]",
-      "dataRoute": "/platforms/salesforce-analyst.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/platforms/salesforce-chatgpt": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": 604800,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": "/platforms/[platform]",
-      "dataRoute": "/platforms/salesforce-chatgpt.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/platforms/salesforce-designer": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": 604800,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": "/platforms/[platform]",
-      "dataRoute": "/platforms/salesforce-designer.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/platforms/salesforce-insight": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": 604800,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": "/platforms/[platform]",
-      "dataRoute": "/platforms/salesforce-insight.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/platforms/salesforce-intelligence": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": 604800,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": "/platforms/[platform]",
-      "dataRoute": "/platforms/salesforce-intelligence.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/platforms/stability-ai-brain": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": 604800,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": "/platforms/[platform]",
-      "dataRoute": "/platforms/stability-ai-brain.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/platforms/stability-ai-claude": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": 604800,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": "/platforms/[platform]",
-      "dataRoute": "/platforms/stability-ai-claude.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/platforms/stability-ai-designer": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": 604800,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": "/platforms/[platform]",
-      "dataRoute": "/platforms/stability-ai-designer.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/platforms/stability-ai-gemini": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": 604800,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": "/platforms/[platform]",
-      "dataRoute": "/platforms/stability-ai-gemini.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/platforms/stability-ai-gpt": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": 604800,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": "/platforms/[platform]",
-      "dataRoute": "/platforms/stability-ai-gpt.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/platforms/stability-ai-optimizer": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": 604800,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": "/platforms/[platform]",
-      "dataRoute": "/platforms/stability-ai-optimizer.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/platforms/stability-ai-vision": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": 604800,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": "/platforms/[platform]",
-      "dataRoute": "/platforms/stability-ai-vision.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
-    "/platforms/stability-ai-writer": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": 604800,
-      "initialExpireSeconds": 31536000,
-      "srcRoute": "/platforms/[platform]",
-      "dataRoute": "/platforms/stability-ai-writer.rsc",
+      "srcRoute": "/guide",
+      "dataRoute": "/guide.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -3530,7 +885,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/tools/geo-audit": {
+    "/tech-view": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -3543,8 +898,80 @@
         }
       ],
       "initialRevalidateSeconds": false,
-      "srcRoute": "/tools/geo-audit",
-      "dataRoute": "/tools/geo-audit.rsc",
+      "srcRoute": "/tech-view",
+      "dataRoute": "/tech-view.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/tools": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "Next-Action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/tools",
+      "dataRoute": "/tools.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/tools/content-optimizer": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "Next-Action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/tools/content-optimizer",
+      "dataRoute": "/tools/content-optimizer.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/use-cases": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "Next-Action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/use-cases",
+      "dataRoute": "/use-cases.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -3569,6 +996,78 @@
       "initialRevalidateSeconds": false,
       "srcRoute": "/tools/keyword-research",
       "dataRoute": "/tools/keyword-research.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/tools/geo-audit": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "Next-Action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/tools/geo-audit",
+      "dataRoute": "/tools/geo-audit.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/tools/visibility-tracker": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "Next-Action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/tools/visibility-tracker",
+      "dataRoute": "/tools/visibility-tracker.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "Next-Action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/",
+      "dataRoute": "/index.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -17578,7 +15077,7 @@
         "x-next-revalidate-tag-token"
       ]
     },
-    "/tools/visibility-tracker": {
+    "/ai-powered-seo-strategies-2025": {
       "experimentalBypassFor": [
         {
           "type": "header",
@@ -17590,9 +15089,360 @@
           "value": "multipart/form-data;.*"
         }
       ],
-      "initialRevalidateSeconds": false,
-      "srcRoute": "/tools/visibility-tracker",
-      "dataRoute": "/tools/visibility-tracker.rsc",
+      "initialRevalidateSeconds": 60,
+      "initialExpireSeconds": 31536000,
+      "srcRoute": "/[slug]",
+      "dataRoute": "/ai-powered-seo-strategies-2025.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/ai-search-apocalypse-why-entity-based-seo-just-killed-tradit-1755532989673": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "Next-Action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": 60,
+      "initialExpireSeconds": 31536000,
+      "srcRoute": "/[slug]",
+      "dataRoute": "/ai-search-apocalypse-why-entity-based-seo-just-killed-tradit-1755532989673.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/entity-based-seo-is-silently-killing-traditional-keyword-str-1755540152359": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "Next-Action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": 60,
+      "initialExpireSeconds": 31536000,
+      "srcRoute": "/[slug]",
+      "dataRoute": "/entity-based-seo-is-silently-killing-traditional-keyword-str-1755540152359.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/llama-s-enterprise-takeover-how-meta-s-aws-partnership-and-l-1755543758338": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "Next-Action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": 60,
+      "initialExpireSeconds": 31536000,
+      "srcRoute": "/[slug]",
+      "dataRoute": "/llama-s-enterprise-takeover-how-meta-s-aws-partnership-and-l-1755543758338.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/seo-vs-geo-complete-guide": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "Next-Action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": 60,
+      "initialExpireSeconds": 31536000,
+      "srcRoute": "/[slug]",
+      "dataRoute": "/seo-vs-geo-complete-guide.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/the-ai-citation-gold-rush-why-everyone-s-writing-like-robots-1755511425293": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "Next-Action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": 60,
+      "initialExpireSeconds": 31536000,
+      "srcRoute": "/[slug]",
+      "dataRoute": "/the-ai-citation-gold-rush-why-everyone-s-writing-like-robots-1755511425293.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/the-citation-gold-rush-how-brands-are-secretly-gaming-chatgp-1755509037678": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "Next-Action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": 60,
+      "initialExpireSeconds": 31536000,
+      "srcRoute": "/[slug]",
+      "dataRoute": "/the-citation-gold-rush-how-brands-are-secretly-gaming-chatgp-1755509037678.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/the-citation-wars-how-geo-is-creating-a-new-battle-for-ai-po-1755547560342": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "Next-Action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": 60,
+      "initialExpireSeconds": 31536000,
+      "srcRoute": "/[slug]",
+      "dataRoute": "/the-citation-wars-how-geo-is-creating-a-new-battle-for-ai-po-1755547560342.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/the-geo-gold-rush-how-content-creators-are-rigging-ai-search-1755508115765": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "Next-Action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": 60,
+      "initialExpireSeconds": 31536000,
+      "srcRoute": "/[slug]",
+      "dataRoute": "/the-geo-gold-rush-how-content-creators-are-rigging-ai-search-1755508115765.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/the-geo-scam-why-80-of-content-optimization-advice-for-ai-se-1755526449836": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "Next-Action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": 60,
+      "initialExpireSeconds": 31536000,
+      "srcRoute": "/[slug]",
+      "dataRoute": "/the-geo-scam-why-80-of-content-optimization-advice-for-ai-se-1755526449836.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/the-great-ai-citation-hustle-how-desperate-marketers-are-gam-1755504450897": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "Next-Action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": 60,
+      "initialExpireSeconds": 31536000,
+      "srcRoute": "/[slug]",
+      "dataRoute": "/the-great-ai-citation-hustle-how-desperate-marketers-are-gam-1755504450897.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/the-great-geo-lie-why-11-000-ai-queries-proved-everything-we-1755529404419": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "Next-Action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": 60,
+      "initialExpireSeconds": 31536000,
+      "srcRoute": "/[slug]",
+      "dataRoute": "/the-great-geo-lie-why-11-000-ai-queries-proved-everything-we-1755529404419.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/the-hidden-seo-goldmine-how-ai-accessibility-features-are-se-1755525103579": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "Next-Action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": 60,
+      "initialExpireSeconds": 31536000,
+      "srcRoute": "/[slug]",
+      "dataRoute": "/the-hidden-seo-goldmine-how-ai-accessibility-features-are-se-1755525103579.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/why-most-geo-tools-are-missing-the-mark-a-technical-deep-div-1755536649647": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "Next-Action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": 60,
+      "initialExpireSeconds": 31536000,
+      "srcRoute": "/[slug]",
+      "dataRoute": "/why-most-geo-tools-are-missing-the-mark-a-technical-deep-div-1755536649647.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/why-your-ai-tools-are-secretly-excluding-15-of-users-the-hid-1755511952955": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "Next-Action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": 60,
+      "initialExpireSeconds": 31536000,
+      "srcRoute": "/[slug]",
+      "dataRoute": "/why-your-ai-tools-are-secretly-excluding-15-of-users-the-hid-1755511952955.rsc",
       "allowHeader": [
         "host",
         "x-matched-path",
@@ -17604,31 +15454,6 @@
     }
   },
   "dynamicRoutes": {
-    "/[slug]": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "routeRegex": "^/([^/]+?)(?:/)?$",
-      "dataRoute": "/[slug].rsc",
-      "fallback": null,
-      "dataRouteRegex": "^/([^/]+?)\\.rsc$",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
     "/platforms/[platform]": {
       "experimentalBypassFor": [
         {
@@ -17670,6 +15495,31 @@
       "dataRoute": "/industries/[industry].rsc",
       "fallback": null,
       "dataRouteRegex": "^/industries/([^/]+?)\\.rsc$",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/[slug]": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "Next-Action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "routeRegex": "^/([^/]+?)(?:/)?$",
+      "dataRoute": "/[slug].rsc",
+      "fallback": null,
+      "dataRouteRegex": "^/([^/]+?)\\.rsc$",
       "allowHeader": [
         "host",
         "x-matched-path",
