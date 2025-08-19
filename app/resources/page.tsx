@@ -50,25 +50,29 @@ const templatesChecklists = [
     title: 'GEO Content Template',
     description: 'Ready-to-use template for creating AI-optimized content',
     type: 'Template',
-    items: ['Semantic structure', 'FAQ sections', 'Citation formats', 'Entity definitions']
+    items: ['Semantic structure', 'FAQ sections', 'Citation formats', 'Entity definitions'],
+    link: '/guide'
   },
   {
     title: 'Technical GEO Checklist',
     description: 'Complete checklist for technical AI optimization',
     type: 'Checklist',
-    items: ['Schema markup', 'Robots.txt setup', 'AI crawler permissions', 'Structured data']
+    items: ['Schema markup', 'Robots.txt setup', 'AI crawler permissions', 'Structured data'],
+    link: '/tools'
   },
   {
     title: 'Content Audit Checklist',
     description: 'Systematic approach to auditing content for GEO',
     type: 'Checklist',
-    items: ['Semantic clarity', 'Citation readiness', 'Conversational tone', 'Comprehensive coverage']
+    items: ['Semantic clarity', 'Citation readiness', 'Conversational tone', 'Comprehensive coverage'],
+    link: '/tools/geo-audit'
   },
   {
     title: 'AI Platform Guidelines',
     description: 'Platform-specific optimization guidelines and best practices',
     type: 'Guide',
-    items: ['ChatGPT optimization', 'Claude preferences', 'Perplexity requirements', 'Bing Chat tips']
+    items: ['ChatGPT optimization', 'Claude preferences', 'Perplexity requirements', 'Bing Chat tips'],
+    link: '/platforms'
   }
 ]
 
@@ -77,6 +81,7 @@ const industryResources = [
     title: 'GEO Research Papers',
     description: 'Latest academic research on generative engine optimization',
     icon: '📊',
+    link: '/blog',
     items: [
       'GEO vs SEO Performance Study (2024)',
       'AI Citation Patterns Analysis',
@@ -88,6 +93,7 @@ const industryResources = [
     title: 'Industry Reports',
     description: 'Market analysis and trend reports for AI search',
     icon: '📈',
+    link: '/industries',
     items: [
       'AI Search Market Report 2024',
       'Generative AI Adoption Statistics',
@@ -99,6 +105,7 @@ const industryResources = [
     title: 'Best Practices',
     description: 'Curated collection of proven GEO strategies',
     icon: '⭐',
+    link: '/guide',
     items: [
       'Content Structure Guidelines',
       'Schema Markup Best Practices',
@@ -251,9 +258,12 @@ export default function ResourcesPage() {
                     </ul>
                   </div>
                   
-                  <button className="bg-gray-100 text-gray-700 px-6 py-3 rounded-lg font-semibold hover:bg-gray-200 transition w-full">
-                    Download {resource.type}
-                  </button>
+                  <Link 
+                    href={resource.link}
+                    className="block text-center bg-gray-100 text-gray-700 px-6 py-3 rounded-lg font-semibold hover:bg-gray-200 transition w-full"
+                  >
+                    Access {resource.type} →
+                  </Link>
                 </div>
               ))}
             </div>
@@ -272,9 +282,13 @@ export default function ResourcesPage() {
               Research, reports, and insights from the GEO industry
             </p>
             
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {industryResources.map((category, index) => (
-                <div key={index} className="bg-white rounded-lg shadow-lg p-6">
+                <Link 
+                  key={index} 
+                  href={category.link}
+                  className="block bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition"
+                >
                   <div className="text-center mb-6">
                     <span className="text-4xl mb-4 block">{category.icon}</span>
                     <h3 className="text-xl font-bold text-gray-900 mb-2">{category.title}</h3>
@@ -283,12 +297,18 @@ export default function ResourcesPage() {
                   
                   <ul className="space-y-3">
                     {category.items.map((item, itemIndex) => (
-                      <li key={itemIndex} className="text-gray-700 text-sm hover:text-blue-600 cursor-pointer transition">
+                      <li key={itemIndex} className="text-gray-700 text-sm">
                         • {item}
                       </li>
                     ))}
                   </ul>
-                </div>
+                  
+                  <div className="mt-6 text-center">
+                    <span className="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium">
+                      Explore {category.title.split(' ')[1]} →
+                    </span>
+                  </div>
+                </Link>
               ))}
             </div>
           </div>
@@ -387,7 +407,7 @@ export default function ResourcesPage() {
       </section>
 
       {/* Newsletter Signup */}
-      <section className="py-16 px-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+      <section id="newsletter" className="py-16 px-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
         <div className="container-blog">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl font-bold mb-4">
@@ -398,16 +418,18 @@ export default function ResourcesPage() {
             </p>
             
             <div className="bg-white rounded-lg p-8 max-w-2xl mx-auto">
-              <div className="flex flex-col sm:flex-row gap-4">
+              <form className="flex flex-col sm:flex-row gap-4" action="/api/newsletter" method="POST">
                 <input 
                   type="email" 
+                  name="email"
                   placeholder="Enter your email address"
                   className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900"
+                  required
                 />
-                <button className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition">
+                <button type="submit" className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition">
                   Subscribe
                 </button>
-              </div>
+              </form>
               <p className="text-gray-600 text-sm mt-3">
                 Join 1,000+ professionals already using our GEO resources. Unsubscribe anytime.
               </p>
