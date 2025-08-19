@@ -92,17 +92,8 @@ export default function PlatformComparePage() {
                 </div>
                 
                 <button 
-                  type="button"
+                  type="submit"
                   className="w-full bg-purple-600 hover:bg-purple-700 text-white font-semibold py-4 px-6 rounded-lg transition"
-                  onClick={() => {
-                    const platform1 = (document.getElementById('platform1') as HTMLSelectElement)?.value;
-                    const platform2 = (document.getElementById('platform2') as HTMLSelectElement)?.value;
-                    if (platform1 && platform2 && platform1 !== platform2) {
-                      window.location.href = `/compare/${platform1}-vs-${platform2}`;
-                    } else {
-                      alert('Please select two different platforms to compare');
-                    }
-                  }}
                 >
                   Compare Platforms →
                 </button>

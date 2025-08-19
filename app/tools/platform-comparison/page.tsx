@@ -54,19 +54,14 @@ export default function PlatformComparisonPage() {
               </div>
               
               <button 
+                type="submit"
                 className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-4 px-6 rounded-lg transition mb-8"
-                onClick={() => {
-                  const table = document.getElementById('comparison-table');
-                  if (table) {
-                    table.classList.remove('hidden');
-                  }
-                }}
               >
                 Generate Comparison Matrix →
               </button>
               
-              {/* Comparison Table (Hidden by default) */}
-              <div id="comparison-table" className="hidden">
+              {/* Comparison Table */}
+              <div id="comparison-table">
                 <div className="overflow-x-auto">
                   <table className="w-full border-collapse">
                     <thead>

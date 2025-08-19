@@ -102,24 +102,16 @@ export default function PlatformFinderPage() {
                 </div>
                 
                 <button 
-                  type="button"
+                  type="submit"
                   className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-4 px-6 rounded-lg transition"
-                  onClick={() => {
-                    // In a real implementation, this would process the form and show recommendations
-                    const resultsSection = document.getElementById('results');
-                    if (resultsSection) {
-                      resultsSection.classList.remove('hidden');
-                      resultsSection.scrollIntoView({ behavior: 'smooth' });
-                    }
-                  }}
                 >
                   Get Platform Recommendations →
                 </button>
               </form>
             </div>
             
-            {/* Results Section (Hidden by default) */}
-            <div id="results" className="hidden mt-8">
+            {/* Results Section */}
+            <div id="results" className="mt-8">
               <h2 className="text-2xl font-bold text-gray-900 mb-6">Recommended Platforms for You</h2>
               
               <div className="space-y-4">

@@ -76,23 +76,16 @@ export default function ChatGPTOptimizerPage() {
                 </div>
                 
                 <button 
-                  type="button"
+                  type="submit"
                   className="w-full bg-teal-600 hover:bg-teal-700 text-white font-semibold py-4 px-6 rounded-lg transition"
-                  onClick={() => {
-                    const results = document.getElementById('optimization-results');
-                    if (results) {
-                      results.classList.remove('hidden');
-                      results.scrollIntoView({ behavior: 'smooth' });
-                    }
-                  }}
                 >
                   Analyze & Optimize for ChatGPT →
                 </button>
               </form>
             </div>
             
-            {/* Results Section (Hidden by default) */}
-            <div id="optimization-results" className="hidden mt-8 space-y-6">
+            {/* Results Section */}
+            <div id="optimization-results" className="mt-8 space-y-6">
               {/* Score Card */}
               <div className="bg-white rounded-2xl shadow-xl p-8">
                 <h2 className="text-2xl font-bold text-gray-900 mb-6">ChatGPT Optimization Score</h2>
