@@ -709,3 +709,47 @@ The site now uses **15 real AI platforms** (cleaned from 102+ fake entries):
 - `/app/lib/platform-redirects.ts` - NEW: URL redirect mappings
 - `/middleware.ts` - Added platform redirect logic
 - `/app/compare/[comparison]/page.tsx` - Fixed text color classes
+
+## 🚨 Google Search Console Structured Data Fix (January 2025)
+
+### The Problem
+Google Search Console reported "Unparsable structured data" errors affecting 9 pages with the error "Parsing error: Missing ',' or '}'". The issue was in the Article schema JSON-LD generation for blog posts.
+
+### Root Cause
+The Article schema in `/app/[slug]/page.tsx` was setting properties to `undefined` when certain conditions weren't met (e.g., empty keyTakeaways array), which created invalid JSON.
+
+### The Solution (Lines 371-430)
+Used spread operators to conditionally include properties only when they have valid values:
+```typescript
+...(keyTakeaways.length > 0 ? {
+  speakable: {
+    '@type': 'SpeakableSpecification',
+    cssSelector: ['.key-takeaways'],
+    xpath: ['//div[@class="key-takeaways"]']
+  },
+  backstory: keyTakeaways.join(' ')
+} : {}),
+```
+
+### Verification
+```bash
+# Extract and validate JSON-LD from blog posts
+curl -s http://localhost:3000/[slug] | \
+  sed -n '/<script type="application\/ld\+json">/,/<\/script>/p' | \
+  sed '1d;$d' | python3 -m json.tool
+```
+
+### Deployment Status
+✅ **Fixed and deployed**: Heroku v111
+✅ **JSON validation**: All blog post schemas validate correctly
+✅ **638 static pages**: Successfully generated in production
+
+### Pages Affected & Current Status
+- `/community` - Created and live
+- 4 entity pages - Created (llm-optimization, claude-optimization, perplexity-optimization, citation-optimization)
+- `/sitemap.xml` - Updated with new tool pages
+- All blog posts - JSON-LD schemas fixed and validating
+
+### Next Steps
+- Monitor Google Search Console for error resolution (24-48 hours for re-crawl)
+- Continue with remaining tasks from GEO priority list

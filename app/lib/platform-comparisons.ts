@@ -1,6 +1,96 @@
 // Auto-generated platform comparisons based on real platforms
 export const platformComparisons = [
   {
+    "slug": "deepseek-r1-vs-openai-o3",
+    "title": "DeepSeek R1 vs OpenAI O3 Optimization Guide",
+    "platform1": "DeepSeek R1",
+    "platform2": "OpenAI O3",
+    "description": "Compare GEO optimization strategies for DeepSeek R1 and OpenAI O3. Learn how to maximize visibility across both cutting-edge AI platforms with detailed comparison of reasoning capabilities, optimization weights, and implementation strategies.",
+    "category": "Next-Gen AI Models",
+    "difficulty": "Advanced",
+    "impact": "High"
+  },
+  {
+    "slug": "deepseek-r1-vs-chatgpt",
+    "title": "DeepSeek R1 vs ChatGPT Optimization Guide",
+    "platform1": "DeepSeek R1",
+    "platform2": "ChatGPT",
+    "description": "Compare GEO optimization strategies for DeepSeek R1 and ChatGPT. Learn how to maximize visibility across both AI platforms with detailed comparison of content preferences, optimization weights, and implementation strategies.",
+    "category": "AI Model Comparison",
+    "difficulty": "Advanced",
+    "impact": "High"
+  },
+  {
+    "slug": "deepseek-r1-vs-claude",
+    "title": "DeepSeek R1 vs Claude Optimization Guide",
+    "platform1": "DeepSeek R1",
+    "platform2": "Claude",
+    "description": "Compare GEO optimization strategies for DeepSeek R1 and Claude. Learn how to maximize visibility across both AI platforms with detailed comparison of content preferences, optimization weights, and implementation strategies.",
+    "category": "AI Model Comparison",
+    "difficulty": "Advanced",
+    "impact": "High"
+  },
+  {
+    "slug": "openai-o3-vs-chatgpt",
+    "title": "OpenAI O3 vs ChatGPT Optimization Guide",
+    "platform1": "OpenAI O3",
+    "platform2": "ChatGPT",
+    "description": "Compare GEO optimization strategies for OpenAI O3 and ChatGPT. Learn how to maximize visibility across both OpenAI platforms with detailed comparison of content preferences, optimization weights, and implementation strategies.",
+    "category": "OpenAI Models",
+    "difficulty": "Advanced",
+    "impact": "High"
+  },
+  {
+    "slug": "openai-o3-vs-claude",
+    "title": "OpenAI O3 vs Claude Optimization Guide",
+    "platform1": "OpenAI O3",
+    "platform2": "Claude",
+    "description": "Compare GEO optimization strategies for OpenAI O3 and Claude. Learn how to maximize visibility across both AI platforms with detailed comparison of content preferences, optimization weights, and implementation strategies.",
+    "category": "AI Model Comparison",
+    "difficulty": "Advanced",
+    "impact": "High"
+  },
+  {
+    "slug": "deepseek-r1-vs-google-gemini",
+    "title": "DeepSeek R1 vs Google Gemini Optimization Guide",
+    "platform1": "DeepSeek R1",
+    "platform2": "Google Gemini",
+    "description": "Compare GEO optimization strategies for DeepSeek R1 and Google Gemini. Learn how to maximize visibility across both AI platforms with detailed comparison of content preferences, optimization weights, and implementation strategies.",
+    "category": "AI Model Comparison",
+    "difficulty": "Advanced",
+    "impact": "High"
+  },
+  {
+    "slug": "openai-o3-vs-google-gemini",
+    "title": "OpenAI O3 vs Google Gemini Optimization Guide",
+    "platform1": "OpenAI O3",
+    "platform2": "Google Gemini",
+    "description": "Compare GEO optimization strategies for OpenAI O3 and Google Gemini. Learn how to maximize visibility across both AI platforms with detailed comparison of content preferences, optimization weights, and implementation strategies.",
+    "category": "AI Model Comparison",
+    "difficulty": "Advanced",
+    "impact": "High"
+  },
+  {
+    "slug": "deepseek-r1-vs-perplexity",
+    "title": "DeepSeek R1 vs Perplexity AI Optimization Guide",
+    "platform1": "DeepSeek R1",
+    "platform2": "Perplexity AI",
+    "description": "Compare GEO optimization strategies for DeepSeek R1 and Perplexity AI. Learn how to maximize visibility across both AI platforms with detailed comparison of content preferences, optimization weights, and implementation strategies.",
+    "category": "AI Model Comparison",
+    "difficulty": "Advanced",
+    "impact": "High"
+  },
+  {
+    "slug": "openai-o3-vs-perplexity",
+    "title": "OpenAI O3 vs Perplexity AI Optimization Guide",
+    "platform1": "OpenAI O3",
+    "platform2": "Perplexity AI",
+    "description": "Compare GEO optimization strategies for OpenAI O3 and Perplexity AI. Learn how to maximize visibility across both AI platforms with detailed comparison of content preferences, optimization weights, and implementation strategies.",
+    "category": "AI Model Comparison",
+    "difficulty": "Advanced",
+    "impact": "High"
+  },
+  {
     "slug": "chatgpt-vs-claude",
     "title": "ChatGPT vs Claude Optimization Guide",
     "platform1": "ChatGPT",
