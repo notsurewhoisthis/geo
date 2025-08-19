@@ -72,10 +72,9 @@ export function addRAGMetadata(html: string, title: string, url: string): string
     optimization: 'rag-enhanced'
   }
   
+  // Use data-* attribute instead of script tag to avoid JSON-LD parsing issues
   return `
-    <script type="application/ld+json" class="rag-metadata">
-    ${JSON.stringify(metadata, null, 2)}
-    </script>
+    <div class="rag-metadata" data-rag-title="${title}" data-rag-url="${url}" data-rag-timestamp="${new Date().toISOString()}" data-rag-type="article" style="display: none;"></div>
     ${html}
   `
 }
