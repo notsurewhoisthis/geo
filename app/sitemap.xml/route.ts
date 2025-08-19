@@ -131,6 +131,10 @@ export async function GET() {
     { path: '/tools/content-optimizer', priority: '0.8', changefreq: 'weekly' },
     { path: '/tools/geo-audit', priority: '0.8', changefreq: 'weekly' },
     { path: '/tools/keyword-research', priority: '0.8', changefreq: 'weekly' },
+    { path: '/tools/platform-comparison', priority: '0.8', changefreq: 'weekly' },
+    { path: '/tools/platform-finder', priority: '0.8', changefreq: 'weekly' },
+    { path: '/tools/platform-compare', priority: '0.8', changefreq: 'weekly' },
+    { path: '/tools/chatgpt-optimizer', priority: '0.8', changefreq: 'weekly' },
     
     // Programmatic page hubs
     { path: '/industries', priority: '0.8', changefreq: 'weekly' },
