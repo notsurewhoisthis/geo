@@ -27,8 +27,21 @@ export default function Footer() {
           {/* Brand Section */}
           <div className="lg:col-span-2">
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 bg-gradient-to-br from-purple-600 to-blue-500 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-xl">G</span>
+              <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center">
+                <svg width="40" height="40" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                  <rect width="200" height="200" fill="white"/>
+                  <circle cx="60" cy="60" r="12" fill="#1e3a8a" stroke="#1e3a8a" strokeWidth="2"/>
+                  <circle cx="140" cy="60" r="12" fill="#1e3a8a" stroke="#1e3a8a" strokeWidth="2"/>
+                  <circle cx="60" cy="140" r="12" fill="#1e3a8a" stroke="#1e3a8a" strokeWidth="2"/>
+                  <circle cx="140" cy="140" r="12" fill="#1e3a8a" stroke="#1e3a8a" strokeWidth="2"/>
+                  <line x1="60" y1="60" x2="140" y2="60" stroke="#1e3a8a" strokeWidth="3"/>
+                  <line x1="140" y1="60" x2="140" y2="140" stroke="#1e3a8a" strokeWidth="3"/>
+                  <line x1="140" y1="140" x2="60" y2="140" stroke="#1e3a8a" strokeWidth="3"/>
+                  <line x1="60" y1="140" x2="60" y2="60" stroke="#1e3a8a" strokeWidth="3"/>
+                  <line x1="60" y1="60" x2="140" y2="140" stroke="#1e3a8a" strokeWidth="3"/>
+                  <line x1="140" y1="60" x2="60" y2="140" stroke="#1e3a8a" strokeWidth="3"/>
+                  <text x="100" y="180" fontFamily="Arial, sans-serif" fontSize="32" fontWeight="bold" textAnchor="middle" fill="#1e3a8a">GEO</text>
+                </svg>
               </div>
               <span className="text-2xl font-bold text-white">GEO Platform</span>
             </div>
