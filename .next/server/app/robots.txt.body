@@ -1,0 +1,28 @@
+# Generative Engine Optimization Robots.txt
+# Allow all crawlers
+
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://geo-engine-optimization-3b7f09edc005.herokuapp.com/sitemap.xml
+Sitemap: https://geo-engine-optimization-3b7f09edc005.herokuapp.com/news-sitemap.xml
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1
+
+# Specific rules for AI crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Claude-Web
+Allow: /

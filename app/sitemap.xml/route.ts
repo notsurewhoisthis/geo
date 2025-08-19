@@ -16,7 +16,9 @@ function escapeXml(unsafe: string): string {
 }
 
 export async function GET() {
-  const baseUrl = 'https://generative-engine.org'
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 
+                  process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` :
+                  'https://geo-engine-optimization-3b7f09edc005.herokuapp.com'
   
   // Get all blog posts from public/blog-data
   const blogDataPath = path.join(process.cwd(), 'public', 'blog-data')

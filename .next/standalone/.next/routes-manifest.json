@@ -1,0 +1,369 @@
+{
+  "version": 3,
+  "pages404": true,
+  "caseSensitive": false,
+  "basePath": "",
+  "redirects": [
+    {
+      "source": "/:path+/",
+      "destination": "/:path+",
+      "internal": true,
+      "statusCode": 308,
+      "regex": "^(?:/((?:[^/]+?)(?:/(?:[^/]+?))*))/$"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/:path*",
+      "headers": [
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-XSS-Protection",
+          "value": "1; mode=block"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), microphone=(), geolocation=()"
+        },
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https:;"
+        }
+      ],
+      "regex": "^(?:/((?:[^/]+?)(?:/(?:[^/]+?))*))?(?:/)?$"
+    }
+  ],
+  "rewrites": {
+    "beforeFiles": [],
+    "afterFiles": [],
+    "fallback": []
+  },
+  "dynamicRoutes": [
+    {
+      "page": "/compare/[comparison]",
+      "regex": "^/compare/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPcomparison": "nxtPcomparison"
+      },
+      "namedRegex": "^/compare/(?<nxtPcomparison>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/industries/[industry]",
+      "regex": "^/industries/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPindustry": "nxtPindustry"
+      },
+      "namedRegex": "^/industries/(?<nxtPindustry>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/platforms/[platform]",
+      "regex": "^/platforms/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPplatform": "nxtPplatform"
+      },
+      "namedRegex": "^/platforms/(?<nxtPplatform>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/[slug]",
+      "regex": "^/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPslug": "nxtPslug"
+      },
+      "namedRegex": "^/(?<nxtPslug>[^/]+?)(?:/)?$"
+    }
+  ],
+  "staticRoutes": [
+    {
+      "page": "/",
+      "regex": "^/(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/(?:/)?$"
+    },
+    {
+      "page": "/_not-found",
+      "regex": "^/_not\\-found(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/_not\\-found(?:/)?$"
+    },
+    {
+      "page": "/about",
+      "regex": "^/about(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/about(?:/)?$"
+    },
+    {
+      "page": "/authors",
+      "regex": "^/authors(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/authors(?:/)?$"
+    },
+    {
+      "page": "/benchmarks",
+      "regex": "^/benchmarks(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/benchmarks(?:/)?$"
+    },
+    {
+      "page": "/blog",
+      "regex": "^/blog(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/blog(?:/)?$"
+    },
+    {
+      "page": "/coming-soon",
+      "regex": "^/coming\\-soon(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/coming\\-soon(?:/)?$"
+    },
+    {
+      "page": "/community",
+      "regex": "^/community(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/community(?:/)?$"
+    },
+    {
+      "page": "/compare",
+      "regex": "^/compare(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/compare(?:/)?$"
+    },
+    {
+      "page": "/consultation",
+      "regex": "^/consultation(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/consultation(?:/)?$"
+    },
+    {
+      "page": "/contact",
+      "regex": "^/contact(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/contact(?:/)?$"
+    },
+    {
+      "page": "/entities",
+      "regex": "^/entities(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/entities(?:/)?$"
+    },
+    {
+      "page": "/entities/chatgpt-optimization",
+      "regex": "^/entities/chatgpt\\-optimization(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/entities/chatgpt\\-optimization(?:/)?$"
+    },
+    {
+      "page": "/entities/citation-optimization",
+      "regex": "^/entities/citation\\-optimization(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/entities/citation\\-optimization(?:/)?$"
+    },
+    {
+      "page": "/entities/claude-optimization",
+      "regex": "^/entities/claude\\-optimization(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/entities/claude\\-optimization(?:/)?$"
+    },
+    {
+      "page": "/entities/generative-engine-optimization",
+      "regex": "^/entities/generative\\-engine\\-optimization(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/entities/generative\\-engine\\-optimization(?:/)?$"
+    },
+    {
+      "page": "/entities/llm-optimization",
+      "regex": "^/entities/llm\\-optimization(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/entities/llm\\-optimization(?:/)?$"
+    },
+    {
+      "page": "/entities/perplexity-optimization",
+      "regex": "^/entities/perplexity\\-optimization(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/entities/perplexity\\-optimization(?:/)?$"
+    },
+    {
+      "page": "/feed.xml",
+      "regex": "^/feed\\.xml(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/feed\\.xml(?:/)?$"
+    },
+    {
+      "page": "/getting-started",
+      "regex": "^/getting\\-started(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/getting\\-started(?:/)?$"
+    },
+    {
+      "page": "/glossary",
+      "regex": "^/glossary(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/glossary(?:/)?$"
+    },
+    {
+      "page": "/guide",
+      "regex": "^/guide(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/guide(?:/)?$"
+    },
+    {
+      "page": "/industries",
+      "regex": "^/industries(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/industries(?:/)?$"
+    },
+    {
+      "page": "/news-sitemap.xml",
+      "regex": "^/news\\-sitemap\\.xml(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/news\\-sitemap\\.xml(?:/)?$"
+    },
+    {
+      "page": "/platforms",
+      "regex": "^/platforms(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/platforms(?:/)?$"
+    },
+    {
+      "page": "/resources",
+      "regex": "^/resources(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/resources(?:/)?$"
+    },
+    {
+      "page": "/robots.txt",
+      "regex": "^/robots\\.txt(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/robots\\.txt(?:/)?$"
+    },
+    {
+      "page": "/rss.xml",
+      "regex": "^/rss\\.xml(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/rss\\.xml(?:/)?$"
+    },
+    {
+      "page": "/sitemap.xml",
+      "regex": "^/sitemap\\.xml(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/sitemap\\.xml(?:/)?$"
+    },
+    {
+      "page": "/tech-view",
+      "regex": "^/tech\\-view(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/tech\\-view(?:/)?$"
+    },
+    {
+      "page": "/tools",
+      "regex": "^/tools(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/tools(?:/)?$"
+    },
+    {
+      "page": "/tools/chatgpt-optimizer",
+      "regex": "^/tools/chatgpt\\-optimizer(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/tools/chatgpt\\-optimizer(?:/)?$"
+    },
+    {
+      "page": "/tools/content-optimizer",
+      "regex": "^/tools/content\\-optimizer(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/tools/content\\-optimizer(?:/)?$"
+    },
+    {
+      "page": "/tools/geo-audit",
+      "regex": "^/tools/geo\\-audit(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/tools/geo\\-audit(?:/)?$"
+    },
+    {
+      "page": "/tools/keyword-research",
+      "regex": "^/tools/keyword\\-research(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/tools/keyword\\-research(?:/)?$"
+    },
+    {
+      "page": "/tools/meta-tag-generator",
+      "regex": "^/tools/meta\\-tag\\-generator(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/tools/meta\\-tag\\-generator(?:/)?$"
+    },
+    {
+      "page": "/tools/platform-compare",
+      "regex": "^/tools/platform\\-compare(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/tools/platform\\-compare(?:/)?$"
+    },
+    {
+      "page": "/tools/platform-comparison",
+      "regex": "^/tools/platform\\-comparison(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/tools/platform\\-comparison(?:/)?$"
+    },
+    {
+      "page": "/tools/platform-finder",
+      "regex": "^/tools/platform\\-finder(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/tools/platform\\-finder(?:/)?$"
+    },
+    {
+      "page": "/tools/schema-validator",
+      "regex": "^/tools/schema\\-validator(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/tools/schema\\-validator(?:/)?$"
+    },
+    {
+      "page": "/tools/serp-preview",
+      "regex": "^/tools/serp\\-preview(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/tools/serp\\-preview(?:/)?$"
+    },
+    {
+      "page": "/tools/visibility-tracker",
+      "regex": "^/tools/visibility\\-tracker(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/tools/visibility\\-tracker(?:/)?$"
+    },
+    {
+      "page": "/tutorials",
+      "regex": "^/tutorials(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/tutorials(?:/)?$"
+    },
+    {
+      "page": "/use-cases",
+      "regex": "^/use\\-cases(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/use\\-cases(?:/)?$"
+    }
+  ],
+  "dataRoutes": [],
+  "rsc": {
+    "header": "RSC",
+    "varyHeader": "RSC, Next-Router-State-Tree, Next-Router-Prefetch, Next-Router-Segment-Prefetch",
+    "prefetchHeader": "Next-Router-Prefetch",
+    "didPostponeHeader": "x-nextjs-postponed",
+    "contentTypeHeader": "text/x-component",
+    "suffix": ".rsc",
+    "prefetchSuffix": ".prefetch.rsc",
+    "prefetchSegmentHeader": "Next-Router-Segment-Prefetch",
+    "prefetchSegmentSuffix": ".segment.rsc",
+    "prefetchSegmentDirSuffix": ".segments"
+  },
+  "rewriteHeaders": {
+    "pathHeader": "x-nextjs-rewritten-path",
+    "queryHeader": "x-nextjs-rewritten-query"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "name": "GEO - Generative Engine Optimization Platform",
+  "short_name": "GEO Platform",
+  "description": "Master Generative Engine Optimization with cutting-edge strategies for AI-powered search",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#1e3a8a",
+  "background_color": "#111827",
+  "display": "standalone",
+  "start_url": "/"
+}
