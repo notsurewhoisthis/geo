@@ -1,16 +1,43 @@
 // Platform URL redirect mappings
 export const platformRedirects: Record<string, string> = {
-  // Google Gemini variations
-  'gemini': 'google-gemini',
-  'gemini-pro': 'google-gemini',
-  'gemini-2-5-pro': 'google-gemini',
+  // GPT-4o variations
+  'gpt4o': 'gpt-4o',
+  'gpt-4-o': 'gpt-4o',
+  'chatgpt-4o': 'gpt-4o',
+  
+  // Claude 4.1 Opus variations
+  'claude-4-1': 'claude-4-1-opus',
+  'claude-opus': 'claude-4-1-opus',
+  'claude-4': 'claude-4-1-opus',
+  'claude-4-opus': 'claude-4-1-opus',
+  
+  // Gemini 2.5 Pro variations
+  'gemini': 'gemini-2-5-pro',
+  'gemini-pro': 'gemini-2-5-pro',
+  'gemini-2': 'gemini-2-5-pro',
+  'gemini-2-5': 'gemini-2-5-pro',
+  'gemini-2.5': 'gemini-2-5-pro',
   'gemini-1-5-pro': 'google-gemini',
-  'gemini-2-5': 'google-gemini',
-  'gemini-1-5': 'google-gemini',
   'bard': 'google-gemini',
   'google-bard': 'google-gemini',
   
-  // ChatGPT variations
+  // DeepSeek-R1 variations
+  'deepseek': 'deepseek-r1',
+  'deepseek-r-1': 'deepseek-r1',
+  'deep-seek-r1': 'deepseek-r1',
+  
+  // Llama 4 variations
+  'llama': 'llama-4',
+  'llama4': 'llama-4',
+  'meta-llama': 'llama-4',
+  'meta-llama-4': 'llama-4',
+  
+  // OpenAI o3 variations
+  'o3': 'openai-o3',
+  'openai-o-3': 'openai-o3',
+  'openai-03': 'openai-o3',
+  
+  // ChatGPT variations (legacy)
   'gpt': 'chatgpt',
   'gpt-4': 'chatgpt',
   'gpt-3': 'chatgpt',
@@ -74,9 +101,11 @@ export const platformRedirects: Record<string, string> = {
 export function getCorrectPlatformSlug(slug: string): string | null {
   // First check if it's already a valid slug
   const validSlugs = [
-    'chatgpt', 'claude', 'copy-ai', 'dall-e', 'elevenlabs',
-    'github-copilot', 'google-gemini', 'grammarly', 'jasper',
-    'microsoft-copilot', 'midjourney', 'notion-ai', 'perplexity',
+    'gpt-4o', 'claude-4-1-opus', 'gemini-2-5-pro', 'deepseek-r1', 
+    'llama-4', 'openai-o3', 'chatgpt', 'claude', 'perplexity', 
+    'google-gemini', 'copy-ai', 'dall-e', 'elevenlabs',
+    'github-copilot', 'grammarly', 'jasper',
+    'microsoft-copilot', 'midjourney', 'notion-ai',
     'runwayml', 'synthesia'
   ]
   
