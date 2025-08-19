@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
+import { getCorrectPlatformSlug } from '@/app/lib/platform-redirects'
 
 // Language configuration
 const supportedLanguages = ['en'] // Only English is currently supported
@@ -18,6 +19,19 @@ export function middleware(request: NextRequest) {
     const url = new URL(`/coming-soon?lang=${subdomain}`, request.url)
     url.hostname = 'generative-engine.org'
     return NextResponse.redirect(url)
+  }
+  
+  // Handle platform page redirects
+  if (pathname.startsWith('/platforms/')) {
+    const platformSlug = pathname.replace('/platforms/', '').replace(/\/$/, '')
+    const correctSlug = getCorrectPlatformSlug(platformSlug)
+    
+    // If we found a redirect mapping and it's different from current
+    if (correctSlug && correctSlug !== platformSlug) {
+      const url = request.nextUrl.clone()
+      url.pathname = `/platforms/${correctSlug}`
+      return NextResponse.redirect(url, { status: 301 })
+    }
   }
   
   // Continue with the request for the main site
