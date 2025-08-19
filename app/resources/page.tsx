@@ -131,11 +131,11 @@ const communityResources = [
     link: '/community'
   },
   {
-    platform: 'Academy',
-    title: 'GEO Training Academy',
-    description: 'Structured courses and certifications for GEO mastery',
-    icon: '🎓',
-    link: '/academy'
+    platform: 'Learning',
+    title: 'GEO Complete Guide',
+    description: 'Comprehensive guide and tutorials for GEO mastery',
+    icon: '📚',
+    link: '/guide'
   }
 ]
 
@@ -396,7 +396,7 @@ export default function ResourcesPage() {
                       href={community.link}
                       className="inline-flex items-center bg-gray-900 text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-800 transition"
                     >
-                      Join {community.platform} →
+                      {community.platform === 'Learning' ? 'Start Learning →' : `Join ${community.platform} →`}
                     </Link>
                   )}
                 </div>

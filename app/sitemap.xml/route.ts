@@ -116,7 +116,6 @@ export async function GET() {
     // Learning & Information pages
     { path: '/benchmarks', priority: '0.8', changefreq: 'weekly' },
     { path: '/tutorials', priority: '0.8', changefreq: 'weekly' },
-    { path: '/academy', priority: '0.8', changefreq: 'weekly' },
     { path: '/coming-soon', priority: '0.3', changefreq: 'monthly' },
     
     // Main pages 

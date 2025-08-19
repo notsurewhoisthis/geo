@@ -72,12 +72,6 @@
       "namedRegex": "^/about(?:/)?$"
     },
     {
-      "page": "/academy",
-      "regex": "^/academy(?:/)?$",
-      "routeKeys": {},
-      "namedRegex": "^/academy(?:/)?$"
-    },
-    {
       "page": "/authors",
       "regex": "^/authors(?:/)?$",
       "routeKeys": {},
