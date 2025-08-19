@@ -15,10 +15,13 @@ function escapeXml(unsafe: string): string {
   });
 }
 
-export async function GET() {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 
-                  process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` :
-                  'https://geo-engine-optimization-3b7f09edc005.herokuapp.com'
+export async function GET(request: Request) {
+  // Use the actual domain from the request or fallback to configured domain
+  const host = request.headers.get('host')
+  const baseUrl = host?.includes('generative-engine.org') 
+    ? 'https://generative-engine.org'
+    : process.env.NEXT_PUBLIC_SITE_URL || 
+      'https://generative-engine.org'
   
   // Get all blog posts from public/blog-data
   const blogDataPath = path.join(process.cwd(), 'public', 'blog-data')
