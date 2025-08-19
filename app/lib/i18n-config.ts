@@ -22,7 +22,7 @@ export const languages: Language[] = [
     name: 'English (UK)',
     nativeName: 'English (UK)',
     region: 'GB',
-    url: 'https://uk.generative-engine.org',
+    url: 'https://www.generative-engine.org',
     enabled: false // Enable when UK version is ready
   },
   {
@@ -30,7 +30,7 @@ export const languages: Language[] = [
     name: 'Spanish',
     nativeName: 'Español',
     region: 'ES',
-    url: 'https://es.generative-engine.org',
+    url: 'https://www.generative-engine.org',
     enabled: false // Enable when Spanish version is ready
   },
   {
@@ -38,7 +38,7 @@ export const languages: Language[] = [
     name: 'French',
     nativeName: 'Français',
     region: 'FR',
-    url: 'https://fr.generative-engine.org',
+    url: 'https://www.generative-engine.org',
     enabled: false // Enable when French version is ready
   },
   {
@@ -46,7 +46,7 @@ export const languages: Language[] = [
     name: 'German',
     nativeName: 'Deutsch',
     region: 'DE',
-    url: 'https://de.generative-engine.org',
+    url: 'https://www.generative-engine.org',
     enabled: false // Enable when German version is ready
   },
   {
@@ -54,7 +54,7 @@ export const languages: Language[] = [
     name: 'Portuguese',
     nativeName: 'Português',
     region: 'PT',
-    url: 'https://pt.generative-engine.org',
+    url: 'https://www.generative-engine.org',
     enabled: false // Enable when Portuguese version is ready
   },
   {
@@ -62,7 +62,7 @@ export const languages: Language[] = [
     name: 'Italian',
     nativeName: 'Italiano',
     region: 'IT',
-    url: 'https://it.generative-engine.org',
+    url: 'https://www.generative-engine.org',
     enabled: false // Enable when Italian version is ready
   },
   {
@@ -70,7 +70,7 @@ export const languages: Language[] = [
     name: 'Japanese',
     nativeName: '日本語',
     region: 'JP',
-    url: 'https://ja.generative-engine.org',
+    url: 'https://www.generative-engine.org',
     enabled: false // Enable when Japanese version is ready
   },
   {
@@ -78,7 +78,7 @@ export const languages: Language[] = [
     name: 'Chinese',
     nativeName: '中文',
     region: 'CN',
-    url: 'https://zh.generative-engine.org',
+    url: 'https://www.generative-engine.org',
     enabled: false // Enable when Chinese version is ready
   },
   {
@@ -86,7 +86,7 @@ export const languages: Language[] = [
     name: 'Korean',
     nativeName: '한국어',
     region: 'KR',
-    url: 'https://ko.generative-engine.org',
+    url: 'https://www.generative-engine.org',
     enabled: false // Enable when Korean version is ready
   }
 ]
@@ -169,15 +169,8 @@ export const localeContent = {
 
 // Get locale from URL or browser
 export function detectLocale(url?: string): string {
-  if (url) {
-    // Check subdomain
-    const urlObj = new URL(url)
-    const subdomain = urlObj.hostname.split('.')[0]
-    const lang = languages.find(l => l.url.includes(subdomain))
-    if (lang) return lang.code
-  }
-  
-  // Default to English
+  // Since we only have one domain and English is the only enabled language,
+  // always return English
   return 'en'
 }
 
