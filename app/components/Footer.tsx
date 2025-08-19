@@ -1,14 +1,14 @@
 import Link from 'next/link'
 
 export default function Footer() {
-  // Popular platform comparisons for SEO
+  // Popular platform comparisons for SEO - using real comparisons from data
   const popularComparisons = [
-    { slug: 'gpt-4o-vs-claude-4-1-opus', title: 'GPT-4o vs Claude Opus' },
-    { slug: 'gemini-2-5-pro-vs-gpt-5', title: 'Gemini Pro vs GPT-5' },
-    { slug: 'deepseek-r1-vs-openai-o3', title: 'DeepSeek vs OpenAI o3' },
-    { slug: 'llama-4-vs-claude-4-1-sonnet', title: 'Llama 4 vs Claude Sonnet' },
-    { slug: 'mistral-large-2-vs-qwen-2-5', title: 'Mistral vs Qwen2.5' },
-    { slug: 'grok-4-vs-gemini-2-0-flash', title: 'Grok 4 vs Gemini Flash' }
+    { slug: 'chatgpt-vs-claude', title: 'ChatGPT vs Claude' },
+    { slug: 'chatgpt-vs-google-gemini', title: 'ChatGPT vs Google Gemini' },
+    { slug: 'claude-vs-google-gemini', title: 'Claude vs Google Gemini' },
+    { slug: 'chatgpt-vs-perplexity', title: 'ChatGPT vs Perplexity' },
+    { slug: 'claude-vs-perplexity', title: 'Claude vs Perplexity' },
+    { slug: 'perplexity-vs-google-gemini', title: 'Perplexity vs Google Gemini' }
   ];
 
   const topPlatforms = [
@@ -102,41 +102,41 @@ export default function Footer() {
             <div>
               <h5 className="text-xs font-semibold text-gray-500 uppercase mb-2">OpenAI Models</h5>
               <div className="flex flex-col gap-1">
-                <Link href="/compare/gpt-4o-vs-gpt-5" className="text-xs text-gray-600 hover:text-purple-400">GPT-4o vs GPT-5</Link>
-                <Link href="/compare/gpt-4-5-vs-openai-o3" className="text-xs text-gray-600 hover:text-purple-400">GPT-4.5 vs o3</Link>
-                <Link href="/compare/chatgpt-5-mini-vs-gpt-4o" className="text-xs text-gray-600 hover:text-purple-400">ChatGPT Mini vs GPT-4o</Link>
+                <Link href="/compare/chatgpt-vs-claude" className="text-xs text-gray-600 hover:text-purple-400">ChatGPT vs Claude</Link>
+                <Link href="/compare/chatgpt-vs-google-gemini" className="text-xs text-gray-600 hover:text-purple-400">ChatGPT vs Gemini</Link>
+                <Link href="/compare/chatgpt-vs-perplexity" className="text-xs text-gray-600 hover:text-purple-400">ChatGPT vs Perplexity</Link>
               </div>
             </div>
             <div>
               <h5 className="text-xs font-semibold text-gray-500 uppercase mb-2">Google Models</h5>
               <div className="flex flex-col gap-1">
-                <Link href="/compare/gemini-2-5-pro-vs-gemini-2-0-flash" className="text-xs text-gray-600 hover:text-purple-400">Gemini Pro vs Flash</Link>
-                <Link href="/compare/gemini-2-5-pro-vs-gemma-3" className="text-xs text-gray-600 hover:text-purple-400">Gemini vs Gemma</Link>
-                <Link href="/compare/gemini-2-0-flash-vs-gpt-4o" className="text-xs text-gray-600 hover:text-purple-400">Gemini Flash vs GPT-4o</Link>
+                <Link href="/compare/google-gemini-vs-dall-e" className="text-xs text-gray-600 hover:text-purple-400">Gemini vs DALL-E</Link>
+                <Link href="/compare/claude-vs-google-gemini" className="text-xs text-gray-600 hover:text-purple-400">Claude vs Gemini</Link>
+                <Link href="/compare/perplexity-vs-google-gemini" className="text-xs text-gray-600 hover:text-purple-400">Perplexity vs Gemini</Link>
               </div>
             </div>
             <div>
               <h5 className="text-xs font-semibold text-gray-500 uppercase mb-2">Anthropic Models</h5>
               <div className="flex flex-col gap-1">
-                <Link href="/compare/claude-4-1-opus-vs-claude-4-1-sonnet" className="text-xs text-gray-600 hover:text-purple-400">Opus vs Sonnet</Link>
-                <Link href="/compare/claude-3-7-sonnet-vs-claude-4-1-opus" className="text-xs text-gray-600 hover:text-purple-400">Claude 3.7 vs 4.1</Link>
-                <Link href="/compare/claude-4-1-opus-vs-gpt-5" className="text-xs text-gray-600 hover:text-purple-400">Claude vs GPT-5</Link>
+                <Link href="/compare/claude-vs-github-copilot" className="text-xs text-gray-600 hover:text-purple-400">Claude vs GitHub Copilot</Link>
+                <Link href="/compare/claude-vs-microsoft-copilot" className="text-xs text-gray-600 hover:text-purple-400">Claude vs Microsoft Copilot</Link>
+                <Link href="/compare/claude-vs-perplexity" className="text-xs text-gray-600 hover:text-purple-400">Claude vs Perplexity</Link>
               </div>
             </div>
             <div>
-              <h5 className="text-xs font-semibold text-gray-500 uppercase mb-2">Open Source</h5>
+              <h5 className="text-xs font-semibold text-gray-500 uppercase mb-2">Creative Tools</h5>
               <div className="flex flex-col gap-1">
-                <Link href="/compare/llama-3-1-vs-llama-4" className="text-xs text-gray-600 hover:text-purple-400">Llama 3.1 vs 4</Link>
-                <Link href="/compare/mistral-large-2-vs-llama-4" className="text-xs text-gray-600 hover:text-purple-400">Mistral vs Llama</Link>
-                <Link href="/compare/qwen-2-5-vs-phi-4" className="text-xs text-gray-600 hover:text-purple-400">Qwen vs Phi-4</Link>
+                <Link href="/compare/dall-e-vs-chatgpt" className="text-xs text-gray-600 hover:text-purple-400">DALL-E vs ChatGPT</Link>
+                <Link href="/compare/midjourney-vs-dall-e" className="text-xs text-gray-600 hover:text-purple-400">Midjourney vs DALL-E</Link>
+                <Link href="/compare/copy-ai-vs-chatgpt" className="text-xs text-gray-600 hover:text-purple-400">Copy.ai vs ChatGPT</Link>
               </div>
             </div>
             <div>
-              <h5 className="text-xs font-semibold text-gray-500 uppercase mb-2">Reasoning Models</h5>
+              <h5 className="text-xs font-semibold text-gray-500 uppercase mb-2">Business Tools</h5>
               <div className="flex flex-col gap-1">
-                <Link href="/compare/deepseek-r1-vs-openai-o3" className="text-xs text-gray-600 hover:text-purple-400">DeepSeek vs o3</Link>
-                <Link href="/compare/openai-o3-vs-claude-4-1-opus" className="text-xs text-gray-600 hover:text-purple-400">o3 vs Claude Opus</Link>
-                <Link href="/compare/deepseek-r1-vs-gpt-5" className="text-xs text-gray-600 hover:text-purple-400">DeepSeek vs GPT-5</Link>
+                <Link href="/compare/grammarly-vs-chatgpt" className="text-xs text-gray-600 hover:text-purple-400">Grammarly vs ChatGPT</Link>
+                <Link href="/compare/jasper-vs-chatgpt" className="text-xs text-gray-600 hover:text-purple-400">Jasper vs ChatGPT</Link>
+                <Link href="/compare/notion-ai-vs-chatgpt" className="text-xs text-gray-600 hover:text-purple-400">Notion AI vs ChatGPT</Link>
               </div>
             </div>
             <div>
