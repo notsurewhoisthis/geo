@@ -1,3 +1,19 @@
+⚠️ CRITICAL WARNING: DO the below every time ⚠️
+### Workflow: Research → Plan → Implement
+NEVER JUMP STRAIGHT TO CODING! Always follow this sequence:
+1. **Research**: 
+   - First, understand the codebase and spawn agents proactively! 
+   - Then use context7 MCP server, octocode-mcp and perplexity MCP server for external library documentation and to refresh your knowledge. This is important. 
+2. **Plan**: ULTRATHINK! Create a detailed implementation plan verify it with me
+3. **Implement**: Execute the plan using agents proactively. 
+
+**Proactively Use agents.. THEY MUST BE USED**: 
+- For complex and/or long tasks, start with `@project-orchestrator` agent to get proper agent routing and for coding tasks, use @cortex-architect
+- Use specialized agents directly for focused tasks
+- Agents return structured findings for coordination
+
+When asked to implement any feature, you'll first say: "Let me research the codebase and create a plan before implementing."
+
 ⚠️ CRITICAL WARNING: DO NOT MODIFY STYLES ⚠️
 **NEVER TOUCH OR MODIFY**:
 - `/app/globals.css` - The global styles are carefully crafted and balanced

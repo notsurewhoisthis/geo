@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { useState } from 'react'
+import GetStartedButton from './GetStartedButton'
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -38,9 +39,7 @@ export default function Header() {
             <Link href="/resources" className="text-gray-600 hover:text-gray-900 font-medium transition">Resources</Link>
             <Link href="/tech-view" className="text-gray-600 hover:text-gray-900 font-medium transition">Tech View</Link>
             <Link href="/about" className="text-gray-600 hover:text-gray-900 font-medium transition">About</Link>
-            <Link href="/tools" className="px-6 py-2.5 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition">
-              Try Tools
-            </Link>
+            <GetStartedButton />
           </div>
           
           <button 
@@ -63,9 +62,7 @@ export default function Header() {
               <Link href="/resources" className="text-gray-600 hover:text-gray-900 font-medium transition">Resources</Link>
               <Link href="/tech-view" className="text-gray-600 hover:text-gray-900 font-medium transition">Tech View</Link>
               <Link href="/about" className="text-gray-600 hover:text-gray-900 font-medium transition">About</Link>
-              <Link href="/tools" className="px-6 py-2.5 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition text-center">
-                Try Tools
-              </Link>
+              <GetStartedButton fullWidth />
             </div>
           </div>
         )}
