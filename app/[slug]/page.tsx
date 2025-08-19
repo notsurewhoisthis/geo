@@ -368,12 +368,14 @@ export default async function BlogPostPage({
                 name: heading.text,
                 position: index + 1,
               })),
-              speakable: keyTakeaways.length > 0 ? {
-                '@type': 'SpeakableSpecification',
-                cssSelector: ['.key-takeaways'],
-                xpath: ['//div[@class="key-takeaways"]']
-              } : undefined,
-              backstory: keyTakeaways.length > 0 ? keyTakeaways.join(' ') : undefined,
+              ...(keyTakeaways.length > 0 ? {
+                speakable: {
+                  '@type': 'SpeakableSpecification',
+                  cssSelector: ['.key-takeaways'],
+                  xpath: ['//div[@class="key-takeaways"]']
+                },
+                backstory: keyTakeaways.join(' ')
+              } : {}),
             },
             {
               '@context': 'https://schema.org',
