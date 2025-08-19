@@ -14,7 +14,7 @@ export const languages: Language[] = [
     name: 'English',
     nativeName: 'English',
     region: 'US',
-    url: 'https://generative-engine.org',
+    url: 'https://www.generative-engine.org',
     enabled: true
   },
   {
@@ -109,10 +109,10 @@ export function generateHreflangTags(pathname: string): Array<{ lang: string; ur
     })
   }
   
-  // Add x-default tag (fallback)
+  // Add x-default tag (fallback) - use www version
   tags.push({
     lang: 'x-default',
-    url: `https://generative-engine.org${pathname}`
+    url: `https://www.generative-engine.org${pathname}`
   })
   
   return tags

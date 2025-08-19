@@ -8,7 +8,7 @@ NEVER JUMP STRAIGHT TO CODING! Always follow this sequence:
 3. **Implement**: Execute the plan using agents proactively. 
 
 **Proactively Use agents.. THEY MUST BE USED**: 
-- For complex and/or long tasks, start with `@project-orchestrator` agent to get proper agent routing and for coding tasks, use @cortex-architect
+- For any task! start with `@project-orchestrator` agent to get proper agent routing and for coding tasks, use @cortex-architect
 - Use specialized agents directly for focused tasks
 - Agents return structured findings for coordination
 

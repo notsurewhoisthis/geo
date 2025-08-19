@@ -211,18 +211,9 @@ export default function RootLayout({
         <link rel="alternate" type="application/rss+xml" title="GEO Platform RSS Feed" href="/rss.xml" />
         
         {/* International SEO - Hreflang Tags */}
-        <link rel="alternate" hrefLang="en" href="https://generative-engine.org" />
-        <link rel="alternate" hrefLang="en-US" href="https://generative-engine.org" />
-        <link rel="alternate" hrefLang="en-GB" href="https://uk.generative-engine.org" />
-        <link rel="alternate" hrefLang="es" href="https://es.generative-engine.org" />
-        <link rel="alternate" hrefLang="fr" href="https://fr.generative-engine.org" />
-        <link rel="alternate" hrefLang="de" href="https://de.generative-engine.org" />
-        <link rel="alternate" hrefLang="pt" href="https://pt.generative-engine.org" />
-        <link rel="alternate" hrefLang="it" href="https://it.generative-engine.org" />
-        <link rel="alternate" hrefLang="ja" href="https://ja.generative-engine.org" />
-        <link rel="alternate" hrefLang="zh" href="https://zh.generative-engine.org" />
-        <link rel="alternate" hrefLang="ko" href="https://ko.generative-engine.org" />
-        <link rel="alternate" hrefLang="x-default" href="https://generative-engine.org" />
+        {/* Only include hreflang tags for enabled languages */}
+        <link rel="alternate" hrefLang="en" href="https://www.generative-engine.org" />
+        <link rel="alternate" hrefLang="x-default" href="https://www.generative-engine.org" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
