@@ -96,17 +96,6 @@ const industryResources = [
     ]
   },
   {
-    title: 'Case Studies',
-    description: 'Real-world examples of successful GEO implementations',
-    icon: '💼',
-    items: [
-      'E-commerce GEO Success Story',
-      'B2B Content Optimization Case',
-      'Publishing Platform AI Visibility',
-      'Local Business GEO Strategy'
-    ]
-  },
-  {
     title: 'Best Practices',
     description: 'Curated collection of proven GEO strategies',
     icon: '⭐',
@@ -332,7 +321,7 @@ export default function ResourcesPage() {
                 <div className="text-4xl mb-4 text-center">✍️</div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3 text-center">GEO Blog</h3>
                 <p className="text-gray-700 text-center mb-4">
-                  Latest strategies, case studies, and industry insights from GEO experts
+                  Latest strategies, optimization techniques, and industry insights from GEO experts
                 </p>
                 <div className="text-center">
                   <span className="bg-purple-600 text-white px-4 py-2 rounded-lg text-sm font-medium">

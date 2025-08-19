@@ -631,3 +631,81 @@ curl -s https://www.generative-engine.org/sitemap.xml | grep -c "<url>"
 - ✅ Always run the generation script if data looks truncated
 - ✅ Always verify programmatic page counts after major changes
 - ✅ Monitor sitemap count in deployment checks
+
+## 🚨 CRITICAL: Platform Comparison Pages Fix (August 19, 2025)
+
+### The Problem
+All 60 comparison pages at `/compare/[comparison]/` were showing black text on black background, making content completely unreadable. User provided screenshot showing the issue on `https://www.generative-engine.org/compare/microsoft-copilot-vs-github-copilot`.
+
+### The Solution  
+Fixed `/app/compare/[comparison]/page.tsx` by adding proper text color classes throughout the HTML content string (lines 20-336):
+- Headers: Added `text-white` class
+- Body text: Added `text-gray-300` class
+- Table cells: Added `text-gray-300` class
+- Strong tags: Added `text-white` class
+- Links: Already had `text-purple-400 hover:text-purple-300`
+
+**Deployed**: Heroku v102 - All comparison pages now readable with proper dark theme colors
+
+### Platform URL Redirects Implementation (August 19, 2025)
+
+### The Problem
+404 errors on platform pages like `/platforms/gemini-2-5-pro` because the actual slug in platforms.json was `google-gemini`. Users were hitting 404s for common platform name variations.
+
+### The Solution
+Created comprehensive redirect system to handle all platform URL variations:
+
+1. **Created**: `/app/lib/platform-redirects.ts` with 40+ URL mappings
+   ```typescript
+   export const platformRedirects: Record<string, string> = {
+     'gemini-2-5-pro': 'google-gemini',
+     'gpt-4': 'chatgpt',
+     'claude-2': 'claude',
+     // ... 37+ more variations
+   }
+   ```
+
+2. **Updated**: `/middleware.ts` to handle 301 redirects for SEO preservation
+   ```typescript
+   if (pathname.startsWith('/platforms/')) {
+     const correctSlug = getCorrectPlatformSlug(platformSlug)
+     if (correctSlug && correctSlug !== platformSlug) {
+       return NextResponse.redirect(url, { status: 301 })
+     }
+   }
+   ```
+
+**Deployed**: Heroku v103 - All platform URL variations now redirect correctly
+
+## 📁 Current Project State (August 19, 2025)
+
+### Real Platform Data
+The site now uses **15 real AI platforms** (cleaned from 102+ fake entries):
+- chatgpt, claude, copy-ai, dall-e, elevenlabs
+- github-copilot, google-gemini, grammarly, jasper
+- microsoft-copilot, midjourney, notion-ai, perplexity
+- runwayml, synthesia
+
+### Pages Status
+✅ **Working Pages**:
+- 560 industry pages (`/industries/[industry]/`)
+- 15 platform pages (`/platforms/[platform]/`) with comprehensive redirects
+- 60 comparison pages (`/compare/[comparison]/`) - fixed black text issue
+- All blog posts with ISR (60-second revalidation)
+- Main tools pages (visibility-tracker, geo-audit, content-optimizer, etc.)
+
+⏳ **Missing Pages** (To Be Created):
+- `/tools/platform-compare`
+- `/tools/platform-finder` 
+- `/tools/platform-comparison`
+- `/tools/chatgpt-optimizer`
+- Various entity pages (`/entities/llm-optimization`, etc.)
+- `/community` page
+- Case study pages
+
+### Key Files Updated in This Session
+- `/public/data/platforms.json` - Reduced to 15 real platforms
+- `/public/data/comparisons.json` - 60 real platform comparisons
+- `/app/lib/platform-redirects.ts` - NEW: URL redirect mappings
+- `/middleware.ts` - Added platform redirect logic
+- `/app/compare/[comparison]/page.tsx` - Fixed text color classes

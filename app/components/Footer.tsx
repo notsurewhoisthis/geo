@@ -146,7 +146,6 @@ export default function Footer() {
                 <Link href="/industries" className="text-xs text-gray-600 hover:text-purple-400">Industries</Link>
                 <Link href="/use-cases" className="text-xs text-gray-600 hover:text-purple-400">Use Cases</Link>
                 <Link href="/tutorials" className="text-xs text-gray-600 hover:text-purple-400">Tutorials</Link>
-                <Link href="/case-studies" className="text-xs text-gray-600 hover:text-purple-400">Case Studies</Link>
                 <Link href="/benchmarks" className="text-xs text-gray-600 hover:text-purple-400">AI Benchmarks</Link>
               </div>
             </div>

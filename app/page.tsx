@@ -455,54 +455,6 @@ export default async function Home() {
           </div>
         </section>
 
-        {/* Case Studies Section */}
-        <section className="py-20 px-4">
-          <div className="container-blog">
-            <div className="text-center mb-12">
-              <h2 className="section-title text-gray-900 mb-4">GEO Success Stories</h2>
-              <p className="text-xl text-gray-600">Real results from implementing GEO strategies</p>
-            </div>
-            
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="bg-white rounded-lg shadow-lg p-8">
-                <div className="text-4xl font-bold text-blue-600 mb-4">+300%</div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">AI Citations Increase</h3>
-                <p className="text-gray-600 mb-4">
-                  E-commerce site saw 300% increase in ChatGPT citations after implementing 
-                  structured data and conversational content optimization.
-                </p>
-                <Link href="/case-studies/ecommerce-geo" className="text-blue-600 font-semibold">
-                  Read Case Study →
-                </Link>
-              </div>
-              
-              <div className="bg-white rounded-lg shadow-lg p-8">
-                <div className="text-4xl font-bold text-green-600 mb-4">+250%</div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">Organic Traffic Growth</h3>
-                <p className="text-gray-600 mb-4">
-                  Tech blog experienced 250% traffic increase from AI-powered search 
-                  after comprehensive GEO implementation.
-                </p>
-                <Link href="/case-studies/tech-blog-geo" className="text-blue-600 font-semibold">
-                  Read Case Study →
-                </Link>
-              </div>
-              
-              <div className="bg-white rounded-lg shadow-lg p-8">
-                <div className="text-4xl font-bold text-purple-600 mb-4">Top 3</div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">Perplexity Rankings</h3>
-                <p className="text-gray-600 mb-4">
-                  SaaS platform achieved top 3 positions in Perplexity AI for 
-                  all target keywords within 60 days.
-                </p>
-                <Link href="/case-studies/saas-perplexity" className="text-blue-600 font-semibold">
-                  Read Case Study →
-                </Link>
-              </div>
-            </div>
-          </div>
-        </section>
-
         {/* Platform Comparisons Section - Enhanced */}
         <PlatformComparisonsSection />
 
@@ -600,7 +552,7 @@ export default async function Home() {
             <div className="flex justify-between items-end mb-12">
               <div>
                 <h2 className="section-title text-gray-900">Latest GEO Insights</h2>
-                <p className="text-xl text-gray-600">Fresh strategies and case studies</p>
+                <p className="text-xl text-gray-600">Fresh strategies and optimization techniques</p>
               </div>
               <Link href="/blog" className="text-blue-600 font-semibold hover:text-blue-700 transition">
                 View All Articles →
@@ -690,27 +642,6 @@ export default async function Home() {
                     </div>
                   </article>
                   
-                  <article className="article-card group">
-                    <div className="aspect-video bg-gradient-to-br from-green-400 to-green-600 relative overflow-hidden">
-                      <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition"></div>
-                    </div>
-                    <div className="p-6">
-                      <div className="flex items-center gap-3 mb-3">
-                        <span className="badge badge-blue">Case Study</span>
-                        <span className="text-sm text-gray-500">Coming Soon</span>
-                      </div>
-                      <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition">
-                        How We Dominated Perplexity AI Rankings
-                      </h3>
-                      <p className="text-gray-600 mb-4 line-clamp-3">
-                        Real-world case study showing how we achieved top positions in Perplexity AI 
-                        for competitive keywords using advanced GEO techniques.
-                      </p>
-                      <Link href="/blog" className="text-blue-600 font-semibold hover:text-blue-700 transition">
-                        View All Articles →
-                      </Link>
-                    </div>
-                  </article>
                 </>
               )}
             </div>
@@ -1020,7 +951,7 @@ export default async function Home() {
             </h2>
             <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
               Get weekly insights on Generative Engine Optimization strategies, 
-              AI platform updates, and exclusive case studies delivered to your inbox.
+              AI platform updates, and exclusive optimization tips delivered to your inbox.
             </p>
             <div className="max-w-md mx-auto">
               <form className="flex flex-col sm:flex-row gap-4">
