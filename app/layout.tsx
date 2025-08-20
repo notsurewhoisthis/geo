@@ -230,6 +230,19 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(navigationSchema) }}
         />
+        
+        {/* Google Analytics - Fallback for standalone mode */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-DKJB7H8XG5"></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-DKJB7H8XG5');
+            `
+          }}
+        />
       </head>
       <body className={`${inter.className} bg-white text-gray-900 min-h-screen flex flex-col`}>
         <Header />
@@ -237,20 +250,6 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
-        
-        {/* Google Analytics - Must be at end of body */}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-DKJB7H8XG5"
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-DKJB7H8XG5');
-          `}
-        </Script>
       </body>
     </html>
   )
