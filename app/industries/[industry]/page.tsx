@@ -724,24 +724,7 @@ export default async function IndustryPage({
               name: `${industry.name} Industry`,
               description: industry.description,
               articleSection: industry.category,
-              keywords: `${industry.category}, ${industry.name}`,
-              additionalProperty: [
-                {
-                  '@type': 'PropertyValue',
-                  name: 'Market Size',
-                  value: industry.marketSize
-                },
-                {
-                  '@type': 'PropertyValue',
-                  name: 'Annual Growth Rate',
-                  value: industry.growth
-                },
-                {
-                  '@type': 'PropertyValue',
-                  name: 'AI Adoption Rate',
-                  value: industry.aiAdoption
-                }
-              ]
+              keywords: `${industry.category}, ${industry.name}`
             }
           ]),
         }}

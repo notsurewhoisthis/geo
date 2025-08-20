@@ -17,10 +17,110 @@ export const metadata: Metadata = {
 }
 
 export default function SEOvsGEOPage() {
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: 'SEO vs GEO: Complete Guide to Both Optimization Strategies',
+    description: 'Understand the key differences between SEO and GEO, when to use each strategy, and how to combine both for maximum visibility across search engines and AI platforms.',
+    author: {
+      '@type': 'Organization',
+      name: 'GEO Platform',
+      url: 'https://generative-engine.org'
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'GEO Platform',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://generative-engine.org/logo.png'
+      }
+    },
+    datePublished: '2025-01-18',
+    dateModified: '2025-01-20',
+    image: 'https://generative-engine.org/api/og?title=SEO%20vs%20GEO%20Guide',
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': 'https://generative-engine.org/tutorials/seo-vs-geo'
+    },
+    keywords: 'SEO vs GEO, search engine optimization, generative engine optimization, AI SEO, traditional SEO',
+    articleSection: 'Tutorials',
+    wordCount: 1600,
+    timeRequired: 'PT8M'
+  }
+
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: 'https://generative-engine.org'
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Tutorials',
+        item: 'https://generative-engine.org/tutorials'
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: 'SEO vs GEO',
+        item: 'https://generative-engine.org/tutorials/seo-vs-geo'
+      }
+    ]
+  }
+
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'What is the difference between SEO and GEO?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'SEO focuses on traditional search engine visibility with keywords and backlinks, while GEO optimizes content for AI-generated answers using citations, E-E-A-T signals, and structured data.'
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'When should I use SEO vs GEO?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Use SEO for driving direct organic traffic, e-commerce, and local business. Use GEO for thought leadership, informational authority, and AI platform presence.'
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'Can I combine SEO and GEO strategies?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Yes! Create dual-format content with keywords for SEO and structured data for GEO. Build backlinks while highlighting E-E-A-T signals, and monitor both organic traffic and AI citation frequency.'
+        }
+      }
+    ]
+  }
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900">
-      <div className="container mx-auto px-6 py-8">
-        <article className="max-w-4xl mx-auto">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <div className="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900">
+        <div className="container mx-auto px-6 py-8">
+          <article className="max-w-4xl mx-auto">
           <header className="text-center mb-12">
             <h1 className="text-5xl font-bold bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent mb-6">
               SEO vs GEO: The Complete Comparison Guide
@@ -201,5 +301,6 @@ export default function SEOvsGEOPage() {
         </article>
       </div>
     </div>
+    </>
   )
 }

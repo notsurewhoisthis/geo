@@ -121,6 +121,8 @@ export async function GET(request: Request) {
     // Learning & Information pages
     { path: '/benchmarks', priority: '0.8', changefreq: 'weekly' },
     { path: '/tutorials', priority: '0.8', changefreq: 'weekly' },
+    { path: '/tutorials/chatgpt-optimization', priority: '0.9', changefreq: 'weekly' },
+    { path: '/tutorials/seo-vs-geo', priority: '0.9', changefreq: 'weekly' },
     { path: '/coming-soon', priority: '0.3', changefreq: 'monthly' },
     
     // Main pages 

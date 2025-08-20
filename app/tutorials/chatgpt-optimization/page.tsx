@@ -17,10 +17,110 @@ export const metadata: Metadata = {
 }
 
 export default function ChatGPTOptimizationPage() {
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: 'ChatGPT Optimization: Complete Guide for 2025',
+    description: 'Master ChatGPT optimization with our comprehensive guide. Learn how ChatGPT selects content, key optimization factors, implementation steps, and common mistakes to avoid.',
+    author: {
+      '@type': 'Organization',
+      name: 'GEO Platform',
+      url: 'https://generative-engine.org'
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'GEO Platform',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://generative-engine.org/logo.png'
+      }
+    },
+    datePublished: '2025-01-18',
+    dateModified: '2025-01-20',
+    image: 'https://generative-engine.org/api/og?title=ChatGPT%20Optimization%20Guide',
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': 'https://generative-engine.org/tutorials/chatgpt-optimization'
+    },
+    keywords: 'ChatGPT optimization, ChatGPT SEO, AI content optimization, ChatGPT ranking factors',
+    articleSection: 'Tutorials',
+    wordCount: 1500,
+    timeRequired: 'PT7M'
+  }
+
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: 'https://generative-engine.org'
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Tutorials',
+        item: 'https://generative-engine.org/tutorials'
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: 'ChatGPT Optimization',
+        item: 'https://generative-engine.org/tutorials/chatgpt-optimization'
+      }
+    ]
+  }
+
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'How does ChatGPT select content?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'ChatGPT prioritizes content based on relevance, authority, clarity, structure, trust signals, freshness, and semantic richness. Unlike traditional SEO, it analyzes semantic meaning and surfaces passages with high topical relevance.'
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'What are the key ChatGPT ranking factors?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Key factors include relevance to user intent, authority from established domains, clear structure with headings and lists, regular content updates, citations to credible sources, and semantic meaning alignment.'
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'How can I optimize my content for ChatGPT?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Add citations and statistics, structure content with clear headings and lists, provide direct answers, keep content fresh with regular updates, and implement schema markup for better AI understanding.'
+        }
+      }
+    ]
+  }
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900">
-      <div className="container mx-auto px-6 py-8">
-        <article className="max-w-4xl mx-auto">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <div className="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900">
+        <div className="container mx-auto px-6 py-8">
+          <article className="max-w-4xl mx-auto">
           <header className="text-center mb-12">
             <h1 className="text-5xl font-bold bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent mb-6">
               ChatGPT Optimization: Complete Guide for 2025
@@ -157,5 +257,6 @@ export default function ChatGPTOptimizationPage() {
         </article>
       </div>
     </div>
+    </>
   )
 }
