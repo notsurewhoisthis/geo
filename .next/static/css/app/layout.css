@@ -769,6 +769,9 @@ video {
 .visible {
   visibility: visible;
 }
+.invisible {
+  visibility: hidden;
+}
 .absolute {
   position: absolute;
 }
@@ -1777,6 +1780,9 @@ video {
 .bg-yellow-800\/30 {
   background-color: rgb(133 77 14 / 0.3);
 }
+.bg-gray-900\/50 {
+  background-color: rgb(17 24 39 / 0.5);
+}
 .bg-opacity-0 {
   --tw-bg-opacity: 0;
 }
@@ -2114,6 +2120,11 @@ video {
   --tw-gradient-to: rgb(55 48 163 / 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
+.from-purple-800\/20 {
+  --tw-gradient-from: rgb(107 33 168 / 0.2) var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(107 33 168 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
 .via-blue-50 {
   --tw-gradient-to: rgb(239 246 255 / 0)  var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), #eff6ff var(--tw-gradient-via-position), var(--tw-gradient-to);
@@ -2373,6 +2384,12 @@ video {
 }
 .to-purple-800\/30 {
   --tw-gradient-to: rgb(107 33 168 / 0.3) var(--tw-gradient-to-position);
+}
+.to-blue-800\/20 {
+  --tw-gradient-to: rgb(30 64 175 / 0.2) var(--tw-gradient-to-position);
+}
+.to-pink-800\/20 {
+  --tw-gradient-to: rgb(157 23 77 / 0.2) var(--tw-gradient-to-position);
 }
 .bg-clip-text {
   -webkit-background-clip: text;

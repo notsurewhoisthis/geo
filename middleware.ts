@@ -14,15 +14,8 @@ const CONTENT_REDIRECTS: { [key: string]: string } = {
   '/case-studies/ecommerce-geo': '/use-cases/ecommerce',
   '/case-studies/saas-geo': '/use-cases/saas',
 
-  // Entities Redirects
-  '/entities/ai-citations': '/glossary/ai-citations',
-  '/entities/ai-seo': '/glossary/ai-seo',
-  '/entities/authority-signals': '/glossary/authority-signals',
-  '/entities/bing-chat-optimization': '/tutorials/bing-chat-optimization',
-  '/entities/content-structuring': '/tutorials/content-structuring',
-  '/entities/gpt-4-optimization': '/tutorials/gpt-4-optimization',
+  // Entities Redirects - Keep only non-existent pages
   '/entities/openai-plugins': '/glossary/openai-plugins',
-  '/entities/prompt-engineering': '/tutorials/prompt-engineering',
   '/entities/rag-optimization': '/tutorials/rag-optimization',
   '/entities/semantic-search-optimization': '/tutorials/semantic-search-optimization',
   '/entities/statistical-enhancement': '/glossary/statistical-enhancement',
