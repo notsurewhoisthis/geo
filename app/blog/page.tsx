@@ -99,34 +99,34 @@ export default async function BlogPage({
             <>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
                 {currentPosts.map((post) => (
-                  <article key={post.slug} className="blog-card">
-                    <div className="space-y-3">
-                      <div className="flex items-center gap-2 text-sm text-gray-600">
-                        <span>{typeof post.author === 'string' ? post.author : post.author?.name || 'GEO Team'}</span>
-                        <span>•</span>
-                        <time>{new Date(post.publishedAt).toLocaleDateString('en-US', { 
-                          year: 'numeric',
-                          month: 'long',
-                          day: 'numeric'
-                        })}</time>
-                      </div>
-                      <h2 className="text-xl font-bold text-gray-900 hover:text-blue-600 transition">
-                        <Link href={`/${post.slug}`}>
+                  <Link key={post.slug} href={`/${post.slug}`} className="block">
+                    <article className="blog-card cursor-pointer hover:shadow-lg transition-shadow">
+                      <div className="space-y-3">
+                        <div className="flex items-center gap-2 text-sm text-gray-600">
+                          <span>{typeof post.author === 'string' ? post.author : post.author?.name || 'GEO Team'}</span>
+                          <span>•</span>
+                          <time>{new Date(post.publishedAt).toLocaleDateString('en-US', { 
+                            year: 'numeric',
+                            month: 'long',
+                            day: 'numeric'
+                          })}</time>
+                        </div>
+                        <h2 className="text-xl font-bold text-gray-900 hover:text-blue-600 transition">
                           {post.title}
-                        </Link>
-                      </h2>
-                      <p className="text-gray-600 line-clamp-3">
-                        {post.description}
-                      </p>
-                      <div className="flex flex-wrap gap-2">
-                        {post.tags.slice(0, 3).map(tag => (
-                          <span key={tag} className="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full">
-                            {tag}
-                          </span>
-                        ))}
+                        </h2>
+                        <p className="text-gray-600 line-clamp-3">
+                          {post.description}
+                        </p>
+                        <div className="flex flex-wrap gap-2">
+                          {post.tags.slice(0, 3).map(tag => (
+                            <span key={tag} className="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full">
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
                       </div>
-                    </div>
-                  </article>
+                    </article>
+                  </Link>
                 ))}
               </div>
 
