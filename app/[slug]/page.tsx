@@ -50,14 +50,16 @@ async function getBlogPost(slug: string): Promise<BlogPost | null> {
         
         // Check if this post's slug matches what we're looking for
         if (post.slug === slug) {
+          console.log(`[Blog Debug] Found matching post for slug: ${slug}`)
           return post
         }
       }
     }
     
+    console.log(`[Blog Debug] No post found for slug: ${slug}`)
     return null
   } catch (error) {
-    console.error('Error loading blog post:', error)
+    console.error('[Blog Debug] Error loading blog post:', error)
     return null
   }
 }

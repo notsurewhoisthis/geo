@@ -99,8 +99,8 @@ export default async function BlogPage({
             <>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
                 {currentPosts.map((post) => (
-                  <Link key={post.slug} href={`/${post.slug}`} className="block">
-                    <article className="blog-card cursor-pointer hover:shadow-lg transition-shadow">
+                  <a key={post.slug} href={`/${post.slug}`} className="block">
+                    <article className="blog-card hover:shadow-lg transition-shadow">
                       <div className="space-y-3">
                         <div className="flex items-center gap-2 text-sm text-gray-600">
                           <span>{typeof post.author === 'string' ? post.author : post.author?.name || 'GEO Team'}</span>
@@ -126,7 +126,7 @@ export default async function BlogPage({
                         </div>
                       </div>
                     </article>
-                  </Link>
+                  </a>
                 ))}
               </div>
 
