@@ -25,6 +25,67 @@ When asked to implement any feature, you'll first say: "Let me research the code
 ## 🎯 Project Overview
 **GEO (Generative Engine Optimization)** - A Next.js 15 blog platform with automated content publishing via n8n integration. Live at https://www.generative-engine.org
 
+## 🚨 CRITICAL: DNS Configuration and Domain Management
+
+### The Problem That Broke the Website (Aug 20, 2025)
+Website showed "too many redirects" error, then after attempted fixes showed NXDOMAIN (domain not resolving). The issue was caused by incorrect DNS configuration between Cloudflare and Heroku.
+
+### Root Causes
+1. **Redirect Loop**: Conflicting redirect configurations between Cloudflare (forcing www) and middleware (forcing non-www)
+2. **DNS Misconfiguration**: Wrong DNS record types and targets after attempting to fix redirects
+3. **CNAME Flattening Issues**: Root domain CNAME records need special handling in Cloudflare
+
+### The Solution
+1. **Use A records for root domain**: Cloudflare automatically flattens CNAME records for root domains to A records
+2. **Keep CNAME for www subdomain**: Points to Heroku DNS target
+3. **Disable Cloudflare proxy**: Set all records to "DNS Only" (gray cloud) for Heroku routing to work
+4. **Fix via API**: Use Cloudflare API to ensure correct configuration
+
+### DNS Configuration Requirements
+```javascript
+// Root domain - Use A records (Cloudflare will manage these)
+generative-engine.org A 13.248.244.96
+generative-engine.org A 75.2.60.68  
+generative-engine.org A 35.71.179.82
+generative-engine.org A 99.83.220.108
+
+// WWW subdomain - Use CNAME
+www.generative-engine.org CNAME polar-reindeer-y0g7jlud4jpcv07h7675juuy.herokudns.com
+```
+
+### How to Fix DNS Issues
+```bash
+# 1. Check current DNS resolution
+curl -s "https://dns.google/resolve?name=generative-engine.org&type=A" | python3 -m json.tool
+
+# 2. Fix using Cloudflare API
+export CF_API_TOKEN="your-token-here"
+bash /Users/heni/GEO/fix-dns.sh
+
+# 3. Verify website is accessible
+curl -I https://generative-engine.org --resolve generative-engine.org:443:13.248.244.96
+
+# 4. Check Heroku domains configuration
+heroku domains -a geo-engine-optimization
+```
+
+### Key Learnings
+1. **Never remove Heroku custom domains**: This causes Error 530 (Origin DNS error)
+2. **Use DNS Only mode**: Cloudflare proxy must be disabled for Heroku SSL to work
+3. **CNAME root limitations**: Cloudflare automatically converts root CNAME to A records
+4. **Test with IP resolution**: Use `--resolve` flag to bypass DNS cache when testing
+5. **Wait for propagation**: DNS changes can take 5-15 minutes to propagate globally
+
+### Never Make These DNS Mistakes Again
+- ❌ Don't enable Cloudflare proxy (orange cloud) for Heroku apps
+- ❌ Don't delete Heroku custom domains when fixing redirects
+- ❌ Don't use CNAME for root domain (Cloudflare will flatten to A records anyway)
+- ❌ Don't panic if local DNS cache shows NXDOMAIN after fixes
+- ✅ Always verify DNS with Google DNS API
+- ✅ Always keep records as "DNS Only" for Heroku
+- ✅ Always test with direct IP resolution first
+- ✅ Always check both root and www domains work
+
 ## 🚨 CRITICAL: Next.js Standalone Deployment on Heroku
 
 ### The Problem That Broke Production (Aug 18, 2025)

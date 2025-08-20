@@ -1,5 +1,59 @@
 # Project Handoff Document
 
+## 🚨 CRITICAL: DNS Configuration and Domain Management (August 20, 2025)
+
+### The Problem That Broke the Website
+Website showed "too many redirects" error, then NXDOMAIN after attempted fixes. Caused by incorrect DNS configuration between Cloudflare and Heroku.
+
+### Root Causes & Solutions
+1. **Redirect Loop**: Conflicting redirects between Cloudflare and middleware
+   - Solution: Ensure middleware handles www→non-www, not Cloudflare
+2. **DNS Misconfiguration**: Wrong record types and targets
+   - Solution: Use A records for root, CNAME for www subdomain
+3. **Cloudflare Proxy Issue**: Orange cloud breaks Heroku SSL
+   - Solution: Always use "DNS Only" (gray cloud) for Heroku apps
+
+### Correct DNS Configuration
+```
+# Root domain - A records (Cloudflare manages these)
+generative-engine.org A 13.248.244.96
+generative-engine.org A 75.2.60.68
+generative-engine.org A 35.71.179.82
+generative-engine.org A 99.83.220.108
+
+# WWW subdomain - CNAME record
+www.generative-engine.org CNAME polar-reindeer-y0g7jlud4jpcv07h7675juuy.herokudns.com
+```
+
+### Emergency Fix Procedure
+```bash
+# 1. Check DNS resolution globally
+curl -s "https://dns.google/resolve?name=generative-engine.org&type=A" | python3 -m json.tool
+
+# 2. Fix via Cloudflare API
+export CF_API_TOKEN="P1knJB08bQ0rn_Frl8EWvS-ggw1O2dn5q7OBvxWJ"
+bash /Users/heni/GEO/fix-dns.sh
+
+# 3. Verify Heroku domains
+heroku domains -a geo-engine-optimization
+
+# 4. Test with IP resolution (bypasses DNS cache)
+curl -I https://generative-engine.org --resolve generative-engine.org:443:13.248.244.96
+```
+
+### Critical DNS Rules
+- ✅ ALWAYS keep Cloudflare records as "DNS Only" for Heroku
+- ✅ NEVER delete Heroku custom domains when fixing issues
+- ✅ USE A records for root domain (Cloudflare flattens CNAMEs)
+- ✅ TEST with Google DNS API for global verification
+- ❌ DON'T enable Cloudflare proxy (orange cloud) for Heroku
+- ❌ DON'T panic if local DNS cache shows errors after fixes
+
+### Helper Scripts Created
+- `/Users/heni/GEO/fix-dns.sh` - Bash script for DNS fixes
+- `/Users/heni/GEO/fix_cloudflare_dns.py` - Python alternative
+- `/Users/heni/GEO/fix-cloudflare-dns.js` - Node.js version
+
 ## Programmatic SEO Implementation (January 2025) - COMPLETED ✅
 
 ### Overview

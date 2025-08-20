@@ -232,9 +232,14 @@ export default function RootLayout({
         />
       </head>
       <body className={`${inter.className} bg-white text-gray-900 min-h-screen flex flex-col`}>
-        {/* Google Analytics */}
+        <Header />
+        <main className="flex-grow">
+          {children}
+        </main>
+        <Footer />
+        
+        {/* Google Analytics - Must be at end of body */}
         <Script
-          async
           src="https://www.googletagmanager.com/gtag/js?id=G-DKJB7H8XG5"
           strategy="afterInteractive"
         />
@@ -246,12 +251,6 @@ export default function RootLayout({
             gtag('config', 'G-DKJB7H8XG5');
           `}
         </Script>
-        
-        <Header />
-        <main className="flex-grow">
-          {children}
-        </main>
-        <Footer />
       </body>
     </html>
   )
