@@ -79,25 +79,8 @@ export function middleware(request: NextRequest) {
     return NextResponse.redirect(url, { status: 301 })
   }
 
-  // News articles dynamic redirects - handle timestamp-based URLs
-  const newsArticlePattern = /-\d{13}$/
-  if (newsArticlePattern.test(pathname)) {
-    const baseSlug = pathname.replace(newsArticlePattern, '')
-    // Check if the base slug exists as a blog post
-    const url = request.nextUrl.clone()
-    url.pathname = baseSlug
-    return NextResponse.redirect(url, { status: 301 })
-  }
-
-  // Handle dynamic blog slug patterns that don't exist
-  // If it's a long slug with hyphens, try to find a match in actual blog posts
-  const blogSlugPattern = /^\/[a-z0-9-]{30,}$/
-  if (blogSlugPattern.test(pathname)) {
-    // For now, redirect to blog page
-    const url = request.nextUrl.clone()
-    url.pathname = '/blog'
-    return NextResponse.redirect(url, { status: 301 })
-  }
+  // Don't redirect blog posts with timestamps - they are valid slugs
+  // Removed the newsArticlePattern redirect that was breaking blog posts
 
   // Continue with the request for the main site
   return NextResponse.next()
