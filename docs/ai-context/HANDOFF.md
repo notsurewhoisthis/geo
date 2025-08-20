@@ -400,7 +400,26 @@ To prevent this from happening again:
 
 ---
 
-## 🚨 LATEST FIXES: August 19, 2025 Session
+## 🚨 LATEST FIXES: August 20, 2025 Session
+
+### Blog Navigation Client-Side Issue ✅
+**Problem**: Blog post links on `/blog` page were redirecting back to `/blog` instead of navigating to articles when clicked
+**Root Cause**: Next.js Link component with aggressive prefetching was interfering with navigation
+**Solution**: 
+- Replaced Next.js `<Link>` with regular `<a>` tags for blog post cards
+- Changed `/app/blog/page.tsx` lines 101-129 to use standard anchor tags
+- Kept Link component only for pagination where client-side transitions work correctly
+**Result**: Deployed to Heroku v186 - Blog navigation now works correctly
+
+### Key Learnings - Blog Navigation
+- ❌ Next.js Link component can cause redirect loops even with `prefetch={false}`
+- ✅ Regular HTML anchor tags are more reliable for simple navigation
+- ✅ Always test both direct URL access AND click navigation
+- ✅ Keep Link component only where client-side transitions are needed
+
+---
+
+## 🚨 PREVIOUS FIXES: August 19, 2025 Session
 
 ### Platform Comparison Pages - Black Text Fix ✅
 **Problem**: All 60 comparison pages showing unreadable black text on black background

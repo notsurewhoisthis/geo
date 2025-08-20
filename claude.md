@@ -120,6 +120,48 @@ curl -s https://www.generative-engine.org/_next/static/css/[hash].css | head -c 
 - ✅ Always copy static files in build script
 - ✅ Always test CSS loading in production after deployment
 
+## 🚨 CRITICAL: Blog Navigation Client-Side Issues (August 20, 2025)
+
+### The Problem That Broke Blog Navigation
+Blog post links on the `/blog` page were redirecting back to `/blog` instead of navigating to individual articles when clicked. The issue only affected client-side navigation - direct URL access worked fine.
+
+### Root Cause
+Next.js Link component with aggressive prefetching was interfering with navigation. The Next.js router was intercepting clicks and redirecting back to the blog listing page instead of navigating to the article.
+
+### The Solution
+Replace Next.js `Link` component with regular HTML `<a>` tags for blog post cards:
+```jsx
+// ❌ BROKEN - Next.js Link causes redirect loop
+<Link key={post.slug} href={`/${post.slug}`} className="block" prefetch={false}>
+  <article className="blog-card">...</article>
+</Link>
+
+// ✅ WORKING - Regular anchor tags bypass Next.js router
+<a key={post.slug} href={`/${post.slug}`} className="block">
+  <article className="blog-card">...</article>
+</a>
+```
+
+### Key Learnings
+1. **Next.js Link can interfere with navigation** - Even with `prefetch={false}`, Link component can cause redirect issues
+2. **Regular anchor tags are more reliable** - For simple navigation that doesn't need client-side transitions
+3. **Test both direct URL and click navigation** - Issues may only appear in client-side routing
+4. **Keep Link for internal pagination** - Link component works fine for pagination where we want client-side transitions
+
+### How to Verify Blog Navigation
+```bash
+# Check that blog cards use regular anchor tags
+curl -s https://generative-engine.org/blog | grep '<a class="block" href="/'
+```
+
+### Never Make These Blog Navigation Mistakes Again
+- ❌ Don't assume Next.js Link always works for all navigation
+- ❌ Don't use Link component for blog post cards
+- ❌ Don't ignore user reports of navigation issues
+- ✅ Use regular `<a>` tags for blog post navigation
+- ✅ Test clicking links, not just direct URL access
+- ✅ Keep Link component only for pagination
+
 ## 📝 Blog System Architecture & n8n Integration
 
 ### How Blog Posts Work
