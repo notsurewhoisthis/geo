@@ -30,16 +30,32 @@ interface BlogPost {
 
 async function getBlogPost(slug: string): Promise<BlogPost | null> {
   try {
-    const blogDataPath = path.join(process.cwd(), 'public', 'blog-data', `${slug}.json`)
+    const blogDataDir = path.join(process.cwd(), 'public', 'blog-data')
     
-    if (!fs.existsSync(blogDataPath)) {
-      return null
+    // First try exact match
+    const exactPath = path.join(blogDataDir, `${slug}.json`)
+    if (fs.existsSync(exactPath)) {
+      const content = fs.readFileSync(exactPath, 'utf8')
+      const post = JSON.parse(content) as BlogPost
+      return post
     }
     
-    const content = fs.readFileSync(blogDataPath, 'utf8')
-    const post = JSON.parse(content) as BlogPost
+    // If not found, look for files that might have timestamps
+    const files = fs.readdirSync(blogDataDir)
+    for (const file of files) {
+      if (file.endsWith('.json')) {
+        const filePath = path.join(blogDataDir, file)
+        const content = fs.readFileSync(filePath, 'utf8')
+        const post = JSON.parse(content) as BlogPost
+        
+        // Check if this post's slug matches what we're looking for
+        if (post.slug === slug) {
+          return post
+        }
+      }
+    }
     
-    return post
+    return null
   } catch (error) {
     console.error('Error loading blog post:', error)
     return null

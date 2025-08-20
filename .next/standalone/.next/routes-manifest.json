@@ -51,6 +51,14 @@
   },
   "dynamicRoutes": [
     {
+      "page": "/case-studies/[slug]",
+      "regex": "^/case\\-studies/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPslug": "nxtPslug"
+      },
+      "namedRegex": "^/case\\-studies/(?<nxtPslug>[^/]+?)(?:/)?$"
+    },
+    {
       "page": "/compare/[comparison]",
       "regex": "^/compare/([^/]+?)(?:/)?$",
       "routeKeys": {
@@ -121,6 +129,12 @@
       "namedRegex": "^/blog(?:/)?$"
     },
     {
+      "page": "/case-studies",
+      "regex": "^/case\\-studies(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/case\\-studies(?:/)?$"
+    },
+    {
       "page": "/coming-soon",
       "regex": "^/coming\\-soon(?:/)?$",
       "routeKeys": {},
@@ -157,6 +171,24 @@
       "namedRegex": "^/entities(?:/)?$"
     },
     {
+      "page": "/entities/ai-seo",
+      "regex": "^/entities/ai\\-seo(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/entities/ai\\-seo(?:/)?$"
+    },
+    {
+      "page": "/entities/authority-signals",
+      "regex": "^/entities/authority\\-signals(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/entities/authority\\-signals(?:/)?$"
+    },
+    {
+      "page": "/entities/bing-chat-optimization",
+      "regex": "^/entities/bing\\-chat\\-optimization(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/entities/bing\\-chat\\-optimization(?:/)?$"
+    },
+    {
       "page": "/entities/chatgpt-optimization",
       "regex": "^/entities/chatgpt\\-optimization(?:/)?$",
       "routeKeys": {},
@@ -175,10 +207,28 @@
       "namedRegex": "^/entities/claude\\-optimization(?:/)?$"
     },
     {
+      "page": "/entities/content-structuring",
+      "regex": "^/entities/content\\-structuring(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/entities/content\\-structuring(?:/)?$"
+    },
+    {
+      "page": "/entities/conversational-search-optimization",
+      "regex": "^/entities/conversational\\-search\\-optimization(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/entities/conversational\\-search\\-optimization(?:/)?$"
+    },
+    {
       "page": "/entities/generative-engine-optimization",
       "regex": "^/entities/generative\\-engine\\-optimization(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/entities/generative\\-engine\\-optimization(?:/)?$"
+    },
+    {
+      "page": "/entities/gpt-4-optimization",
+      "regex": "^/entities/gpt\\-4\\-optimization(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/entities/gpt\\-4\\-optimization(?:/)?$"
     },
     {
       "page": "/entities/llm-optimization",
@@ -191,6 +241,24 @@
       "regex": "^/entities/perplexity\\-optimization(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/entities/perplexity\\-optimization(?:/)?$"
+    },
+    {
+      "page": "/entities/prompt-engineering",
+      "regex": "^/entities/prompt\\-engineering(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/entities/prompt\\-engineering(?:/)?$"
+    },
+    {
+      "page": "/entities/rag-optimization",
+      "regex": "^/entities/rag\\-optimization(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/entities/rag\\-optimization(?:/)?$"
+    },
+    {
+      "page": "/entities/vector-embeddings",
+      "regex": "^/entities/vector\\-embeddings(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/entities/vector\\-embeddings(?:/)?$"
     },
     {
       "page": "/feed.xml",
@@ -233,6 +301,12 @@
       "regex": "^/platforms(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/platforms(?:/)?$"
+    },
+    {
+      "page": "/platforms/grok",
+      "regex": "^/platforms/grok(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/platforms/grok(?:/)?$"
     },
     {
       "page": "/resources",
