@@ -10,6 +10,13 @@ const defaultLanguage = 'en'
 export function middleware(request: NextRequest) {
   const { pathname, hostname } = request.nextUrl
   
+  // Handle www to non-www redirect FIRST to prevent loops
+  if (hostname === 'www.generative-engine.org' || hostname === 'www.lookatmyprofile.org') {
+    const url = request.nextUrl.clone()
+    url.hostname = hostname.replace('www.', '')
+    return NextResponse.redirect(url, { status: 301 })
+  }
+  
   // Check if it's a language subdomain
   const languageSubdomains = ['es', 'fr', 'de', 'pt', 'it', 'ja', 'zh', 'ko', 'uk']
   const subdomain = hostname.split('.')[0]
