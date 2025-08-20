@@ -21,6 +21,14 @@ const CONTENT_REDIRECTS: { [key: string]: string } = {
   '/entities/statistical-enhancement': '/glossary/statistical-enhancement',
   '/entities/vector-embeddings': '/glossary/vector-embeddings',
 
+  // Glossary to Entities Redirects (for URLs that now exist as entities)
+  '/glossary/ai-seo': '/entities/ai-seo',
+  '/glossary/ai-citations': '/entities/ai-citations',
+  '/glossary/authority-signals': '/entities/authority-signals',
+  '/glossary/bing-chat-optimization': '/entities/bing-chat-optimization',
+  '/glossary/content-structuring': '/entities/content-structuring',
+  '/glossary/gpt-4-optimization': '/entities/gpt-4-optimization',
+
   // Platforms Redirects
   '/platforms/gemini': '/platforms/google-gemini',
   '/platforms/grok': '/platforms/grok-ai',
