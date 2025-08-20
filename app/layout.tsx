@@ -231,18 +231,6 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(navigationSchema) }}
         />
         
-        {/* Google Analytics - Fallback for standalone mode */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-DKJB7H8XG5"></script>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-DKJB7H8XG5');
-            `
-          }}
-        />
       </head>
       <body className={`${inter.className} bg-white text-gray-900 min-h-screen flex flex-col`}>
         <Header />
@@ -250,6 +238,26 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        
+        {/* Google Analytics - Using Next.js Script component for proper loading */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-DKJB7H8XG5"
+          strategy="afterInteractive"
+        />
+        <Script
+          id="google-analytics"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-DKJB7H8XG5', {
+                page_path: window.location.pathname,
+              });
+            `,
+          }}
+        />
       </body>
     </html>
   )
