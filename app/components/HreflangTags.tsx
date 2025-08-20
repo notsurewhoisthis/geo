@@ -2,12 +2,21 @@
 
 import { usePathname } from 'next/navigation'
 
-export function HreflangTags() {
+interface HreflangTagsProps {
+  alternateLanguages?: {
+    languageCode: string;
+    url: string;
+  }[];
+}
+
+export function HreflangTags({
+  alternateLanguages = []
+}: HreflangTagsProps = {}) {
   const pathname = usePathname()
   
   // Always include self-referencing hreflang for the current page
   // This is REQUIRED by Google guidelines - each page must reference itself
-  const baseUrl = 'https://www.generative-engine.org'
+  const baseUrl = 'https://generative-engine.org'
   const currentUrl = `${baseUrl}${pathname}`
   
   return (
@@ -26,11 +35,15 @@ export function HreflangTags() {
         href={currentUrl}
       />
       
-      {/* Future language versions can be added here when enabled
-          Each language version will also need its own self-referencing tag
-          Example for Spanish version:
-          <link rel="alternate" hrefLang="es" href={`https://es.generative-engine.org${pathname}`} />
-      */}
+      {/* Alternate language versions */}
+      {alternateLanguages.map(lang => (
+        <link
+          key={lang.languageCode}
+          rel="alternate"
+          hrefLang={lang.languageCode}
+          href={lang.url}
+        />
+      ))}
     </>
   )
 }

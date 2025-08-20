@@ -183,9 +183,9 @@ export async function generateMetadata({ params }: { params: Promise<{ platform:
       title,
       description,
       type: 'article',
-      url: `https://www.generative-engine.org/platforms/${platform.slug}`,
+      url: `https://generative-engine.org/platforms/${platform.slug}`,
       images: [{
-        url: `https://www.generative-engine.org/api/og?title=${encodeURIComponent(platform.name + ' GEO Guide')}&type=platform`,
+        url: `https://generative-engine.org/api/og?title=${encodeURIComponent(platform.name + ' GEO Guide')}&type=platform`,
         width: 1200,
         height: 630,
         alt: `${platform.name} Optimization Guide`
@@ -195,10 +195,10 @@ export async function generateMetadata({ params }: { params: Promise<{ platform:
       card: 'summary_large_image',
       title,
       description,
-      images: [`https://www.generative-engine.org/api/og?title=${encodeURIComponent(platform.name + ' GEO Guide')}&type=platform`],
+      images: [`https://generative-engine.org/api/og?title=${encodeURIComponent(platform.name + ' GEO Guide')}&type=platform`],
     },
     alternates: {
-      canonical: `https://www.generative-engine.org/platforms/${platform.slug}`,
+      canonical: `https://generative-engine.org/platforms/${platform.slug}`,
     },
   }
 }
@@ -253,19 +253,19 @@ export default async function PlatformPage({ params }: { params: Promise<{ platf
     "author": {
       "@type": "Organization",
       "name": "Generative Engine Optimization Platform",
-      "url": "https://www.generative-engine.org"
+      "url": "https://generative-engine.org"
     },
     "publisher": {
       "@type": "Organization", 
       "name": "GEO Platform",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://www.generative-engine.org/logo.png"
+        "url": "https://generative-engine.org/logo.png"
       }
     },
     "datePublished": "2025-01-18",
     "dateModified": "2025-01-18",
-    "mainEntityOfPage": `https://www.generative-engine.org/platforms/${platform.slug}`,
+    "mainEntityOfPage": `https://generative-engine.org/platforms/${platform.slug}`,
     "about": {
       "@type": "SoftwareApplication",
       "name": platform.name,

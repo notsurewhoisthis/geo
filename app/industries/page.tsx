@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   description: 'Discover Generative Engine Optimization strategies for 560+ industries. Get tailored AI optimization guides for your sector with market insights and proven techniques.',
   keywords: 'industry GEO, sector-specific AI optimization, industry AI strategies, generative engine optimization by industry',
   alternates: {
-    canonical: 'https://www.generative-engine.org/industries',
+    canonical: 'https://generative-engine.org/industries',
   },
 }
 

@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   description: 'Master Generative Engine Optimization for 103+ AI platforms. Get platform-specific strategies for ChatGPT, Claude, Perplexity, and more with proven GEO techniques.',
   keywords: 'AI platform optimization, ChatGPT SEO, Claude optimization, Perplexity AI visibility, generative engine platforms',
   alternates: {
-    canonical: 'https://www.generative-engine.org/platforms',
+    canonical: 'https://generative-engine.org/platforms',
   },
 }
 

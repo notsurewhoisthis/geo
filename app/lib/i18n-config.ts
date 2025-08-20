@@ -14,7 +14,7 @@ export const languages: Language[] = [
     name: 'English',
     nativeName: 'English',
     region: 'US',
-    url: 'https://www.generative-engine.org',
+    url: 'https://generative-engine.org',
     enabled: true
   },
   {
@@ -22,7 +22,7 @@ export const languages: Language[] = [
     name: 'English (UK)',
     nativeName: 'English (UK)',
     region: 'GB',
-    url: 'https://www.generative-engine.org',
+    url: 'https://generative-engine.org',
     enabled: false // Enable when UK version is ready
   },
   {
@@ -30,7 +30,7 @@ export const languages: Language[] = [
     name: 'Spanish',
     nativeName: 'Español',
     region: 'ES',
-    url: 'https://www.generative-engine.org',
+    url: 'https://generative-engine.org',
     enabled: false // Enable when Spanish version is ready
   },
   {
@@ -38,7 +38,7 @@ export const languages: Language[] = [
     name: 'French',
     nativeName: 'Français',
     region: 'FR',
-    url: 'https://www.generative-engine.org',
+    url: 'https://generative-engine.org',
     enabled: false // Enable when French version is ready
   },
   {
@@ -46,7 +46,7 @@ export const languages: Language[] = [
     name: 'German',
     nativeName: 'Deutsch',
     region: 'DE',
-    url: 'https://www.generative-engine.org',
+    url: 'https://generative-engine.org',
     enabled: false // Enable when German version is ready
   },
   {
@@ -54,7 +54,7 @@ export const languages: Language[] = [
     name: 'Portuguese',
     nativeName: 'Português',
     region: 'PT',
-    url: 'https://www.generative-engine.org',
+    url: 'https://generative-engine.org',
     enabled: false // Enable when Portuguese version is ready
   },
   {
@@ -62,7 +62,7 @@ export const languages: Language[] = [
     name: 'Italian',
     nativeName: 'Italiano',
     region: 'IT',
-    url: 'https://www.generative-engine.org',
+    url: 'https://generative-engine.org',
     enabled: false // Enable when Italian version is ready
   },
   {
@@ -70,7 +70,7 @@ export const languages: Language[] = [
     name: 'Japanese',
     nativeName: '日本語',
     region: 'JP',
-    url: 'https://www.generative-engine.org',
+    url: 'https://generative-engine.org',
     enabled: false // Enable when Japanese version is ready
   },
   {
@@ -78,7 +78,7 @@ export const languages: Language[] = [
     name: 'Chinese',
     nativeName: '中文',
     region: 'CN',
-    url: 'https://www.generative-engine.org',
+    url: 'https://generative-engine.org',
     enabled: false // Enable when Chinese version is ready
   },
   {
@@ -86,7 +86,7 @@ export const languages: Language[] = [
     name: 'Korean',
     nativeName: '한국어',
     region: 'KR',
-    url: 'https://www.generative-engine.org',
+    url: 'https://generative-engine.org',
     enabled: false // Enable when Korean version is ready
   }
 ]
@@ -109,10 +109,10 @@ export function generateHreflangTags(pathname: string): Array<{ lang: string; ur
     })
   }
   
-  // Add x-default tag (fallback) - use www version
+  // Add x-default tag (fallback)
   tags.push({
     lang: 'x-default',
-    url: `https://www.generative-engine.org${pathname}`
+    url: `https://generative-engine.org${pathname}`
   })
   
   return tags

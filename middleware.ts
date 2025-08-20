@@ -2,6 +2,37 @@ import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
 import { getCorrectPlatformSlug } from '@/app/lib/platform-redirects'
 
+// SEO and GEO Redirects
+const CONTENT_REDIRECTS: { [key: string]: string } = {
+  // Blog and Content Redirects
+  '/blog/chatgpt-optimization-guide': '/tutorials/chatgpt-optimization',
+  '/blog/seo-vs-geo-complete-guide': '/tutorials/seo-vs-geo',
+
+  // Case Studies Redirects
+  '/case-studies/b2b-geo': '/use-cases/b2b',
+  '/case-studies/content-geo': '/use-cases/content',
+  '/case-studies/ecommerce-geo': '/use-cases/ecommerce',
+  '/case-studies/saas-geo': '/use-cases/saas',
+
+  // Entities Redirects
+  '/entities/ai-citations': '/glossary/ai-citations',
+  '/entities/ai-seo': '/glossary/ai-seo',
+  '/entities/authority-signals': '/glossary/authority-signals',
+  '/entities/bing-chat-optimization': '/tutorials/bing-chat-optimization',
+  '/entities/content-structuring': '/tutorials/content-structuring',
+  '/entities/gpt-4-optimization': '/tutorials/gpt-4-optimization',
+  '/entities/openai-plugins': '/glossary/openai-plugins',
+  '/entities/prompt-engineering': '/tutorials/prompt-engineering',
+  '/entities/rag-optimization': '/tutorials/rag-optimization',
+  '/entities/semantic-search-optimization': '/tutorials/semantic-search-optimization',
+  '/entities/statistical-enhancement': '/glossary/statistical-enhancement',
+  '/entities/vector-embeddings': '/glossary/vector-embeddings',
+
+  // Platforms Redirects
+  '/platforms/gemini': '/platforms/google-gemini',
+  '/platforms/grok': '/platforms/grok-ai',
+};
+
 // Language configuration
 const supportedLanguages = ['en'] // Only English is currently supported
 const defaultLanguage = 'en'
@@ -41,6 +72,33 @@ export function middleware(request: NextRequest) {
     }
   }
   
+  // Handle content redirects
+  if (CONTENT_REDIRECTS[pathname]) {
+    const url = request.nextUrl.clone()
+    url.pathname = CONTENT_REDIRECTS[pathname]
+    return NextResponse.redirect(url, { status: 301 })
+  }
+
+  // News articles dynamic redirects - handle timestamp-based URLs
+  const newsArticlePattern = /-\d{13}$/
+  if (newsArticlePattern.test(pathname)) {
+    const baseSlug = pathname.replace(newsArticlePattern, '')
+    // Check if the base slug exists as a blog post
+    const url = request.nextUrl.clone()
+    url.pathname = baseSlug
+    return NextResponse.redirect(url, { status: 301 })
+  }
+
+  // Handle dynamic blog slug patterns that don't exist
+  // If it's a long slug with hyphens, try to find a match in actual blog posts
+  const blogSlugPattern = /^\/[a-z0-9-]{30,}$/
+  if (blogSlugPattern.test(pathname)) {
+    // For now, redirect to blog page
+    const url = request.nextUrl.clone()
+    url.pathname = '/blog'
+    return NextResponse.redirect(url, { status: 301 })
+  }
+
   // Continue with the request for the main site
   return NextResponse.next()
 }
