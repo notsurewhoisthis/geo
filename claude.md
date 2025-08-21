@@ -1,4 +1,5 @@
 ⚠️ CRITICAL WARNING: DO the below every time ⚠️
+Always pull from github first! that's your source of truth and the most updated source⚠️ CRITICAL WARNING: DO the below every time ⚠️
 ### Workflow: Research → Plan → Implement
 NEVER JUMP STRAIGHT TO CODING! Always follow this sequence:
 1. **Research**: 

@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
 import { getCorrectPlatformSlug } from '@/app/lib/platform-redirects'
 
-// SEO and GEO Redirects
+// SEO and GEO Redirects - Fixed to prevent redirect loops
 const CONTENT_REDIRECTS: { [key: string]: string } = {
   // Blog and Content Redirects
   '/blog/chatgpt-optimization-guide': '/tutorials/chatgpt-optimization',
@@ -14,24 +14,17 @@ const CONTENT_REDIRECTS: { [key: string]: string } = {
   '/case-studies/ecommerce-geo': '/use-cases/ecommerce',
   '/case-studies/saas-geo': '/use-cases/saas',
 
-  // Entities Redirects - Keep only non-existent pages
-  '/entities/openai-plugins': '/glossary/openai-plugins',
-  '/entities/rag-optimization': '/tutorials/rag-optimization',
-  '/entities/semantic-search-optimization': '/tutorials/semantic-search-optimization',
-  '/entities/statistical-enhancement': '/glossary/statistical-enhancement',
-  '/entities/vector-embeddings': '/glossary/vector-embeddings',
-
-  // Glossary to Entities Redirects (for URLs that now exist as entities)
-  '/glossary/ai-seo': '/entities/ai-seo',
-  '/glossary/ai-citations': '/entities/ai-citations',
-  '/glossary/authority-signals': '/entities/authority-signals',
-  '/glossary/bing-chat-optimization': '/entities/bing-chat-optimization',
-  '/glossary/content-structuring': '/entities/content-structuring',
-  '/glossary/gpt-4-optimization': '/entities/gpt-4-optimization',
-
+  // Old Entity URLs that don't exist anymore
+  '/entities/openai-plugins': '/glossary#openai-plugins',
+  '/entities/statistical-enhancement': '/glossary#statistical-enhancement',
+  
   // Platforms Redirects
   '/platforms/gemini': '/platforms/google-gemini',
   '/platforms/grok': '/platforms/grok-ai',
+  
+  // Old tool URLs
+  '/tools/seo-analyzer': '/tools/geo-audit',
+  '/tools/ai-optimizer': '/tools/content-optimizer',
 };
 
 // Language configuration

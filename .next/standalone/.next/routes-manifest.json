@@ -171,6 +171,12 @@
       "namedRegex": "^/entities(?:/)?$"
     },
     {
+      "page": "/entities/ai-citations",
+      "regex": "^/entities/ai\\-citations(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/entities/ai\\-citations(?:/)?$"
+    },
+    {
       "page": "/entities/ai-seo",
       "regex": "^/entities/ai\\-seo(?:/)?$",
       "routeKeys": {},
@@ -351,6 +357,12 @@
       "namedRegex": "^/tools/chatgpt\\-optimizer(?:/)?$"
     },
     {
+      "page": "/tools/competitor-analysis",
+      "regex": "^/tools/competitor\\-analysis(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/tools/competitor\\-analysis(?:/)?$"
+    },
+    {
       "page": "/tools/content-optimizer",
       "regex": "^/tools/content\\-optimizer(?:/)?$",
       "routeKeys": {},
@@ -361,6 +373,12 @@
       "regex": "^/tools/geo\\-audit(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/tools/geo\\-audit(?:/)?$"
+    },
+    {
+      "page": "/tools/keyword-analyzer",
+      "regex": "^/tools/keyword\\-analyzer(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/tools/keyword\\-analyzer(?:/)?$"
     },
     {
       "page": "/tools/keyword-research",
@@ -415,6 +433,18 @@
       "regex": "^/tutorials(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/tutorials(?:/)?$"
+    },
+    {
+      "page": "/tutorials/chatgpt-optimization",
+      "regex": "^/tutorials/chatgpt\\-optimization(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/tutorials/chatgpt\\-optimization(?:/)?$"
+    },
+    {
+      "page": "/tutorials/seo-vs-geo",
+      "regex": "^/tutorials/seo\\-vs\\-geo(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/tutorials/seo\\-vs\\-geo(?:/)?$"
     },
     {
       "page": "/use-cases",
