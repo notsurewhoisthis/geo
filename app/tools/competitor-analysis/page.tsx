@@ -23,77 +23,91 @@ interface CompetitorData {
 
 export default function CompetitorAnalysisPage() {
   const [domain, setDomain] = useState('')
+  const [competitorUrls, setCompetitorUrls] = useState('')
   const [competitors, setCompetitors] = useState<CompetitorData[]>([])
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
 
   const analyzeCompetitors = async () => {
     if (!domain.trim()) {
-      setError('Please enter a domain to analyze')
+      setError('Please enter your domain to analyze')
       return
     }
 
     setError('')
     setLoading(true)
+    setCompetitors([])
 
-    // Simulate API call with demo data
-    setTimeout(() => {
-      const demoCompetitors: CompetitorData[] = [
-        {
-          domain: domain,
-          geoScore: 78,
-          citationCount: 12,
-          statisticsCount: 25,
-          faqSections: 3,
-          schemaMarkup: true,
-          contentLength: 2500,
-          aiVisibility: {
-            perplexity: 82,
-            chatgpt: 75,
-            claude: 79,
-            bingChat: 71
-          },
-          strengths: ['Strong citation usage', 'Comprehensive FAQ sections', 'Rich schema markup'],
-          opportunities: ['Increase statistical data', 'Add more long-form content']
-        },
-        {
-          domain: 'competitor1.com',
-          geoScore: 65,
-          citationCount: 8,
-          statisticsCount: 15,
-          faqSections: 2,
-          schemaMarkup: true,
-          contentLength: 1800,
-          aiVisibility: {
-            perplexity: 68,
-            chatgpt: 62,
-            claude: 65,
-            bingChat: 60
-          },
-          strengths: ['Good schema implementation', 'Regular content updates'],
-          opportunities: ['Add more citations', 'Expand FAQ sections', 'Increase content depth']
-        },
-        {
-          domain: 'competitor2.com',
-          geoScore: 85,
-          citationCount: 20,
-          statisticsCount: 35,
-          faqSections: 5,
-          schemaMarkup: true,
-          contentLength: 3200,
-          aiVisibility: {
-            perplexity: 88,
-            chatgpt: 85,
-            claude: 87,
-            bingChat: 82
-          },
-          strengths: ['Excellent citation density', 'Comprehensive content', 'Strong AI optimization'],
-          opportunities: ['Minor improvements in technical SEO']
+    try {
+      // Parse competitor URLs or use defaults
+      const urls = competitorUrls.trim() 
+        ? competitorUrls.split('\n').map(u => u.trim()).filter(u => u)
+        : ['techcrunch.com', 'theverge.com'] // Default competitors
+
+      // Add user's domain to the analysis
+      const allUrls = [domain, ...urls].slice(0, 5) // Max 5 sites
+      const competitorResults: CompetitorData[] = []
+
+      for (const url of allUrls) {
+        try {
+          const response = await fetch('/api/analyze-website', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ url })
+          })
+
+          if (response.ok) {
+            const data = await response.json()
+            
+            // Determine strengths based on high scores
+            const strengths: string[] = []
+            if (data.metrics.citations >= 5) strengths.push('Strong citation usage')
+            if (data.metrics.statistics >= 10) strengths.push('Rich statistical content')
+            if (data.metrics.faqSections > 0) strengths.push('FAQ sections present')
+            if (data.metrics.hasSchema) strengths.push('Schema markup implemented')
+            if (data.metrics.wordCount >= 1500) strengths.push('Comprehensive content depth')
+            if (data.metrics.headings.h2 >= 3) strengths.push('Well-structured headings')
+
+            // Determine opportunities based on low scores
+            const opportunities: string[] = []
+            if (data.metrics.citations < 3) opportunities.push(`Add ${3 - data.metrics.citations} more citations`)
+            if (data.metrics.statistics < 5) opportunities.push('Include more statistics and data')
+            if (data.metrics.faqSections === 0) opportunities.push('Add FAQ sections')
+            if (!data.metrics.hasSchema) opportunities.push('Implement schema markup')
+            if (data.metrics.wordCount < 1000) opportunities.push('Expand content length')
+            if (!data.metrics.metaDescription) opportunities.push('Add meta description')
+
+            competitorResults.push({
+              domain: url,
+              geoScore: data.geoScore,
+              citationCount: data.metrics.citations,
+              statisticsCount: data.metrics.statistics,
+              faqSections: data.metrics.faqSections,
+              schemaMarkup: data.metrics.hasSchema,
+              contentLength: data.metrics.wordCount,
+              aiVisibility: data.aiVisibility,
+              strengths,
+              opportunities
+            })
+          }
+        } catch (err) {
+          console.error(`Failed to analyze ${url}:`, err)
         }
-      ]
-      setCompetitors(demoCompetitors)
+      }
+
+      if (competitorResults.length === 0) {
+        throw new Error('Unable to analyze any websites. Please check the URLs and try again.')
+      }
+
+      // Sort by GEO score (highest first)
+      competitorResults.sort((a, b) => b.geoScore - a.geoScore)
+      
+      setCompetitors(competitorResults)
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Failed to analyze competitors')
+    } finally {
       setLoading(false)
-    }, 2000)
+    }
   }
 
   const getScoreColor = (score: number) => {
@@ -108,39 +122,60 @@ export default function CompetitorAnalysisPage() {
         {/* Hero Section */}
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent mb-4">
-            GEO Competitor Analysis
+            Real-Time Competitor Analysis
           </h1>
           <p className="text-gray-300 text-lg max-w-3xl mx-auto">
-            Analyze your competitors' Generative Engine Optimization strategies. Compare domain metrics, 
-            identify strengths and opportunities, and benchmark your GEO performance.
+            Analyze real competitor websites to understand their GEO strategies. Compare actual metrics, 
+            identify strengths and opportunities, and benchmark your performance with real data.
           </p>
         </div>
 
         {/* Input Section */}
         <div className="bg-gray-800 rounded-lg p-8 mb-8">
           <div className="max-w-2xl mx-auto">
-            <label htmlFor="domain" className="block text-sm font-medium text-gray-300 mb-2">
-              Enter Your Domain
-            </label>
-            <div className="flex gap-4">
-              <input
-                type="text"
-                id="domain"
-                value={domain}
-                onChange={(e) => setDomain(e.target.value)}
-                placeholder="e.g., example.com"
-                className="flex-1 px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-purple-500"
-              />
+            <div className="space-y-4">
+              <div>
+                <label htmlFor="domain" className="block text-sm font-medium text-gray-300 mb-2">
+                  Your Domain
+                </label>
+                <input
+                  type="text"
+                  id="domain"
+                  value={domain}
+                  onChange={(e) => setDomain(e.target.value)}
+                  placeholder="e.g., example.com"
+                  className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-purple-500"
+                />
+              </div>
+              
+              <div>
+                <label htmlFor="competitors" className="block text-sm font-medium text-gray-300 mb-2">
+                  Competitor Domains (Optional - one per line)
+                </label>
+                <textarea
+                  id="competitors"
+                  value={competitorUrls}
+                  onChange={(e) => setCompetitorUrls(e.target.value)}
+                  placeholder="competitor1.com&#10;competitor2.com&#10;competitor3.com"
+                  rows={3}
+                  className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-purple-500"
+                />
+                <p className="mt-1 text-gray-500 text-sm">
+                  Leave empty to analyze example tech sites, or enter up to 4 competitor domains
+                </p>
+              </div>
+
               <button
                 onClick={analyzeCompetitors}
                 disabled={loading}
-                className="px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold rounded-lg hover:from-purple-600 hover:to-pink-600 transition-all disabled:opacity-50"
+                className="w-full px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold rounded-lg hover:from-purple-600 hover:to-pink-600 transition-all disabled:opacity-50"
               >
-                {loading ? 'Analyzing...' : 'Analyze'}
+                {loading ? 'Analyzing Real Websites...' : 'Analyze Competitors'}
               </button>
             </div>
+            
             {error && (
-              <p className="mt-2 text-red-400 text-sm">{error}</p>
+              <p className="mt-4 text-red-400 text-sm">{error}</p>
             )}
           </div>
         </div>
@@ -151,7 +186,8 @@ export default function CompetitorAnalysisPage() {
             {/* Comparison Table */}
             <div className="bg-gray-800 rounded-lg overflow-hidden">
               <div className="px-6 py-4 border-b border-gray-700">
-                <h2 className="text-xl font-semibold text-white">Competitor Comparison</h2>
+                <h2 className="text-xl font-semibold text-white">Real-Time Competitor Comparison</h2>
+                <p className="text-gray-400 text-sm mt-1">Actual metrics from live website analysis</p>
               </div>
               <div className="overflow-x-auto">
                 <table className="w-full">
@@ -168,10 +204,10 @@ export default function CompetitorAnalysisPage() {
                   </thead>
                   <tbody className="divide-y divide-gray-700">
                     {competitors.map((comp, index) => (
-                      <tr key={index} className={index === 0 ? 'bg-gray-700/50' : ''}>
+                      <tr key={index} className={comp.domain === domain ? 'bg-gray-700/50' : ''}>
                         <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-white">
                           {comp.domain}
-                          {index === 0 && <span className="ml-2 text-xs text-purple-400">(You)</span>}
+                          {comp.domain === domain && <span className="ml-2 text-xs text-purple-400">(You)</span>}
                         </td>
                         <td className="px-6 py-4 whitespace-nowrap text-sm text-center">
                           <span className={`font-semibold ${getScoreColor(comp.geoScore)}`}>
@@ -206,16 +242,16 @@ export default function CompetitorAnalysisPage() {
 
             {/* AI Platform Visibility */}
             <div className="grid md:grid-cols-2 gap-6">
-              {competitors.map((comp, index) => (
+              {competitors.slice(0, 4).map((comp, index) => (
                 <div key={index} className="bg-gray-800 rounded-lg p-6">
                   <h3 className="text-lg font-semibold text-white mb-4">
-                    {comp.domain} {index === 0 && <span className="text-purple-400">(You)</span>}
+                    {comp.domain} {comp.domain === domain && <span className="text-purple-400">(You)</span>}
                   </h3>
                   <div className="space-y-3">
                     {Object.entries(comp.aiVisibility).map(([platform, score]) => (
                       <div key={platform}>
                         <div className="flex justify-between mb-1">
-                          <span className="text-gray-300 capitalize">{platform}</span>
+                          <span className="text-gray-300 capitalize">{platform.replace('bingChat', 'Bing Chat')}</span>
                           <span className="text-white font-semibold">{score}%</span>
                         </div>
                         <div className="w-full bg-gray-700 rounded-full h-2">
@@ -231,43 +267,45 @@ export default function CompetitorAnalysisPage() {
               ))}
             </div>
 
-            {/* Strengths and Opportunities */}
-            <div className="grid md:grid-cols-2 gap-6">
-              <div className="bg-gray-800 rounded-lg p-6">
-                <h3 className="text-xl font-semibold text-white mb-4">Your Strengths</h3>
-                <ul className="space-y-2">
-                  {competitors[0]?.strengths.map((strength, index) => (
-                    <li key={index} className="flex items-start">
-                      <span className="text-green-400 mr-2">✓</span>
-                      <span className="text-gray-300">{strength}</span>
-                    </li>
-                  ))}
-                </ul>
+            {/* Strengths and Opportunities for Your Domain */}
+            {competitors.find(c => c.domain === domain) && (
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="bg-gray-800 rounded-lg p-6">
+                  <h3 className="text-xl font-semibold text-white mb-4">Your Strengths</h3>
+                  <ul className="space-y-2">
+                    {competitors.find(c => c.domain === domain)?.strengths.map((strength, index) => (
+                      <li key={index} className="flex items-start">
+                        <span className="text-green-400 mr-2">✓</span>
+                        <span className="text-gray-300">{strength}</span>
+                      </li>
+                    )) || <li className="text-gray-400">No significant strengths detected</li>}
+                  </ul>
+                </div>
+                <div className="bg-gray-800 rounded-lg p-6">
+                  <h3 className="text-xl font-semibold text-white mb-4">Improvement Opportunities</h3>
+                  <ul className="space-y-2">
+                    {competitors.find(c => c.domain === domain)?.opportunities.map((opportunity, index) => (
+                      <li key={index} className="flex items-start">
+                        <span className="text-yellow-400 mr-2">→</span>
+                        <span className="text-gray-300">{opportunity}</span>
+                      </li>
+                    )) || <li className="text-gray-400">You're doing great!</li>}
+                  </ul>
+                </div>
               </div>
-              <div className="bg-gray-800 rounded-lg p-6">
-                <h3 className="text-xl font-semibold text-white mb-4">Improvement Opportunities</h3>
-                <ul className="space-y-2">
-                  {competitors[0]?.opportunities.map((opportunity, index) => (
-                    <li key={index} className="flex items-start">
-                      <span className="text-yellow-400 mr-2">→</span>
-                      <span className="text-gray-300">{opportunity}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
+            )}
 
-            {/* Top Competitor Analysis */}
-            {competitors[2] && (
+            {/* Top Performer Analysis */}
+            {competitors.length > 1 && (
               <div className="bg-gradient-to-r from-purple-900/50 to-pink-900/50 rounded-lg p-6 border border-purple-500/30">
                 <h3 className="text-xl font-semibold text-white mb-4">
-                  Learn from Top Performer: {competitors[2].domain}
+                  Learn from Top Performer: {competitors[0].domain}
                 </h3>
                 <p className="text-gray-300 mb-4">
-                  This competitor has the highest GEO score ({competitors[2].geoScore}%). Here's what they're doing right:
+                  This website has the highest GEO score ({competitors[0].geoScore}%). Here's what they're doing right:
                 </p>
                 <ul className="space-y-2">
-                  {competitors[2].strengths.map((strength, index) => (
+                  {competitors[0].strengths.map((strength, index) => (
                     <li key={index} className="flex items-start">
                       <span className="text-purple-400 mr-2">★</span>
                       <span className="text-gray-300">{strength}</span>
@@ -281,22 +319,22 @@ export default function CompetitorAnalysisPage() {
 
         {/* How It Works Section */}
         <div className="mt-16 bg-gray-800 rounded-lg p-8">
-          <h2 className="text-2xl font-bold text-white mb-6">How Competitor Analysis Works</h2>
+          <h2 className="text-2xl font-bold text-white mb-6">How Real-Time Analysis Works</h2>
           <div className="grid md:grid-cols-3 gap-6">
             <div>
               <div className="text-purple-400 text-3xl font-bold mb-2">1</div>
-              <h3 className="text-lg font-semibold text-white mb-2">Identify Competitors</h3>
-              <p className="text-gray-400">We automatically identify your top competitors based on your domain and content focus.</p>
+              <h3 className="text-lg font-semibold text-white mb-2">Fetch Live Websites</h3>
+              <p className="text-gray-400">We fetch and analyze the actual HTML content from each website in real-time.</p>
             </div>
             <div>
               <div className="text-pink-400 text-3xl font-bold mb-2">2</div>
-              <h3 className="text-lg font-semibold text-white mb-2">Analyze GEO Factors</h3>
-              <p className="text-gray-400">We evaluate key GEO factors including citations, statistics, FAQs, and content structure.</p>
+              <h3 className="text-lg font-semibold text-white mb-2">Extract GEO Metrics</h3>
+              <p className="text-gray-400">Count real citations, statistics, FAQs, schema markup, and content structure.</p>
             </div>
             <div>
               <div className="text-blue-400 text-3xl font-bold mb-2">3</div>
               <h3 className="text-lg font-semibold text-white mb-2">Generate Insights</h3>
-              <p className="text-gray-400">Get actionable insights on strengths to maintain and opportunities to improve your GEO strategy.</p>
+              <p className="text-gray-400">Compare metrics and provide actionable recommendations based on real data.</p>
             </div>
           </div>
         </div>

@@ -1,0 +1,7 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/[slug]/layout,_N_T_/[slug]/page,_N_T_/the-entity-authority-arms-race-how-ai-search-engines-are-rew-1755756167395"
+  }
+}
