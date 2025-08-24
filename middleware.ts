@@ -28,13 +28,7 @@ const CONTENT_REDIRECTS: { [key: string]: string } = {
   '/tools/ai-optimizer': '/tools/content-optimizer',
   
   // Blog posts with timestamps - redirect to clean URLs
-  '/beyond-google-how-apple-s-safari-ai-integration-is-driving-3-1755712980073': '/beyond-google-how-apple-s-safari-ai-integration-is-driving-3',
-  '/inside-the-black-box-how-chatgpt-actually-reads-your-content-1755687783993': '/inside-the-black-box-how-chatgpt-actually-reads-your-content',
-  '/the-geo-lies-everyone-s-telling-what-actually-gets-you-cited-1755662584200': '/the-geo-lies-everyone-s-telling-what-actually-gets-you-cited',
-  '/the-weekly-gemini-changelog-chaos-how-rapid-ai-updates-are-b-1755684193536': '/the-weekly-gemini-changelog-chaos-how-rapid-ai-updates-are-b',
-  '/the-geo-gold-rush-how-content-creators-are-rigging-ai-search-1755508115765': '/the-geo-gold-rush-how-content-creators-are-rigging-ai-search',
-  '/the-ai-citation-gold-rush-why-everyone-s-writing-like-robots-1755511425293': '/the-ai-citation-gold-rush-why-everyone-s-writing-like-robots',
-  '/why-most-geo-tools-are-missing-the-mark-a-technical-deep-div-1755536649647': '/why-most-geo-tools-are-missing-the-mark-a-technical-deep-div',
+  // Pattern: remove timestamp suffix from all blog post URLs
   
   // Fix incorrect industry URLs - redirect to proper format
   '/industries/gaming-real-estate-tech': '/industries/real-estate-tech',
@@ -56,6 +50,9 @@ const CONTENT_REDIRECTS: { [key: string]: string } = {
   '/tutorials': '/guide',
   '/getting-started': '/guide',
   '/contact': '/consultation',
+  '/seo-vs-geo-complete-guide': '/guide',
+  '/entities': '/glossary',
+  '/glossary': '/glossary',
 };
 
 // Language configuration
@@ -106,6 +103,16 @@ export function middleware(request: NextRequest) {
 
   // Don't redirect blog posts with timestamps - they are valid slugs
   // Removed the newsArticlePattern redirect that was breaking blog posts
+
+  // Handle blog post URLs with timestamps - redirect to clean URLs
+  // Pattern: /slug-with-text-1234567890 -> /slug-with-text
+  const timestampPattern = /^(\/[a-z0-9-]+)-\d{13}$/
+  const match = pathname.match(timestampPattern)
+  if (match) {
+    const url = request.nextUrl.clone()
+    url.pathname = match[1]
+    return NextResponse.redirect(url, { status: 301 })
+  }
 
   // Continue with the request for the main site
   return NextResponse.next()

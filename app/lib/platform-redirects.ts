@@ -103,10 +103,7 @@ export function getCorrectPlatformSlug(slug: string): string | null {
   const validSlugs = [
     'gpt-4o', 'claude-4-1-opus', 'gemini-2-5-pro', 'deepseek-r1', 
     'llama-4', 'openai-o3', 'chatgpt', 'claude', 'perplexity', 
-    'google-gemini', 'copy-ai', 'dall-e', 'elevenlabs',
-    'github-copilot', 'grammarly', 'jasper',
-    'microsoft-copilot', 'midjourney', 'notion-ai',
-    'runwayml', 'synthesia'
+    'google-gemini'
   ]
   
   if (validSlugs.includes(slug)) {
