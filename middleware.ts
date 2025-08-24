@@ -18,13 +18,44 @@ const CONTENT_REDIRECTS: { [key: string]: string } = {
   '/entities/openai-plugins': '/glossary#openai-plugins',
   '/entities/statistical-enhancement': '/glossary#statistical-enhancement',
   
-  // Platforms Redirects
-  '/platforms/gemini': '/platforms/google-gemini',
+  // Platforms Redirects (removed - handled by platform-redirects.ts)
+  // '/platforms/gemini': '/platforms/google-gemini', // Now handled by platform-redirects.ts
   '/platforms/grok': '/platforms/grok-ai',
+  '/platforms/google-bard': '/platforms/google-gemini', // Redirect google-bard to google-gemini
   
   // Old tool URLs
   '/tools/seo-analyzer': '/tools/geo-audit',
   '/tools/ai-optimizer': '/tools/content-optimizer',
+  
+  // Blog posts with timestamps - redirect to clean URLs
+  '/beyond-google-how-apple-s-safari-ai-integration-is-driving-3-1755712980073': '/beyond-google-how-apple-s-safari-ai-integration-is-driving-3',
+  '/inside-the-black-box-how-chatgpt-actually-reads-your-content-1755687783993': '/inside-the-black-box-how-chatgpt-actually-reads-your-content',
+  '/the-geo-lies-everyone-s-telling-what-actually-gets-you-cited-1755662584200': '/the-geo-lies-everyone-s-telling-what-actually-gets-you-cited',
+  '/the-weekly-gemini-changelog-chaos-how-rapid-ai-updates-are-b-1755684193536': '/the-weekly-gemini-changelog-chaos-how-rapid-ai-updates-are-b',
+  '/the-geo-gold-rush-how-content-creators-are-rigging-ai-search-1755508115765': '/the-geo-gold-rush-how-content-creators-are-rigging-ai-search',
+  '/the-ai-citation-gold-rush-why-everyone-s-writing-like-robots-1755511425293': '/the-ai-citation-gold-rush-why-everyone-s-writing-like-robots',
+  '/why-most-geo-tools-are-missing-the-mark-a-technical-deep-div-1755536649647': '/why-most-geo-tools-are-missing-the-mark-a-technical-deep-div',
+  
+  // Fix incorrect industry URLs - redirect to proper format
+  '/industries/gaming-real-estate-tech': '/industries/real-estate-tech',
+  '/industries/manufacturing-logistics': '/industries/logistics-supply-chain',
+  '/industries/transportation-cybersecurity': '/industries/cybersecurity-defense',
+  '/industries/media-healthtech': '/industries/healthcare-medical-devices',
+  '/industries/energy-fitness-tech': '/industries/fitness-wellness-tech',
+  '/industries/manufacturing-customer-service': '/industries/customer-service-support',
+  '/industries/real-estate-accounting': '/industries/accounting-finance',
+  '/industries/consulting-data-analytics': '/industries/data-analytics-business-intelligence',
+  '/industries/pharmaceutical-accounting': '/industries/pharmaceutical-biotech',
+  
+  // RSS/Feed redirects  
+  '/rss.xml': '/feed.xml',
+  '/feed': '/feed.xml',
+  '/rss': '/feed.xml',
+  
+  // Missing pages that should redirect
+  '/tutorials': '/guide',
+  '/getting-started': '/guide',
+  '/contact': '/consultation',
 };
 
 // Language configuration
