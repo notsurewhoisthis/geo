@@ -102,17 +102,8 @@ export function middleware(request: NextRequest) {
   }
 
   // Don't redirect blog posts with timestamps - they are valid slugs
-  // Removed the newsArticlePattern redirect that was breaking blog posts
-
-  // Handle blog post URLs with timestamps - redirect to clean URLs
-  // Pattern: /slug-with-text-1234567890 -> /slug-with-text
-  const timestampPattern = /^(\/[a-z0-9-]+)-\d{13}$/
-  const match = pathname.match(timestampPattern)
-  if (match) {
-    const url = request.nextUrl.clone()
-    url.pathname = match[1]
-    return NextResponse.redirect(url, { status: 301 })
-  }
+  // Blog posts with timestamps like /the-geo-gold-rush-1755508115765 are VALID URLs
+  // DO NOT redirect them - they are the actual blog post slugs
 
   // Continue with the request for the main site
   return NextResponse.next()
