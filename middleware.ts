@@ -7,6 +7,10 @@ const CONTENT_REDIRECTS: { [key: string]: string } = {
   // Blog and Content Redirects
   '/blog/chatgpt-optimization-guide': '/tutorials/chatgpt-optimization',
   '/blog/seo-vs-geo-complete-guide': '/tutorials/seo-vs-geo',
+  
+  // Fix truncated blog post URLs
+  '/beyond-wcag-compliance-how-ai-powered-behavioral-signal-dete': '/beyond-wcag-compliance-how-ai-powered-behavioral-signal-dete-1756062207010',
+  '/platform-wars-why-your-chatgpt-strategy-fails-on-perplexity-': '/platform-wars-why-your-chatgpt-strategy-fails-on-perplexity--1756058617374',
 
   // Case Studies Redirects
   '/case-studies/b2b-geo': '/use-cases/b2b',
